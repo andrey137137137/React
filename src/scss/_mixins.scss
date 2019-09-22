@@ -1,0 +1,53 @@
+@mixin cssProp($property, $value) {
+  #{$property}: unquote($value);
+}
+
+@mixin margin($value) {
+  // margin: unquote($value);
+  @include cssProp(margin, $value);
+}
+
+@mixin border($value) {
+  // border: unquote($value);
+  @include cssProp(border, $value);
+}
+
+@mixin padding($value) {
+  // padding: unquote($value);
+  @include cssProp(padding, $value);
+}
+
+@mixin size($value) {
+  // size: unquote($value);
+  @include cssProp(size, $value);
+}
+
+@mixin position($value) {
+  @include cssProp(position, $value);
+}
+
+@mixin oneLineBlock($height, $border: 0) {
+  height: $height;
+  line-height: $height - $border * 2;
+}
+
+@mixin iconSize($size) {
+  &,
+  &:before,
+  &:after {
+    border-width: $size;
+  }
+}
+
+@mixin pixelPerfect($img, $top: 0) {
+  #pixel_perfect {
+    position: absolute;
+    // top: -194px;
+    top: $top;
+    left: 0;
+    z-index: 1000000;
+    size: 100%;
+    background: url(../img/#{$img}) center top repeat-y;
+    opacity: 0.5;
+  }
+}

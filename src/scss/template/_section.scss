@@ -1,0 +1,18 @@
+.section {
+  &-title {
+    line-height: 1.5;
+    color: $gray-600;
+
+    &--main {
+      line-height: $headings-line-height;
+      // font-weight: normal;
+      color: $gray-700;
+    }
+  }
+
+  &-container {
+    &--light_bg {
+      background-color: $white;
+    }
+  }
+}

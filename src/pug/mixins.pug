@@ -1,0 +1,135 @@
+include variables
+
+mixin svg(id, classes="")
+  svg(class=classes)
+    use(xlink:href="../svg/symbol/svg/sprite.symbol.svg#" + id)
+
+mixin card-rating-body(text, modif="")
+  .card-rating(class="card-rating--" + modif)
+    +svg("star", "card-rating_star")
+    span.card-rating_text= text
+
+mixin card-rating(status)
+  case status
+    when 5.8
+      +card-rating-body(status, "warning")
+    when 2.4
+      +card-rating-body(status, "danger")
+    default
+      +card-rating-body(status)
+
+mixin card-img(img, options)
+  if card.isRow
+    .card-tab
+  img.card-img(src="img/today/" + img + ".jpg", alt=options.title)
+  +card-rating(options.status)
+  if options.status > 9
+    .card-review
+
+mixin card-title(title, classes="", marked=false)
+  h3.card-title.section-title(class=classes)
+    span #{title}
+    .card-title_hidden.d-md-none
+    if card.isRow
+      +svg("bookmark", "card-icon")
+      .card-title_translate Infinitely polar bear
+
+mixin card-info(classes="")
+  ul.col-auto.list-group.list-group-horizontal(class=classes)
+    li.list-group-item
+      +svg("star-empty", "card-icon")
+    li.list-group-item
+      +svg("layer-group", "card-icon")
+    li.list-group-item
+      +svg("comment", "card-icon")
+
+mixin card-subtitle(date, genre)
+  h4.card-subtitle
+    span #{date}, #{genre}
+    if card.isRow
+      span.badge.order-md-first 16+
+
+mixin card-block(img, options)
+  article.col.card.px-md-0.mb-md-0
+    .card-body.pb-0
+      +card-img(img, options)
+      +card-title(options.title)
+      +card-subtitle(options.date, options.genre)
+
+mixin card-row(img, options)
+  article.w-100.card.card--row
+    .card-body
+      .row
+        .col-auto.card-img_wrap
+          +card-img(img, options)
+        .col
+          .row.justify-content-between
+            +card-title(options.title, "col-12 col-md-8")
+            +card-info("d-none d-md-flex")
+            .col-6
+              +card-subtitle(options.date, options.genre)
+              .list-group.list-group-horizontal.d-none.d-md-flex.card-categories
+                span.badge
+              .card-text
+            .col-6.card-text
+    .card-footer.d-md-none
+      +card-info
+
+mixin display-cards(items, byRows = false)
+  //- .card-group
+  if byRows
+    - card.isRow = true
+    each item, index in items
+      +card-row((index + 1), item)
+  else
+    each item, index in items
+      +card-block((index + 1), item)
+
+mixin card-container(byRows)
+  -
+    var movies = [
+      {
+        title: "Бесконечно белый медведь",
+        date: 2015,
+        genre: "комедия",
+        status: 9.3
+      },
+      {
+        title: "Путешествие из Парижа",
+        date: 2015,
+        genre: "комедия",
+        status: 5.8
+      },
+      {
+        title: "Побудь в моей шкуре",
+        date: 2014,
+        genre: "фантастика",
+        status: 2.4
+      },
+      {
+        title: "Матрос Железняк",
+        date: 1985,
+        genre: "драма",
+        status: 9.3
+      },
+      //- {
+      //-   title: "Сила воли",
+      //-   date: 2016,
+      //-   genre: "драма",
+      //-   status: 5.8
+      //- }
+    ]
+
+  +display-cards(movies, byRows)
+  //- +display-cards(movies, byRows)
+
+mixin main-container(byRows = true)
+  - var classes = "row mr-0 section-container main-row main-container"
+
+  if byRows
+    - classes += " p-0"
+  else
+    - classes += " pr-11 pb-37 pl-27 pt-md-4 pr-md-19 pb-md-14 pl-md-23 shadow-sm section-container--light_bg"
+
+  main(class=classes)
+    +card-container(byRows)

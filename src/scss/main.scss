@@ -1,0 +1,293 @@
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "mixins";
+@import "template/import";
+
+body {
+  background-image: url(../img/bg/body/mobile.jpg);
+}
+
+.header {
+  // margin-bottom: 12px;
+  height: 100px;
+  background-color: $gray-900;
+}
+
+.navbar-toggler {
+  border-width: 0;
+
+  &-icon {
+    background-image: none !important;
+    size: 24px 19px;
+    fill: $gray-300;
+    // @include iconSize(3px);
+  }
+}
+
+.search {
+  &-icon {
+    padding: 0;
+    size: 20px;
+    fill: $gray-300;
+    // @include iconSize(3px);
+  }
+}
+
+.logo {
+  line-height: $navbar-brand-height;
+
+  &-text {
+    display: block;
+    // padding-top: 6px;
+
+    &--light {
+      // @include padding("* 7px 6px");
+      @include padding("* 7px * *");
+      color: $white;
+    }
+
+    &--dark {
+      // @include padding("* 5px 12px");
+      @include padding("* 5px *");
+      color: $gray-900 $green;
+    }
+  }
+}
+
+// .content {
+//   max-width: 100%;
+// }
+
+.main {
+  // padding-right: 0;
+
+  &-row {
+    margin-right: 0;
+    // padding-right: 11px;
+    padding-right: map-get($spacers, 11);
+  }
+
+  // &-top {
+  //   padding-left: 8px;
+  // }
+
+  &-container {
+    justify-content: space-around;
+    // @include padding("* 17px * 33px");
+    @include padding("* * 37px 27px");
+  }
+}
+
+.filter {
+  @include padding("* 5px 6px *");
+
+  &-link,
+  &-icons {
+    display: flex;
+    align-items: center;
+  }
+
+  &-link {
+    justify-content: space-between;
+    padding: 0;
+    // height: 100%;
+  }
+
+  &-text {
+    @include padding("* 6px");
+    display: block;
+    font-size: 17px/49px;
+    color: $gray-500;
+  }
+
+  &-icon {
+    size: 16px;
+    fill: $gray-200;
+    @include iconSize(3px);
+
+    &.icon-squares {
+      @include iconSize(6px);
+    }
+
+    &--rounded {
+      @include margin("* -1px * 6px");
+      border-radius: 50%;
+      padding: 8px 7px 7px 8px;
+      size: 31px;
+      fill: #f7f7f7;
+      background-color: $gray-light;
+    }
+
+    &--margined {
+      margin-left: 10px;
+    }
+
+    &--active {
+      fill: $green !important;
+    }
+  }
+}
+
+.card {
+  flex-grow: 0;
+  margin-bottom: -6px;
+  @include padding("5px 6px *");
+  min-width: auto;
+
+  // &-group {
+  //   @include padding("* 19px * 23px");
+  // }
+
+  &-body,
+  &-img_wrap {
+    position: relative;
+  }
+
+  &-img {
+    @include padding("21px 14px * *");
+    width: auto;
+    // width: 113px;
+    // height: 171px;
+    max-width: 113px;
+    // border-radius: 0;
+    overflow: hidden;
+  }
+
+  &-rating {
+    $elem: &;
+
+    @include position("absolute 4px 5px * *");
+    @include size("49px 46px");
+    font-size: 15px;
+    text-align: center;
+    color: $white;
+    background-image: url(../img/sprite/star.png);
+
+    &_star {
+      @include padding("* 5px");
+      size: 100%;
+      stroke-width: 5px;
+      stroke: $green;
+      fill: $green;
+    }
+
+    &_text {
+      @include position("absolute 0 0 *");
+      padding-top: 14px;
+      size: 100%;
+    }
+
+    &--warning {
+      #{$elem}_star {
+        stroke: $orange;
+        fill: $orange;
+      }
+
+      #{$elem}_text {
+        text-shadow: 0 1px rgba(148, 110, 0, 0.21);
+      }
+    }
+
+    &--danger {
+      #{$elem}_star {
+        stroke: $red;
+        fill: $red;
+      }
+    }
+  }
+
+  &-review {
+    @include position("absolute 141px 14px * *");
+    size: 49px 50px;
+    background-image: url(../img/sprite/review.png);
+  }
+
+  &-title {
+    position: relative;
+    margin-top: 10px;
+    overflow: hidden;
+    height: 21px;
+
+    &_hidden {
+      @include position("absolute 0 0 * *");
+      size: 24px 24px;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0), $white 30%);
+    }
+  }
+
+  &-icon {
+    size: 15px;
+  }
+
+  &-subtitle {
+    line-height: 26px;
+  }
+
+  &--row {
+    background-color: $white;
+  }
+}
+
+.pagination {
+  &-container {
+    margin-top: 20px;
+    padding-left: 18px;
+  }
+
+  margin-bottom: 9px;
+  padding-right: 19px;
+}
+
+.page {
+  $block: &;
+
+  &-item {
+    &:first-child,
+    &:last-child {
+      #{$block}-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        size: 40px 36px;
+      }
+    }
+
+    &.active {
+      #{$block}-link {
+        font-weight: bold;
+      }
+    }
+  }
+
+  &-link {
+    margin-left: 7px;
+    width: 36px;
+    text-align: center;
+  }
+
+  &-icon {
+    size: 10px;
+    fill: $gray-200;
+  }
+
+  &-text {
+    display: block;
+  }
+
+  &-status {
+    font-size: 17px/36px;
+    color: $gray-200;
+  }
+}
+
+.sidebar {
+  max-width: 216px;
+
+  &-container {
+    height: 585px;
+  }
+}
+
+@import "adaptive/import";
+
+@include pixelPerfect("mobile-squares.jpg");

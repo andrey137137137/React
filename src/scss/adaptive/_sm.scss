@@ -1,0 +1,12 @@
+@include media-breakpoint-up(sm) {
+  .filter {
+    &-link {
+      height: 60px;
+    }
+
+    &-text {
+      padding-right: 0;
+      line-height: 60px;
+    }
+  }
+}

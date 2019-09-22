@@ -1,0 +1,71 @@
+.icon {
+  display: inline-block;
+  overflow: hidden;
+
+  &:before,
+  &:after {
+    display: block;
+    content: "";
+  }
+
+  // &-bars {
+  //   &:before,
+  //   &:after {
+  //     border-bottom-style: solid;
+  //   }
+
+  //   &:after {
+  //     margin-top: 28.57142857142857%;
+  //     border-top-style: solid;
+  //     padding-top: 28.57142857142857%;
+  //   }
+  // }
+
+  // &-search {
+  //   &:before {
+  //     border-style: solid;
+  //     border-radius: 50%;
+  //     size: 80%;
+  //   }
+
+  //   &:after {
+  //     border-bottom-style: solid;
+  //     @include margin("* 2% * 41%");
+  //     size: 57% 20%;
+  //     transform-origin: 90.90909090909091% 90.90909090909091%;
+  //     transform: rotate(45deg);
+  //   }
+  // }
+
+  // &-filter {
+  //   background: url(../img/sprite/filter/white.png) center center no-repeat;
+  // }
+
+  // &-sort {
+  //   background: url(../img/sprite/downstairs/white.png) center center no-repeat;
+  // }
+
+  // &-squares {
+  //   &:before,
+  //   &:after {
+  //     @include border("* / * solid / *");
+  //     height: 6px;
+  //   }
+
+  //   &:after {
+  //     margin-top: 14.28571428571429%;
+  //   }
+  // }
+
+  &-angle {
+    &_left {
+      @include border("2px * * 2px / solid * * solid");
+      transform: rotate(-45deg);
+    }
+
+    &_right {
+      @include border("2px 2px * * / solid solid * *");
+      transform: rotate(45deg);
+    }
+  }
+}

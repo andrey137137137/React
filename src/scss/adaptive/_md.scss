@@ -1,0 +1,166 @@
+@include media-breakpoint-up(md) {
+  body {
+    background-image: url(../img/bg/body/desktop.jpg);
+  }
+
+  // .icon {
+  //   &-filter {
+  //     background: url(../img/sprite/filter/gray.png) center center no-repeat;
+  //   }
+
+  //   &-sort {
+  //     @include border("* * 2px / * * solid / *");
+  //     background-image: none;
+
+  //     &:before,
+  //     &:after {
+  //       @include border("2px * * / solid * * / *");
+  //       padding-top: 28.57142857142857%;
+  //     }
+
+  //     &:before {
+  //       width: 50%;
+  //     }
+
+  //     &:after {
+  //       width: 75%;
+  //     }
+  //   }
+  // }
+
+  .section {
+    &-title {
+      font-size: #{$font-size-lg}/ 1.5;
+
+      &--main {
+        font-size: #{$h2-font-size * 1.181818181818182}/#{$headings-line-height *
+          1.59375};
+      }
+    }
+
+    &-container {
+      &--light_bg {
+        border: $border-color solid $border-width;
+        border-radius: $border-radius;
+      }
+    }
+  }
+
+  .header {
+    height: 109px;
+    margin-bottom: 13px;
+  }
+
+  .main {
+    &-row {
+      margin-right: -7px;
+    }
+
+    &-title {
+      padding-left: 2px;
+    }
+
+    &-container {
+      // justify-content: flex-start;
+      @include padding("4px 19px 14px 23px");
+    }
+  }
+
+  .filter {
+    @include padding("* 7px 4px *");
+
+    &-item {
+      @include margin("* 4px * 19px");
+
+      &:first-child {
+        margin-right: 11px;
+      }
+    }
+
+    &-text {
+      @include padding("* 10px");
+      // line-height: 60px;
+    }
+
+    &-icon {
+      size: 14px;
+      // @include iconSize(2px);
+
+      // &.icon-squares {
+      //   @include iconSize(6px);
+      // }
+
+      &--margined {
+        @include margin("* 5px");
+        fill: $gray-light;
+      }
+
+      &--rounded {
+        @include margin("* 0");
+        border-radius: 0;
+        size: 14px;
+        fill: $gray-200;
+        background-color: rgba(0, 0, 0, 0);
+      }
+    }
+
+    &-icons {
+      padding-left: 4px;
+    }
+  }
+
+  .card {
+    @include padding("2px 7px *");
+    // min-width: 149px;
+
+    &-body {
+      position: relative;
+      padding-bottom: 8px !important;
+    }
+
+    &-img {
+      padding-right: 11px;
+      max-width: 133px;
+    }
+
+    &-rating {
+      @include position("6px 2px * *");
+    }
+
+    &-title {
+      margin-top: 7px;
+      font-weight: 500;
+      height: auto;
+      line-height: 20px;
+    }
+  }
+
+  .page {
+    $block: &;
+
+    &-item {
+      &:first-child,
+      &:last-child {
+        #{$block}-link {
+          justify-content: space-between;
+          @include padding("* 25px");
+          width: 155px;
+        }
+      }
+    }
+  }
+
+  .pagination {
+    &-container {
+      margin-top: 14px;
+    }
+
+    padding-right: 25px;
+  }
+
+  .page {
+    &-text {
+      font-size: 17px;
+    }
+  }
+}
