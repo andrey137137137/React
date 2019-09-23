@@ -48,83 +48,90 @@
 
   .header {
     height: 109px;
-    margin-bottom: 13px;
+    // margin-bottom: 13px;
   }
 
   .main {
     &-row {
-      margin-right: -7px;
+      // margin-right: -7px;
+      margin-right: -#{$grid-gutter-width/2};
     }
 
-    &-title {
-      padding-left: 2px;
-    }
+    // &-title {
+    //   padding-left: 2px;
+    // }
 
-    &-container {
-      // justify-content: flex-start;
-      @include padding("4px 19px 14px 23px");
-    }
+    // &-container {
+    //   justify-content: flex-start;
+    //   @include padding("4px 19px 14px 23px");
+    // }
   }
 
   .filter {
-    @include padding("* 7px 4px *");
+    // @include padding("* 7px 4px *");
 
     &-item {
-      @include margin("* 4px * 19px");
+      // @include margin("* 4px * 19px");
+      @include margin("* #{map-get($spacers, 4)} * #{map-get($spacers, 19)}");
 
       &:first-child {
-        margin-right: 11px;
+        // margin-right: 11px;
+        margin-right: map-get($spacers, 11);
       }
     }
 
     &-text {
-      @include padding("* 10px");
+      // @include padding("* 10px");
+      @include padding("* #{map-get($spacers, 10)}");
       // line-height: 60px;
     }
 
     &-icon {
-      size: 14px;
-      // @include iconSize(2px);
-
-      // &.icon-squares {
-      //   @include iconSize(6px);
-      // }
+      // size: 14px;
+      size: map-get($spacers, 14);
 
       &--margined {
-        @include margin("* 5px");
+        // @include margin("* 5px");
+        @include margin("* #{map-get($spacers, 5)}");
         fill: $gray-light;
       }
 
       &--rounded {
         @include margin("* 0");
         border-radius: 0;
-        size: 14px;
+        // size: 14px;
+        size: map-get($spacers, 14);
         fill: $gray-200;
         background-color: rgba(0, 0, 0, 0);
       }
     }
 
     &-icons {
-      padding-left: 4px;
+      // padding-left: 4px;
+      padding-left: map-get($spacers, 4);
     }
   }
 
   .card {
-    @include padding("2px 7px *");
+    margin-bottom: 0;
+    // @include padding("2px 7px *");
+    padding-top: map-get($spacers, 2);
     // min-width: 149px;
 
     &-body {
-      position: relative;
-      padding-bottom: 8px !important;
+      // padding-bottom: 8px !important;
+      padding-bottom: map-get($spacers, 8);
     }
 
     &-img {
-      padding-right: 11px;
+      // padding-right: 11px;
+      padding-right: map-get($spacers, 11);
       max-width: 133px;
     }
 
     &-rating {
-      @include position("6px 2px * *");
+      // @include position("6px 2px * *");
+      @include position("#{map-get($spacers, 6)} #{map-get($spacers, 2)} * *");
     }
 
     &-title {

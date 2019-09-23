@@ -18,18 +18,18 @@ body {
 
   &-icon {
     background-image: none !important;
-    size: 24px 19px;
+    // size: 24px 19px;
+    size: map-get($spacers, 24) map-get($spacers, 19);
     fill: $gray-300;
-    // @include iconSize(3px);
   }
 }
 
 .search {
   &-icon {
     padding: 0;
-    size: 20px;
+    // size: 20px;
+    size: map-get($spacers, 20);
     fill: $gray-300;
-    // @include iconSize(3px);
   }
 }
 
@@ -73,13 +73,12 @@ body {
 
   &-container {
     justify-content: space-around;
-    // @include padding("* 17px * 33px");
-    @include padding("* * 37px 27px");
+    // @include padding("* * 37px 27px");
   }
 }
 
 .filter {
-  @include padding("* 5px 6px *");
+  // @include padding("* 5px 6px *");
 
   &-link,
   &-icons {
@@ -94,32 +93,35 @@ body {
   }
 
   &-text {
-    @include padding("* 6px");
+    // @include padding("* 6px");
+    @include padding("* #{map-get($spacers, 6)}");
     display: block;
-    font-size: 17px/49px;
+    // font-size: 17px/49px;
+    font-size: #{$font-size-lg * 1.0625}/#{map-get($spacers, 49)};
     color: $gray-500;
   }
 
   &-icon {
-    size: 16px;
+    // size: 16px;
+    size: $spacer;
     fill: $gray-200;
-    @include iconSize(3px);
-
-    &.icon-squares {
-      @include iconSize(6px);
-    }
 
     &--rounded {
-      @include margin("* -1px * 6px");
+      // @include margin("* -1px * 6px");
+      @include margin("* -#{map-get($spacers, 1)} * #{map-get($spacers, 6)}");
       border-radius: 50%;
-      padding: 8px 7px 7px 8px;
-      size: 31px;
+      // padding: 8px 7px 7px 8px;
+      padding: map-get($spacers, 8) map-get($spacers, 7) map-get($spacers, 7)
+        map-get($spacers, 8);
+      // size: 31px;
+      size: map-get($spacers, 31);
       fill: #f7f7f7;
       background-color: $gray-light;
     }
 
     &--margined {
-      margin-left: 10px;
+      // margin-left: 10px;
+      margin-left: map-get($spacers, 10);
     }
 
     &--active {
@@ -130,8 +132,10 @@ body {
 
 .card {
   flex-grow: 0;
-  margin-bottom: -6px;
-  @include padding("5px 6px *");
+  // margin-bottom: -6px;
+  margin-bottom: -#{map-get($spacers, 6)};
+  // @include padding("5px 6px *");
+  @include padding("#{map-get($spacers, 5)} #{map-get($spacers, 6)} *");
   min-width: auto;
 
   // &-group {
@@ -143,8 +147,13 @@ body {
     position: relative;
   }
 
+  &-body {
+    padding-bottom: 0;
+  }
+
   &-img {
-    @include padding("21px 14px * *");
+    // @include padding("21px 14px * *");
+    @include padding("#{map-get($spacers, 21)} #{map-get($spacers, 14)} * *");
     width: auto;
     // width: 113px;
     // height: 171px;
@@ -156,15 +165,21 @@ body {
   &-rating {
     $elem: &;
 
-    @include position("absolute 4px 5px * *");
-    @include size("49px 46px");
-    font-size: 15px;
+    // @include position("absolute 4px 5px * *");
+    @include position(
+      "absolute #{map-get($spacers, 4)} #{map-get($spacers, 5)} * *"
+    );
+    // size: 49px 46px;
+    size: map-get($spacers, 49) map-get($spacers, 46);
+    // font-size: 15px;
+    font-size: $font-size-lg * 0.9375;
     text-align: center;
     color: $white;
     background-image: url(../img/sprite/star.png);
 
     &_star {
-      @include padding("* 5px");
+      // @include padding("* 5px");
+      @include padding("* #{map-get($spacers, 5)}");
       size: 100%;
       stroke-width: 5px;
       stroke: $green;
@@ -173,7 +188,8 @@ body {
 
     &_text {
       @include position("absolute 0 0 *");
-      padding-top: 14px;
+      // padding-top: 14px;
+      padding-top: map-get($spacers, 14);
       size: 100%;
     }
 
@@ -197,30 +213,38 @@ body {
   }
 
   &-review {
-    @include position("absolute 141px 14px * *");
-    size: 49px 50px;
+    // @include position("absolute 141px 14px * *");
+    @include position(
+      "absolute #{map-get($spacers, 50) * 2 + map-get($spacers, 41)} #{map-get($spacers, 14)} * *"
+    );
+    // size: 49px 50px;
+    size: map-get($spacers, 49) map-get($spacers, 50);
     background-image: url(../img/sprite/review.png);
   }
 
   &-title {
     position: relative;
-    margin-top: 10px;
+    // margin-top: 10px;
+    margin-top: map-get($spacers, 10);
     overflow: hidden;
-    height: 21px;
+    // height: 21px;
+    height: map-get($spacers, 21);
 
     &_hidden {
       @include position("absolute 0 0 * *");
-      size: 24px 24px;
+      // size: 24px;
+      size: map-get($spacers, 24);
       background: linear-gradient(to right, rgba(0, 0, 0, 0), $white 30%);
     }
   }
 
   &-icon {
-    size: 15px;
+    // size: 15px;
+    size: map-get($spacers, 15);
   }
 
   &-subtitle {
-    line-height: 26px;
+    line-height: 1.857142857142857;
   }
 
   &--row {
@@ -228,15 +252,15 @@ body {
   }
 }
 
-.pagination {
-  &-container {
-    margin-top: 20px;
-    padding-left: 18px;
-  }
+// .pagination {
+//   &-container {
+//     margin-top: 20px;
+//     padding-left: 18px;
+//   }
 
-  margin-bottom: 9px;
-  padding-right: 19px;
-}
+//   margin-bottom: 9px;
+//   padding-right: 19px;
+// }
 
 .page {
   $block: &;
@@ -248,7 +272,8 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        size: 40px 36px;
+        // size: 40px 36px;
+        size: map-get($spacers, 40) map-get($spacers, 36);
       }
     }
 
@@ -260,13 +285,16 @@ body {
   }
 
   &-link {
-    margin-left: 7px;
-    width: 36px;
+    // margin-left: 7px;
+    margin-left: map-get($spacers, 7);
+    // width: 36px;
+    width: map-get($spacers, 36);
     text-align: center;
   }
 
   &-icon {
-    size: 10px;
+    // size: 10px;
+    size: map-get($spacers, 10);
     fill: $gray-200;
   }
 
@@ -276,6 +304,7 @@ body {
 
   &-status {
     font-size: 17px/36px;
+    font-size: #{$font-size-lg * 1.0625}/#{map-get($spacers, 36)};
     color: $gray-200;
   }
 }
@@ -290,4 +319,4 @@ body {
 
 @import "adaptive/import";
 
-@include pixelPerfect("mobile-squares.jpg");
+// @include pixelPerfect("mobile-squares.jpg");

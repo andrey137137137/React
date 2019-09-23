@@ -28947,15 +28947,15 @@ body {
 
 .navbar-toggler-icon {
   background-image: none !important;
-  width: 24px;
-  height: 19px;
+  width: 1.5rem;
+  height: 1.1875rem;
   fill: #989898;
 }
 
 .search-icon {
   padding: 0;
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
   fill: #989898;
 }
 
@@ -28989,13 +28989,6 @@ body {
 .main-container {
   -ms-flex-pack: distribute;
   justify-content: space-around;
-  padding-bottom: 37px;
-  padding-left: 27px;
-}
-
-.filter {
-  padding-right: 5px;
-  padding-bottom: 6px;
 }
 
 .filter-link,
@@ -29018,43 +29011,39 @@ body {
 .filter-text {
   padding-right: 6px;
   padding-left: 6px;
+  padding-right: 0.375rem;
+  padding-left: 0.375rem;
   display: block;
   font-size: 17px;
   line-height: 49px;
+  font-size: 1.0625rem;
+  line-height: 3.0625rem;
   color: #757575;
 }
 
 .filter-icon {
-  width: 16px;
-  height: 16px;
+  width: 1rem;
+  height: 1rem;
   fill: #a0a0a0;
-}
-
-.filter-icon,
-.filter-icon:before,
-.filter-icon:after {
-  border-width: 3px;
-}
-
-.filter-icon.icon-squares,
-.filter-icon.icon-squares:before,
-.filter-icon.icon-squares:after {
-  border-width: 6px;
 }
 
 .filter-icon--rounded {
   margin-right: -1px;
   margin-left: 6px;
+  margin-right: -0.0625rem;
+  margin-left: 0.375rem;
   border-radius: 50%;
   padding: 8px 7px 7px 8px;
-  width: 31px;
-  height: 31px;
+  padding: 0.5rem 0.4375rem 0.4375rem 0.5rem;
+  width: 1.9375rem;
+  height: 1.9375rem;
   fill: #f7f7f7;
   background-color: #cbcbcb;
 }
 
 .filter-icon--margined {
   margin-left: 10px;
+  margin-left: 0.625rem;
 }
 
 .filter-icon--active {
@@ -29066,9 +29055,13 @@ body {
   -ms-flex-positive: 0;
   flex-grow: 0;
   margin-bottom: -6px;
+  margin-bottom: -0.375rem;
   padding-top: 5px;
   padding-right: 6px;
   padding-left: 6px;
+  padding-top: 0.3125rem;
+  padding-right: 0.375rem;
+  padding-left: 0.375rem;
   min-width: auto;
 }
 
@@ -29077,9 +29070,15 @@ body {
   position: relative;
 }
 
+.card-body {
+  padding-bottom: 0;
+}
+
 .card-img {
   padding-top: 21px;
   padding-right: 14px;
+  padding-top: 1.3125rem;
+  padding-right: 0.875rem;
   width: auto;
   max-width: 113px;
   overflow: hidden;
@@ -29089,9 +29088,13 @@ body {
   top: 4px;
   right: 5px;
   position: absolute;
-  width: 49px;
-  height: 46px;
+  top: 0.25rem;
+  right: 0.3125rem;
+  position: absolute;
+  width: 3.0625rem;
+  height: 2.875rem;
   font-size: 15px;
+  font-size: 0.9375rem;
   text-align: center;
   color: #fff;
   background-image: url("../img/sprite/star.png");
@@ -29100,6 +29103,8 @@ body {
 .card-rating_star {
   padding-right: 5px;
   padding-left: 5px;
+  padding-right: 0.3125rem;
+  padding-left: 0.3125rem;
   width: 100%;
   height: 100%;
   stroke-width: 5px;
@@ -29113,6 +29118,7 @@ body {
   left: 0;
   position: absolute;
   padding-top: 14px;
+  padding-top: 0.875rem;
   width: 100%;
   height: 100%;
 }
@@ -29135,49 +29141,44 @@ body {
   top: 141px;
   right: 14px;
   position: absolute;
-  width: 49px;
-  height: 50px;
+  top: 8.8125rem;
+  right: 0.875rem;
+  position: absolute;
+  width: 3.0625rem;
+  height: 3.125rem;
   background-image: url("../img/sprite/review.png");
 }
 
 .card-title {
   position: relative;
   margin-top: 10px;
+  margin-top: 0.625rem;
   overflow: hidden;
   height: 21px;
+  height: 1.3125rem;
 }
 
 .card-title_hidden {
   top: 0;
   right: 0;
   position: absolute;
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
   background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(30%, #fff));
   background: linear-gradient(to right, rgba(0, 0, 0, 0), #fff 30%);
 }
 
 .card-icon {
-  width: 15px;
-  height: 15px;
+  width: 0.9375rem;
+  height: 0.9375rem;
 }
 
 .card-subtitle {
-  line-height: 26px;
+  line-height: 1.857142857142857;
 }
 
 .card--row {
   background-color: #fff;
-}
-
-.pagination {
-  margin-bottom: 9px;
-  padding-right: 19px;
-}
-
-.pagination-container {
-  margin-top: 20px;
-  padding-left: 18px;
 }
 
 .page-item:first-child .page-link,
@@ -29191,8 +29192,8 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 40px;
-  height: 36px;
+  width: 2.5rem;
+  height: 2.25rem;
 }
 
 .page-item.active .page-link {
@@ -29201,13 +29202,15 @@ body {
 
 .page-link {
   margin-left: 7px;
+  margin-left: 0.4375rem;
   width: 36px;
+  width: 2.25rem;
   text-align: center;
 }
 
 .page-icon {
-  width: 10px;
-  height: 10px;
+  width: 0.625rem;
+  height: 0.625rem;
   fill: #a0a0a0;
 }
 
@@ -29218,6 +29221,10 @@ body {
 .page-status {
   font-size: 17px;
   line-height: 36px;
+  font-size: 17px;
+  line-height: 36px;
+  font-size: 1.0625rem;
+  line-height: 2.25rem;
   color: #a0a0a0;
 }
 
@@ -29262,48 +29269,34 @@ body {
 
   .header {
     height: 109px;
-    margin-bottom: 13px;
   }
 
   .main-row {
     margin-right: -7px;
   }
 
-  .main-title {
-    padding-left: 2px;
-  }
-
-  .main-container {
-    padding: 4px 19px 14px 23px;
-  }
-
-  .filter {
-    padding-right: 7px;
-    padding-bottom: 4px;
-  }
-
   .filter-item {
-    margin-right: 4px;
-    margin-left: 19px;
+    margin-right: 0.25rem;
+    margin-left: 1.1875rem;
   }
 
   .filter-item:first-child {
-    margin-right: 11px;
+    margin-right: 0.6875rem;
   }
 
   .filter-text {
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
   }
 
   .filter-icon {
-    width: 14px;
-    height: 14px;
+    width: 0.875rem;
+    height: 0.875rem;
   }
 
   .filter-icon--margined {
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-right: 0.3125rem;
+    margin-left: 0.3125rem;
     fill: #cbcbcb;
   }
 
@@ -29311,35 +29304,33 @@ body {
     margin-right: 0;
     margin-left: 0;
     border-radius: 0;
-    width: 14px;
-    height: 14px;
+    width: 0.875rem;
+    height: 0.875rem;
     fill: #a0a0a0;
     background-color: rgba(0, 0, 0, 0);
   }
 
   .filter-icons {
-    padding-left: 4px;
+    padding-left: 0.25rem;
   }
 
   .card {
-    padding-top: 2px;
-    padding-right: 7px;
-    padding-left: 7px;
+    margin-bottom: 0;
+    padding-top: 0.125rem;
   }
 
   .card-body {
-    position: relative;
-    padding-bottom: 8px !important;
+    padding-bottom: 0.5rem;
   }
 
   .card-img {
-    padding-right: 11px;
+    padding-right: 0.6875rem;
     max-width: 133px;
   }
 
   .card-rating {
-    top: 6px;
-    right: 2px;
+    top: 0.375rem;
+    right: 0.125rem;
   }
 
   .card-title {
@@ -29380,15 +29371,4 @@ body {
   .main {
     padding-right: 14px;
   }
-}
-
-#pixel_perfect {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1000000;
-  width: 100%;
-  height: 100%;
-  background: url("../img/mobile-squares.jpg") center top repeat-y;
-  opacity: 0.5;
 }

@@ -5,7 +5,7 @@ mixin svg(id, classes="")
     use(xlink:href="../svg/symbol/svg/sprite.symbol.svg#" + id)
 
 mixin card-rating-body(text, modif="")
-  .card-rating(class="card-rating--" + modif)
+  .card-rating(class=modif ? "card-rating--" + modif : "")
     +svg("star", "card-rating_star")
     span.card-rating_text= text
 
@@ -50,8 +50,8 @@ mixin card-subtitle(date, genre)
       span.badge.order-md-first 16+
 
 mixin card-block(img, options)
-  article.col.card.px-md-0.mb-md-0
-    .card-body.pb-0
+  article.col.card.px-md-0
+    .card-body
       +card-img(img, options)
       +card-title(options.title)
       +card-subtitle(options.date, options.genre)
@@ -124,12 +124,12 @@ mixin card-container(byRows)
   //- +display-cards(movies, byRows)
 
 mixin main-container(byRows = true)
-  - var classes = "row mr-0 section-container main-row main-container"
+  - var classes = "row mr-md-0 section-container main-row main-container"
 
   if byRows
     - classes += " p-0"
   else
-    - classes += " pr-11 pb-37 pl-27 pt-md-4 pr-md-19 pb-md-14 pl-md-23 shadow-sm section-container--light_bg"
+    - classes += " pb-37 pl-27 pt-md-4 pr-md-19 pb-md-14 pl-md-23 shadow-sm section-container--light_bg"
 
   main(class=classes)
     +card-container(byRows)
