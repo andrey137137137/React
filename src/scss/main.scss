@@ -97,7 +97,7 @@ body {
     @include padding("* #{map-get($spacers, 6)}");
     display: block;
     // font-size: 17px/49px;
-    font-size: #{$font-size-lg * 1.0625}/#{map-get($spacers, 49)};
+    font-size: #{$lead-font-size}/#{map-get($spacers, 49)};
     color: $gray-500;
   }
 
@@ -303,8 +303,8 @@ body {
   }
 
   &-status {
-    font-size: 17px/36px;
-    font-size: #{$font-size-lg * 1.0625}/#{map-get($spacers, 36)};
+    // font-size: 17px/36px;
+    font-size: #{$lead-font-size}/#{map-get($spacers, 36)};
     color: $gray-200;
   }
 }
@@ -319,4 +319,4 @@ body {
 
 @import "adaptive/import";
 
-// @include pixelPerfect("mobile-squares.jpg");
+// @include pixelPerfect("desktop-blocks.jpg");

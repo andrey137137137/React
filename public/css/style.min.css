@@ -414,8 +414,8 @@ h6,
 }
 
 .lead {
-  font-size: 17.5px;
-  font-size: 1.09375rem;
+  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: 300;
 }
 
@@ -29221,8 +29221,6 @@ body {
 .page-status {
   font-size: 17px;
   line-height: 36px;
-  font-size: 17px;
-  line-height: 36px;
   font-size: 1.0625rem;
   line-height: 2.25rem;
   color: #a0a0a0;
@@ -29269,10 +29267,6 @@ body {
 
   .header {
     height: 109px;
-  }
-
-  .main-row {
-    margin-right: -7px;
   }
 
   .filter-item {
@@ -29334,10 +29328,10 @@ body {
   }
 
   .card-title {
-    margin-top: 7px;
+    margin-top: 0.4375rem;
     font-weight: 500;
     height: auto;
-    line-height: 20px;
+    line-height: 1.25rem;
   }
 
   .page-item:first-child .page-link,
@@ -29345,21 +29339,13 @@ body {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding-right: 25px;
-    padding-left: 25px;
+    padding-right: 1.5625rem;
+    padding-left: 1.5625rem;
     width: 155px;
   }
 
-  .pagination {
-    padding-right: 25px;
-  }
-
-  .pagination-container {
-    margin-top: 14px;
-  }
-
   .page-text {
-    font-size: 17px;
+    font-size: 1.0625rem;
   }
 }
 
@@ -29368,7 +29354,7 @@ body {
     max-width: 1020px;
   }
 
-  .main {
-    padding-right: 14px;
+  .main-row {
+    margin-right: -7px;
   }
 }

@@ -1,9 +1,15 @@
 @include media-breakpoint-up(lg) {
   .content {
-    max-width: 1020px;
+    // max-width: 1020px;
+    max-width: map-get($container-max-widths, xl);
   }
 
   .main {
-    padding-right: 14px;
+    // padding-right: 14px;
+
+    &-row {
+      // margin-right: -7px;
+      margin-right: -#{$grid-gutter-width/2};
+    }
   }
 }

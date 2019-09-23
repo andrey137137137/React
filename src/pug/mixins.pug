@@ -112,19 +112,19 @@ mixin card-container(byRows)
         genre: "драма",
         status: 9.3
       },
-      //- {
-      //-   title: "Сила воли",
-      //-   date: 2016,
-      //-   genre: "драма",
-      //-   status: 5.8
-      //- }
+      {
+        title: "Сила воли",
+        date: 2016,
+        genre: "драма",
+        status: 5.8
+      }
     ]
 
   +display-cards(movies, byRows)
-  //- +display-cards(movies, byRows)
+  +display-cards(movies, byRows)
 
 mixin main-container(byRows = true)
-  - var classes = "row mr-md-0 section-container main-row main-container"
+  - var classes = "row mr-lg-0 section-container main-row main-container"
 
   if byRows
     - classes += " p-0"

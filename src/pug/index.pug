@@ -11,116 +11,119 @@ html(lang="en")
 		//- link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css")
 		//- Add the slick-theme.css if you want default styling
 		//- link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css")
+		script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
 
 	body
 
 		- var mainMenu = ["афиша", "медиа", "киноцензор", "рейтинги", "идеи", "войти"]
 
-		header.section.header.mb-12.mb-md-13
-			nav.navbar.navbar-dark
-				.container
-					.row
-						button.navbar-toggler.d-md-none(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
-							//- span.navbar-toggler-icon.icon.icon-bars
-							+svg("bars", "navbar-toggler-icon border-0")
-						form.form-inline.search(action="", method="post")
-							//- a.d-md-none.icon.icon-search.search-icon(href="")
-							a.d-md-none(href="")
-								+svg("search", "search-icon")
-							.input-group.d-none.d-md-flex
-								input.form-control(type="text")
-								.input-group-append
-									//- a.input-group-text.icon.icon-search.search-icon(href="")
-									a.input-group-text(href="")
-										+svg("search", "search-icon")
-									//- a.input-group-text.icon.search-icon(href="") &gt;
-									a.input-group-text(href="")
-										+svg("sliders-h", "search-icon")
-						a.navbar-brand.order-md-first(href="")
-							h1.d-md-flex.section-title.section-title--main.logo
-								span.logo-text.logo-text--light Кино
-								b.logo-text.logo-text--dark Цензор
-						.navbar-text.letters
-							.icon.icon-letter
-								.letters-number
-							.icon.icon-square_check
-						.navbar-text.user
-							.user-status_wrap
-								.user-text
-								.user-status
-									- for (var i = 0; i <= 10; i++)
-										.user-bar(class={"user-bar--full": i < 2, "user-bar--first": i == 0, "user-bar--last": i == 10})
-							.img_wrap.user-avatar_wrap
-								img.img_wrap-img.user-avatar(src="", alt="")
-								.icon.icon-check.user-check
-						.w-100
-						.collapse.navbar-collapse.d-md-block#navbarSupportedContent
-							ul.navbar-nav.mr-auto
-								each item in mainMenu
-									li.nav-item
-										a.nav-link(href="")= item
+		#app
+			header.section.header.mb-12.mb-md-13
+				nav.navbar.navbar-dark
+					.container
+						.row
+							button.navbar-toggler.d-md-none(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+								//- span.navbar-toggler-icon.icon.icon-bars
+								+svg("bars", "navbar-toggler-icon border-0")
+							form.form-inline.search(action="", method="post")
+								//- a.d-md-none.icon.icon-search.search-icon(href="")
+								a.d-md-none(href="")
+									+svg("search", "search-icon")
+								.input-group.d-none.d-md-flex
+									input.form-control(type="text")
+									.input-group-append
+										//- a.input-group-text.icon.icon-search.search-icon(href="")
+										a.input-group-text(href="")
+											+svg("search", "search-icon")
+										//- a.input-group-text.icon.search-icon(href="") &gt;
+										a.input-group-text(href="")
+											+svg("sliders-h", "search-icon")
+							a.navbar-brand.order-md-first(href="")
+								h1.d-md-flex.section-title.section-title--main.logo
+									span.logo-text.logo-text--light Кино
+									b.logo-text.logo-text--dark Цензор
+							.navbar-text.letters
+								.icon.icon-letter
+									.letters-number
+								.icon.icon-square_check
+							.navbar-text.user
+								.user-status_wrap
+									.user-text
+									.user-status
+										- for (var i = 0; i <= 10; i++)
+											.user-bar(class={"user-bar--full": i < 2, "user-bar--first": i == 0, "user-bar--last": i == 10})
+								.img_wrap.user-avatar_wrap
+									img.img_wrap-img.user-avatar(src="", alt="")
+									.icon.icon-check.user-check
+							.w-100
+							.collapse.navbar-collapse.d-md-block#navbarSupportedContent
+								ul.navbar-nav.mr-auto
+									each item in mainMenu
+										li.nav-item
+											a.nav-link(href="")= item
 
-		.container.px-0.content
-			.row.mx-0
-				section.col.pr-0.pr-lg-14.section.main
-					.row.pl-8.px-md-0.main-row.main-top
-						h2.col.pl-md-2.section-title.section-title--main.main-title Сегодня в кино
-						ul.col-5.col-sm-6.nav.pr-5.pb-6.pr-md-7.pb-md-4.justify-content-end.filter
-							li.nav-item.order-md-1.filter-item
-								a.nav-link.filter-link(href="")
-									span.d-none.d-md-inline-block.filter-text Фильтр
-									//- span.p-md-0.icon.icon-filter.filter-icon.filter-icon--rounded
-									+svg("filter", "p-md-0 filter-icon filter-icon--rounded")
-							li.nav-item.order-md-3.filter-item
-								a.nav-link.filter-link(href="")
-									span.d-none.d-md-inline-block.filter-text Сортировка
-									//- span.p-md-0.icon.icon-sort.filter-icon.filter-icon--rounded
-									+svg("sort-amount", "p-md-0 filter-icon filter-icon--rounded")
-							li.nav-item.order-md-2.nav.filter-item
-								span.filter-text Вид
-								.filter-icons
+			.container.px-0.content
+				.row.mx-0
+					section.col.pr-0.pr-lg-14.section.main
+						.row.pl-8.px-md-0.main-row.main-top
+							h2.col.pl-md-2.section-title.section-title--main.main-title Сегодня в кино
+							ul.col-5.col-sm-6.nav.pr-5.pb-6.pr-md-7.pb-md-4.justify-content-end.filter
+								li.nav-item.order-md-1.filter-item
 									a.nav-link.filter-link(href="")
-										//- span.icon.icon-bars.filter-icon.filter-icon--margined
-										+svg("bars", "filter-icon filter-icon--margined")
+										span.d-none.d-md-inline-block.filter-text Фильтр
+										//- span.p-md-0.icon.icon-filter.filter-icon.filter-icon--rounded
+										+svg("filter", "p-md-0 filter-icon filter-icon--rounded")
+								li.nav-item.order-md-3.filter-item
 									a.nav-link.filter-link(href="")
-										//- span.icon.icon-squares.filter-icon.filter-icon--margined.filter-icon--active
-										+svg("th-large", "filter-icon filter-icon--margined filter-icon--active")
-					+main-container(false)
-					.row.mt-20.pl-18.px-md-0.mt-md-14.main-row.pagination-container
-						ul.col-auto.pagination.mb-9.pr-19.pr-md-25
-							- for (var i = 0; i < 7; i++)
-								case i
-									when 0
-										li.page-item
-											a.page-link(href="")
-												span.icon.icon-angle_left.page-text.page-icon
-												span.d-none.d-md-block.page-text Предыдущая
-									when 1
-										li.page-item.d-none.d-md-block
-											a.page-link(href="")= i
-									when 3
-										li.page-item.active
-											a.page-link(href="")= i
-									when 5
-										li.page-item.d-none.d-md-block
-											a.page-link(href="")= i
-									when 6
-										li.page-item
-											a.page-link(href="")
-												span.d-none.d-md-block.page-text Следующая
-												span.icon.icon-angle_right.page-text.page-icon
-									default
-										li.page-item
-											a.page-link(href="")= i
-						.col-auto.px-0.page-status Страница 3 из 7
-						//- svg
-						//- 	polygon(points="0,40 35,30 50,0 65,30 100,40 75,60 85,100 50,80 15,100 25,60"  style="fill: #66c52d; stroke: orange; stroke-width: 5; stroke-linejoin: round;")
-						//- +svg("star")
-				aside.col.d-none.d-lg-block.px-0.section.sidebar
-					.container.shadow-sm.section-container.section-container--light_bg.sidebar-container
+										span.d-none.d-md-inline-block.filter-text Сортировка
+										//- span.p-md-0.icon.icon-sort.filter-icon.filter-icon--rounded
+										+svg("sort-amount", "p-md-0 filter-icon filter-icon--rounded")
+								li.nav-item.order-md-2.nav.filter-item
+									span.filter-text Вид
+									.filter-icons
+										a.nav-link.filter-link(href="")
+											//- span.icon.icon-bars.filter-icon.filter-icon--margined
+											+svg("bars", "filter-icon filter-icon--margined")
+										a.nav-link.filter-link(href="")
+											//- span.icon.icon-squares.filter-icon.filter-icon--margined.filter-icon--active
+											+svg("th-large", "filter-icon filter-icon--margined filter-icon--active")
+						+main-container(false)
+						.row.mt-20.pl-18.px-md-0.mt-md-14.main-row.pagination-container
+							ul.col-auto.pagination.mb-9.pr-19.pr-md-25
+								- for (var i = 0; i < 7; i++)
+									case i
+										when 0
+											li.page-item
+												a.page-link(href="")
+													span.icon.icon-angle_left.page-text.page-icon
+													span.d-none.d-md-block.page-text Предыдущая
+										when 1
+											li.page-item.d-none.d-md-block
+												a.page-link(href="")= i
+										when 3
+											li.page-item.active
+												a.page-link(href="")= i
+										when 5
+											li.page-item.d-none.d-md-block
+												a.page-link(href="")= i
+										when 6
+											li.page-item
+												a.page-link(href="")
+													span.d-none.d-md-block.page-text Следующая
+													span.icon.icon-angle_right.page-text.page-icon
+										default
+											li.page-item
+												a.page-link(href="")= i
+							.col-auto.px-0.page-status {{ message }}
+							//- svg
+							//- 	polygon(points="0,40 35,30 50,0 65,30 100,40 75,60 85,100 50,80 15,100 25,60"  style="fill: #66c52d; stroke: orange; stroke-width: 5; stroke-linejoin: round;")
+							//- +svg("star")
+					aside.col.d-none.d-lg-block.px-0.section.sidebar
+						.container.shadow-sm.section-container.section-container--light_bg.sidebar-container
 
-		#pixel_perfect
+			#pixel_perfect
 
 		script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
 		script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+		<script src="js/script.js"></script>

@@ -5,181 +5,270 @@
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <title>КиноЦензор</title>
     <link rel="stylesheet" href="css/style.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
-    <header class="section header mb-12 mb-md-13">
-      <nav class="navbar navbar-dark">
-        <div class="container">
-          <div class="row">
-            <button class="navbar-toggler d-md-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <svg class="navbar-toggler-icon border-0">
-                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bars"></use>
-              </svg>
-            </button>
-            <form class="form-inline search" action="" method="post"><a class="d-md-none" href="">
-                <svg class="search-icon">
-                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#search"></use>
-                </svg></a>
-              <div class="input-group d-none d-md-flex">
-                <input class="form-control" type="text">
-                <div class="input-group-append"><a class="input-group-text" href="">
-                    <svg class="search-icon">
-                      <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#search"></use>
-                    </svg></a><a class="input-group-text" href="">
-                    <svg class="search-icon">
-                      <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#sliders-h"></use>
-                    </svg></a></div>
+    <div id="app">
+      <header class="section header mb-12 mb-md-13">
+        <nav class="navbar navbar-dark">
+          <div class="container">
+            <div class="row">
+              <button class="navbar-toggler d-md-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg class="navbar-toggler-icon border-0">
+                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bars"></use>
+                </svg>
+              </button>
+              <form class="form-inline search" action="" method="post"><a class="d-md-none" href="">
+                  <svg class="search-icon">
+                    <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#search"></use>
+                  </svg></a>
+                <div class="input-group d-none d-md-flex">
+                  <input class="form-control" type="text">
+                  <div class="input-group-append"><a class="input-group-text" href="">
+                      <svg class="search-icon">
+                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#search"></use>
+                      </svg></a><a class="input-group-text" href="">
+                      <svg class="search-icon">
+                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#sliders-h"></use>
+                      </svg></a></div>
+                </div>
+              </form><a class="navbar-brand order-md-first" href="">
+                <h1 class="d-md-flex section-title section-title--main logo"><span class="logo-text logo-text--light">Кино</span><b class="logo-text logo-text--dark">Цензор</b></h1></a>
+              <div class="navbar-text letters">
+                <div class="icon icon-letter">
+                  <div class="letters-number"></div>
+                </div>
+                <div class="icon icon-square_check"></div>
               </div>
-            </form><a class="navbar-brand order-md-first" href="">
-              <h1 class="d-md-flex section-title section-title--main logo"><span class="logo-text logo-text--light">Кино</span><b class="logo-text logo-text--dark">Цензор</b></h1></a>
-            <div class="navbar-text letters">
-              <div class="icon icon-letter">
-                <div class="letters-number"></div>
-              </div>
-              <div class="icon icon-square_check"></div>
-            </div>
-            <div class="navbar-text user">
-              <div class="user-status_wrap">
-                <div class="user-text"></div>
-                <div class="user-status">
-                  <div class="user-bar user-bar--full user-bar--first"></div>
-                  <div class="user-bar user-bar--full"></div>
-                  <div class="user-bar"></div>
-                  <div class="user-bar"></div>
-                  <div class="user-bar"></div>
-                  <div class="user-bar"></div>
-                  <div class="user-bar"></div>
-                  <div class="user-bar"></div>
-                  <div class="user-bar"></div>
-                  <div class="user-bar"></div>
-                  <div class="user-bar user-bar--last"></div>
+              <div class="navbar-text user">
+                <div class="user-status_wrap">
+                  <div class="user-text"></div>
+                  <div class="user-status">
+                    <div class="user-bar user-bar--full user-bar--first"></div>
+                    <div class="user-bar user-bar--full"></div>
+                    <div class="user-bar"></div>
+                    <div class="user-bar"></div>
+                    <div class="user-bar"></div>
+                    <div class="user-bar"></div>
+                    <div class="user-bar"></div>
+                    <div class="user-bar"></div>
+                    <div class="user-bar"></div>
+                    <div class="user-bar"></div>
+                    <div class="user-bar user-bar--last"></div>
+                  </div>
+                </div>
+                <div class="img_wrap user-avatar_wrap"><img class="img_wrap-img user-avatar" src="" alt="">
+                  <div class="icon icon-check user-check"></div>
                 </div>
               </div>
-              <div class="img_wrap user-avatar_wrap"><img class="img_wrap-img user-avatar" src="" alt="">
-                <div class="icon icon-check user-check"></div>
+              <div class="w-100"></div>
+              <div class="collapse navbar-collapse d-md-block" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item"><a class="nav-link" href="">афиша</a></li>
+                  <li class="nav-item"><a class="nav-link" href="">медиа</a></li>
+                  <li class="nav-item"><a class="nav-link" href="">киноцензор</a></li>
+                  <li class="nav-item"><a class="nav-link" href="">рейтинги</a></li>
+                  <li class="nav-item"><a class="nav-link" href="">идеи</a></li>
+                  <li class="nav-item"><a class="nav-link" href="">войти</a></li>
+                </ul>
               </div>
             </div>
-            <div class="w-100"></div>
-            <div class="collapse navbar-collapse d-md-block" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" href="">афиша</a></li>
-                <li class="nav-item"><a class="nav-link" href="">медиа</a></li>
-                <li class="nav-item"><a class="nav-link" href="">киноцензор</a></li>
-                <li class="nav-item"><a class="nav-link" href="">рейтинги</a></li>
-                <li class="nav-item"><a class="nav-link" href="">идеи</a></li>
-                <li class="nav-item"><a class="nav-link" href="">войти</a></li>
+          </div>
+        </nav>
+      </header>
+      <div class="container px-0 content">
+        <div class="row mx-0">
+          <section class="col pr-0 pr-lg-14 section main">
+            <div class="row pl-8 px-md-0 main-row main-top">
+              <h2 class="col pl-md-2 section-title section-title--main main-title">Сегодня в кино</h2>
+              <ul class="col-5 col-sm-6 nav pr-5 pb-6 pr-md-7 pb-md-4 justify-content-end filter">
+                <li class="nav-item order-md-1 filter-item"><a class="nav-link filter-link" href=""><span class="d-none d-md-inline-block filter-text">Фильтр</span>
+                    <svg class="p-md-0 filter-icon filter-icon--rounded">
+                      <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#filter"></use>
+                    </svg></a></li>
+                <li class="nav-item order-md-3 filter-item"><a class="nav-link filter-link" href=""><span class="d-none d-md-inline-block filter-text">Сортировка</span>
+                    <svg class="p-md-0 filter-icon filter-icon--rounded">
+                      <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#sort-amount"></use>
+                    </svg></a></li>
+                <li class="nav-item order-md-2 nav filter-item"><span class="filter-text">Вид</span>
+                  <div class="filter-icons"><a class="nav-link filter-link" href="">
+                      <svg class="filter-icon filter-icon--margined">
+                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bars"></use>
+                      </svg></a><a class="nav-link filter-link" href="">
+                      <svg class="filter-icon filter-icon--margined filter-icon--active">
+                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#th-large"></use>
+                      </svg></a></div>
+                </li>
               </ul>
             </div>
-          </div>
+            <main class="row mr-lg-0 section-container main-row main-container pb-37 pl-27 pt-md-4 pr-md-19 pb-md-14 pl-md-23 shadow-sm section-container--light_bg">
+              <article class="col card px-md-0">
+                <div class="card-body"><img class="card-img" src="img/today/1.jpg" alt="Бесконечно белый медведь"/>
+                  <div class="card-rating">
+                    <svg class="card-rating_star">
+                      <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
+                    </svg><span class="card-rating_text">9.3</span>
+                  </div>
+                  <div class="card-review"></div>
+                  <h3 class="card-title section-title"><span>Бесконечно белый медведь</span>
+                    <div class="card-title_hidden d-md-none"></div>
+                  </h3>
+                  <h4 class="card-subtitle"><span>2015, комедия</span>
+                  </h4>
+                </div>
+              </article>
+              <article class="col card px-md-0">
+                <div class="card-body"><img class="card-img" src="img/today/2.jpg" alt="Путешествие из Парижа"/>
+                  <div class="card-rating card-rating--warning">
+                    <svg class="card-rating_star">
+                      <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
+                    </svg><span class="card-rating_text">5.8</span>
+                  </div>
+                  <h3 class="card-title section-title"><span>Путешествие из Парижа</span>
+                    <div class="card-title_hidden d-md-none"></div>
+                  </h3>
+                  <h4 class="card-subtitle"><span>2015, комедия</span>
+                  </h4>
+                </div>
+              </article>
+              <article class="col card px-md-0">
+                <div class="card-body"><img class="card-img" src="img/today/3.jpg" alt="Побудь в моей шкуре"/>
+                  <div class="card-rating card-rating--danger">
+                    <svg class="card-rating_star">
+                      <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
+                    </svg><span class="card-rating_text">2.4</span>
+                  </div>
+                  <h3 class="card-title section-title"><span>Побудь в моей шкуре</span>
+                    <div class="card-title_hidden d-md-none"></div>
+                  </h3>
+                  <h4 class="card-subtitle"><span>2014, фантастика</span>
+                  </h4>
+                </div>
+              </article>
+              <article class="col card px-md-0">
+                <div class="card-body"><img class="card-img" src="img/today/4.jpg" alt="Матрос Железняк"/>
+                  <div class="card-rating">
+                    <svg class="card-rating_star">
+                      <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
+                    </svg><span class="card-rating_text">9.3</span>
+                  </div>
+                  <div class="card-review"></div>
+                  <h3 class="card-title section-title"><span>Матрос Железняк</span>
+                    <div class="card-title_hidden d-md-none"></div>
+                  </h3>
+                  <h4 class="card-subtitle"><span>1985, драма</span>
+                  </h4>
+                </div>
+              </article>
+              <article class="col card px-md-0">
+                <div class="card-body"><img class="card-img" src="img/today/5.jpg" alt="Сила воли"/>
+                  <div class="card-rating card-rating--warning">
+                    <svg class="card-rating_star">
+                      <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
+                    </svg><span class="card-rating_text">5.8</span>
+                  </div>
+                  <h3 class="card-title section-title"><span>Сила воли</span>
+                    <div class="card-title_hidden d-md-none"></div>
+                  </h3>
+                  <h4 class="card-subtitle"><span>2016, драма</span>
+                  </h4>
+                </div>
+              </article>
+              <article class="col card px-md-0">
+                <div class="card-body"><img class="card-img" src="img/today/1.jpg" alt="Бесконечно белый медведь"/>
+                  <div class="card-rating">
+                    <svg class="card-rating_star">
+                      <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
+                    </svg><span class="card-rating_text">9.3</span>
+                  </div>
+                  <div class="card-review"></div>
+                  <h3 class="card-title section-title"><span>Бесконечно белый медведь</span>
+                    <div class="card-title_hidden d-md-none"></div>
+                  </h3>
+                  <h4 class="card-subtitle"><span>2015, комедия</span>
+                  </h4>
+                </div>
+              </article>
+              <article class="col card px-md-0">
+                <div class="card-body"><img class="card-img" src="img/today/2.jpg" alt="Путешествие из Парижа"/>
+                  <div class="card-rating card-rating--warning">
+                    <svg class="card-rating_star">
+                      <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
+                    </svg><span class="card-rating_text">5.8</span>
+                  </div>
+                  <h3 class="card-title section-title"><span>Путешествие из Парижа</span>
+                    <div class="card-title_hidden d-md-none"></div>
+                  </h3>
+                  <h4 class="card-subtitle"><span>2015, комедия</span>
+                  </h4>
+                </div>
+              </article>
+              <article class="col card px-md-0">
+                <div class="card-body"><img class="card-img" src="img/today/3.jpg" alt="Побудь в моей шкуре"/>
+                  <div class="card-rating card-rating--danger">
+                    <svg class="card-rating_star">
+                      <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
+                    </svg><span class="card-rating_text">2.4</span>
+                  </div>
+                  <h3 class="card-title section-title"><span>Побудь в моей шкуре</span>
+                    <div class="card-title_hidden d-md-none"></div>
+                  </h3>
+                  <h4 class="card-subtitle"><span>2014, фантастика</span>
+                  </h4>
+                </div>
+              </article>
+              <article class="col card px-md-0">
+                <div class="card-body"><img class="card-img" src="img/today/4.jpg" alt="Матрос Железняк"/>
+                  <div class="card-rating">
+                    <svg class="card-rating_star">
+                      <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
+                    </svg><span class="card-rating_text">9.3</span>
+                  </div>
+                  <div class="card-review"></div>
+                  <h3 class="card-title section-title"><span>Матрос Железняк</span>
+                    <div class="card-title_hidden d-md-none"></div>
+                  </h3>
+                  <h4 class="card-subtitle"><span>1985, драма</span>
+                  </h4>
+                </div>
+              </article>
+              <article class="col card px-md-0">
+                <div class="card-body"><img class="card-img" src="img/today/5.jpg" alt="Сила воли"/>
+                  <div class="card-rating card-rating--warning">
+                    <svg class="card-rating_star">
+                      <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
+                    </svg><span class="card-rating_text">5.8</span>
+                  </div>
+                  <h3 class="card-title section-title"><span>Сила воли</span>
+                    <div class="card-title_hidden d-md-none"></div>
+                  </h3>
+                  <h4 class="card-subtitle"><span>2016, драма</span>
+                  </h4>
+                </div>
+              </article>
+            </main>
+            <div class="row mt-20 pl-18 px-md-0 mt-md-14 main-row pagination-container">
+              <ul class="col-auto pagination mb-9 pr-19 pr-md-25">
+                <li class="page-item"><a class="page-link" href=""><span class="icon icon-angle_left page-text page-icon"></span><span class="d-none d-md-block page-text">Предыдущая</span></a></li>
+                <li class="page-item d-none d-md-block"><a class="page-link" href="">1</a></li>
+                <li class="page-item"><a class="page-link" href="">2</a></li>
+                <li class="page-item active"><a class="page-link" href="">3</a></li>
+                <li class="page-item"><a class="page-link" href="">4</a></li>
+                <li class="page-item d-none d-md-block"><a class="page-link" href="">5</a></li>
+                <li class="page-item"><a class="page-link" href=""><span class="d-none d-md-block page-text">Следующая</span><span class="icon icon-angle_right page-text page-icon"></span></a></li>
+              </ul>
+              <div class="col-auto px-0 page-status">{{ message }}</div>
+            </div>
+          </section>
+          <aside class="col d-none d-lg-block px-0 section sidebar">
+            <div class="container shadow-sm section-container section-container--light_bg sidebar-container"></div>
+          </aside>
         </div>
-      </nav>
-    </header>
-    <div class="container px-0 content">
-      <div class="row mx-0">
-        <section class="col pr-0 pr-lg-14 section main">
-          <div class="row pl-8 px-md-0 main-row main-top">
-            <h2 class="col pl-md-2 section-title section-title--main main-title">Сегодня в кино</h2>
-            <ul class="col-5 col-sm-6 nav pr-5 pb-6 pr-md-7 pb-md-4 justify-content-end filter">
-              <li class="nav-item order-md-1 filter-item"><a class="nav-link filter-link" href=""><span class="d-none d-md-inline-block filter-text">Фильтр</span>
-                  <svg class="p-md-0 filter-icon filter-icon--rounded">
-                    <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#filter"></use>
-                  </svg></a></li>
-              <li class="nav-item order-md-3 filter-item"><a class="nav-link filter-link" href=""><span class="d-none d-md-inline-block filter-text">Сортировка</span>
-                  <svg class="p-md-0 filter-icon filter-icon--rounded">
-                    <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#sort-amount"></use>
-                  </svg></a></li>
-              <li class="nav-item order-md-2 nav filter-item"><span class="filter-text">Вид</span>
-                <div class="filter-icons"><a class="nav-link filter-link" href="">
-                    <svg class="filter-icon filter-icon--margined">
-                      <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bars"></use>
-                    </svg></a><a class="nav-link filter-link" href="">
-                    <svg class="filter-icon filter-icon--margined filter-icon--active">
-                      <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#th-large"></use>
-                    </svg></a></div>
-              </li>
-            </ul>
-          </div>
-          <main class="row mr-md-0 section-container main-row main-container pb-37 pl-27 pt-md-4 pr-md-19 pb-md-14 pl-md-23 shadow-sm section-container--light_bg">
-            <article class="col card px-md-0">
-              <div class="card-body"><img class="card-img" src="img/today/1.jpg" alt="Бесконечно белый медведь"/>
-                <div class="card-rating">
-                  <svg class="card-rating_star">
-                    <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
-                  </svg><span class="card-rating_text">9.3</span>
-                </div>
-                <div class="card-review"></div>
-                <h3 class="card-title section-title"><span>Бесконечно белый медведь</span>
-                  <div class="card-title_hidden d-md-none"></div>
-                </h3>
-                <h4 class="card-subtitle"><span>2015, комедия</span>
-                </h4>
-              </div>
-            </article>
-            <article class="col card px-md-0">
-              <div class="card-body"><img class="card-img" src="img/today/2.jpg" alt="Путешествие из Парижа"/>
-                <div class="card-rating card-rating--warning">
-                  <svg class="card-rating_star">
-                    <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
-                  </svg><span class="card-rating_text">5.8</span>
-                </div>
-                <h3 class="card-title section-title"><span>Путешествие из Парижа</span>
-                  <div class="card-title_hidden d-md-none"></div>
-                </h3>
-                <h4 class="card-subtitle"><span>2015, комедия</span>
-                </h4>
-              </div>
-            </article>
-            <article class="col card px-md-0">
-              <div class="card-body"><img class="card-img" src="img/today/3.jpg" alt="Побудь в моей шкуре"/>
-                <div class="card-rating card-rating--danger">
-                  <svg class="card-rating_star">
-                    <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
-                  </svg><span class="card-rating_text">2.4</span>
-                </div>
-                <h3 class="card-title section-title"><span>Побудь в моей шкуре</span>
-                  <div class="card-title_hidden d-md-none"></div>
-                </h3>
-                <h4 class="card-subtitle"><span>2014, фантастика</span>
-                </h4>
-              </div>
-            </article>
-            <article class="col card px-md-0">
-              <div class="card-body"><img class="card-img" src="img/today/4.jpg" alt="Матрос Железняк"/>
-                <div class="card-rating">
-                  <svg class="card-rating_star">
-                    <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
-                  </svg><span class="card-rating_text">9.3</span>
-                </div>
-                <div class="card-review"></div>
-                <h3 class="card-title section-title"><span>Матрос Железняк</span>
-                  <div class="card-title_hidden d-md-none"></div>
-                </h3>
-                <h4 class="card-subtitle"><span>1985, драма</span>
-                </h4>
-              </div>
-            </article>
-          </main>
-          <div class="row mt-20 pl-18 px-md-0 mt-md-14 main-row pagination-container">
-            <ul class="col-auto pagination mb-9 pr-19 pr-md-25">
-              <li class="page-item"><a class="page-link" href=""><span class="icon icon-angle_left page-text page-icon"></span><span class="d-none d-md-block page-text">Предыдущая</span></a></li>
-              <li class="page-item d-none d-md-block"><a class="page-link" href="">1</a></li>
-              <li class="page-item"><a class="page-link" href="">2</a></li>
-              <li class="page-item active"><a class="page-link" href="">3</a></li>
-              <li class="page-item"><a class="page-link" href="">4</a></li>
-              <li class="page-item d-none d-md-block"><a class="page-link" href="">5</a></li>
-              <li class="page-item"><a class="page-link" href=""><span class="d-none d-md-block page-text">Следующая</span><span class="icon icon-angle_right page-text page-icon"></span></a></li>
-            </ul>
-            <div class="col-auto px-0 page-status">Страница 3 из 7</div>
-          </div>
-        </section>
-        <aside class="col d-none d-lg-block px-0 section sidebar">
-          <div class="container shadow-sm section-container section-container--light_bg sidebar-container"></div>
-        </aside>
       </div>
+      <div id="pixel_perfect"></div>
     </div>
-    <div id="pixel_perfect"></div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script src="js/script.js"></script>
   </body>
 </html>
