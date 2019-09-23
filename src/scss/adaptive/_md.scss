@@ -126,7 +126,10 @@
 
     &-rating {
       // @include position("6px 2px * *");
-      @include position("#{map-get($spacers, 6)} #{map-get($spacers, 2)} * *");
+      // @include position("#{map-get($spacers, 6)} #{map-get($spacers, 2)} * *");
+      @include position(
+        "-#{map-get($spacers, 2)} -#{map-get($spacers, 6)} * *"
+      );
     }
 
     &-title {

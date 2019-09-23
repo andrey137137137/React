@@ -34,11 +34,11 @@ const // general
     css: {
       src: "/scss",
       dest: "/css"
+    },
+    js: {
+      src: "/js",
+      dest: "/js"
     }
-    // js: {
-    //   src: "/js",
-    //   dest: "/js"
-    // }
   };
 
 for (path in pathes) {
@@ -53,7 +53,8 @@ function clean() {
     pathes.dest + "/*",
     // pathes.dest + "/*.html",
     "!" + pathes.fonts.dest,
-    "!" + pathes.images.dest
+    "!" + pathes.images.dest,
+    "!" + pathes.js.dest
   ]);
 }
 

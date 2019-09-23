@@ -29065,7 +29065,6 @@ body {
   min-width: auto;
 }
 
-.card-body,
 .card-img_wrap {
   position: relative;
 }
@@ -29085,11 +29084,11 @@ body {
 }
 
 .card-rating {
-  top: 4px;
-  right: 5px;
+  top: -4px;
+  right: -3px;
   position: absolute;
-  top: 0.25rem;
-  right: 0.3125rem;
+  top: -0.25rem;
+  right: -0.1875rem;
   position: absolute;
   width: 3.0625rem;
   height: 2.875rem;
@@ -29138,11 +29137,11 @@ body {
 }
 
 .card-review {
-  top: 141px;
-  right: 14px;
+  top: 133px;
+  right: 6px;
   position: absolute;
-  top: 8.8125rem;
-  right: 0.875rem;
+  top: 8.3125rem;
+  right: 0.375rem;
   position: absolute;
   width: 3.0625rem;
   height: 3.125rem;
@@ -29178,6 +29177,12 @@ body {
 }
 
 .card--row {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  width: 100%;
   background-color: #fff;
 }
 
@@ -29323,8 +29328,8 @@ body {
   }
 
   .card-rating {
-    top: 0.375rem;
-    right: 0.125rem;
+    top: -0.125rem;
+    right: -0.375rem;
   }
 
   .card-title {
