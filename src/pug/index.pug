@@ -81,12 +81,12 @@ html(lang="en")
 								li.nav-item.order-md-2.nav.filter-item
 									span.filter-text Вид
 									.filter-icons
-										a.nav-link.filter-link(href="")
+										a.nav-link.filter-link(href="" :class="{'filter-link--active': byRows}" @click.prevent="displayRows")
 											//- span.icon.icon-bars.filter-icon.filter-icon--margined
 											+svg("bars", "filter-icon filter-icon--margined")
-										a.nav-link.filter-link(href="")
+										a.nav-link.filter-link(href="" :class="{'filter-link--active': !byRows}" @click.prevent="displayBlocks")
 											//- span.icon.icon-squares.filter-icon.filter-icon--margined.filter-icon--active
-											+svg("th-large", "filter-icon filter-icon--margined filter-icon--active")
+											+svg("th-large", "filter-icon filter-icon--margined")
 						+card-container
 						.row.mt-20.pl-18.px-md-0.mt-md-14.main-row.pagination-container
 							ul.col-auto.pagination.mb-9.pr-19.pr-md-25
@@ -114,7 +114,7 @@ html(lang="en")
 										default
 											li.page-item
 												a.page-link(href="")= i
-							.col-auto.px-0.page-status {{ message }}
+							.col-auto.px-0.page-status Страница 3 из 7
 							//- svg
 							//- 	polygon(points="0,40 35,30 50,0 65,30 100,40 75,60 85,100 50,80 15,100 25,60"  style="fill: #66c52d; stroke: orange; stroke-width: 5; stroke-linejoin: round;")
 							//- +svg("star")

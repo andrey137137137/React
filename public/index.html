@@ -91,22 +91,21 @@
                       <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#sort-amount"></use>
                     </svg></a></li>
                 <li class="nav-item order-md-2 nav filter-item"><span class="filter-text">Вид</span>
-                  <div class="filter-icons"><a class="nav-link filter-link" href="">
+                  <div class="filter-icons"><a class="nav-link filter-link" href="" :class="{'filter-link--active': byRows}" @click.prevent="displayRows">
                       <svg class="filter-icon filter-icon--margined">
                         <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bars"></use>
-                      </svg></a><a class="nav-link filter-link" href="">
-                      <svg class="filter-icon filter-icon--margined filter-icon--active">
+                      </svg></a><a class="nav-link filter-link" href="" :class="{'filter-link--active': !byRows}" @click.prevent="displayBlocks">
+                      <svg class="filter-icon filter-icon--margined">
                         <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#th-large"></use>
                       </svg></a></div>
                 </li>
               </ul>
             </div>
-            <main class="row mr-lg-0 section-container main-row main-container p-0">
-              <article class="col px-md-0 card card--row">
+            <main class="row mr-lg-0 section-container main-row main-container" :class="containerClasses">
+              <article class="col px-md-0 card" :class="cardModifClass">
                 <div class="card-body">
                   <div class="row no-gutters">
-                    <div class="col-auto px-0 card-img_wrap">
-                      <div class="card-tab"></div><img class="card-img" src="img/today/1.jpg" alt="Бесконечно белый медведь"/>
+                    <div class="col-auto px-0 card-img_wrap"><img class="card-img" src="img/today/1.jpg" alt="Бесконечно белый медведь"/>
                       <div class="card-rating">
                         <svg class="card-rating_star">
                           <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
@@ -121,36 +120,39 @@
                           <svg class="card-icon">
                             <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
                           </svg>
-                          <div class="card-title_translate">Infinitely polar bear</div>
+                          <div class="card-title_translate">The Lion King</div>
                         </h3>
-                        <ul class="col-auto list-group list-group-horizontal d-none">
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
-                            </svg>
-                          </li>
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
-                            </svg>
-                          </li>
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
-                            </svg>
-                          </li>
-                        </ul>
-                        <div class="w-100">
-                          <h4 class="card-subtitle"><span>2015, комедия</span><span class="badge order-md-first">16+</span>
-                          </h4>
-                          <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
+                        <div class="col-auto card-info_wrap">
+                          <ul class="list-group list-group-horizontal card-info">
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                              </svg>
+                            </li>
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                              </svg>
+                            </li>
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                              </svg>
+                            </li>
+                          </ul>
                         </div>
+                        <div class="w-100">
+                          <h4 class="card-subtitle"><span>2015, комедия</span><span class="badge card-subtitle_badge order-md-first">16+</span></h4>
+                          <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
+                          <div class="card-text card-text--short">Фильм, 120 мин. Великобритания</div>
+                        </div>
+                        <div class="col-6 card-text">2015, Фильм, 106 мин. Боевик, драма, биография Китай, США, Канада Режисёр: Джеймс Кэмерон</div>
                       </div>
                     </div>
-                  </div>
+                  </div><a class="btn btn-link card-link" href="">Подробнее...</a>
                 </div>
-                <div class="card-footer d-none">
-                  <ul class="col-auto list-group list-group-horizontal">
+                <div class="card-footer">
+                  <ul class="list-group list-group-horizontal card-info">
                     <li class="list-group-item">
                       <svg class="card-icon">
                         <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
@@ -169,11 +171,10 @@
                   </ul>
                 </div>
               </article>
-              <article class="col px-md-0 card card--row">
+              <article class="col px-md-0 card" :class="cardModifClass">
                 <div class="card-body">
                   <div class="row no-gutters">
-                    <div class="col-auto px-0 card-img_wrap">
-                      <div class="card-tab"></div><img class="card-img" src="img/today/2.jpg" alt="Путешествие из Парижа"/>
+                    <div class="col-auto px-0 card-img_wrap"><img class="card-img" src="img/today/2.jpg" alt="Путешествие из Парижа"/>
                       <div class="card-rating card-rating--warning">
                         <svg class="card-rating_star">
                           <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
@@ -187,36 +188,39 @@
                           <svg class="card-icon">
                             <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
                           </svg>
-                          <div class="card-title_translate">Infinitely polar bear</div>
+                          <div class="card-title_translate">The Lion King</div>
                         </h3>
-                        <ul class="col-auto list-group list-group-horizontal d-none">
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
-                            </svg>
-                          </li>
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
-                            </svg>
-                          </li>
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
-                            </svg>
-                          </li>
-                        </ul>
-                        <div class="w-100">
-                          <h4 class="card-subtitle"><span>2015, комедия</span><span class="badge order-md-first">16+</span>
-                          </h4>
-                          <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
+                        <div class="col-auto card-info_wrap">
+                          <ul class="list-group list-group-horizontal card-info">
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                              </svg>
+                            </li>
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                              </svg>
+                            </li>
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                              </svg>
+                            </li>
+                          </ul>
                         </div>
+                        <div class="w-100">
+                          <h4 class="card-subtitle"><span>2015, комедия</span><span class="badge card-subtitle_badge order-md-first">16+</span></h4>
+                          <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
+                          <div class="card-text card-text--short">Фильм, 120 мин. Великобритания</div>
+                        </div>
+                        <div class="col-6 card-text">2011, Фильм, 120 мин. Драма, военный Великобритания, Франция Режисёр: Стивен Спилберг</div>
                       </div>
                     </div>
-                  </div>
+                  </div><a class="btn btn-link card-link" href="">Подробнее...</a>
                 </div>
-                <div class="card-footer d-none">
-                  <ul class="col-auto list-group list-group-horizontal">
+                <div class="card-footer">
+                  <ul class="list-group list-group-horizontal card-info">
                     <li class="list-group-item">
                       <svg class="card-icon">
                         <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
@@ -235,11 +239,10 @@
                   </ul>
                 </div>
               </article>
-              <article class="col px-md-0 card card--row">
+              <article class="col px-md-0 card" :class="cardModifClass">
                 <div class="card-body">
                   <div class="row no-gutters">
-                    <div class="col-auto px-0 card-img_wrap">
-                      <div class="card-tab"></div><img class="card-img" src="img/today/3.jpg" alt="Побудь в моей шкуре"/>
+                    <div class="col-auto px-0 card-img_wrap"><img class="card-img" src="img/today/3.jpg" alt="Побудь в моей шкуре"/>
                       <div class="card-rating card-rating--danger">
                         <svg class="card-rating_star">
                           <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
@@ -253,36 +256,39 @@
                           <svg class="card-icon">
                             <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
                           </svg>
-                          <div class="card-title_translate">Infinitely polar bear</div>
+                          <div class="card-title_translate">The Lion King</div>
                         </h3>
-                        <ul class="col-auto list-group list-group-horizontal d-none">
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
-                            </svg>
-                          </li>
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
-                            </svg>
-                          </li>
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
-                            </svg>
-                          </li>
-                        </ul>
-                        <div class="w-100">
-                          <h4 class="card-subtitle"><span>2014, фантастика</span><span class="badge order-md-first">16+</span>
-                          </h4>
-                          <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
+                        <div class="col-auto card-info_wrap">
+                          <ul class="list-group list-group-horizontal card-info">
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                              </svg>
+                            </li>
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                              </svg>
+                            </li>
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                              </svg>
+                            </li>
+                          </ul>
                         </div>
+                        <div class="w-100">
+                          <h4 class="card-subtitle"><span>2014, фантастика</span><span class="badge card-subtitle_badge order-md-first">16+</span></h4>
+                          <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
+                          <div class="card-text card-text--short">Фильм, 120 мин. Великобритания</div>
+                        </div>
+                        <div class="col-6 card-text"></div>
                       </div>
                     </div>
-                  </div>
+                  </div><a class="btn btn-link card-link" href="">Подробнее...</a>
                 </div>
-                <div class="card-footer d-none">
-                  <ul class="col-auto list-group list-group-horizontal">
+                <div class="card-footer">
+                  <ul class="list-group list-group-horizontal card-info">
                     <li class="list-group-item">
                       <svg class="card-icon">
                         <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
@@ -301,11 +307,10 @@
                   </ul>
                 </div>
               </article>
-              <article class="col px-md-0 card card--row">
+              <article class="col px-md-0 card" :class="cardModifClass">
                 <div class="card-body">
                   <div class="row no-gutters">
-                    <div class="col-auto px-0 card-img_wrap">
-                      <div class="card-tab"></div><img class="card-img" src="img/today/4.jpg" alt="Матрос Железняк"/>
+                    <div class="col-auto px-0 card-img_wrap"><img class="card-img" src="img/today/4.jpg" alt="Матрос Железняк"/>
                       <div class="card-rating">
                         <svg class="card-rating_star">
                           <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
@@ -320,36 +325,39 @@
                           <svg class="card-icon">
                             <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
                           </svg>
-                          <div class="card-title_translate">Infinitely polar bear</div>
+                          <div class="card-title_translate">The Lion King</div>
                         </h3>
-                        <ul class="col-auto list-group list-group-horizontal d-none">
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
-                            </svg>
-                          </li>
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
-                            </svg>
-                          </li>
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
-                            </svg>
-                          </li>
-                        </ul>
-                        <div class="w-100">
-                          <h4 class="card-subtitle"><span>1985, драма</span><span class="badge order-md-first">16+</span>
-                          </h4>
-                          <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
+                        <div class="col-auto card-info_wrap">
+                          <ul class="list-group list-group-horizontal card-info">
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                              </svg>
+                            </li>
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                              </svg>
+                            </li>
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                              </svg>
+                            </li>
+                          </ul>
                         </div>
+                        <div class="w-100">
+                          <h4 class="card-subtitle"><span>1985, драма</span><span class="badge card-subtitle_badge order-md-first">16+</span></h4>
+                          <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
+                          <div class="card-text card-text--short">Фильм, 120 мин. Великобритания</div>
+                        </div>
+                        <div class="col-6 card-text"></div>
                       </div>
                     </div>
-                  </div>
+                  </div><a class="btn btn-link card-link" href="">Подробнее...</a>
                 </div>
-                <div class="card-footer d-none">
-                  <ul class="col-auto list-group list-group-horizontal">
+                <div class="card-footer">
+                  <ul class="list-group list-group-horizontal card-info">
                     <li class="list-group-item">
                       <svg class="card-icon">
                         <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
@@ -368,11 +376,10 @@
                   </ul>
                 </div>
               </article>
-              <article class="col px-md-0 card card--row">
+              <article class="col px-md-0 card" :class="cardModifClass">
                 <div class="card-body">
                   <div class="row no-gutters">
-                    <div class="col-auto px-0 card-img_wrap">
-                      <div class="card-tab"></div><img class="card-img" src="img/today/5.jpg" alt="Сила воли"/>
+                    <div class="col-auto px-0 card-img_wrap"><img class="card-img" src="img/today/5.jpg" alt="Сила воли"/>
                       <div class="card-rating card-rating--warning">
                         <svg class="card-rating_star">
                           <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
@@ -386,36 +393,39 @@
                           <svg class="card-icon">
                             <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
                           </svg>
-                          <div class="card-title_translate">Infinitely polar bear</div>
+                          <div class="card-title_translate">The Lion King</div>
                         </h3>
-                        <ul class="col-auto list-group list-group-horizontal d-none">
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
-                            </svg>
-                          </li>
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
-                            </svg>
-                          </li>
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
-                            </svg>
-                          </li>
-                        </ul>
-                        <div class="w-100">
-                          <h4 class="card-subtitle"><span>2016, драма</span><span class="badge order-md-first">16+</span>
-                          </h4>
-                          <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
+                        <div class="col-auto card-info_wrap">
+                          <ul class="list-group list-group-horizontal card-info">
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                              </svg>
+                            </li>
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                              </svg>
+                            </li>
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                              </svg>
+                            </li>
+                          </ul>
                         </div>
+                        <div class="w-100">
+                          <h4 class="card-subtitle"><span>2016, драма</span><span class="badge card-subtitle_badge order-md-first">16+</span></h4>
+                          <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
+                          <div class="card-text card-text--short">Фильм, 120 мин. Великобритания</div>
+                        </div>
+                        <div class="col-6 card-text"></div>
                       </div>
                     </div>
-                  </div>
+                  </div><a class="btn btn-link card-link" href="">Подробнее...</a>
                 </div>
-                <div class="card-footer d-none">
-                  <ul class="col-auto list-group list-group-horizontal">
+                <div class="card-footer">
+                  <ul class="list-group list-group-horizontal card-info">
                     <li class="list-group-item">
                       <svg class="card-icon">
                         <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
@@ -434,11 +444,10 @@
                   </ul>
                 </div>
               </article>
-              <article class="col px-md-0 card card--row">
+              <article class="col px-md-0 card" :class="cardModifClass">
                 <div class="card-body">
                   <div class="row no-gutters">
-                    <div class="col-auto px-0 card-img_wrap">
-                      <div class="card-tab"></div><img class="card-img" src="img/today/1.jpg" alt="Бесконечно белый медведь"/>
+                    <div class="col-auto px-0 card-img_wrap"><img class="card-img" src="img/today/1.jpg" alt="Бесконечно белый медведь"/>
                       <div class="card-rating">
                         <svg class="card-rating_star">
                           <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
@@ -453,36 +462,39 @@
                           <svg class="card-icon">
                             <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
                           </svg>
-                          <div class="card-title_translate">Infinitely polar bear</div>
+                          <div class="card-title_translate">The Lion King</div>
                         </h3>
-                        <ul class="col-auto list-group list-group-horizontal d-none">
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
-                            </svg>
-                          </li>
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
-                            </svg>
-                          </li>
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
-                            </svg>
-                          </li>
-                        </ul>
-                        <div class="w-100">
-                          <h4 class="card-subtitle"><span>2015, комедия</span><span class="badge order-md-first">16+</span>
-                          </h4>
-                          <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
+                        <div class="col-auto card-info_wrap">
+                          <ul class="list-group list-group-horizontal card-info">
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                              </svg>
+                            </li>
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                              </svg>
+                            </li>
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                              </svg>
+                            </li>
+                          </ul>
                         </div>
+                        <div class="w-100">
+                          <h4 class="card-subtitle"><span>2015, комедия</span><span class="badge card-subtitle_badge order-md-first">16+</span></h4>
+                          <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
+                          <div class="card-text card-text--short">Фильм, 120 мин. Великобритания</div>
+                        </div>
+                        <div class="col-6 card-text">2015, Фильм, 106 мин. Боевик, драма, биография Китай, США, Канада Режисёр: Джеймс Кэмерон</div>
                       </div>
                     </div>
-                  </div>
+                  </div><a class="btn btn-link card-link" href="">Подробнее...</a>
                 </div>
-                <div class="card-footer d-none">
-                  <ul class="col-auto list-group list-group-horizontal">
+                <div class="card-footer">
+                  <ul class="list-group list-group-horizontal card-info">
                     <li class="list-group-item">
                       <svg class="card-icon">
                         <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
@@ -501,11 +513,10 @@
                   </ul>
                 </div>
               </article>
-              <article class="col px-md-0 card card--row">
+              <article class="col px-md-0 card" :class="cardModifClass">
                 <div class="card-body">
                   <div class="row no-gutters">
-                    <div class="col-auto px-0 card-img_wrap">
-                      <div class="card-tab"></div><img class="card-img" src="img/today/2.jpg" alt="Путешествие из Парижа"/>
+                    <div class="col-auto px-0 card-img_wrap"><img class="card-img" src="img/today/2.jpg" alt="Путешествие из Парижа"/>
                       <div class="card-rating card-rating--warning">
                         <svg class="card-rating_star">
                           <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
@@ -519,36 +530,39 @@
                           <svg class="card-icon">
                             <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
                           </svg>
-                          <div class="card-title_translate">Infinitely polar bear</div>
+                          <div class="card-title_translate">The Lion King</div>
                         </h3>
-                        <ul class="col-auto list-group list-group-horizontal d-none">
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
-                            </svg>
-                          </li>
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
-                            </svg>
-                          </li>
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
-                            </svg>
-                          </li>
-                        </ul>
-                        <div class="w-100">
-                          <h4 class="card-subtitle"><span>2015, комедия</span><span class="badge order-md-first">16+</span>
-                          </h4>
-                          <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
+                        <div class="col-auto card-info_wrap">
+                          <ul class="list-group list-group-horizontal card-info">
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                              </svg>
+                            </li>
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                              </svg>
+                            </li>
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                              </svg>
+                            </li>
+                          </ul>
                         </div>
+                        <div class="w-100">
+                          <h4 class="card-subtitle"><span>2015, комедия</span><span class="badge card-subtitle_badge order-md-first">16+</span></h4>
+                          <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
+                          <div class="card-text card-text--short">Фильм, 120 мин. Великобритания</div>
+                        </div>
+                        <div class="col-6 card-text">2011, Фильм, 120 мин. Драма, военный Великобритания, Франция Режисёр: Стивен Спилберг</div>
                       </div>
                     </div>
-                  </div>
+                  </div><a class="btn btn-link card-link" href="">Подробнее...</a>
                 </div>
-                <div class="card-footer d-none">
-                  <ul class="col-auto list-group list-group-horizontal">
+                <div class="card-footer">
+                  <ul class="list-group list-group-horizontal card-info">
                     <li class="list-group-item">
                       <svg class="card-icon">
                         <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
@@ -567,11 +581,10 @@
                   </ul>
                 </div>
               </article>
-              <article class="col px-md-0 card card--row">
+              <article class="col px-md-0 card" :class="cardModifClass">
                 <div class="card-body">
                   <div class="row no-gutters">
-                    <div class="col-auto px-0 card-img_wrap">
-                      <div class="card-tab"></div><img class="card-img" src="img/today/3.jpg" alt="Побудь в моей шкуре"/>
+                    <div class="col-auto px-0 card-img_wrap"><img class="card-img" src="img/today/3.jpg" alt="Побудь в моей шкуре"/>
                       <div class="card-rating card-rating--danger">
                         <svg class="card-rating_star">
                           <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
@@ -585,36 +598,39 @@
                           <svg class="card-icon">
                             <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
                           </svg>
-                          <div class="card-title_translate">Infinitely polar bear</div>
+                          <div class="card-title_translate">The Lion King</div>
                         </h3>
-                        <ul class="col-auto list-group list-group-horizontal d-none">
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
-                            </svg>
-                          </li>
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
-                            </svg>
-                          </li>
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
-                            </svg>
-                          </li>
-                        </ul>
-                        <div class="w-100">
-                          <h4 class="card-subtitle"><span>2014, фантастика</span><span class="badge order-md-first">16+</span>
-                          </h4>
-                          <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
+                        <div class="col-auto card-info_wrap">
+                          <ul class="list-group list-group-horizontal card-info">
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                              </svg>
+                            </li>
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                              </svg>
+                            </li>
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                              </svg>
+                            </li>
+                          </ul>
                         </div>
+                        <div class="w-100">
+                          <h4 class="card-subtitle"><span>2014, фантастика</span><span class="badge card-subtitle_badge order-md-first">16+</span></h4>
+                          <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
+                          <div class="card-text card-text--short">Фильм, 120 мин. Великобритания</div>
+                        </div>
+                        <div class="col-6 card-text"></div>
                       </div>
                     </div>
-                  </div>
+                  </div><a class="btn btn-link card-link" href="">Подробнее...</a>
                 </div>
-                <div class="card-footer d-none">
-                  <ul class="col-auto list-group list-group-horizontal">
+                <div class="card-footer">
+                  <ul class="list-group list-group-horizontal card-info">
                     <li class="list-group-item">
                       <svg class="card-icon">
                         <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
@@ -633,11 +649,10 @@
                   </ul>
                 </div>
               </article>
-              <article class="col px-md-0 card card--row">
+              <article class="col px-md-0 card" :class="cardModifClass">
                 <div class="card-body">
                   <div class="row no-gutters">
-                    <div class="col-auto px-0 card-img_wrap">
-                      <div class="card-tab"></div><img class="card-img" src="img/today/4.jpg" alt="Матрос Железняк"/>
+                    <div class="col-auto px-0 card-img_wrap"><img class="card-img" src="img/today/4.jpg" alt="Матрос Железняк"/>
                       <div class="card-rating">
                         <svg class="card-rating_star">
                           <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
@@ -652,36 +667,39 @@
                           <svg class="card-icon">
                             <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
                           </svg>
-                          <div class="card-title_translate">Infinitely polar bear</div>
+                          <div class="card-title_translate">The Lion King</div>
                         </h3>
-                        <ul class="col-auto list-group list-group-horizontal d-none">
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
-                            </svg>
-                          </li>
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
-                            </svg>
-                          </li>
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
-                            </svg>
-                          </li>
-                        </ul>
-                        <div class="w-100">
-                          <h4 class="card-subtitle"><span>1985, драма</span><span class="badge order-md-first">16+</span>
-                          </h4>
-                          <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
+                        <div class="col-auto card-info_wrap">
+                          <ul class="list-group list-group-horizontal card-info">
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                              </svg>
+                            </li>
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                              </svg>
+                            </li>
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                              </svg>
+                            </li>
+                          </ul>
                         </div>
+                        <div class="w-100">
+                          <h4 class="card-subtitle"><span>1985, драма</span><span class="badge card-subtitle_badge order-md-first">16+</span></h4>
+                          <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
+                          <div class="card-text card-text--short">Фильм, 120 мин. Великобритания</div>
+                        </div>
+                        <div class="col-6 card-text"></div>
                       </div>
                     </div>
-                  </div>
+                  </div><a class="btn btn-link card-link" href="">Подробнее...</a>
                 </div>
-                <div class="card-footer d-none">
-                  <ul class="col-auto list-group list-group-horizontal">
+                <div class="card-footer">
+                  <ul class="list-group list-group-horizontal card-info">
                     <li class="list-group-item">
                       <svg class="card-icon">
                         <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
@@ -700,11 +718,10 @@
                   </ul>
                 </div>
               </article>
-              <article class="col px-md-0 card card--row">
+              <article class="col px-md-0 card" :class="cardModifClass">
                 <div class="card-body">
                   <div class="row no-gutters">
-                    <div class="col-auto px-0 card-img_wrap">
-                      <div class="card-tab"></div><img class="card-img" src="img/today/5.jpg" alt="Сила воли"/>
+                    <div class="col-auto px-0 card-img_wrap"><img class="card-img" src="img/today/5.jpg" alt="Сила воли"/>
                       <div class="card-rating card-rating--warning">
                         <svg class="card-rating_star">
                           <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
@@ -718,36 +735,39 @@
                           <svg class="card-icon">
                             <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
                           </svg>
-                          <div class="card-title_translate">Infinitely polar bear</div>
+                          <div class="card-title_translate">The Lion King</div>
                         </h3>
-                        <ul class="col-auto list-group list-group-horizontal d-none">
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
-                            </svg>
-                          </li>
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
-                            </svg>
-                          </li>
-                          <li class="list-group-item">
-                            <svg class="card-icon">
-                              <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
-                            </svg>
-                          </li>
-                        </ul>
-                        <div class="w-100">
-                          <h4 class="card-subtitle"><span>2016, драма</span><span class="badge order-md-first">16+</span>
-                          </h4>
-                          <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
+                        <div class="col-auto card-info_wrap">
+                          <ul class="list-group list-group-horizontal card-info">
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                              </svg>
+                            </li>
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                              </svg>
+                            </li>
+                            <li class="list-group-item">
+                              <svg class="card-icon">
+                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                              </svg>
+                            </li>
+                          </ul>
                         </div>
+                        <div class="w-100">
+                          <h4 class="card-subtitle"><span>2016, драма</span><span class="badge card-subtitle_badge order-md-first">16+</span></h4>
+                          <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
+                          <div class="card-text card-text--short">Фильм, 120 мин. Великобритания</div>
+                        </div>
+                        <div class="col-6 card-text"></div>
                       </div>
                     </div>
-                  </div>
+                  </div><a class="btn btn-link card-link" href="">Подробнее...</a>
                 </div>
-                <div class="card-footer d-none">
-                  <ul class="col-auto list-group list-group-horizontal">
+                <div class="card-footer">
+                  <ul class="list-group list-group-horizontal card-info">
                     <li class="list-group-item">
                       <svg class="card-icon">
                         <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
@@ -777,7 +797,7 @@
                 <li class="page-item d-none d-md-block"><a class="page-link" href="">5</a></li>
                 <li class="page-item"><a class="page-link" href=""><span class="d-none d-md-block page-text">Следующая</span><span class="icon icon-angle_right page-text page-icon"></span></a></li>
               </ul>
-              <div class="col-auto px-0 page-status">{{ message }}</div>
+              <div class="col-auto px-0 page-status">Страница 3 из 7</div>
             </div>
           </section>
           <aside class="col d-none d-lg-block px-0 section sidebar">

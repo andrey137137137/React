@@ -108,6 +108,8 @@
   }
 
   .card {
+    $block: &;
+
     margin-bottom: 0;
     // @include padding("2px 7px *");
     padding-top: map-get($spacers, 2);
@@ -139,6 +141,19 @@
       height: auto;
       // line-height: 20px;
       line-height: map-get($spacers, 20);
+    }
+
+    &--row {
+      #{$block}-info_wrap,
+      #{$block}-text {
+        display: block;
+      }
+
+      #{$block}-text--short,
+      #{$block}-link,
+      #{$block}-footer {
+        display: none;
+      }
     }
   }
 
