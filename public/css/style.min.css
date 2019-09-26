@@ -28917,6 +28917,38 @@ a.text-dark:focus {
   transform: rotate(45deg);
 }
 
+.icon--round {
+  padding: 8px;
+  padding: 0.5rem;
+  width: 1.9375rem;
+  height: 1.9375rem;
+}
+
+.icon--round,
+.icon--round .icon-symbol_wrap {
+  position: relative;
+}
+
+.icon--round .icon-bg,
+.icon--round .icon-symbol_wrap,
+.icon--round .icon-symbol {
+  width: 100%;
+  height: 100%;
+}
+
+.icon--round .icon-bg {
+  top: 0;
+  left: 0;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.icon--round .icon-symbol_wrap {
+  z-index: 1;
+  line-height: 14px;
+  line-height: 0.875rem;
+}
+
 .section-title {
   line-height: 1.5;
   color: #535252;
@@ -29005,6 +29037,28 @@ body {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.filter-link--rounded {
+  margin-right: -1px;
+  margin-left: 6px;
+  margin-right: -0.0625rem;
+  margin-left: 0.375rem;
+  padding-top: 8px;
+  padding-left: 8px;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.filter-link--rounded .icon-bg {
+  background-color: #cbcbcb;
+}
+
+.filter-link--rounded .icon-symbol {
+  fill: #f7f7f7;
+}
+
+.filter-link--p_0 {
   padding: 0;
 }
 
@@ -29029,20 +29083,6 @@ body {
   width: 1rem;
   height: 1rem;
   fill: #a0a0a0;
-}
-
-.filter-icon--rounded {
-  margin-right: -1px;
-  margin-left: 6px;
-  margin-right: -0.0625rem;
-  margin-left: 0.375rem;
-  border-radius: 50%;
-  padding: 8px 7px 7px 8px;
-  padding: 0.5rem 0.4375rem 0.4375rem 0.5rem;
-  width: 1.9375rem;
-  height: 1.9375rem;
-  fill: #f7f7f7;
-  background-color: #cbcbcb;
 }
 
 .filter-icon--margined {
@@ -29153,7 +29193,7 @@ body {
   margin-top: 10px;
   margin-top: 0.625rem;
   overflow: hidden;
-  height: 21px;
+  width: 100%;
   height: 1.3125rem;
 }
 
@@ -29167,13 +29207,9 @@ body {
   background: linear-gradient(to right, rgba(0, 0, 0, 0), #fff 30%);
 }
 
-.card-icon,
-.card-title_translate,
+.card-row_elem,
 .card-info_wrap,
-.card-subtitle_badge,
-.card-text,
-.card-link,
-.card-footer {
+.card-text {
   display: none;
 }
 
@@ -29199,17 +29235,33 @@ body {
   background-color: #fff;
 }
 
-.card--row .card-icon,
-.card--row .card-title_translate,
-.card--row .card-subtitle_badge,
-.card--row .card-text--short,
-.card--row .card-link,
-.card--row .card-footer {
+.card--row .card-icon {
+  display: inline-block;
+}
+
+.card--row .card-row_elem,
+.card--row .card-text--short {
   display: block;
+}
+
+.card--row .card-row_elem--d_inline_block {
+  display: inline-block;
+}
+
+.card--row .card-title {
+  height: auto;
 }
 
 .card--row .card-title_hidden {
   display: none;
+}
+
+.card--row .card-mark .icon-bg {
+  background-color: #ececec;
+}
+
+.card--row .card-mark .icon-symbol {
+  fill: #bebebe;
 }
 
 .page-item:first-child .page-link,

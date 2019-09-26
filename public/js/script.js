@@ -1,7 +1,7 @@
 var app = new Vue({
   el: "#app",
   data: {
-    byRows: false
+    byRows: true
   },
   computed: {
     containerClasses: function() {

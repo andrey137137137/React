@@ -1,4 +1,6 @@
 .icon {
+  $block: &;
+
   display: inline-block;
   overflow: hidden;
 
@@ -66,6 +68,35 @@
     &_right {
       @include border("2px 2px * * / solid solid * *");
       transform: rotate(45deg);
+    }
+  }
+
+  &--round {
+    // padding: 8px;
+    padding: map-get($spacers, 8);
+    // size: 31px;
+    size: map-get($spacers, 31);
+
+    &,
+    #{$block}-symbol_wrap {
+      position: relative;
+    }
+
+    #{$block}-bg,
+    #{$block}-symbol_wrap,
+    #{$block}-symbol {
+      size: 100%;
+    }
+
+    #{$block}-bg {
+      @include position("absolute 0 * * 0");
+      border-radius: 50%;
+    }
+
+    #{$block}-symbol_wrap {
+      z-index: 1;
+      // line-height: 14px;
+      line-height: map-get($spacers, 14);
     }
   }
 }

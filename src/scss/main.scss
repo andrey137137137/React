@@ -90,8 +90,26 @@ body {
 
   &-link {
     justify-content: space-between;
-    padding: 0;
     // height: 100%;
+
+    &--rounded {
+      // @include margin("* -1px * 6px");
+      @include margin("* -#{map-get($spacers, 1)} * #{map-get($spacers, 6)}");
+      // @include padding("8px * * 8px");
+      @include padding("#{map-get($spacers, 8)} * * #{map-get($spacers, 8)}");
+
+      .icon-bg {
+        background-color: $gray-light;
+      }
+
+      .icon-symbol {
+        fill: #f7f7f7;
+      }
+    }
+
+    &--p_0 {
+      padding: 0;
+    }
 
     &--active {
       #{$block}-icon {
@@ -113,19 +131,6 @@ body {
     // size: 16px;
     size: $spacer;
     fill: $gray-200;
-
-    &--rounded {
-      // @include margin("* -1px * 6px");
-      @include margin("* -#{map-get($spacers, 1)} * #{map-get($spacers, 6)}");
-      border-radius: 50%;
-      // padding: 8px 7px 7px 8px;
-      padding: map-get($spacers, 8) map-get($spacers, 7) map-get($spacers, 7)
-        map-get($spacers, 8);
-      // size: 31px;
-      size: map-get($spacers, 31);
-      fill: #f7f7f7;
-      background-color: $gray-light;
-    }
 
     &--margined {
       // margin-left: 10px;
@@ -244,7 +249,7 @@ body {
     margin-top: map-get($spacers, 10);
     overflow: hidden;
     // height: 21px;
-    height: map-get($spacers, 21);
+    size: 100% map-get($spacers, 21);
 
     &_hidden {
       @include position("absolute 0 0 * *");
@@ -254,13 +259,9 @@ body {
     }
   }
 
-  &-icon,
-  &-title_translate,
+  &-row_elem,
   &-info_wrap,
-  &-subtitle_badge,
-  &-text,
-  &-link,
-  &-footer {
+  &-text {
     display: none;
   }
 
@@ -280,17 +281,35 @@ body {
     width: 100%;
     background-color: $white;
 
-    #{$block}-icon,
-    #{$block}-title_translate,
-    #{$block}-subtitle_badge,
-    #{$block}-text--short,
-    #{$block}-link,
-    #{$block}-footer {
+    #{$block}-icon {
+      display: inline-block;
+    }
+
+    #{$block}-row_elem,
+    #{$block}-text--short {
       display: block;
     }
 
-    #{$block}-title_hidden {
-      display: none;
+    #{$block}-row_elem--d_inline_block {
+      display: inline-block;
+    }
+
+    #{$block}-title {
+      height: auto;
+
+      &_hidden {
+        display: none;
+      }
+    }
+
+    #{$block}-mark {
+      .icon-bg {
+        background-color: #ececec;
+      }
+
+      .icon-symbol {
+        fill: #bebebe;
+      }
     }
   }
 }
@@ -361,4 +380,6 @@ body {
 }
 
 @import "adaptive/import";
-// @include pixelPerfect("mobile-rows.jpg");
+
+// @include pixelPerfect("mobile-blocks.jpg");
+// @include pixelPerfect("desktop-blocks.jpg");

@@ -69,22 +69,26 @@ html(lang="en")
 							h2.col.pl-md-2.section-title.section-title--main.main-title Сегодня в кино
 							ul.col-5.col-sm-6.nav.pr-5.pb-6.pr-md-7.pb-md-4.justify-content-end.filter
 								li.nav-item.order-md-1.filter-item
-									a.nav-link.filter-link(href="")
+									a.nav-link.filter-link.icon.icon--round.filter-link--rounded(href="")
+										.icon-bg
 										span.d-none.d-md-inline-block.filter-text Фильтр
 										//- span.p-md-0.icon.icon-filter.filter-icon.filter-icon--rounded
-										+svg("filter", "p-md-0 filter-icon filter-icon--rounded")
+										.icon-symbol_wrap
+											+svg("filter", "p-md-0 icon-symbol filter-icon")
 								li.nav-item.order-md-3.filter-item
-									a.nav-link.filter-link(href="")
+									a.nav-link.filter-link.icon.icon--round.filter-link--rounded(href="")
+										.icon-bg
 										span.d-none.d-md-inline-block.filter-text Сортировка
 										//- span.p-md-0.icon.icon-sort.filter-icon.filter-icon--rounded
-										+svg("sort-amount", "p-md-0 filter-icon filter-icon--rounded")
+										.icon-symbol_wrap
+											+svg("sort-amount", "p-md-0 icon-symbol filter-icon")
 								li.nav-item.order-md-2.nav.filter-item
 									span.filter-text Вид
 									.filter-icons
-										a.nav-link.filter-link(href="" :class="{'filter-link--active': byRows}" @click.prevent="displayRows")
+										a.nav-link.filter-link.filter-link.filter-link--p_0(href="" :class="{'filter-link--active': byRows}" @click.prevent="displayRows")
 											//- span.icon.icon-bars.filter-icon.filter-icon--margined
 											+svg("bars", "filter-icon filter-icon--margined")
-										a.nav-link.filter-link(href="" :class="{'filter-link--active': !byRows}" @click.prevent="displayBlocks")
+										a.nav-link.filter-link.filter-link.filter-link--p_0(href="" :class="{'filter-link--active': !byRows}" @click.prevent="displayBlocks")
 											//- span.icon.icon-squares.filter-icon.filter-icon--margined.filter-icon--active
 											+svg("th-large", "filter-icon filter-icon--margined")
 						+card-container
