@@ -2,13 +2,14 @@
   $block: &;
 
   display: inline-block;
+  line-height: 0;
   overflow: hidden;
 
-  &:before,
-  &:after {
-    display: block;
-    content: "";
-  }
+  // &:before,
+  // &:after {
+  //   display: block;
+  //   content: "";
+  // }
 
   // &-bars {
   //   &:before,
@@ -96,7 +97,8 @@
     #{$block}-symbol_wrap {
       z-index: 1;
       // line-height: 14px;
-      line-height: map-get($spacers, 14);
+      // line-height: map-get($spacers, 14);
+      line-height: inherit;
     }
   }
 }

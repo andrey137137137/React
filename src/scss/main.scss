@@ -92,21 +92,6 @@ body {
     justify-content: space-between;
     // height: 100%;
 
-    &--rounded {
-      // @include margin("* -1px * 6px");
-      @include margin("* -#{map-get($spacers, 1)} * #{map-get($spacers, 6)}");
-      // @include padding("8px * * 8px");
-      @include padding("#{map-get($spacers, 8)} * * #{map-get($spacers, 8)}");
-
-      .icon-bg {
-        background-color: $gray-light;
-      }
-
-      .icon-symbol {
-        fill: #f7f7f7;
-      }
-    }
-
     &--p_0 {
       padding: 0;
     }
@@ -118,6 +103,11 @@ body {
     }
   }
 
+  // &-icons {
+  //   padding-right: 1px;
+  //   padding-right: map-get($spacers, 1);
+  // }
+
   &-text {
     // @include padding("* 6px");
     @include padding("* #{map-get($spacers, 6)}");
@@ -128,13 +118,31 @@ body {
   }
 
   &-icon {
-    // size: 16px;
-    size: $spacer;
-    fill: $gray-200;
+    &--rounded {
+      // @include margin("* -1px * 6px");
+      // @include margin("* -#{map-get($spacers, 1)} * #{map-get($spacers, 6)}");
+      margin-left: map-get($spacers, 5);
+      // @include padding("8px 7px 7px 8px");
+      // @include padding(
+      //   "#{map-get($spacers, 8)} #{map-get($spacers, 7)} #{map-get($spacers, 7)} #{map-get($spacers, 8)}"
+      // );
+
+      .icon-bg {
+        background-color: $gray-light;
+      }
+
+      .icon-symbol {
+        fill: #f7f7f7;
+      }
+    }
 
     &--margined {
       // margin-left: 10px;
-      margin-left: map-get($spacers, 10);
+      // margin-left: map-get($spacers, 10);
+      margin-left: map-get($spacers, 9);
+      // size: 16px;
+      size: $spacer;
+      fill: $gray-200;
     }
   }
 }
@@ -278,8 +286,19 @@ body {
   &--row {
     flex-grow: 1;
     flex-basis: auto;
+    // @include padding("9px * * 11px");
+    @include padding("#{map-get($spacers, 9)} * * #{map-get($spacers, 11)}");
     width: 100%;
     background-color: $white;
+
+    #{$block}-text_wrap {
+      @include padding("11px * * 3px");
+    }
+
+    // #{$block}-img {
+    //   @include padding("#{map-get($spacers, 21)} #{map-get($spacers, 14)} * *");
+    //   max-width: 99px;
+    // }
 
     #{$block}-icon {
       display: inline-block;
@@ -295,10 +314,27 @@ body {
     }
 
     #{$block}-title {
+      margin-top: 0;
+      border-bottom: 1px solid #eaeaea;
+      padding-bottom: 13px;
       height: auto;
+      font-size: #{map-get($spacers, 20)}/ 1.4;
+
+      &_row {
+        align-items: center;
+        padding-bottom: 1px;
+      }
+
+      &_text {
+        padding-right: 11px;
+      }
 
       &_hidden {
         display: none;
+      }
+
+      &_translate {
+        font-size: #{$lead-font-size}/ 1.235294117647059;
       }
     }
 
@@ -382,4 +418,5 @@ body {
 @import "adaptive/import";
 
 // @include pixelPerfect("mobile-blocks.jpg");
+@include pixelPerfect("mobile-rows.jpg");
 // @include pixelPerfect("desktop-blocks.jpg");

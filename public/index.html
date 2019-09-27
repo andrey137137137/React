@@ -81,15 +81,15 @@
           <section class="col pr-0 pr-lg-14 section main">
             <div class="row pl-8 px-md-0 main-row main-top">
               <h2 class="col pl-md-2 section-title section-title--main main-title">Сегодня в кино</h2>
-              <ul class="col-5 col-sm-6 nav pr-5 pb-6 pr-md-7 pb-md-4 justify-content-end filter">
-                <li class="nav-item order-md-1 filter-item"><a class="nav-link filter-link icon icon--round filter-link--rounded" href="">
+              <ul class="col-5 col-sm-6 nav pr-4 pb-6 pr-md-7 pb-md-4 justify-content-end filter">
+                <li class="nav-item order-md-1 filter-item"><a class="nav-link pr-7 pb-7 p-md-0 icon icon--round filter-icon filter-icon--rounded filter-link" href="">
                     <div class="icon-bg"></div><span class="d-none d-md-inline-block filter-text">Фильтр</span>
                     <div class="icon-symbol_wrap">
                       <svg class="p-md-0 icon-symbol filter-icon">
                         <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#filter"></use>
                       </svg>
                     </div></a></li>
-                <li class="nav-item order-md-3 filter-item"><a class="nav-link filter-link icon icon--round filter-link--rounded" href="">
+                <li class="nav-item order-md-3 filter-item"><a class="nav-link pl-11 py-10 pr-9 p-md-0 icon icon--round filter-icon filter-icon--rounded filter-link" href="">
                     <div class="icon-bg"></div><span class="d-none d-md-inline-block filter-text">Сортировка</span>
                     <div class="icon-symbol_wrap">
                       <svg class="p-md-0 icon-symbol filter-icon">
@@ -97,7 +97,7 @@
                       </svg>
                     </div></a></li>
                 <li class="nav-item order-md-2 nav filter-item"><span class="filter-text">Вид</span>
-                  <div class="filter-icons"><a class="nav-link filter-link filter-link filter-link--p_0" href="" :class="{'filter-link--active': byRows}" @click.prevent="displayRows">
+                  <div class="filter-icons pl-1 pr-2 pl-md-4 pr-md-0"><a class="nav-link filter-link filter-link filter-link--p_0" href="" :class="{'filter-link--active': byRows}" @click.prevent="displayRows">
                       <svg class="filter-icon filter-icon--margined">
                         <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bars"></use>
                       </svg></a><a class="nav-link filter-link filter-link filter-link--p_0" href="" :class="{'filter-link--active': !byRows}" @click.prevent="displayBlocks">
@@ -120,16 +120,18 @@
                       </div>
                       <div class="card-review"></div>
                     </div>
-                    <div class="col card-col">
+                    <div class="col card-col card-text_wrap">
                       <div class="row justify-content-between no-gutters">
-                        <h3 class="card-title section-title col-auto card-col"><span>Бесконечно белый медведь</span>
-                          <div class="card-title_hidden d-md-none"></div>
-                          <div class="icon icon--round card-row_elem card-row_elem--d_inline_block card-mark">
-                            <div class="icon-bg"></div>
-                            <div class="icon-symbol_wrap">
-                              <svg class="icon-symbol">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
-                              </svg>
+                        <h3 class="card-title section-title col-auto card-col">
+                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Король лев</span>
+                            <div class="card-title_hidden d-md-none"></div>
+                            <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-mark">
+                              <div class="icon-bg"></div>
+                              <div class="icon-symbol_wrap">
+                                <svg class="icon-symbol">
+                                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
+                                </svg>
+                              </div>
                             </div>
                           </div>
                           <div class="card-row_elem card-title_translate">The Lion King</div>
@@ -195,16 +197,18 @@
                         </svg><span class="card-rating_text">5.8</span>
                       </div>
                     </div>
-                    <div class="col card-col">
+                    <div class="col card-col card-text_wrap">
                       <div class="row justify-content-between no-gutters">
-                        <h3 class="card-title section-title col-auto card-col"><span>Путешествие из Парижа</span>
-                          <div class="card-title_hidden d-md-none"></div>
-                          <div class="icon icon--round card-row_elem card-row_elem--d_inline_block card-mark">
-                            <div class="icon-bg"></div>
-                            <div class="icon-symbol_wrap">
-                              <svg class="icon-symbol">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
-                              </svg>
+                        <h3 class="card-title section-title col-auto card-col">
+                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Король лев</span>
+                            <div class="card-title_hidden d-md-none"></div>
+                            <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-mark">
+                              <div class="icon-bg"></div>
+                              <div class="icon-symbol_wrap">
+                                <svg class="icon-symbol">
+                                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
+                                </svg>
+                              </div>
                             </div>
                           </div>
                           <div class="card-row_elem card-title_translate">The Lion King</div>
@@ -270,16 +274,18 @@
                         </svg><span class="card-rating_text">2.4</span>
                       </div>
                     </div>
-                    <div class="col card-col">
+                    <div class="col card-col card-text_wrap">
                       <div class="row justify-content-between no-gutters">
-                        <h3 class="card-title section-title col-auto card-col"><span>Побудь в моей шкуре</span>
-                          <div class="card-title_hidden d-md-none"></div>
-                          <div class="icon icon--round card-row_elem card-row_elem--d_inline_block card-mark">
-                            <div class="icon-bg"></div>
-                            <div class="icon-symbol_wrap">
-                              <svg class="icon-symbol">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
-                              </svg>
+                        <h3 class="card-title section-title col-auto card-col">
+                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Король лев</span>
+                            <div class="card-title_hidden d-md-none"></div>
+                            <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-mark">
+                              <div class="icon-bg"></div>
+                              <div class="icon-symbol_wrap">
+                                <svg class="icon-symbol">
+                                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
+                                </svg>
+                              </div>
                             </div>
                           </div>
                           <div class="card-row_elem card-title_translate">The Lion King</div>
@@ -346,16 +352,18 @@
                       </div>
                       <div class="card-review"></div>
                     </div>
-                    <div class="col card-col">
+                    <div class="col card-col card-text_wrap">
                       <div class="row justify-content-between no-gutters">
-                        <h3 class="card-title section-title col-auto card-col"><span>Матрос Железняк</span>
-                          <div class="card-title_hidden d-md-none"></div>
-                          <div class="icon icon--round card-row_elem card-row_elem--d_inline_block card-mark">
-                            <div class="icon-bg"></div>
-                            <div class="icon-symbol_wrap">
-                              <svg class="icon-symbol">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
-                              </svg>
+                        <h3 class="card-title section-title col-auto card-col">
+                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Король лев</span>
+                            <div class="card-title_hidden d-md-none"></div>
+                            <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-mark">
+                              <div class="icon-bg"></div>
+                              <div class="icon-symbol_wrap">
+                                <svg class="icon-symbol">
+                                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
+                                </svg>
+                              </div>
                             </div>
                           </div>
                           <div class="card-row_elem card-title_translate">The Lion King</div>
@@ -421,16 +429,18 @@
                         </svg><span class="card-rating_text">5.8</span>
                       </div>
                     </div>
-                    <div class="col card-col">
+                    <div class="col card-col card-text_wrap">
                       <div class="row justify-content-between no-gutters">
-                        <h3 class="card-title section-title col-auto card-col"><span>Сила воли</span>
-                          <div class="card-title_hidden d-md-none"></div>
-                          <div class="icon icon--round card-row_elem card-row_elem--d_inline_block card-mark">
-                            <div class="icon-bg"></div>
-                            <div class="icon-symbol_wrap">
-                              <svg class="icon-symbol">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
-                              </svg>
+                        <h3 class="card-title section-title col-auto card-col">
+                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Король лев</span>
+                            <div class="card-title_hidden d-md-none"></div>
+                            <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-mark">
+                              <div class="icon-bg"></div>
+                              <div class="icon-symbol_wrap">
+                                <svg class="icon-symbol">
+                                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
+                                </svg>
+                              </div>
                             </div>
                           </div>
                           <div class="card-row_elem card-title_translate">The Lion King</div>
@@ -497,16 +507,18 @@
                       </div>
                       <div class="card-review"></div>
                     </div>
-                    <div class="col card-col">
+                    <div class="col card-col card-text_wrap">
                       <div class="row justify-content-between no-gutters">
-                        <h3 class="card-title section-title col-auto card-col"><span>Бесконечно белый медведь</span>
-                          <div class="card-title_hidden d-md-none"></div>
-                          <div class="icon icon--round card-row_elem card-row_elem--d_inline_block card-mark">
-                            <div class="icon-bg"></div>
-                            <div class="icon-symbol_wrap">
-                              <svg class="icon-symbol">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
-                              </svg>
+                        <h3 class="card-title section-title col-auto card-col">
+                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Король лев</span>
+                            <div class="card-title_hidden d-md-none"></div>
+                            <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-mark">
+                              <div class="icon-bg"></div>
+                              <div class="icon-symbol_wrap">
+                                <svg class="icon-symbol">
+                                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
+                                </svg>
+                              </div>
                             </div>
                           </div>
                           <div class="card-row_elem card-title_translate">The Lion King</div>
@@ -572,16 +584,18 @@
                         </svg><span class="card-rating_text">5.8</span>
                       </div>
                     </div>
-                    <div class="col card-col">
+                    <div class="col card-col card-text_wrap">
                       <div class="row justify-content-between no-gutters">
-                        <h3 class="card-title section-title col-auto card-col"><span>Путешествие из Парижа</span>
-                          <div class="card-title_hidden d-md-none"></div>
-                          <div class="icon icon--round card-row_elem card-row_elem--d_inline_block card-mark">
-                            <div class="icon-bg"></div>
-                            <div class="icon-symbol_wrap">
-                              <svg class="icon-symbol">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
-                              </svg>
+                        <h3 class="card-title section-title col-auto card-col">
+                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Король лев</span>
+                            <div class="card-title_hidden d-md-none"></div>
+                            <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-mark">
+                              <div class="icon-bg"></div>
+                              <div class="icon-symbol_wrap">
+                                <svg class="icon-symbol">
+                                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
+                                </svg>
+                              </div>
                             </div>
                           </div>
                           <div class="card-row_elem card-title_translate">The Lion King</div>
@@ -647,16 +661,18 @@
                         </svg><span class="card-rating_text">2.4</span>
                       </div>
                     </div>
-                    <div class="col card-col">
+                    <div class="col card-col card-text_wrap">
                       <div class="row justify-content-between no-gutters">
-                        <h3 class="card-title section-title col-auto card-col"><span>Побудь в моей шкуре</span>
-                          <div class="card-title_hidden d-md-none"></div>
-                          <div class="icon icon--round card-row_elem card-row_elem--d_inline_block card-mark">
-                            <div class="icon-bg"></div>
-                            <div class="icon-symbol_wrap">
-                              <svg class="icon-symbol">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
-                              </svg>
+                        <h3 class="card-title section-title col-auto card-col">
+                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Король лев</span>
+                            <div class="card-title_hidden d-md-none"></div>
+                            <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-mark">
+                              <div class="icon-bg"></div>
+                              <div class="icon-symbol_wrap">
+                                <svg class="icon-symbol">
+                                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
+                                </svg>
+                              </div>
                             </div>
                           </div>
                           <div class="card-row_elem card-title_translate">The Lion King</div>
@@ -723,16 +739,18 @@
                       </div>
                       <div class="card-review"></div>
                     </div>
-                    <div class="col card-col">
+                    <div class="col card-col card-text_wrap">
                       <div class="row justify-content-between no-gutters">
-                        <h3 class="card-title section-title col-auto card-col"><span>Матрос Железняк</span>
-                          <div class="card-title_hidden d-md-none"></div>
-                          <div class="icon icon--round card-row_elem card-row_elem--d_inline_block card-mark">
-                            <div class="icon-bg"></div>
-                            <div class="icon-symbol_wrap">
-                              <svg class="icon-symbol">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
-                              </svg>
+                        <h3 class="card-title section-title col-auto card-col">
+                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Король лев</span>
+                            <div class="card-title_hidden d-md-none"></div>
+                            <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-mark">
+                              <div class="icon-bg"></div>
+                              <div class="icon-symbol_wrap">
+                                <svg class="icon-symbol">
+                                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
+                                </svg>
+                              </div>
                             </div>
                           </div>
                           <div class="card-row_elem card-title_translate">The Lion King</div>
@@ -798,16 +816,18 @@
                         </svg><span class="card-rating_text">5.8</span>
                       </div>
                     </div>
-                    <div class="col card-col">
+                    <div class="col card-col card-text_wrap">
                       <div class="row justify-content-between no-gutters">
-                        <h3 class="card-title section-title col-auto card-col"><span>Сила воли</span>
-                          <div class="card-title_hidden d-md-none"></div>
-                          <div class="icon icon--round card-row_elem card-row_elem--d_inline_block card-mark">
-                            <div class="icon-bg"></div>
-                            <div class="icon-symbol_wrap">
-                              <svg class="icon-symbol">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
-                              </svg>
+                        <h3 class="card-title section-title col-auto card-col">
+                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Король лев</span>
+                            <div class="card-title_hidden d-md-none"></div>
+                            <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-mark">
+                              <div class="icon-bg"></div>
+                              <div class="icon-symbol_wrap">
+                                <svg class="icon-symbol">
+                                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
+                                </svg>
+                              </div>
                             </div>
                           </div>
                           <div class="card-row_elem card-title_translate">The Lion King</div>

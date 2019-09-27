@@ -27,12 +27,14 @@ mixin card-img(img, options)
 
 mixin card-title(title, classes="", marked=false)
   h3.card-title.section-title(class=classes)
-    span= title
-    .card-title_hidden.d-md-none
-    .icon.icon--round.card-row_elem.card-row_elem--d_inline_block.card-mark
-      .icon-bg
-      .icon-symbol_wrap
-        +svg("bookmark", "icon-symbol")
+    .row.no-gutters.card-title_row
+      //- span= title
+      span.col-auto.card-title_text Король лев
+      .card-title_hidden.d-md-none
+      .col-auto.icon.icon--round.card-row_elem.card-row_elem--d_inline_block.card-mark
+        .icon-bg
+        .icon-symbol_wrap
+          +svg("bookmark", "icon-symbol")
     .card-row_elem.card-title_translate The Lion King
 
 mixin card-info(classes="")
@@ -66,7 +68,7 @@ mixin card(img, options)
       .row.no-gutters
         .col-auto.card-col.card-img_wrap
           +card-img(img, options)
-        .col.card-col
+        .col.card-col.card-text_wrap
           .row.justify-content-between.no-gutters
             //- +card-title(options.title, "col-12 col-md-8")
             +card-title(options.title, "col-auto card-col")

@@ -3,30 +3,51 @@
     background-image: url(../img/bg/body/desktop.jpg);
   }
 
-  // .icon {
-  //   &-filter {
-  //     background: url(../img/sprite/filter/gray.png) center center no-repeat;
-  //   }
+  .icon {
+    $block: &;
 
-  //   &-sort {
-  //     @include border("* * 2px / * * solid / *");
-  //     background-image: none;
+    //   &-filter {
+    //     background: url(../img/sprite/filter/gray.png) center center no-repeat;
+    //   }
 
-  //     &:before,
-  //     &:after {
-  //       @include border("2px * * / solid * * / *");
-  //       padding-top: 28.57142857142857%;
-  //     }
+    //   &-sort {
+    //     @include border("* * 2px / * * solid / *");
+    //     background-image: none;
 
-  //     &:before {
-  //       width: 50%;
-  //     }
+    //     &:before,
+    //     &:after {
+    //       @include border("2px * * / solid * * / *");
+    //       padding-top: 28.57142857142857%;
+    //     }
 
-  //     &:after {
-  //       width: 75%;
-  //     }
-  //   }
-  // }
+    //     &:before {
+    //       width: 50%;
+    //     }
+
+    //     &:after {
+    //       width: 75%;
+    //     }
+    //   }
+
+    &--round {
+      padding: 0;
+
+      &,
+      #{$block}-symbol_wrap,
+      #{$block}-symbol {
+        size: auto;
+      }
+
+      #{$block}-bg {
+        display: none;
+      }
+
+      #{$block}-symbol_wrap {
+        z-index: 1;
+        line-height: inherit;
+      }
+    }
+  }
 
   .section {
     &-title {
@@ -82,8 +103,11 @@
     }
 
     &-icon {
-      // size: 14px;
-      size: map-get($spacers, 14);
+      &--margined,
+      &--rounded .icon-symbol {
+        // size: 14px;
+        size: map-get($spacers, 14);
+      }
 
       &--margined {
         // @include margin("* 5px");
@@ -93,11 +117,12 @@
 
       &--rounded {
         @include margin("* 0");
-        border-radius: 0;
-        // size: 14px;
-        size: map-get($spacers, 14);
-        fill: $gray-200;
-        background-color: rgba(0, 0, 0, 0);
+        // border-radius: 0;
+        // background-color: rgba(0, 0, 0, 0);
+
+        .icon-symbol {
+          fill: $gray-200;
+        }
       }
     }
 

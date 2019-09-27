@@ -6,7 +6,7 @@ var app = new Vue({
   computed: {
     containerClasses: function() {
       return {
-        "p-0": this.byRows,
+        "pr-0": this.byRows,
         "pb-37": !this.byRows,
         "pl-27": !this.byRows,
         "pt-md-4": !this.byRows,
