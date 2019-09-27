@@ -148,6 +148,10 @@ body {
 }
 
 .card {
+  // &-group {
+  //   @include padding("* 19px * 23px");
+  // }
+
   $block: &;
 
   flex-grow: 0;
@@ -156,10 +160,6 @@ body {
   // @include padding("5px 6px *");
   @include padding("#{map-get($spacers, 5)} #{map-get($spacers, 6)} *");
   min-width: auto;
-
-  // &-group {
-  //   @include padding("* 19px * 23px");
-  // }
 
   // &-body,
   // &-img_wrap {
@@ -273,26 +273,33 @@ body {
     display: none;
   }
 
-  &-icon {
-    // size: 15px;
-    size: map-get($spacers, 15);
-  }
-
   &-subtitle {
-    display: flex;
-    line-height: 1.857142857142857;
+    // display: flex;
+    // line-height: 1.857142857142857;
+    line-height: map-get($spacers, 26);
   }
 
   &--row {
     flex-grow: 1;
     flex-basis: auto;
-    // @include padding("9px * * 11px");
-    @include padding("#{map-get($spacers, 9)} * * #{map-get($spacers, 11)}");
+    // margin-bottom: 20px;
+    margin-bottom: map-get($spacers, 20);
+    // @include padding("#{map-get($spacers, 9)} * * #{map-get($spacers, 11)}");
+    // @include padding("9px 0 *");
+    @include padding("#{map-get($spacers, 9)} 0 *");
     width: 100%;
     background-color: $white;
 
+    #{$block}-body {
+      // @include padding("* 14px 9px 19px");
+      @include padding(
+        "* #{map-get($spacers, 14)} #{map-get($spacers, 9)} #{map-get($spacers, 19)}"
+      );
+    }
+
     #{$block}-text_wrap {
-      @include padding("11px * * 3px");
+      // @include padding("11px * * 3px");
+      @include padding("#{map-get($spacers, 11)} * * #{map-get($spacers, 3)}");
     }
 
     // #{$block}-img {
@@ -302,6 +309,8 @@ body {
 
     #{$block}-icon {
       display: inline-block;
+      // size: 15px;
+      size: map-get($spacers, 15);
     }
 
     #{$block}-row_elem,
@@ -316,17 +325,30 @@ body {
     #{$block}-title {
       margin-top: 0;
       border-bottom: 1px solid #eaeaea;
-      padding-bottom: 13px;
+      // padding-bottom: 13px;
+      padding-bottom: map-get($spacers, 13);
       height: auto;
       font-size: #{map-get($spacers, 20)}/ 1.4;
 
       &_row {
         align-items: center;
-        padding-bottom: 1px;
+        // padding-bottom: 1px;
+        padding-bottom: map-get($spacers, 1);
       }
 
       &_text {
-        padding-right: 11px;
+        // padding-right: 11px;
+        padding-right: map-get($spacers, 11);
+      }
+
+      &_mark {
+        .icon-bg {
+          background-color: #ececec;
+        }
+
+        .icon-symbol {
+          fill: #bebebe;
+        }
       }
 
       &_hidden {
@@ -334,18 +356,61 @@ body {
       }
 
       &_translate {
-        font-size: #{$lead-font-size}/ 1.235294117647059;
+        font-size: #{$lead-font-size}/#{map-get($spacers, 21)};
+        color: $gray-500;
       }
     }
 
-    #{$block}-mark {
-      .icon-bg {
-        background-color: #ececec;
-      }
+    #{$block}-info {
+      // justify-content: space-between;
 
-      .icon-symbol {
-        fill: #bebebe;
+      &_item {
+        display: flex;
+        align-items: center;
+        border-style: none;
       }
+    }
+
+    #{$block}-subtitle,
+    #{$block}-text--short {
+      // padding-top: 9px;
+      padding-top: map-get($spacers, 9);
+      font-size: #{$lead-font-size}/#{map-get($spacers, 24)};
+    }
+
+    #{$block}-subtitle {
+      &_badge {
+        // margin-left: 9px;
+        margin-left: map-get($spacers, 9);
+        // border-radius: 6px;
+        border-radius: map-get($spacers, 6);
+        // padding: 0 2px 0 4px;
+        padding: 0 map-get($spacers, 2) 0 map-get($spacers, 4);
+        font-weight: bold;
+        // font-size: 12px/13px;
+        font-size: #{map-get($spacers, 12)}/#{map-get($spacers, 13)};
+        color: $white $gray-light;
+      }
+    }
+
+    #{$block}-text {
+      &--short {
+        color: $gray-700;
+      }
+    }
+
+    #{$block}-link {
+      // margin-left: -5px;
+      margin-left: -#{map-get($spacers, 5)};
+      font-size: #{$lead-font-size}/#{map-get($spacers, 26)};
+    }
+
+    #{$block}-footer {
+      @include padding("* 0");
+      border-top: 1px solid #eaeaea;
+      // height: 52px;
+      height: map-get($spacers, 52);
+      background-color: inherit;
     }
   }
 }
@@ -418,5 +483,5 @@ body {
 @import "adaptive/import";
 
 // @include pixelPerfect("mobile-blocks.jpg");
-@include pixelPerfect("mobile-rows.jpg");
+// @include pixelPerfect("mobile-rows.jpg");
 // @include pixelPerfect("desktop-blocks.jpg");

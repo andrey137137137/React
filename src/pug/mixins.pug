@@ -28,10 +28,10 @@ mixin card-img(img, options)
 mixin card-title(title, classes="", marked=false)
   h3.card-title.section-title(class=classes)
     .row.no-gutters.card-title_row
-      //- span= title
+      //- span.col-auto.card-title_text= title
       span.col-auto.card-title_text Король лев
       .card-title_hidden.d-md-none
-      .col-auto.icon.icon--round.card-row_elem.card-row_elem--d_inline_block.card-mark
+      .col-auto.icon.icon--round.card-row_elem.card-row_elem--d_inline_block.card-title_mark
         .icon-bg
         .icon-symbol_wrap
           +svg("bookmark", "icon-symbol")
@@ -39,18 +39,22 @@ mixin card-title(title, classes="", marked=false)
 
 mixin card-info(classes="")
   ul.list-group.list-group-horizontal.card-info(class=classes)
-    li.list-group-item
+    li.list-group-item.card-info_item
       +svg("star-empty", "card-row_elem card-icon")
-    li.list-group-item
+      span.card-info_number 392
+    li.list-group-item.card-info_item
       +svg("layer-group", "card-row_elem card-icon")
-    li.list-group-item
+      span.card-info_number 47
+    li.list-group-item.card-info_item
       +svg("comment", "card-row_elem card-icon")
+      span.card-info_number 578
 
 mixin card-subtitle(date, genre)
-  - var text = card.isRow ? "2019, Боевик, драма, биография" : date + ", " + genre
+  //- - var text = card.isRow ? "2019, Боевик, драма, биография" : date + ", " + genre
 
   h4.card-subtitle
-    span= text
+    //- span date + ", " + genre
+    span 2019, Боевик, драма, биография
     span.badge.card-row_elem.card-row_elem--d_inline_block.card-subtitle_badge.order-md-first 16+
 
 //- mixin card-block(img, options)

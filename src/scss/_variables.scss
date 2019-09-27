@@ -179,6 +179,36 @@ $spacers: (
   ),
   50: (
     $spacer * 3.125
+  ),
+  51: (
+    $spacer * 3.1875
+  ),
+  52: (
+    $spacer * 3.25
+  ),
+  53: (
+    $spacer * 3.3125
+  ),
+  54: (
+    $spacer * 3.375
+  ),
+  55: (
+    $spacer * 3.4375
+  ),
+  56: (
+    $spacer * 3.5
+  ),
+  57: (
+    $spacer * 3.5625
+  ),
+  58: (
+    $spacer * 3.625
+  ),
+  59: (
+    $spacer * 3.6875
+  ),
+  60: (
+    $spacer * 3.75
   )
 );
 
@@ -188,6 +218,15 @@ $spacers: (
 
 $body-bg: $black;
 $body-color: $gray-400;
+
+// Links
+//
+// Style anchor elements.
+
+$link-color: $green;
+// $link-hover-color: darken($link-color, 15%) !default;
+// Darken percentage for links with `.text-*` class (e.g. `.text-success`)
+// $emphasized-link-hover-darken-percentage: 15% !default;
 
 // Grid breakpoints
 //
