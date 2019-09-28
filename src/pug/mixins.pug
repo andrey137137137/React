@@ -19,7 +19,7 @@ mixin card-rating(status)
       +card-rating-body(status)
 
 mixin card-img(img, options)
-  .card-row_elem.card-tab
+  .card-row_elem.card-tab 3d
   img.card-img(src="img/today/" + img + ".jpg", alt=options.title)
   +card-rating(options.status)
   if options.status > 9
@@ -40,13 +40,13 @@ mixin card-title(title, classes="", marked=false)
 mixin card-info(classes="")
   ul.list-group.list-group-horizontal.card-info(class=classes)
     li.list-group-item.card-info_item
-      +svg("star-empty", "card-row_elem card-icon")
+      +svg("star-empty", "card-row_elem card-icon card-info_icon")
       span.card-info_number 392
     li.list-group-item.card-info_item
-      +svg("layer-group", "card-row_elem card-icon")
+      +svg("layer-group", "card-row_elem card-icon card-info_icon card-info_icon--review")
       span.card-info_number 47
     li.list-group-item.card-info_item
-      +svg("comment", "card-row_elem card-icon")
+      +svg("comment", "card-row_elem card-icon card-info_icon card-info_icon--comment")
       span.card-info_number 578
 
 mixin card-subtitle(date, genre)

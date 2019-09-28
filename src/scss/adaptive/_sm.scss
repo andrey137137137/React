@@ -1,7 +1,12 @@
 @include media-breakpoint-up(sm) {
   .filter {
-    &-link {
+    &-item {
       height: 60px;
+
+      &--d_flex {
+        display: flex;
+        align-items: center;
+      }
     }
 
     &-text {

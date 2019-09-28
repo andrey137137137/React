@@ -243,8 +243,11 @@ body {
     // @include position(
     //   "absolute #{map-get($spacers, 50) * 2 + map-get($spacers, 41)} #{map-get($spacers, 14)} * *"
     // );
+    // @include position(
+    //   "absolute #{map-get($spacers, 50) * 2 + map-get($spacers, 33)} #{map-get($spacers, 6)} * *"
+    // );
     @include position(
-      "absolute #{map-get($spacers, 50) * 2 + map-get($spacers, 33)} #{map-get($spacers, 6)} * *"
+      "absolute * #{map-get($spacers, 6)} -#{map-get($spacers, 9)} *"
     );
     // size: 49px 50px;
     size: map-get($spacers, 49) map-get($spacers, 50);
@@ -302,15 +305,23 @@ body {
       @include padding("#{map-get($spacers, 11)} * * #{map-get($spacers, 3)}");
     }
 
-    // #{$block}-img {
-    //   @include padding("#{map-get($spacers, 21)} #{map-get($spacers, 14)} * *");
-    //   max-width: 99px;
-    // }
+    #{$block}-tab {
+      // @include position("absolute 4px * * 0");
+      @include position("absolute #{map-get($spacers, 4)} * * 0");
+      // border-top-left-radius: 3px;
+      border-top-left-radius: map-get($spacers, 3);
+      // border-top-right-radius: 3px;
+      border-top-right-radius: map-get($spacers, 3);
+      line-height: $lead-font-size;
+      // width: 27px;
+      width: map-get($spacers, 27);
+      text-align: center;
+      color: $white $gray-200;
+    }
 
-    #{$block}-icon {
-      display: inline-block;
-      // size: 15px;
-      size: map-get($spacers, 15);
+    #{$block}-review {
+      // @include position("* 5px 11px *");
+      @include position("* #{map-get($spacers, 5)} #{map-get($spacers, 11)} *");
     }
 
     #{$block}-row_elem,
@@ -320,6 +331,12 @@ body {
 
     #{$block}-row_elem--d_inline_block {
       display: inline-block;
+    }
+
+    #{$block}-icon {
+      display: inline-block;
+      // size: 15px;
+      size: map-get($spacers, 15);
     }
 
     #{$block}-title {
@@ -363,11 +380,39 @@ body {
 
     #{$block}-info {
       // justify-content: space-between;
+      // @include padding("* 12px");
+      @include padding("* #{map-get($spacers, 12)}");
 
       &_item {
         display: flex;
         align-items: center;
         border-style: none;
+        // @include padding("* 10px");
+        @include padding("* #{map-get($spacers, 10)}");
+      }
+
+      &_icon {
+        // margin-right: 8px;
+        margin-right: map-get($spacers, 8);
+        fill: $gray-light;
+
+        &--review {
+          // margin-right: 7px;
+          // width: 22px;
+          width: map-get($spacers, 22);
+        }
+
+        &--comment {
+          // margin-right: 9px;
+          margin-right: map-get($spacers, 9);
+          // width: 18px;
+          width: map-get($spacers, 18);
+        }
+      }
+
+      &_number {
+        font-size: $lead-font-size;
+        color: $gray-500;
       }
     }
 
