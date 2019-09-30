@@ -86,6 +86,21 @@
           "#{map-get($spacers, 4)} #{map-get($spacers, 19)} #{map-get($spacers, 14)} #{map-get($spacers, 23)}"
         );
       }
+
+      &--rows {
+        .card {
+          &-info_wrap,
+          &-text {
+            display: block;
+          }
+
+          &-text--short,
+          &-link,
+          &-footer {
+            display: none;
+          }
+        }
+      }
     }
   }
 
@@ -172,19 +187,6 @@
       height: auto;
       // line-height: 20px;
       line-height: map-get($spacers, 20);
-    }
-
-    &--row {
-      #{$block}-info_wrap,
-      #{$block}-text {
-        display: block;
-      }
-
-      #{$block}-text--short,
-      #{$block}-link,
-      #{$block}-footer {
-        display: none;
-      }
     }
   }
 

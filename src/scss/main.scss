@@ -80,6 +80,191 @@ body {
       @include padding("* * #{map-get($spacers, 37)} #{map-get($spacers, 27)}");
       background-color: $white;
     }
+
+    &--rows {
+      padding-right: 0;
+
+      .card {
+        flex-grow: 1;
+        flex-basis: auto;
+        // margin-bottom: 20px;
+        margin-bottom: map-get($spacers, 20);
+        // @include padding("#{map-get($spacers, 9)} * * #{map-get($spacers, 11)}");
+        // @include padding("9px 0 *");
+        @include padding("#{map-get($spacers, 9)} 0 *");
+        width: 100%;
+        background-color: $white;
+
+        &-body {
+          // @include padding("* 14px 9px 19px");
+          @include padding(
+            "* #{map-get($spacers, 14)} #{map-get($spacers, 9)} #{map-get($spacers, 19)}"
+          );
+        }
+
+        &-text_wrap {
+          // @include padding("11px * * 3px");
+          @include padding(
+            "#{map-get($spacers, 11)} * * #{map-get($spacers, 3)}"
+          );
+        }
+
+        &-tab {
+          // @include position("absolute 4px * * 0");
+          @include position("absolute #{map-get($spacers, 4)} * * 0");
+          // border-top-left-radius: 3px;
+          border-top-left-radius: map-get($spacers, 3);
+          // border-top-right-radius: 3px;
+          border-top-right-radius: map-get($spacers, 3);
+          line-height: $lead-font-size;
+          // width: 27px;
+          width: map-get($spacers, 27);
+          text-align: center;
+          color: $white $gray-200;
+        }
+
+        &-review {
+          // @include position("* 5px 11px *");
+          @include position(
+            "* #{map-get($spacers, 5)} #{map-get($spacers, 11)} *"
+          );
+        }
+
+        &-row_elem,
+        &-text--short {
+          display: block;
+        }
+
+        &-row_elem--d_inline_block {
+          display: inline-block;
+        }
+
+        &-icon {
+          display: inline-block;
+          // size: 15px;
+          size: map-get($spacers, 15);
+        }
+
+        &-title {
+          margin-top: 0;
+          border-bottom: 1px solid #eaeaea;
+          // padding-bottom: 13px;
+          padding-bottom: map-get($spacers, 13);
+          height: auto;
+          font-size: #{map-get($spacers, 20)}/ 1.4;
+
+          &_row {
+            align-items: center;
+            // padding-bottom: 1px;
+            padding-bottom: map-get($spacers, 1);
+          }
+
+          &_text {
+            // padding-right: 11px;
+            padding-right: map-get($spacers, 11);
+          }
+
+          &_mark {
+            .icon-bg {
+              background-color: #ececec;
+            }
+
+            .icon-symbol {
+              fill: #bebebe;
+            }
+          }
+
+          &_hidden {
+            display: none;
+          }
+
+          &_translate {
+            font-size: #{$lead-font-size}/#{map-get($spacers, 21)};
+            color: $gray-500;
+          }
+        }
+
+        &-info {
+          // justify-content: space-between;
+          // @include padding("* 12px");
+          @include padding("* #{map-get($spacers, 12)}");
+
+          &_item {
+            display: flex;
+            align-items: center;
+            border-style: none;
+            // @include padding("* 10px");
+            @include padding("* #{map-get($spacers, 10)}");
+          }
+
+          &_icon {
+            // margin-right: 8px;
+            margin-right: map-get($spacers, 8);
+            fill: $gray-light;
+
+            &--review {
+              // margin-right: 7px;
+              // width: 22px;
+              width: map-get($spacers, 22);
+            }
+
+            &--comment {
+              // margin-right: 9px;
+              margin-right: map-get($spacers, 9);
+              // width: 18px;
+              width: map-get($spacers, 18);
+            }
+          }
+
+          &_number {
+            font-size: $lead-font-size;
+            color: $gray-500;
+          }
+        }
+
+        &-subtitle,
+        &-text--short {
+          // padding-top: 9px;
+          padding-top: map-get($spacers, 9);
+          font-size: #{$lead-font-size}/#{map-get($spacers, 24)};
+        }
+
+        &-subtitle {
+          &_badge {
+            // margin-left: 9px;
+            margin-left: map-get($spacers, 9);
+            // border-radius: 6px;
+            border-radius: map-get($spacers, 6);
+            // padding: 0 2px 0 4px;
+            padding: 0 map-get($spacers, 2) 0 map-get($spacers, 4);
+            font-weight: bold;
+            // font-size: 12px/13px;
+            font-size: #{map-get($spacers, 12)}/#{map-get($spacers, 13)};
+            color: $white $gray-light;
+          }
+        }
+
+        &-text {
+          &--short {
+            color: $gray-700;
+          }
+        }
+
+        &-link {
+          // margin-left: -5px;
+          margin-left: -#{map-get($spacers, 5)};
+          font-size: #{$lead-font-size}/#{map-get($spacers, 26)};
+        }
+
+        &-footer {
+          @include padding("* 0");
+          border-top: 1px solid #eaeaea;
+          // height: 52px;
+          height: map-get($spacers, 52);
+          background-color: inherit;
+        }
+      }
+    }
   }
 }
 
@@ -157,8 +342,6 @@ body {
   // &-group {
   //   @include padding("* 19px * 23px");
   // }
-
-  $block: &;
 
   flex-grow: 0;
   // margin-bottom: -6px;
@@ -287,183 +470,6 @@ body {
     // line-height: 1.857142857142857;
     line-height: map-get($spacers, 26);
   }
-
-  &--row {
-    flex-grow: 1;
-    flex-basis: auto;
-    // margin-bottom: 20px;
-    margin-bottom: map-get($spacers, 20);
-    // @include padding("#{map-get($spacers, 9)} * * #{map-get($spacers, 11)}");
-    // @include padding("9px 0 *");
-    @include padding("#{map-get($spacers, 9)} 0 *");
-    width: 100%;
-    background-color: $white;
-
-    #{$block}-body {
-      // @include padding("* 14px 9px 19px");
-      @include padding(
-        "* #{map-get($spacers, 14)} #{map-get($spacers, 9)} #{map-get($spacers, 19)}"
-      );
-    }
-
-    #{$block}-text_wrap {
-      // @include padding("11px * * 3px");
-      @include padding("#{map-get($spacers, 11)} * * #{map-get($spacers, 3)}");
-    }
-
-    #{$block}-tab {
-      // @include position("absolute 4px * * 0");
-      @include position("absolute #{map-get($spacers, 4)} * * 0");
-      // border-top-left-radius: 3px;
-      border-top-left-radius: map-get($spacers, 3);
-      // border-top-right-radius: 3px;
-      border-top-right-radius: map-get($spacers, 3);
-      line-height: $lead-font-size;
-      // width: 27px;
-      width: map-get($spacers, 27);
-      text-align: center;
-      color: $white $gray-200;
-    }
-
-    #{$block}-review {
-      // @include position("* 5px 11px *");
-      @include position("* #{map-get($spacers, 5)} #{map-get($spacers, 11)} *");
-    }
-
-    #{$block}-row_elem,
-    #{$block}-text--short {
-      display: block;
-    }
-
-    #{$block}-row_elem--d_inline_block {
-      display: inline-block;
-    }
-
-    #{$block}-icon {
-      display: inline-block;
-      // size: 15px;
-      size: map-get($spacers, 15);
-    }
-
-    #{$block}-title {
-      margin-top: 0;
-      border-bottom: 1px solid #eaeaea;
-      // padding-bottom: 13px;
-      padding-bottom: map-get($spacers, 13);
-      height: auto;
-      font-size: #{map-get($spacers, 20)}/ 1.4;
-
-      &_row {
-        align-items: center;
-        // padding-bottom: 1px;
-        padding-bottom: map-get($spacers, 1);
-      }
-
-      &_text {
-        // padding-right: 11px;
-        padding-right: map-get($spacers, 11);
-      }
-
-      &_mark {
-        .icon-bg {
-          background-color: #ececec;
-        }
-
-        .icon-symbol {
-          fill: #bebebe;
-        }
-      }
-
-      &_hidden {
-        display: none;
-      }
-
-      &_translate {
-        font-size: #{$lead-font-size}/#{map-get($spacers, 21)};
-        color: $gray-500;
-      }
-    }
-
-    #{$block}-info {
-      // justify-content: space-between;
-      // @include padding("* 12px");
-      @include padding("* #{map-get($spacers, 12)}");
-
-      &_item {
-        display: flex;
-        align-items: center;
-        border-style: none;
-        // @include padding("* 10px");
-        @include padding("* #{map-get($spacers, 10)}");
-      }
-
-      &_icon {
-        // margin-right: 8px;
-        margin-right: map-get($spacers, 8);
-        fill: $gray-light;
-
-        &--review {
-          // margin-right: 7px;
-          // width: 22px;
-          width: map-get($spacers, 22);
-        }
-
-        &--comment {
-          // margin-right: 9px;
-          margin-right: map-get($spacers, 9);
-          // width: 18px;
-          width: map-get($spacers, 18);
-        }
-      }
-
-      &_number {
-        font-size: $lead-font-size;
-        color: $gray-500;
-      }
-    }
-
-    #{$block}-subtitle,
-    #{$block}-text--short {
-      // padding-top: 9px;
-      padding-top: map-get($spacers, 9);
-      font-size: #{$lead-font-size}/#{map-get($spacers, 24)};
-    }
-
-    #{$block}-subtitle {
-      &_badge {
-        // margin-left: 9px;
-        margin-left: map-get($spacers, 9);
-        // border-radius: 6px;
-        border-radius: map-get($spacers, 6);
-        // padding: 0 2px 0 4px;
-        padding: 0 map-get($spacers, 2) 0 map-get($spacers, 4);
-        font-weight: bold;
-        // font-size: 12px/13px;
-        font-size: #{map-get($spacers, 12)}/#{map-get($spacers, 13)};
-        color: $white $gray-light;
-      }
-    }
-
-    #{$block}-text {
-      &--short {
-        color: $gray-700;
-      }
-    }
-
-    #{$block}-link {
-      // margin-left: -5px;
-      margin-left: -#{map-get($spacers, 5)};
-      font-size: #{$lead-font-size}/#{map-get($spacers, 26)};
-    }
-
-    #{$block}-footer {
-      @include padding("* 0");
-      border-top: 1px solid #eaeaea;
-      // height: 52px;
-      height: map-get($spacers, 52);
-      background-color: inherit;
-    }
-  }
 }
 
 // .pagination {
@@ -535,4 +541,4 @@ body {
 
 // @include pixelPerfect("mobile-blocks.jpg");
 // @include pixelPerfect("mobile-rows.jpg");
-@include pixelPerfect("desktop-blocks.jpg");
+// @include pixelPerfect("desktop-blocks.jpg");

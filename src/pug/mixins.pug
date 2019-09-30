@@ -57,17 +57,9 @@ mixin card-subtitle(date, genre)
     //- span 2019, Боевик, драма, биография
     span.badge.card-row_elem.card-row_elem--d_inline_block.card-subtitle_badge.order-md-first 16+
 
-//- mixin card-block(img, options)
-//-   article.col.card.px-md-0
-//-     .card-body
-//-       +card-img(img, options)
-//-       +card-title(options.title)
-//-       +card-subtitle(options.date, options.genre)
-
 mixin card(img, options)
-  //- article.w-100.card.card--row
-  //- article.col.px-md-0.card(class={"card--row": card.isRow})
-  article.col.px-md-0.card(:class="cardModifClass")
+  //- article.col.px-md-0.card(:class="cardModifClass")
+  article.col.px-md-0.card
     .card-body
       .row.no-gutters.align-items-start
         .col-auto.card-col.card-img_wrap
