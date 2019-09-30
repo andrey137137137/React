@@ -72,16 +72,22 @@
     // margin-bottom: 13px;
   }
 
-  // .main {
-  //   &-title {
-  //     padding-left: 2px;
-  //   }
+  .main {
+    // &-title {
+    //   padding-left: 2px;
+    // }
 
-  //   &-container {
-  //     justify-content: flex-start;
-  //     @include padding("4px 19px 14px 23px");
-  //   }
-  // }
+    &-container {
+      // justify-content: flex-start;
+
+      &--blocks {
+        // @include padding("4px 19px 14px 23px");
+        @include padding(
+          "#{map-get($spacers, 4)} #{map-get($spacers, 19)} #{map-get($spacers, 14)} #{map-get($spacers, 23)}"
+        );
+      }
+    }
+  }
 
   .filter {
     // @include padding("* 7px 4px *");

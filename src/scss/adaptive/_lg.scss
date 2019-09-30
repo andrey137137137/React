@@ -4,12 +4,12 @@
     max-width: map-get($container-max-widths, xl);
   }
 
-  .main {
-    // padding-right: 14px;
+  // .main {
+  //   padding-right: 14px;
 
-    &-row {
-      // margin-right: -7px;
-      margin-right: -#{$grid-gutter-width/2};
-    }
-  }
+  //   &-row {
+  //     margin-right: -7px;
+  //     margin-right: -#{$grid-gutter-width/2};
+  //   }
+  // }
 }

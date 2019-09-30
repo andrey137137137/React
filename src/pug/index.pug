@@ -68,7 +68,7 @@ html(lang="en")
 						.row.pl-8.px-md-0.main-row.main-top
 							h2.col.pl-md-2.section-title.section-title--main.main-title Сегодня в кино
 							//- ul.col-5.col-sm-6.nav.pr-5.pb-6.pr-md-7.pb-md-4.justify-content-end.filter
-							ul.col-5.col-sm-6.nav.pr-4.pb-6.pr-md-7.pb-md-4.justify-content-end.filter
+							ul.col-5.col-sm-6.nav.pr-4.pb-6.pr-md-0.pb-md-4.justify-content-end.filter
 								li.nav-item.order-md-1.filter-item.filter-item--d_flex
 									a.nav-link.pr-7.pb-7.p-md-0.icon.icon--round.filter-icon.filter-icon--rounded.filter-link(href="")
 										.icon-bg
@@ -86,10 +86,10 @@ html(lang="en")
 								li.nav-item.order-md-2.nav.filter-item
 									span.filter-text Вид
 									.filter-icons.pl-1.pr-2.pl-md-4.pr-md-0
-										a.nav-link.filter-link.filter-link--p_0(href="" :class="{'filter-link--active': byRows}" @click.prevent="displayRows")
+										a.nav-link.filter-link.filter-link--p_0(href="" :class="{'filter-link--active': byRows}" @click.prevent="byRows=true")
 											//- span.icon.icon-bars.filter-icon.filter-icon--margined
 											+svg("bars", "filter-icon filter-icon--margined")
-										a.nav-link.filter-link.filter-link--p_0(href="" :class="{'filter-link--active': !byRows}" @click.prevent="displayBlocks")
+										a.nav-link.filter-link.filter-link--p_0(href="" :class="{'filter-link--active': !byRows}" @click.prevent="byRows=false")
 											//- span.icon.icon-squares.filter-icon.filter-icon--margined.filter-icon--active
 											+svg("th-large", "filter-icon filter-icon--margined")
 						+card-container

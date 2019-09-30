@@ -31,11 +31,26 @@
   line-height: $height - $border * 2;
 }
 
-@mixin iconSize($size) {
-  &,
-  &:before,
-  &:after {
-    border-width: $size;
+// @mixin iconSize($size) {
+//   &,
+//   &:before,
+//   &:after {
+//     border-width: $size;
+//   }
+// }
+
+@mixin fontFace($font, $path: "../fonts") {
+  @font-face {
+    font-family: "#{$font}";
+    src: url("#{$path}/#{$font}/#{$font}.eot");
+    src: url("#{$path}/#{$font}/#{$font}.eot?#iefix")
+        format("embedded-opentype"),
+      url("#{$path}/#{$font}/#{$font}.svg#Neuron") format("svg"),
+      url("#{$path}/#{$font}/#{$font}.ttf") format("truetype"),
+      url("#{$path}/#{$font}/#{$font}.woff") format("woff"),
+      url("#{$path}/#{$font}/#{$font}.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
   }
 }
 

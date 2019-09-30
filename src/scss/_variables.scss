@@ -266,18 +266,22 @@ $grid-gutter-width: 14px;
 // $line-height-lg: 24px;
 // $line-height-sm: 24px;
 
-$border-color: rgba(0, 0, 0, 0.1);
+$border-color: rgba($black, 0.1);
 
-$border-radius: 3px;
-$border-radius-lg: 3px;
-$border-radius-sm: 3px;
+$border-radius: 5px;
+$border-radius-lg: $border-radius + 2px;
+$border-radius-sm: $border-radius - 2px;
+
+$box-shadow-sm: 0 1px 0 rgba($black, 0.09);
+// $box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
+// $box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
 
 // Typography
 //
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif: Neuron, -apple-system, BlinkMacSystemFont, "Segoe UI",
+$font-family-sans-serif: "Neuron", -apple-system, BlinkMacSystemFont, "Segoe UI",
   Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
   "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 // stylelint-enable value-keyword-case

@@ -81,7 +81,7 @@
           <section class="col pr-0 pr-lg-14 section main">
             <div class="row pl-8 px-md-0 main-row main-top">
               <h2 class="col pl-md-2 section-title section-title--main main-title">Сегодня в кино</h2>
-              <ul class="col-5 col-sm-6 nav pr-4 pb-6 pr-md-7 pb-md-4 justify-content-end filter">
+              <ul class="col-5 col-sm-6 nav pr-4 pb-6 pr-md-0 pb-md-4 justify-content-end filter">
                 <li class="nav-item order-md-1 filter-item filter-item--d_flex"><a class="nav-link pr-7 pb-7 p-md-0 icon icon--round filter-icon filter-icon--rounded filter-link" href="">
                     <div class="icon-bg"></div><span class="d-none d-md-inline-block filter-text">Фильтр</span>
                     <div class="icon-symbol_wrap">
@@ -97,10 +97,10 @@
                       </svg>
                     </div></a></li>
                 <li class="nav-item order-md-2 nav filter-item"><span class="filter-text">Вид</span>
-                  <div class="filter-icons pl-1 pr-2 pl-md-4 pr-md-0"><a class="nav-link filter-link filter-link--p_0" href="" :class="{'filter-link--active': byRows}" @click.prevent="displayRows">
+                  <div class="filter-icons pl-1 pr-2 pl-md-4 pr-md-0"><a class="nav-link filter-link filter-link--p_0" href="" :class="{'filter-link--active': byRows}" @click.prevent="byRows=true">
                       <svg class="filter-icon filter-icon--margined">
                         <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bars"></use>
-                      </svg></a><a class="nav-link filter-link filter-link--p_0" href="" :class="{'filter-link--active': !byRows}" @click.prevent="displayBlocks">
+                      </svg></a><a class="nav-link filter-link filter-link--p_0" href="" :class="{'filter-link--active': !byRows}" @click.prevent="byRows=false">
                       <svg class="filter-icon filter-icon--margined">
                         <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#th-large"></use>
                       </svg></a></div>
@@ -110,7 +110,7 @@
             <main class="row mr-lg-0 section-container main-row main-container" :class="containerClasses">
               <article class="col px-md-0 card" :class="cardModifClass">
                 <div class="card-body">
-                  <div class="row no-gutters">
+                  <div class="row no-gutters align-items-start">
                     <div class="col-auto card-col card-img_wrap">
                       <div class="card-row_elem card-tab">3d</div><img class="card-img" src="img/today/1.jpg" alt="Бесконечно белый медведь"/>
                       <div class="card-rating">
@@ -123,7 +123,7 @@
                     <div class="col card-col card-text_wrap">
                       <div class="row justify-content-between no-gutters">
                         <h3 class="card-title section-title col-auto card-col">
-                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Король лев</span>
+                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Бесконечно белый медведь</span>
                             <div class="card-title_hidden d-md-none"></div>
                             <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
                               <div class="icon-bg"></div>
@@ -156,7 +156,7 @@
                           </ul>
                         </div>
                         <div class="col">
-                          <h4 class="card-subtitle"><span>2019, Боевик, драма, биография</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span></h4>
+                          <h4 class="card-subtitle"><span>2015, комедия</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span></h4>
                           <div class="list-group list-group-horizontal d-none d-md-flex card-categories"></div>
                           <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
                           <div class="card-text card-text--short">Фильм, 120 мин. Великобритания</div>
@@ -188,7 +188,7 @@
               </article>
               <article class="col px-md-0 card" :class="cardModifClass">
                 <div class="card-body">
-                  <div class="row no-gutters">
+                  <div class="row no-gutters align-items-start">
                     <div class="col-auto card-col card-img_wrap">
                       <div class="card-row_elem card-tab">3d</div><img class="card-img" src="img/today/2.jpg" alt="Путешествие из Парижа"/>
                       <div class="card-rating card-rating--warning">
@@ -200,7 +200,7 @@
                     <div class="col card-col card-text_wrap">
                       <div class="row justify-content-between no-gutters">
                         <h3 class="card-title section-title col-auto card-col">
-                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Король лев</span>
+                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Путешествие из Парижа</span>
                             <div class="card-title_hidden d-md-none"></div>
                             <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
                               <div class="icon-bg"></div>
@@ -233,7 +233,7 @@
                           </ul>
                         </div>
                         <div class="col">
-                          <h4 class="card-subtitle"><span>2019, Боевик, драма, биография</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span></h4>
+                          <h4 class="card-subtitle"><span>2015, комедия</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span></h4>
                           <div class="list-group list-group-horizontal d-none d-md-flex card-categories"></div>
                           <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
                           <div class="card-text card-text--short">Фильм, 120 мин. Великобритания</div>
@@ -265,7 +265,7 @@
               </article>
               <article class="col px-md-0 card" :class="cardModifClass">
                 <div class="card-body">
-                  <div class="row no-gutters">
+                  <div class="row no-gutters align-items-start">
                     <div class="col-auto card-col card-img_wrap">
                       <div class="card-row_elem card-tab">3d</div><img class="card-img" src="img/today/3.jpg" alt="Побудь в моей шкуре"/>
                       <div class="card-rating card-rating--danger">
@@ -277,7 +277,7 @@
                     <div class="col card-col card-text_wrap">
                       <div class="row justify-content-between no-gutters">
                         <h3 class="card-title section-title col-auto card-col">
-                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Король лев</span>
+                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Побудь в моей шкуре</span>
                             <div class="card-title_hidden d-md-none"></div>
                             <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
                               <div class="icon-bg"></div>
@@ -310,7 +310,7 @@
                           </ul>
                         </div>
                         <div class="col">
-                          <h4 class="card-subtitle"><span>2019, Боевик, драма, биография</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span></h4>
+                          <h4 class="card-subtitle"><span>2014, фантастика</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span></h4>
                           <div class="list-group list-group-horizontal d-none d-md-flex card-categories"></div>
                           <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
                           <div class="card-text card-text--short">Фильм, 120 мин. Великобритания</div>
@@ -342,7 +342,7 @@
               </article>
               <article class="col px-md-0 card" :class="cardModifClass">
                 <div class="card-body">
-                  <div class="row no-gutters">
+                  <div class="row no-gutters align-items-start">
                     <div class="col-auto card-col card-img_wrap">
                       <div class="card-row_elem card-tab">3d</div><img class="card-img" src="img/today/4.jpg" alt="Матрос Железняк"/>
                       <div class="card-rating">
@@ -355,7 +355,7 @@
                     <div class="col card-col card-text_wrap">
                       <div class="row justify-content-between no-gutters">
                         <h3 class="card-title section-title col-auto card-col">
-                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Король лев</span>
+                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Матрос Железняк</span>
                             <div class="card-title_hidden d-md-none"></div>
                             <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
                               <div class="icon-bg"></div>
@@ -388,7 +388,7 @@
                           </ul>
                         </div>
                         <div class="col">
-                          <h4 class="card-subtitle"><span>2019, Боевик, драма, биография</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span></h4>
+                          <h4 class="card-subtitle"><span>1985, драма</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span></h4>
                           <div class="list-group list-group-horizontal d-none d-md-flex card-categories"></div>
                           <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
                           <div class="card-text card-text--short">Фильм, 120 мин. Великобритания</div>
@@ -420,7 +420,7 @@
               </article>
               <article class="col px-md-0 card" :class="cardModifClass">
                 <div class="card-body">
-                  <div class="row no-gutters">
+                  <div class="row no-gutters align-items-start">
                     <div class="col-auto card-col card-img_wrap">
                       <div class="card-row_elem card-tab">3d</div><img class="card-img" src="img/today/5.jpg" alt="Сила воли"/>
                       <div class="card-rating card-rating--warning">
@@ -432,7 +432,7 @@
                     <div class="col card-col card-text_wrap">
                       <div class="row justify-content-between no-gutters">
                         <h3 class="card-title section-title col-auto card-col">
-                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Король лев</span>
+                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Сила воли</span>
                             <div class="card-title_hidden d-md-none"></div>
                             <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
                               <div class="icon-bg"></div>
@@ -465,7 +465,7 @@
                           </ul>
                         </div>
                         <div class="col">
-                          <h4 class="card-subtitle"><span>2019, Боевик, драма, биография</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span></h4>
+                          <h4 class="card-subtitle"><span>2016, драма</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span></h4>
                           <div class="list-group list-group-horizontal d-none d-md-flex card-categories"></div>
                           <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
                           <div class="card-text card-text--short">Фильм, 120 мин. Великобритания</div>
@@ -497,7 +497,7 @@
               </article>
               <article class="col px-md-0 card" :class="cardModifClass">
                 <div class="card-body">
-                  <div class="row no-gutters">
+                  <div class="row no-gutters align-items-start">
                     <div class="col-auto card-col card-img_wrap">
                       <div class="card-row_elem card-tab">3d</div><img class="card-img" src="img/today/1.jpg" alt="Бесконечно белый медведь"/>
                       <div class="card-rating">
@@ -510,7 +510,7 @@
                     <div class="col card-col card-text_wrap">
                       <div class="row justify-content-between no-gutters">
                         <h3 class="card-title section-title col-auto card-col">
-                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Король лев</span>
+                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Бесконечно белый медведь</span>
                             <div class="card-title_hidden d-md-none"></div>
                             <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
                               <div class="icon-bg"></div>
@@ -543,7 +543,7 @@
                           </ul>
                         </div>
                         <div class="col">
-                          <h4 class="card-subtitle"><span>2019, Боевик, драма, биография</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span></h4>
+                          <h4 class="card-subtitle"><span>2015, комедия</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span></h4>
                           <div class="list-group list-group-horizontal d-none d-md-flex card-categories"></div>
                           <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
                           <div class="card-text card-text--short">Фильм, 120 мин. Великобритания</div>
@@ -575,7 +575,7 @@
               </article>
               <article class="col px-md-0 card" :class="cardModifClass">
                 <div class="card-body">
-                  <div class="row no-gutters">
+                  <div class="row no-gutters align-items-start">
                     <div class="col-auto card-col card-img_wrap">
                       <div class="card-row_elem card-tab">3d</div><img class="card-img" src="img/today/2.jpg" alt="Путешествие из Парижа"/>
                       <div class="card-rating card-rating--warning">
@@ -587,7 +587,7 @@
                     <div class="col card-col card-text_wrap">
                       <div class="row justify-content-between no-gutters">
                         <h3 class="card-title section-title col-auto card-col">
-                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Король лев</span>
+                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Путешествие из Парижа</span>
                             <div class="card-title_hidden d-md-none"></div>
                             <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
                               <div class="icon-bg"></div>
@@ -620,7 +620,7 @@
                           </ul>
                         </div>
                         <div class="col">
-                          <h4 class="card-subtitle"><span>2019, Боевик, драма, биография</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span></h4>
+                          <h4 class="card-subtitle"><span>2015, комедия</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span></h4>
                           <div class="list-group list-group-horizontal d-none d-md-flex card-categories"></div>
                           <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
                           <div class="card-text card-text--short">Фильм, 120 мин. Великобритания</div>
@@ -652,7 +652,7 @@
               </article>
               <article class="col px-md-0 card" :class="cardModifClass">
                 <div class="card-body">
-                  <div class="row no-gutters">
+                  <div class="row no-gutters align-items-start">
                     <div class="col-auto card-col card-img_wrap">
                       <div class="card-row_elem card-tab">3d</div><img class="card-img" src="img/today/3.jpg" alt="Побудь в моей шкуре"/>
                       <div class="card-rating card-rating--danger">
@@ -664,7 +664,7 @@
                     <div class="col card-col card-text_wrap">
                       <div class="row justify-content-between no-gutters">
                         <h3 class="card-title section-title col-auto card-col">
-                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Король лев</span>
+                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Побудь в моей шкуре</span>
                             <div class="card-title_hidden d-md-none"></div>
                             <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
                               <div class="icon-bg"></div>
@@ -697,7 +697,7 @@
                           </ul>
                         </div>
                         <div class="col">
-                          <h4 class="card-subtitle"><span>2019, Боевик, драма, биография</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span></h4>
+                          <h4 class="card-subtitle"><span>2014, фантастика</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span></h4>
                           <div class="list-group list-group-horizontal d-none d-md-flex card-categories"></div>
                           <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
                           <div class="card-text card-text--short">Фильм, 120 мин. Великобритания</div>
@@ -729,7 +729,7 @@
               </article>
               <article class="col px-md-0 card" :class="cardModifClass">
                 <div class="card-body">
-                  <div class="row no-gutters">
+                  <div class="row no-gutters align-items-start">
                     <div class="col-auto card-col card-img_wrap">
                       <div class="card-row_elem card-tab">3d</div><img class="card-img" src="img/today/4.jpg" alt="Матрос Железняк"/>
                       <div class="card-rating">
@@ -742,7 +742,7 @@
                     <div class="col card-col card-text_wrap">
                       <div class="row justify-content-between no-gutters">
                         <h3 class="card-title section-title col-auto card-col">
-                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Король лев</span>
+                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Матрос Железняк</span>
                             <div class="card-title_hidden d-md-none"></div>
                             <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
                               <div class="icon-bg"></div>
@@ -775,7 +775,7 @@
                           </ul>
                         </div>
                         <div class="col">
-                          <h4 class="card-subtitle"><span>2019, Боевик, драма, биография</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span></h4>
+                          <h4 class="card-subtitle"><span>1985, драма</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span></h4>
                           <div class="list-group list-group-horizontal d-none d-md-flex card-categories"></div>
                           <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
                           <div class="card-text card-text--short">Фильм, 120 мин. Великобритания</div>
@@ -807,7 +807,7 @@
               </article>
               <article class="col px-md-0 card" :class="cardModifClass">
                 <div class="card-body">
-                  <div class="row no-gutters">
+                  <div class="row no-gutters align-items-start">
                     <div class="col-auto card-col card-img_wrap">
                       <div class="card-row_elem card-tab">3d</div><img class="card-img" src="img/today/5.jpg" alt="Сила воли"/>
                       <div class="card-rating card-rating--warning">
@@ -819,7 +819,7 @@
                     <div class="col card-col card-text_wrap">
                       <div class="row justify-content-between no-gutters">
                         <h3 class="card-title section-title col-auto card-col">
-                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Король лев</span>
+                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Сила воли</span>
                             <div class="card-title_hidden d-md-none"></div>
                             <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
                               <div class="icon-bg"></div>
@@ -852,7 +852,7 @@
                           </ul>
                         </div>
                         <div class="col">
-                          <h4 class="card-subtitle"><span>2019, Боевик, драма, биография</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span></h4>
+                          <h4 class="card-subtitle"><span>2016, драма</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span></h4>
                           <div class="list-group list-group-horizontal d-none d-md-flex card-categories"></div>
                           <div class="list-group list-group-horizontal d-none card-categories"><span class="badge"></span></div>
                           <div class="card-text card-text--short">Фильм, 120 мин. Великобритания</div>

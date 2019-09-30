@@ -1,6 +1,7 @@
+@import "mixins";
+@import "fonts";
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
-@import "mixins";
 @import "template/import";
 
 body {
@@ -73,7 +74,12 @@ body {
 
   &-container {
     justify-content: space-around;
-    // @include padding("* * 37px 27px");
+
+    &--blocks {
+      // @include padding("* * 37px 27px");
+      @include padding("* * #{map-get($spacers, 37)} #{map-get($spacers, 27)}");
+      background-color: $white;
+    }
   }
 }
 
@@ -529,4 +535,4 @@ body {
 
 // @include pixelPerfect("mobile-blocks.jpg");
 // @include pixelPerfect("mobile-rows.jpg");
-// @include pixelPerfect("desktop-blocks.jpg");
+@include pixelPerfect("desktop-blocks.jpg");
