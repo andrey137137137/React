@@ -6,29 +6,6 @@
   .icon {
     $block: &;
 
-    //   &-filter {
-    //     background: url(../img/sprite/filter/gray.png) center center no-repeat;
-    //   }
-
-    //   &-sort {
-    //     @include border("* * 2px / * * solid / *");
-    //     background-image: none;
-
-    //     &:before,
-    //     &:after {
-    //       @include border("2px * * / solid * * / *");
-    //       padding-top: 28.57142857142857%;
-    //     }
-
-    //     &:before {
-    //       width: 50%;
-    //     }
-
-    //     &:after {
-    //       width: 75%;
-    //     }
-    //   }
-
     &--round {
       padding: 0;
 
@@ -59,11 +36,10 @@
       }
     }
 
-    &-container {
-      &--light_bg {
-        border: $border-color solid $border-width;
-        border-radius: $border-radius;
-      }
+    &-white_bg {
+      border: $border-color solid $border-width;
+      border-radius: $border-radius;
+      box-shadow: 0 1px 0 rgba($black, 0.09);
     }
   }
 
@@ -81,24 +57,227 @@
       // justify-content: flex-start;
 
       &--blocks {
+        margin-bottom: 14px;
         // @include padding("4px 19px 14px 23px");
         @include padding(
           "#{map-get($spacers, 4)} #{map-get($spacers, 19)} #{map-get($spacers, 14)} #{map-get($spacers, 23)}"
         );
+
+        .card {
+          margin-bottom: 0;
+          // @include padding("2px 0 *");
+          @include padding("#{map-get($spacers, 2)} 0 *");
+          // min-width: 149px;
+
+          &-body {
+            // padding-bottom: 8px;
+            padding-bottom: map-get($spacers, 8);
+          }
+
+          &-img {
+            // padding-right: 11px;
+            padding-right: map-get($spacers, 11);
+            max-width: 133px;
+          }
+
+          &-rating {
+            // @include position("-2px -6px * *");
+            @include position(
+              "-#{map-get($spacers, 2)} -#{map-get($spacers, 6)} * *"
+            );
+          }
+
+          &-title {
+            // margin-top: 7px;
+            margin-top: map-get($spacers, 7);
+            font-weight: 500;
+            // line-height: 20px;
+            line-height: map-get($spacers, 20);
+          }
+
+          &-subtitle {
+            // height: 26px;
+            height: map-get($spacers, 26);
+          }
+        }
       }
 
       &--rows {
         .card {
+          margin-bottom: $grid-gutter-width;
+          // @include padding("5px * * 11px");
+          @include padding(
+            "#{map-get($spacers, 5)} * * #{map-get($spacers, 11)}"
+          );
+          min-height: 214px;
+
+          &-body {
+            // @include padding("* 14px 9px 19px");
+            @include padding(
+              "* #{map-get($spacers, 14)} #{map-get($spacers, 9)} #{map-get($spacers, 19)}"
+            );
+          }
+
+          &-rating {
+            // right: -8px;
+            right: -#{map-get($spacers, 8)};
+          }
+
+          &-review {
+            // right: -5px;
+            right: -#{map-get($spacers, 5)};
+          }
+
+          &-text_wrap {
+            align-self: stretch;
+            // @include padding("8px * * 24px");
+            @include padding(
+              "#{map-get($spacers, 8)} * * #{map-get($spacers, 24)}"
+            );
+
+            &_row {
+              position: relative;
+              align-content: start;
+              height: 100%;
+            }
+          }
+
+          &-title {
+            border-bottom-width: 0;
+            padding-bottom: 0;
+            width: auto;
+            // font-size: 22px/1.5;
+            font-size: #{map-get($spacers, 22)}/ 1.5;
+
+            &_row {
+              align-items: center;
+            }
+
+            &_text {
+              // padding-right: 14px;
+              padding-right: map-get($spacers, 14);
+            }
+
+            &_mark {
+              // padding-top: 4px;
+              padding-top: map-get($spacers, 4);
+
+              .icon-symbol {
+                // size: 15px;
+                size: map-get($spacers, 15);
+                fill: #d6d6d6;
+              }
+            }
+          }
+
           &-info_wrap,
+          &-separator,
           &-text {
             display: block;
           }
 
-          &-text--short,
-          &-link,
-          &-footer {
-            display: none;
+          &-info {
+            // @include padding("* 6px");
+            @include padding("* #{map-get($spacers, 6)}");
+
+            &_item {
+              // @include padding("8px  * 0 8px");
+              @include padding(
+                "#{map-get($spacers, 8)} * 0 #{map-get($spacers, 8)}"
+              );
+
+              &:first-child {
+                // padding-right: 7px;
+                padding-right: map-get($spacers, 7);
+              }
+            }
+
+            &_icon {
+              fill: $gray-light;
+
+              &--comment {
+                // margin-right: 8px;
+                margin-right: map-get($spacers, 8);
+              }
+            }
+
+            &_number {
+              font-size: $font-size-base;
+              color: $gray-200;
+            }
           }
+
+          &-categories_wrap {
+            width: 44%;
+            max-width: 44%;
+          }
+
+          &-subtitle {
+            display: flex;
+            // align-items: center;
+            // padding-top: 1px;
+            padding-top: map-get($spacers, 1);
+            // height: 24px;
+            height: map-get($spacers, 24);
+
+            &_badge {
+              align-self: center;
+              // @include margin("* 8px * 0");
+              @include margin("* #{map-get($spacers, 8)} * 0");
+              // border-radius: 9px;
+              border-radius: map-get($spacers, 9);
+              // @include padding("* 6px * 9px");
+              @include padding(
+                "* #{map-get($spacers, 6)} * #{map-get($spacers, 9)}"
+              );
+              // font-size: 15px/19px;
+              font-size: #{map-get($spacers, 15)}/#{map-get($spacers, 19)};
+              background-color: #bfbfbf;
+            }
+          }
+
+          &-categories {
+            display: flex;
+            // margin-left: -3px;
+            margin-left: -#{map-get($spacers, 3)};
+
+            &_item {
+              margin-right: 1px;
+              // @include padding("15px 0 *");
+              @include padding("#{map-get($spacers, 15)} 0 *");
+              // width: 36px;
+              width: map-get($spacers, 36);
+            }
+
+            &_icon {
+              // @include padding("* 3px");
+              @include padding("* #{map-get($spacers, 3)}");
+              // size: 100% 30px;
+              size: 100% map-get($spacers, 30);
+            }
+
+            &_badge {
+              display: block;
+              // padding-top: 1px;
+              padding-top: map-get($spacers, 1);
+              text-align: center;
+              color: $gray-200;
+            }
+          }
+
+          &-text {
+            @include position("absolute * 129px 0 *");
+            // width: 53%;
+            width: 190px;
+            font-size: 17px/25px;
+            color: $gray-500;
+          }
+
+          // &-text--short,
+          // &-link,
+          // &-footer {
+          //   display: none;
+          // }
         }
       }
     }
@@ -120,7 +299,6 @@
     &-text {
       // @include padding("* 10px");
       @include padding("* #{map-get($spacers, 10)}");
-      // line-height: 60px;
     }
 
     &-icon {
@@ -138,8 +316,6 @@
 
       &--rounded {
         @include margin("* 0");
-        // border-radius: 0;
-        // background-color: rgba(0, 0, 0, 0);
 
         .icon-symbol {
           fill: $gray-200;
@@ -154,40 +330,15 @@
   }
 
   .card {
-    $block: &;
-
-    margin-bottom: 0;
-    // @include padding("2px 7px *");
-    padding-top: map-get($spacers, 2);
-    // min-width: 149px;
-
-    &-body {
-      // padding-bottom: 8px !important;
-      padding-bottom: map-get($spacers, 8);
-    }
-
-    &-img {
-      // padding-right: 11px;
-      padding-right: map-get($spacers, 11);
-      max-width: 133px;
-    }
-
-    &-rating {
-      // @include position("6px 2px * *");
-      // @include position("#{map-get($spacers, 6)} #{map-get($spacers, 2)} * *");
-      @include position(
-        "-#{map-get($spacers, 2)} -#{map-get($spacers, 6)} * *"
-      );
-    }
-
     &-title {
-      // margin-top: 7px;
-      margin-top: map-get($spacers, 7);
-      font-weight: 500;
       height: auto;
-      // line-height: 20px;
-      line-height: map-get($spacers, 20);
     }
+
+    // &-subtitle {
+    //   &_gradient_hidden {
+    //     display: block;
+    //   }
+    // }
   }
 
   .page {

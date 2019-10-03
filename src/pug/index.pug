@@ -1,7 +1,7 @@
 include mixins
 
 doctype html
-html(lang="en")
+html(lang="ru")
 	head
 		meta(charset="UTF-8")
 		meta(content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport")
@@ -19,7 +19,7 @@ html(lang="en")
 
 		#app
 			header.section.header.mb-12.mb-md-13
-				nav.navbar.navbar-dark
+				nav.navbar.navbar-dark.pt-10.pr-15.pl-18
 					.container
 						.row
 							button.navbar-toggler.d-md-none(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
@@ -38,14 +38,19 @@ html(lang="en")
 										//- a.input-group-text.icon.search-icon(href="") &gt;
 										a.input-group-text(href="")
 											+svg("sliders-h", "search-icon")
+							//- a.navbar-brand.order-md-first(href="")
+							//- 	h1.d-md-flex.section-title.section-title--main.logo
+							//- 		span.logo-text.logo-text--light Кино
+							//- 		b.logo-text.logo-text--dark Цензор
 							a.navbar-brand.order-md-first(href="")
-								h1.d-md-flex.section-title.section-title--main.logo
-									span.logo-text.logo-text--light Кино
-									b.logo-text.logo-text--dark Цензор
+								+svg("cinema", "navbar-brand_icon navbar-brand_icon--cinema")
+								+svg("censor", "navbar-brand_icon navbar-brand_icon--censor")
 							.navbar-text.letters
-								.icon.icon-letter
-									.letters-number
-								.icon.icon-square_check
+								.icon.letters-icon
+									.icon-symbol_wrap
+										+svg("envelope", "icon-symbol")
+									.badge.letters-number
+								+svg("check-square", "letters-icon")
 							.navbar-text.user
 								.user-status_wrap
 									.user-text
@@ -93,7 +98,7 @@ html(lang="en")
 											//- span.icon.icon-squares.filter-icon.filter-icon--margined.filter-icon--active
 											+svg("th-large", "filter-icon filter-icon--margined")
 						+card-container
-						.row.mt-20.pl-18.px-md-0.mt-md-14.main-row.pagination-container
+						.row.pl-18.px-md-0.main-row.pagination-container
 							ul.col-auto.pagination.mb-9.pr-19.pr-md-25
 								- for (var i = 0; i < 7; i++)
 									case i
@@ -120,15 +125,12 @@ html(lang="en")
 											li.page-item
 												a.page-link(href="")= i
 							.col-auto.px-0.page-status Страница 3 из 7
-							//- svg
-							//- 	polygon(points="0,40 35,30 50,0 65,30 100,40 75,60 85,100 50,80 15,100 25,60"  style="fill: #66c52d; stroke: orange; stroke-width: 5; stroke-linejoin: round;")
-							//- +svg("star")
 					aside.col.d-none.d-lg-block.px-0.section.sidebar
-						.container.shadow-sm.section-container.section-container--light_bg.sidebar-container
+						.container.section-container.sidebar-container.section-white_bg
 
 			#pixel_perfect
 
 		script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
 		script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
-		<script src="js/script.js"></script>
+		script(src="js/script.js")

@@ -1,15 +1,20 @@
 var app = new Vue({
   el: "#app",
   data: {
-    byRows: false
+    byRows: true
   },
   computed: {
     containerClasses: function() {
       return {
-        "main-container--rows": this.byRows,
-        "shadow-sm": !this.byRows,
-        "section-container--light_bg": !this.byRows,
-        "main-container--blocks": !this.byRows
+        "main-container--blocks": !this.byRows,
+        "section-white_bg": !this.byRows,
+        "main-container--rows": this.byRows
+      };
+    },
+    cardClasses: function() {
+      return {
+        col: !this.byRows,
+        "section-white_bg": this.byRows
       };
     }
   }

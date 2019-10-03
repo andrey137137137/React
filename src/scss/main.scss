@@ -14,14 +14,41 @@ body {
   background-color: $gray-900;
 }
 
-.navbar-toggler {
-  border-width: 0;
+.navbar {
+  &-toggler {
+    border-width: 0;
 
-  &-icon {
-    background-image: none !important;
-    // size: 24px 19px;
-    size: map-get($spacers, 24) map-get($spacers, 19);
-    fill: $gray-300;
+    &-icon {
+      background-image: none !important;
+      // size: 24px 19px;
+      size: map-get($spacers, 24) map-get($spacers, 19);
+      fill: $gray-300;
+    }
+  }
+
+  &-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    // size: 56px 36px;
+    size: map-get($spacers, 56) map-get($spacers, 36);
+    overflow: hidden;
+
+    &_icon {
+      display: block;
+      size: 100% auto;
+
+      &--cinema {
+        height: 10px;
+        fill: $white;
+      }
+
+      &--censor {
+        height: 21px;
+        fill: $green;
+      }
+    }
   }
 }
 
@@ -34,24 +61,10 @@ body {
   }
 }
 
-.logo {
-  line-height: $navbar-brand-height;
-
-  &-text {
-    display: block;
-    // padding-top: 6px;
-
-    &--light {
-      // @include padding("* 7px 6px");
-      @include padding("* 7px * *");
-      color: $white;
-    }
-
-    &--dark {
-      // @include padding("* 5px 12px");
-      @include padding("* 5px *");
-      color: $gray-900 $green;
-    }
+.letters {
+  &-icon {
+    size: 29px 25px;
+    fill: $gray-300;
   }
 }
 
@@ -76,6 +89,7 @@ body {
     justify-content: space-around;
 
     &--blocks {
+      margin-bottom: 20px;
       // @include padding("* * 37px 27px");
       @include padding("* * #{map-get($spacers, 37)} #{map-get($spacers, 27)}");
       background-color: $white;
@@ -89,6 +103,7 @@ body {
         flex-basis: auto;
         // margin-bottom: 20px;
         margin-bottom: map-get($spacers, 20);
+        border-radius: 0;
         // @include padding("#{map-get($spacers, 9)} * * #{map-get($spacers, 11)}");
         // @include padding("9px 0 *");
         @include padding("#{map-get($spacers, 9)} 0 *");
@@ -102,13 +117,6 @@ body {
           );
         }
 
-        &-text_wrap {
-          // @include padding("11px * * 3px");
-          @include padding(
-            "#{map-get($spacers, 11)} * * #{map-get($spacers, 3)}"
-          );
-        }
-
         &-tab {
           // @include position("absolute 4px * * 0");
           @include position("absolute #{map-get($spacers, 4)} * * 0");
@@ -116,6 +124,7 @@ body {
           border-top-left-radius: map-get($spacers, 3);
           // border-top-right-radius: 3px;
           border-top-right-radius: map-get($spacers, 3);
+          // line-height: 17px;
           line-height: $lead-font-size;
           // width: 27px;
           width: map-get($spacers, 27);
@@ -124,9 +133,16 @@ body {
         }
 
         &-review {
-          // @include position("* 5px 11px *");
+          // @include position("absolute * 5px -13px *");
           @include position(
-            "* #{map-get($spacers, 5)} #{map-get($spacers, 11)} *"
+            "absolute * #{map-get($spacers, 5)} -#{map-get($spacers, 13)} *"
+          );
+        }
+
+        &-text_wrap {
+          // @include padding("11px * * 3px");
+          @include padding(
+            "#{map-get($spacers, 11)} * * #{map-get($spacers, 3)}"
           );
         }
 
@@ -151,6 +167,7 @@ body {
           // padding-bottom: 13px;
           padding-bottom: map-get($spacers, 13);
           height: auto;
+          // font-size: 20px/1.4;
           font-size: #{map-get($spacers, 20)}/ 1.4;
 
           &_row {
@@ -174,25 +191,28 @@ body {
             }
           }
 
-          &_hidden {
-            display: none;
-          }
-
           &_translate {
+            // font-size: 17px/21px;
             font-size: #{$lead-font-size}/#{map-get($spacers, 21)};
             color: $gray-500;
           }
         }
 
+        &-text_gradient_hidden {
+          display: none;
+        }
+
+        &-list_item {
+          border-style: none;
+        }
+
         &-info {
-          // justify-content: space-between;
           // @include padding("* 12px");
           @include padding("* #{map-get($spacers, 12)}");
 
           &_item {
             display: flex;
             align-items: center;
-            border-style: none;
             // @include padding("* 10px");
             @include padding("* #{map-get($spacers, 10)}");
           }
@@ -217,6 +237,7 @@ body {
           }
 
           &_number {
+            // font-size: 17px;
             font-size: $lead-font-size;
             color: $gray-500;
           }
@@ -230,6 +251,8 @@ body {
         }
 
         &-subtitle {
+          height: auto;
+
           &_badge {
             // margin-left: 9px;
             margin-left: map-get($spacers, 9);
@@ -428,13 +451,6 @@ body {
   }
 
   &-review {
-    // @include position("absolute 141px 14px * *");
-    // @include position(
-    //   "absolute #{map-get($spacers, 50) * 2 + map-get($spacers, 41)} #{map-get($spacers, 14)} * *"
-    // );
-    // @include position(
-    //   "absolute #{map-get($spacers, 50) * 2 + map-get($spacers, 33)} #{map-get($spacers, 6)} * *"
-    // );
     @include position(
       "absolute * #{map-get($spacers, 6)} -#{map-get($spacers, 9)} *"
     );
@@ -443,32 +459,44 @@ body {
     background-image: url(../img/sprite/review.png);
   }
 
+  &-text_wrap_row {
+    justify-content: space-between;
+  }
+
+  &-title,
+  &-subtitle {
+    overflow: hidden;
+  }
+
   &-title {
     position: relative;
     // margin-top: 10px;
     margin-top: map-get($spacers, 10);
-    overflow: hidden;
     // height: 21px;
     size: 100% map-get($spacers, 21);
+  }
 
-    &_hidden {
-      @include position("absolute 0 0 * *");
-      // size: 24px;
-      size: map-get($spacers, 24);
-      background: linear-gradient(to right, rgba(0, 0, 0, 0), $white 30%);
-    }
+  &-text_gradient_hidden {
+    @include position("absolute 0 0 * *");
+    // size: 24px;
+    size: map-get($spacers, 24) 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), $white 30%);
   }
 
   &-row_elem,
   &-info_wrap,
+  &-separator,
+  &-categories,
   &-text {
     display: none;
   }
 
   &-subtitle {
     // display: flex;
-    // line-height: 1.857142857142857;
+    // line-height: 26px;
     line-height: map-get($spacers, 26);
+    // height: 26px;
+    height: map-get($spacers, 26);
   }
 }
 
@@ -538,7 +566,4 @@ body {
 }
 
 @import "adaptive/import";
-
-// @include pixelPerfect("mobile-blocks.jpg");
-// @include pixelPerfect("mobile-rows.jpg");
-// @include pixelPerfect("desktop-blocks.jpg");
+@import "pixel-perfect";

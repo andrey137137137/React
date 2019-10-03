@@ -5,6 +5,23 @@
   line-height: 0;
   overflow: hidden;
 
+  &,
+  &-symbol_wrap {
+    position: relative;
+  }
+
+  &-symbol_wrap,
+  &-symbol {
+    size: 100%;
+  }
+
+  &-symbol_wrap {
+    z-index: 1;
+    // line-height: 14px;
+    // line-height: map-get($spacers, 14);
+    line-height: inherit;
+  }
+
   // &:before,
   // &:after {
   //   display: block;
@@ -100,5 +117,17 @@
       // line-height: map-get($spacers, 14);
       line-height: inherit;
     }
+  }
+
+  &-success {
+    fill: map-get($theme-colors, "success");
+  }
+
+  &-warning {
+    fill: map-get($theme-colors, "warning");
+  }
+
+  &-danger {
+    fill: map-get($theme-colors, "danger");
   }
 }

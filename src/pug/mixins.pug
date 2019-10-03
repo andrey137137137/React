@@ -26,62 +26,115 @@ mixin card-img(img, options)
     .card-review
 
 mixin card-title(title, classes="", marked=false)
-  h3.card-title.section-title(class=classes)
+  h3.col-auto.card-title.section-title.card-col
     .row.no-gutters.card-title_row
       span.col-auto.card-title_text= title
       //- span.col-auto.card-title_text Король лев
-      .card-title_hidden.d-md-none
       .col-auto.icon.icon--round.card-row_elem.card-row_elem--d_inline_block.card-title_mark
         .icon-bg
         .icon-symbol_wrap
           +svg("bookmark", "icon-symbol")
-    .card-row_elem.card-title_translate The Lion King
+    .d-md-none.card-row_elem.card-title_translate The Lion King
+    .d-md-none.card-text_gradient_hidden
 
 mixin card-info(classes="")
   ul.list-group.list-group-horizontal.card-info(class=classes)
-    li.list-group-item.card-info_item
-      +svg("star-empty", "card-row_elem card-icon card-info_icon")
+    li.list-group-item.card-list_item.card-info_item
+      +svg("star-empty", "card-icon card-info_icon")
       span.card-info_number 392
-    li.list-group-item.card-info_item
-      +svg("layer-group", "card-row_elem card-icon card-info_icon card-info_icon--review")
+    li.list-group-item.card-list_item.card-info_item
+      +svg("layer-group", "card-icon card-info_icon card-info_icon--review")
       span.card-info_number 47
-    li.list-group-item.card-info_item
-      +svg("comment", "card-row_elem card-icon card-info_icon card-info_icon--comment")
+    li.list-group-item.card-list_item.card-info_item
+      +svg("comment", "card-icon card-info_icon card-info_icon--comment")
       span.card-info_number 578
 
 mixin card-subtitle(date, genre)
-  //- - var text = card.isRow ? "2019, Боевик, драма, биография" : date + ", " + genre
-
   h4.card-subtitle
-    span #{date}, #{genre}
     //- span 2019, Боевик, драма, биография
+    //- span #{date}, #{genre}
+    span  Who Is Harry Kellerman and Why Is He Saying Those Terrible Things About Me?
     span.badge.card-row_elem.card-row_elem--d_inline_block.card-subtitle_badge.order-md-first 16+
+    .d-md-block.card-text_gradient_hidden.card-subtitle_gradient_hidden
+
+mixin card-categories(items)
+  -
+    var categoryItem = {
+      icon: "",
+      success: false,
+      warning: false,
+      danger: false,
+      value: 0
+    }
+
+  ul.list-group.list-group-horizontal.card-categories
+    each item, index in items
+      li.list-group-item.card-list_item.card-categories_item
+        if index > 0
+          if item < 3
+            - categoryItem.success = true
+          else if item < 8
+            - categoryItem.warning = true
+          else
+            - categoryItem.danger = true
+          if index > 1 && index < 5
+            if item < 3
+              - categoryItem.value = "Нет"
+            else
+              - categoryItem.value = "Есть"
+          else
+            - categoryItem.value = item
+        case index
+          when 0
+            - categoryItem.icon = "libra-square"
+            if item.positive == "6,2"
+              - categoryItem.success = true
+            else
+              - categoryItem.warning = true
+          when 1
+            - categoryItem.icon = "cup-square"
+          when 2
+            - categoryItem.icon = "bottle-square"
+          when 3
+            - categoryItem.icon = "strawberry-square"
+          when 4
+            - categoryItem.icon = "toilet-paper-square"
+          when 5
+            - categoryItem.icon = "knuckle-square"
+          when 6
+            - categoryItem.icon = "bullhorn-square"
+        +svg(categoryItem.icon, {"icon": true, "card-categories_icon": true, "icon-success": categoryItem.success, "icon-warning": categoryItem.warning, "icon-danger": categoryItem.danger})
+        case index
+          when 0
+            span.card-categories_badge
+              span.text-success= item.positive
+              | /
+              span.text-danger= item.negative
+          default
+            span.card-categories_badge(class={"text-success": categoryItem.success, "text-warning": categoryItem.warning, "text-danger": categoryItem.danger})= categoryItem.value
+      - categoryItem.success = false
+      - categoryItem.warning = false
+      - categoryItem.danger = false
 
 mixin card(img, options)
-  //- article.col.px-md-0.card(:class="cardModifClass")
-  article.col.px-md-0.card
+  article.card(:class="cardClasses")
     .card-body
       .row.no-gutters.align-items-start
         .col-auto.card-col.card-img_wrap
           +card-img(img, options)
         .col.card-col.card-text_wrap
-          .row.justify-content-between.no-gutters
-            //- +card-title(options.title, "col-12 col-md-8")
-            +card-title(options.title, "col-auto card-col")
-            //- +card-info("d-none d-md-flex")
+          .row.no-gutters.card-text_wrap_row
+            +card-title(options.title)
             .col-auto.card-info_wrap
               +card-info
-            //- .w-100
-            .col
+            .w-100.card-separator
+            .col.card-categories_wrap
               +card-subtitle(options.date, options.genre)
-              .list-group.list-group-horizontal.d-none.d-md-flex.card-categories
-              .list-group.list-group-horizontal.d-none.card-categories
-                span.badge
-              .card-text.card-text--short Фильм, 120 мин. Великобритания
-            .col-6.card-text= options.text
-      a.btn.btn-link.card-row_elem.card-link(href="") Подробнее...
-    //- .card-footer.d-md-none
-    .card-row_elem.card-footer
+              +card-categories(options.reviews)
+              .d-md-none.card-text.card-text--short Фильм, 120 мин. Великобритания
+            .col-auto.card-text= options.text
+      a.btn.btn-link.d-md-none.card-row_elem.card-link(href="") Подробнее...
+    .d-md-none.card-row_elem.card-footer
       +card-info
 
 mixin display-cards(items)
@@ -89,54 +142,6 @@ mixin display-cards(items)
     +card((index + 1), item)
 
 mixin card-container
-  //- - var classes = ""
-  -
-    var movies = [
-      {
-        title: "Бесконечно белый медведь",
-        date: 2015,
-        genre: "комедия",
-        status: 9.3,
-        text: "2015, Фильм, 106 мин. Боевик, драма, биография Китай, США, Канада Режисёр: Джеймс Кэмерон"
-      },
-      {
-        title: "Путешествие из Парижа",
-        date: 2015,
-        genre: "комедия",
-        status: 5.8,
-        text: "2011, Фильм, 120 мин. Драма, военный Великобритания, Франция Режисёр: Стивен Спилберг"
-      },
-      {
-        title: "Побудь в моей шкуре",
-        date: 2014,
-        genre: "фантастика",
-        status: 2.4,
-        text: ""
-      },
-      {
-        title: "Матрос Железняк",
-        date: 1985,
-        genre: "драма",
-        status: 9.3,
-        text: ""
-      },
-      {
-        title: "Сила воли",
-        date: 2016,
-        genre: "драма",
-        status: 5.8,
-        text: ""
-      }
-    ]
-
-  //- - card.isRow = byRows
-
-  //- if card.isRow
-  //-   - classes = "p-0"
-  //- else
-  //-   - classes = "pb-37 pl-27 pt-md-4 pr-md-19 pb-md-14 pl-md-23 shadow-sm section-container--light_bg"
-
   main.row.mr-lg-0.section-container.main-row.main-container(:class="containerClasses")
-    //- .card-group
     +display-cards(movies)
     +display-cards(movies)

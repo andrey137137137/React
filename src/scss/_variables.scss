@@ -30,6 +30,7 @@ $enable-shadows: true;
 // You can add more entries to the $spacers map, should you need more variation.
 
 $spacer: 1rem;
+
 $spacers: (
   0: 0,
   1: (
@@ -225,6 +226,7 @@ $body-color: $gray-400;
 
 $link-color: $green;
 // $link-hover-color: darken($link-color, 15%) !default;
+
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
 // $emphasized-link-hover-darken-percentage: 15% !default;
 
@@ -272,8 +274,8 @@ $border-radius: 5px;
 $border-radius-lg: $border-radius + 2px;
 $border-radius-sm: $border-radius - 2px;
 
-$box-shadow-sm: 0 1px 0 rgba($black, 0.09);
-// $box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
+// $box-shadow-sm: 0 1px 0 rgba($black, 0.09);
+$box-shadow: 0 1px 0 rgba($black, 0.09);
 // $box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
 
 // Typography
@@ -340,7 +342,7 @@ $pagination-hover-border-color: $pagination-active-border-color;
 $card-spacer-y: 0;
 $card-spacer-x: 0.5rem;
 $card-border-width: 0;
-// $card-border-radius: $border-radius !default;
+$card-border-radius: 0;
 // $card-border-color: rgba($black, 0.125) !default;
 // $card-inner-border-radius: calc(
 //   #{$card-border-radius} - #{$card-border-width}
