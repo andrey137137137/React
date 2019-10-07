@@ -117,17 +117,21 @@
       // line-height: map-get($spacers, 14);
       line-height: inherit;
     }
+
+    #{$block}-symbol {
+      fill: inherit;
+    }
   }
 
   &-success {
-    fill: map-get($theme-colors, "success");
+    fill: map-get($theme-colors, "success") !important;
   }
 
   &-warning {
-    fill: map-get($theme-colors, "warning");
+    fill: map-get($theme-colors, "warning") !important;
   }
 
   &-danger {
-    fill: map-get($theme-colors, "danger");
+    fill: map-get($theme-colors, "danger") !important;
   }
 }

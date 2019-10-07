@@ -15,41 +15,41 @@
             <div class="row">
               <button class="navbar-toggler d-md-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <svg class="navbar-toggler-icon border-0">
-                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bars"></use>
+                  <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bars"></use>
                 </svg>
               </button>
               <form class="form-inline search" action="" method="post"><a class="d-md-none" href="">
                   <svg class="search-icon">
-                    <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#search"></use>
+                    <use xlink:href="svg/symbol/svg/sprite.symbol.svg#search"></use>
                   </svg></a>
                 <div class="input-group d-none d-md-flex">
                   <input class="form-control" type="text">
                   <div class="input-group-append"><a class="input-group-text" href="">
                       <svg class="search-icon">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#search"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#search"></use>
                       </svg></a><a class="input-group-text" href="">
                       <svg class="search-icon">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#sliders-h"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#sliders-h"></use>
                       </svg></a></div>
                 </div>
               </form><a class="navbar-brand order-md-first" href="">
                 <svg class="navbar-brand_icon navbar-brand_icon--cinema">
-                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#cinema"></use>
+                  <use xlink:href="svg/symbol/svg/sprite.symbol.svg#cinema"></use>
                 </svg>
                 <svg class="navbar-brand_icon navbar-brand_icon--censor">
-                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#censor"></use>
+                  <use xlink:href="svg/symbol/svg/sprite.symbol.svg#censor"></use>
                 </svg></a>
               <div class="navbar-text letters">
                 <div class="icon letters-icon">
                   <div class="icon-symbol_wrap">
                     <svg class="icon-symbol">
-                      <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#envelope"></use>
+                      <use xlink:href="svg/symbol/svg/sprite.symbol.svg#envelope"></use>
                     </svg>
                   </div>
                   <div class="badge letters-number"></div>
                 </div>
                 <svg class="letters-icon">
-                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#check-square"></use>
+                  <use xlink:href="svg/symbol/svg/sprite.symbol.svg#check-square"></use>
                 </svg>
               </div>
               <div class="navbar-text user">
@@ -98,23 +98,23 @@
                     <div class="icon-bg"></div><span class="d-none d-md-inline-block filter-text">Фильтр</span>
                     <div class="icon-symbol_wrap">
                       <svg class="p-md-0 icon-symbol filter-icon">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#filter"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#filter"></use>
                       </svg>
                     </div></a></li>
                 <li class="nav-item order-md-3 filter-item filter-item--d_flex"><a class="nav-link pl-11 py-10 pr-9 p-md-0 icon icon--round filter-icon filter-icon--rounded filter-link" href="">
                     <div class="icon-bg"></div><span class="d-none d-md-inline-block filter-text">Сортировка</span>
                     <div class="icon-symbol_wrap">
                       <svg class="p-md-0 icon-symbol filter-icon">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#sort-amount"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#sort-amount"></use>
                       </svg>
                     </div></a></li>
                 <li class="nav-item order-md-2 nav filter-item"><span class="filter-text">Вид</span>
                   <div class="filter-icons pl-1 pr-2 pl-md-4 pr-md-0"><a class="nav-link filter-link filter-link--p_0" href="" :class="{'filter-link--active': byRows}" @click.prevent="byRows=true">
                       <svg class="filter-icon filter-icon--margined">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bars"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bars"></use>
                       </svg></a><a class="nav-link filter-link filter-link--p_0" href="" :class="{'filter-link--active': !byRows}" @click.prevent="byRows=false">
                       <svg class="filter-icon filter-icon--margined">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#th-large"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#th-large"></use>
                       </svg></a></div>
                 </li>
               </ul>
@@ -123,95 +123,96 @@
               <article class="card" :class="cardClasses">
                 <div class="card-body">
                   <div class="row no-gutters align-items-start">
-                    <div class="col-auto card-col card-img_wrap">
-                      <div class="card-row_elem card-tab">3d</div><img class="card-img" src="img/today/1.jpg" alt="Бесконечно белый медведь"/>
+                    <div class="col-auto card-img_cover">
+                      <div class="card-row_elem card-tab">3d</div>
+                      <div class="card-img_wrap"><img class="card-img" src="img/today/1.jpg" alt="Бесконечно белый медведь"/></div>
                       <div class="card-rating">
                         <svg class="card-rating_star">
-                          <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
+                          <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star"></use>
                         </svg><span class="card-rating_text">9.3</span>
                       </div>
                       <div class="card-review"></div>
                     </div>
-                    <div class="col card-col card-text_wrap">
+                    <div class="col card-text_wrap">
                       <div class="row no-gutters card-text_wrap_row">
-                        <h3 class="col-auto card-title section-title card-col">
-                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Бесконечно белый медведь</span>
-                            <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
+                        <h3 class="col-auto section-title card-title">
+                          <div class="card-title_row"><span class="card-title_text">Бесконечно белый медведь</span>
+                            <div class="icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
                               <div class="icon-bg"></div>
                               <div class="icon-symbol_wrap">
                                 <svg class="icon-symbol">
-                                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
+                                  <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
                                 </svg>
                               </div>
                             </div>
                           </div>
                           <div class="d-md-none card-row_elem card-title_translate">The Lion King</div>
-                          <div class="d-md-none card-text_gradient_hidden"></div>
+                          <div class="card-text_gradient_hidden card-title_gradient_hidden"></div>
                         </h3>
                         <div class="col-auto card-info_wrap">
                           <ul class="list-group list-group-horizontal card-info">
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
                               </svg><span class="card-info_number">392</span>
                             </li>
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon card-info_icon--review">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
                               </svg><span class="card-info_number">47</span>
                             </li>
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon card-info_icon--comment">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#comment"></use>
                               </svg><span class="card-info_number">578</span>
                             </li>
                           </ul>
                         </div>
                         <div class="w-100 card-separator"></div>
                         <div class="col card-categories_wrap">
-                          <h4 class="card-subtitle"><span> Who Is Harry Kellerman and Why Is He Saying Those Terrible Things About Me?</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span>
-                            <div class="d-md-block card-text_gradient_hidden card-subtitle_gradient_hidden"></div>
+                          <h4 class="card-subtitle"><span>Infinitely polar bear</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span>
+                            <div class="card-text_gradient_hidden card-subtitle_gradient_hidden"></div>
                           </h4>
                           <ul class="list-group list-group-horizontal card-categories">
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#libra-square"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#libra-square"></use>
                               </svg><span class="card-categories_badge"><span class="text-success">6,2</span>/<span class="text-danger">3,8</span></span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#cup-square"></use>
-                              </svg><span class="card-categories_badge text-warning">7</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#cup-square"></use>
+                              </svg><span class="card-categories_badge">7</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-danger">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bottle-square"></use>
-                              </svg><span class="card-categories_badge text-danger">Есть</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bottle-square"></use>
+                              </svg><span class="card-categories_badge">Есть</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#strawberry-square"></use>
-                              </svg><span class="card-categories_badge text-success">Нет</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#strawberry-square"></use>
+                              </svg><span class="card-categories_badge">Нет</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-danger">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#toilet-paper-square"></use>
-                              </svg><span class="card-categories_badge text-danger">Есть</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#toilet-paper-square"></use>
+                              </svg><span class="card-categories_badge">Есть</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#knuckle-square"></use>
-                              </svg><span class="card-categories_badge text-success">2</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#knuckle-square"></use>
+                              </svg><span class="card-categories_badge">2</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bullhorn-square"></use>
-                              </svg><span class="card-categories_badge text-success">2</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bullhorn-square"></use>
+                              </svg><span class="card-categories_badge">2</span>
                             </li>
                           </ul>
-                          <div class="d-md-none card-text card-text--short">Фильм, 120 мин. Великобритания</div>
+                          <div class="card-row_elem card-short_text">Топ 100 лучших фильмов</div>
                         </div>
-                        <div class="col-auto card-text">2015, Фильм, 106 мин. Боевик, драма, биография Китай, США, Канада Режисёр: Джеймс Кэмерон</div>
+                        <div class="col-auto card-desc">2015, Фильм, 106 мин. Боевик, драма, биография Китай, США, Канада Режисёр: Джеймс Кэмерон</div>
                       </div>
                     </div>
                   </div><a class="btn btn-link d-md-none card-row_elem card-link" href="">Подробнее...</a>
@@ -220,17 +221,17 @@
                   <ul class="list-group list-group-horizontal card-info">
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
                       </svg><span class="card-info_number">392</span>
                     </li>
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon card-info_icon--review">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
                       </svg><span class="card-info_number">47</span>
                     </li>
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon card-info_icon--comment">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#comment"></use>
                       </svg><span class="card-info_number">578</span>
                     </li>
                   </ul>
@@ -239,94 +240,95 @@
               <article class="card" :class="cardClasses">
                 <div class="card-body">
                   <div class="row no-gutters align-items-start">
-                    <div class="col-auto card-col card-img_wrap">
-                      <div class="card-row_elem card-tab">3d</div><img class="card-img" src="img/today/2.jpg" alt="Путешествие из Парижа"/>
+                    <div class="col-auto card-img_cover">
+                      <div class="card-row_elem card-tab">3d</div>
+                      <div class="card-img_wrap"><img class="card-img" src="img/today/2.jpg" alt="Кто такой Гарри Келлерман и почему он говорит обо мне ужасные вещи?"/></div>
                       <div class="card-rating card-rating--warning">
                         <svg class="card-rating_star">
-                          <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
+                          <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star"></use>
                         </svg><span class="card-rating_text">5.8</span>
                       </div>
                     </div>
-                    <div class="col card-col card-text_wrap">
+                    <div class="col card-text_wrap">
                       <div class="row no-gutters card-text_wrap_row">
-                        <h3 class="col-auto card-title section-title card-col">
-                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Путешествие из Парижа</span>
-                            <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
+                        <h3 class="col-auto section-title card-title">
+                          <div class="card-title_row"><span class="card-title_text">Кто такой Гарри Келлерман и почему он говорит обо мне ужасные вещи?</span>
+                            <div class="icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark icon-success">
                               <div class="icon-bg"></div>
                               <div class="icon-symbol_wrap">
                                 <svg class="icon-symbol">
-                                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
+                                  <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
                                 </svg>
                               </div>
                             </div>
                           </div>
                           <div class="d-md-none card-row_elem card-title_translate">The Lion King</div>
-                          <div class="d-md-none card-text_gradient_hidden"></div>
+                          <div class="card-text_gradient_hidden card-title_gradient_hidden"></div>
                         </h3>
                         <div class="col-auto card-info_wrap">
                           <ul class="list-group list-group-horizontal card-info">
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
                               </svg><span class="card-info_number">392</span>
                             </li>
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon card-info_icon--review">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
                               </svg><span class="card-info_number">47</span>
                             </li>
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon card-info_icon--comment">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#comment"></use>
                               </svg><span class="card-info_number">578</span>
                             </li>
                           </ul>
                         </div>
                         <div class="w-100 card-separator"></div>
                         <div class="col card-categories_wrap">
-                          <h4 class="card-subtitle"><span> Who Is Harry Kellerman and Why Is He Saying Those Terrible Things About Me?</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span>
-                            <div class="d-md-block card-text_gradient_hidden card-subtitle_gradient_hidden"></div>
+                          <h4 class="card-subtitle"><span>Who Is Harry Kellerman and Why Is He Saying Those Terrible Things About Me?</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span>
+                            <div class="card-text_gradient_hidden card-subtitle_gradient_hidden"></div>
                           </h4>
                           <ul class="list-group list-group-horizontal card-categories">
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#libra-square"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#libra-square"></use>
                               </svg><span class="card-categories_badge"><span class="text-success">4,7</span>/<span class="text-danger">5,3</span></span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#cup-square"></use>
-                              </svg><span class="card-categories_badge text-warning">7</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#cup-square"></use>
+                              </svg><span class="card-categories_badge">7</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-danger">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bottle-square"></use>
-                              </svg><span class="card-categories_badge text-danger">Есть</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bottle-square"></use>
+                              </svg><span class="card-categories_badge">Есть</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#strawberry-square"></use>
-                              </svg><span class="card-categories_badge text-warning">Есть</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#strawberry-square"></use>
+                              </svg><span class="card-categories_badge">Есть</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#toilet-paper-square"></use>
-                              </svg><span class="card-categories_badge text-success">Нет</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#toilet-paper-square"></use>
+                              </svg><span class="card-categories_badge">Нет</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#knuckle-square"></use>
-                              </svg><span class="card-categories_badge text-warning">5</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#knuckle-square"></use>
+                              </svg><span class="card-categories_badge">5</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-danger">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bullhorn-square"></use>
-                              </svg><span class="card-categories_badge text-danger">9</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bullhorn-square"></use>
+                              </svg><span class="card-categories_badge">9</span>
                             </li>
                           </ul>
-                          <div class="d-md-none card-text card-text--short">Фильм, 120 мин. Великобритания</div>
+                          <div class="card-row_elem card-short_text"></div>
                         </div>
-                        <div class="col-auto card-text">2011, Фильм, 120 мин. Драма, военный Великобритания, Франция Режисёр: Стивен Спилберг</div>
+                        <div class="col-auto card-desc">2011, Фильм, 120 мин. Драма, военный Великобритания, Франция Режисёр: Стивен Спилберг</div>
                       </div>
                     </div>
                   </div><a class="btn btn-link d-md-none card-row_elem card-link" href="">Подробнее...</a>
@@ -335,17 +337,17 @@
                   <ul class="list-group list-group-horizontal card-info">
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
                       </svg><span class="card-info_number">392</span>
                     </li>
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon card-info_icon--review">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
                       </svg><span class="card-info_number">47</span>
                     </li>
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon card-info_icon--comment">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#comment"></use>
                       </svg><span class="card-info_number">578</span>
                     </li>
                   </ul>
@@ -354,94 +356,95 @@
               <article class="card" :class="cardClasses">
                 <div class="card-body">
                   <div class="row no-gutters align-items-start">
-                    <div class="col-auto card-col card-img_wrap">
-                      <div class="card-row_elem card-tab">3d</div><img class="card-img" src="img/today/3.jpg" alt="Побудь в моей шкуре"/>
+                    <div class="col-auto card-img_cover">
+                      <div class="card-row_elem card-tab">3d</div>
+                      <div class="card-img_wrap"><img class="card-img" src="img/today/3.jpg" alt="Побудь в моей шкуре"/></div>
                       <div class="card-rating card-rating--danger">
                         <svg class="card-rating_star">
-                          <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
+                          <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star"></use>
                         </svg><span class="card-rating_text">2.4</span>
                       </div>
                     </div>
-                    <div class="col card-col card-text_wrap">
+                    <div class="col card-text_wrap">
                       <div class="row no-gutters card-text_wrap_row">
-                        <h3 class="col-auto card-title section-title card-col">
-                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Побудь в моей шкуре</span>
-                            <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
+                        <h3 class="col-auto section-title card-title">
+                          <div class="card-title_row"><span class="card-title_text">Побудь в моей шкуре</span>
+                            <div class="icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
                               <div class="icon-bg"></div>
                               <div class="icon-symbol_wrap">
                                 <svg class="icon-symbol">
-                                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
+                                  <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
                                 </svg>
                               </div>
                             </div>
                           </div>
                           <div class="d-md-none card-row_elem card-title_translate">The Lion King</div>
-                          <div class="d-md-none card-text_gradient_hidden"></div>
+                          <div class="card-text_gradient_hidden card-title_gradient_hidden"></div>
                         </h3>
                         <div class="col-auto card-info_wrap">
                           <ul class="list-group list-group-horizontal card-info">
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
                               </svg><span class="card-info_number">392</span>
                             </li>
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon card-info_icon--review">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
                               </svg><span class="card-info_number">47</span>
                             </li>
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon card-info_icon--comment">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#comment"></use>
                               </svg><span class="card-info_number">578</span>
                             </li>
                           </ul>
                         </div>
                         <div class="w-100 card-separator"></div>
                         <div class="col card-categories_wrap">
-                          <h4 class="card-subtitle"><span> Who Is Harry Kellerman and Why Is He Saying Those Terrible Things About Me?</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span>
-                            <div class="d-md-block card-text_gradient_hidden card-subtitle_gradient_hidden"></div>
+                          <h4 class="card-subtitle"><span>Infinitely polar bear</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span>
+                            <div class="card-text_gradient_hidden card-subtitle_gradient_hidden"></div>
                           </h4>
                           <ul class="list-group list-group-horizontal card-categories">
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#libra-square"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#libra-square"></use>
                               </svg><span class="card-categories_badge"><span class="text-success">6,2</span>/<span class="text-danger">3,8</span></span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#cup-square"></use>
-                              </svg><span class="card-categories_badge text-warning">7</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#cup-square"></use>
+                              </svg><span class="card-categories_badge">7</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-danger">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bottle-square"></use>
-                              </svg><span class="card-categories_badge text-danger">Есть</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bottle-square"></use>
+                              </svg><span class="card-categories_badge">Есть</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#strawberry-square"></use>
-                              </svg><span class="card-categories_badge text-success">Нет</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#strawberry-square"></use>
+                              </svg><span class="card-categories_badge">Нет</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-danger">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#toilet-paper-square"></use>
-                              </svg><span class="card-categories_badge text-danger">Есть</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#toilet-paper-square"></use>
+                              </svg><span class="card-categories_badge">Есть</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#knuckle-square"></use>
-                              </svg><span class="card-categories_badge text-success">2</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#knuckle-square"></use>
+                              </svg><span class="card-categories_badge">2</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bullhorn-square"></use>
-                              </svg><span class="card-categories_badge text-success">2</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bullhorn-square"></use>
+                              </svg><span class="card-categories_badge">2</span>
                             </li>
                           </ul>
-                          <div class="d-md-none card-text card-text--short">Фильм, 120 мин. Великобритания</div>
+                          <div class="card-row_elem card-short_text"></div>
                         </div>
-                        <div class="col-auto card-text"></div>
+                        <div class="col-auto card-desc"></div>
                       </div>
                     </div>
                   </div><a class="btn btn-link d-md-none card-row_elem card-link" href="">Подробнее...</a>
@@ -450,17 +453,17 @@
                   <ul class="list-group list-group-horizontal card-info">
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
                       </svg><span class="card-info_number">392</span>
                     </li>
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon card-info_icon--review">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
                       </svg><span class="card-info_number">47</span>
                     </li>
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon card-info_icon--comment">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#comment"></use>
                       </svg><span class="card-info_number">578</span>
                     </li>
                   </ul>
@@ -469,95 +472,96 @@
               <article class="card" :class="cardClasses">
                 <div class="card-body">
                   <div class="row no-gutters align-items-start">
-                    <div class="col-auto card-col card-img_wrap">
-                      <div class="card-row_elem card-tab">3d</div><img class="card-img" src="img/today/4.jpg" alt="Матрос Железняк"/>
+                    <div class="col-auto card-img_cover">
+                      <div class="card-row_elem card-tab">3d</div>
+                      <div class="card-img_wrap"><img class="card-img" src="img/today/4.jpg" alt="Матрос Железняк"/></div>
                       <div class="card-rating">
                         <svg class="card-rating_star">
-                          <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
+                          <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star"></use>
                         </svg><span class="card-rating_text">9.3</span>
                       </div>
                       <div class="card-review"></div>
                     </div>
-                    <div class="col card-col card-text_wrap">
+                    <div class="col card-text_wrap">
                       <div class="row no-gutters card-text_wrap_row">
-                        <h3 class="col-auto card-title section-title card-col">
-                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Матрос Железняк</span>
-                            <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
+                        <h3 class="col-auto section-title card-title">
+                          <div class="card-title_row"><span class="card-title_text">Матрос Железняк</span>
+                            <div class="icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
                               <div class="icon-bg"></div>
                               <div class="icon-symbol_wrap">
                                 <svg class="icon-symbol">
-                                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
+                                  <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
                                 </svg>
                               </div>
                             </div>
                           </div>
                           <div class="d-md-none card-row_elem card-title_translate">The Lion King</div>
-                          <div class="d-md-none card-text_gradient_hidden"></div>
+                          <div class="card-text_gradient_hidden card-title_gradient_hidden"></div>
                         </h3>
                         <div class="col-auto card-info_wrap">
                           <ul class="list-group list-group-horizontal card-info">
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
                               </svg><span class="card-info_number">392</span>
                             </li>
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon card-info_icon--review">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
                               </svg><span class="card-info_number">47</span>
                             </li>
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon card-info_icon--comment">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#comment"></use>
                               </svg><span class="card-info_number">578</span>
                             </li>
                           </ul>
                         </div>
                         <div class="w-100 card-separator"></div>
                         <div class="col card-categories_wrap">
-                          <h4 class="card-subtitle"><span> Who Is Harry Kellerman and Why Is He Saying Those Terrible Things About Me?</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span>
-                            <div class="d-md-block card-text_gradient_hidden card-subtitle_gradient_hidden"></div>
+                          <h4 class="card-subtitle"><span>Infinitely polar bear</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span>
+                            <div class="card-text_gradient_hidden card-subtitle_gradient_hidden"></div>
                           </h4>
                           <ul class="list-group list-group-horizontal card-categories">
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#libra-square"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#libra-square"></use>
                               </svg><span class="card-categories_badge"><span class="text-success">4,7</span>/<span class="text-danger">5,3</span></span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#cup-square"></use>
-                              </svg><span class="card-categories_badge text-warning">7</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#cup-square"></use>
+                              </svg><span class="card-categories_badge">7</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-danger">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bottle-square"></use>
-                              </svg><span class="card-categories_badge text-danger">Есть</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bottle-square"></use>
+                              </svg><span class="card-categories_badge">Есть</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#strawberry-square"></use>
-                              </svg><span class="card-categories_badge text-warning">Есть</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#strawberry-square"></use>
+                              </svg><span class="card-categories_badge">Есть</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#toilet-paper-square"></use>
-                              </svg><span class="card-categories_badge text-success">Нет</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#toilet-paper-square"></use>
+                              </svg><span class="card-categories_badge">Нет</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#knuckle-square"></use>
-                              </svg><span class="card-categories_badge text-warning">5</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#knuckle-square"></use>
+                              </svg><span class="card-categories_badge">5</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-danger">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bullhorn-square"></use>
-                              </svg><span class="card-categories_badge text-danger">9</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bullhorn-square"></use>
+                              </svg><span class="card-categories_badge">9</span>
                             </li>
                           </ul>
-                          <div class="d-md-none card-text card-text--short">Фильм, 120 мин. Великобритания</div>
+                          <div class="card-row_elem card-short_text">Топ 100 лучших фильмов</div>
                         </div>
-                        <div class="col-auto card-text"></div>
+                        <div class="col-auto card-desc"></div>
                       </div>
                     </div>
                   </div><a class="btn btn-link d-md-none card-row_elem card-link" href="">Подробнее...</a>
@@ -566,17 +570,17 @@
                   <ul class="list-group list-group-horizontal card-info">
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
                       </svg><span class="card-info_number">392</span>
                     </li>
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon card-info_icon--review">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
                       </svg><span class="card-info_number">47</span>
                     </li>
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon card-info_icon--comment">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#comment"></use>
                       </svg><span class="card-info_number">578</span>
                     </li>
                   </ul>
@@ -585,94 +589,95 @@
               <article class="card" :class="cardClasses">
                 <div class="card-body">
                   <div class="row no-gutters align-items-start">
-                    <div class="col-auto card-col card-img_wrap">
-                      <div class="card-row_elem card-tab">3d</div><img class="card-img" src="img/today/5.jpg" alt="Сила воли"/>
+                    <div class="col-auto card-img_cover">
+                      <div class="card-row_elem card-tab">3d</div>
+                      <div class="card-img_wrap"><img class="card-img" src="img/today/5.jpg" alt="Сила воли"/></div>
                       <div class="card-rating card-rating--warning">
                         <svg class="card-rating_star">
-                          <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
+                          <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star"></use>
                         </svg><span class="card-rating_text">5.8</span>
                       </div>
                     </div>
-                    <div class="col card-col card-text_wrap">
+                    <div class="col card-text_wrap">
                       <div class="row no-gutters card-text_wrap_row">
-                        <h3 class="col-auto card-title section-title card-col">
-                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Сила воли</span>
-                            <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
+                        <h3 class="col-auto section-title card-title">
+                          <div class="card-title_row"><span class="card-title_text">Сила воли</span>
+                            <div class="icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
                               <div class="icon-bg"></div>
                               <div class="icon-symbol_wrap">
                                 <svg class="icon-symbol">
-                                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
+                                  <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
                                 </svg>
                               </div>
                             </div>
                           </div>
                           <div class="d-md-none card-row_elem card-title_translate">The Lion King</div>
-                          <div class="d-md-none card-text_gradient_hidden"></div>
+                          <div class="card-text_gradient_hidden card-title_gradient_hidden"></div>
                         </h3>
                         <div class="col-auto card-info_wrap">
                           <ul class="list-group list-group-horizontal card-info">
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
                               </svg><span class="card-info_number">392</span>
                             </li>
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon card-info_icon--review">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
                               </svg><span class="card-info_number">47</span>
                             </li>
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon card-info_icon--comment">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#comment"></use>
                               </svg><span class="card-info_number">578</span>
                             </li>
                           </ul>
                         </div>
                         <div class="w-100 card-separator"></div>
                         <div class="col card-categories_wrap">
-                          <h4 class="card-subtitle"><span> Who Is Harry Kellerman and Why Is He Saying Those Terrible Things About Me?</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span>
-                            <div class="d-md-block card-text_gradient_hidden card-subtitle_gradient_hidden"></div>
+                          <h4 class="card-subtitle"><span>Infinitely polar bear</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span>
+                            <div class="card-text_gradient_hidden card-subtitle_gradient_hidden"></div>
                           </h4>
                           <ul class="list-group list-group-horizontal card-categories">
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#libra-square"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#libra-square"></use>
                               </svg><span class="card-categories_badge"><span class="text-success">6,2</span>/<span class="text-danger">3,8</span></span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#cup-square"></use>
-                              </svg><span class="card-categories_badge text-warning">7</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#cup-square"></use>
+                              </svg><span class="card-categories_badge">7</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-danger">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bottle-square"></use>
-                              </svg><span class="card-categories_badge text-danger">Есть</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bottle-square"></use>
+                              </svg><span class="card-categories_badge">Есть</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#strawberry-square"></use>
-                              </svg><span class="card-categories_badge text-success">Нет</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#strawberry-square"></use>
+                              </svg><span class="card-categories_badge">Нет</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-danger">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#toilet-paper-square"></use>
-                              </svg><span class="card-categories_badge text-danger">Есть</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#toilet-paper-square"></use>
+                              </svg><span class="card-categories_badge">Есть</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#knuckle-square"></use>
-                              </svg><span class="card-categories_badge text-success">2</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#knuckle-square"></use>
+                              </svg><span class="card-categories_badge">2</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bullhorn-square"></use>
-                              </svg><span class="card-categories_badge text-success">2</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bullhorn-square"></use>
+                              </svg><span class="card-categories_badge">2</span>
                             </li>
                           </ul>
-                          <div class="d-md-none card-text card-text--short">Фильм, 120 мин. Великобритания</div>
+                          <div class="card-row_elem card-short_text"></div>
                         </div>
-                        <div class="col-auto card-text"></div>
+                        <div class="col-auto card-desc"></div>
                       </div>
                     </div>
                   </div><a class="btn btn-link d-md-none card-row_elem card-link" href="">Подробнее...</a>
@@ -681,17 +686,17 @@
                   <ul class="list-group list-group-horizontal card-info">
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
                       </svg><span class="card-info_number">392</span>
                     </li>
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon card-info_icon--review">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
                       </svg><span class="card-info_number">47</span>
                     </li>
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon card-info_icon--comment">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#comment"></use>
                       </svg><span class="card-info_number">578</span>
                     </li>
                   </ul>
@@ -700,95 +705,96 @@
               <article class="card" :class="cardClasses">
                 <div class="card-body">
                   <div class="row no-gutters align-items-start">
-                    <div class="col-auto card-col card-img_wrap">
-                      <div class="card-row_elem card-tab">3d</div><img class="card-img" src="img/today/1.jpg" alt="Бесконечно белый медведь"/>
+                    <div class="col-auto card-img_cover">
+                      <div class="card-row_elem card-tab">3d</div>
+                      <div class="card-img_wrap"><img class="card-img" src="img/today/1.jpg" alt="Бесконечно белый медведь"/></div>
                       <div class="card-rating">
                         <svg class="card-rating_star">
-                          <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
+                          <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star"></use>
                         </svg><span class="card-rating_text">9.3</span>
                       </div>
                       <div class="card-review"></div>
                     </div>
-                    <div class="col card-col card-text_wrap">
+                    <div class="col card-text_wrap">
                       <div class="row no-gutters card-text_wrap_row">
-                        <h3 class="col-auto card-title section-title card-col">
-                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Бесконечно белый медведь</span>
-                            <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
+                        <h3 class="col-auto section-title card-title">
+                          <div class="card-title_row"><span class="card-title_text">Бесконечно белый медведь</span>
+                            <div class="icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
                               <div class="icon-bg"></div>
                               <div class="icon-symbol_wrap">
                                 <svg class="icon-symbol">
-                                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
+                                  <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
                                 </svg>
                               </div>
                             </div>
                           </div>
                           <div class="d-md-none card-row_elem card-title_translate">The Lion King</div>
-                          <div class="d-md-none card-text_gradient_hidden"></div>
+                          <div class="card-text_gradient_hidden card-title_gradient_hidden"></div>
                         </h3>
                         <div class="col-auto card-info_wrap">
                           <ul class="list-group list-group-horizontal card-info">
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
                               </svg><span class="card-info_number">392</span>
                             </li>
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon card-info_icon--review">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
                               </svg><span class="card-info_number">47</span>
                             </li>
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon card-info_icon--comment">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#comment"></use>
                               </svg><span class="card-info_number">578</span>
                             </li>
                           </ul>
                         </div>
                         <div class="w-100 card-separator"></div>
                         <div class="col card-categories_wrap">
-                          <h4 class="card-subtitle"><span> Who Is Harry Kellerman and Why Is He Saying Those Terrible Things About Me?</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span>
-                            <div class="d-md-block card-text_gradient_hidden card-subtitle_gradient_hidden"></div>
+                          <h4 class="card-subtitle"><span>Infinitely polar bear</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span>
+                            <div class="card-text_gradient_hidden card-subtitle_gradient_hidden"></div>
                           </h4>
                           <ul class="list-group list-group-horizontal card-categories">
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#libra-square"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#libra-square"></use>
                               </svg><span class="card-categories_badge"><span class="text-success">6,2</span>/<span class="text-danger">3,8</span></span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#cup-square"></use>
-                              </svg><span class="card-categories_badge text-warning">7</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#cup-square"></use>
+                              </svg><span class="card-categories_badge">7</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-danger">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bottle-square"></use>
-                              </svg><span class="card-categories_badge text-danger">Есть</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bottle-square"></use>
+                              </svg><span class="card-categories_badge">Есть</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#strawberry-square"></use>
-                              </svg><span class="card-categories_badge text-success">Нет</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#strawberry-square"></use>
+                              </svg><span class="card-categories_badge">Нет</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-danger">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#toilet-paper-square"></use>
-                              </svg><span class="card-categories_badge text-danger">Есть</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#toilet-paper-square"></use>
+                              </svg><span class="card-categories_badge">Есть</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#knuckle-square"></use>
-                              </svg><span class="card-categories_badge text-success">2</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#knuckle-square"></use>
+                              </svg><span class="card-categories_badge">2</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bullhorn-square"></use>
-                              </svg><span class="card-categories_badge text-success">2</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bullhorn-square"></use>
+                              </svg><span class="card-categories_badge">2</span>
                             </li>
                           </ul>
-                          <div class="d-md-none card-text card-text--short">Фильм, 120 мин. Великобритания</div>
+                          <div class="card-row_elem card-short_text">Топ 100 лучших фильмов</div>
                         </div>
-                        <div class="col-auto card-text">2015, Фильм, 106 мин. Боевик, драма, биография Китай, США, Канада Режисёр: Джеймс Кэмерон</div>
+                        <div class="col-auto card-desc">2015, Фильм, 106 мин. Боевик, драма, биография Китай, США, Канада Режисёр: Джеймс Кэмерон</div>
                       </div>
                     </div>
                   </div><a class="btn btn-link d-md-none card-row_elem card-link" href="">Подробнее...</a>
@@ -797,17 +803,17 @@
                   <ul class="list-group list-group-horizontal card-info">
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
                       </svg><span class="card-info_number">392</span>
                     </li>
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon card-info_icon--review">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
                       </svg><span class="card-info_number">47</span>
                     </li>
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon card-info_icon--comment">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#comment"></use>
                       </svg><span class="card-info_number">578</span>
                     </li>
                   </ul>
@@ -816,94 +822,95 @@
               <article class="card" :class="cardClasses">
                 <div class="card-body">
                   <div class="row no-gutters align-items-start">
-                    <div class="col-auto card-col card-img_wrap">
-                      <div class="card-row_elem card-tab">3d</div><img class="card-img" src="img/today/2.jpg" alt="Путешествие из Парижа"/>
+                    <div class="col-auto card-img_cover">
+                      <div class="card-row_elem card-tab">3d</div>
+                      <div class="card-img_wrap"><img class="card-img" src="img/today/2.jpg" alt="Кто такой Гарри Келлерман и почему он говорит обо мне ужасные вещи?"/></div>
                       <div class="card-rating card-rating--warning">
                         <svg class="card-rating_star">
-                          <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
+                          <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star"></use>
                         </svg><span class="card-rating_text">5.8</span>
                       </div>
                     </div>
-                    <div class="col card-col card-text_wrap">
+                    <div class="col card-text_wrap">
                       <div class="row no-gutters card-text_wrap_row">
-                        <h3 class="col-auto card-title section-title card-col">
-                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Путешествие из Парижа</span>
-                            <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
+                        <h3 class="col-auto section-title card-title">
+                          <div class="card-title_row"><span class="card-title_text">Кто такой Гарри Келлерман и почему он говорит обо мне ужасные вещи?</span>
+                            <div class="icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark icon-success">
                               <div class="icon-bg"></div>
                               <div class="icon-symbol_wrap">
                                 <svg class="icon-symbol">
-                                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
+                                  <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
                                 </svg>
                               </div>
                             </div>
                           </div>
                           <div class="d-md-none card-row_elem card-title_translate">The Lion King</div>
-                          <div class="d-md-none card-text_gradient_hidden"></div>
+                          <div class="card-text_gradient_hidden card-title_gradient_hidden"></div>
                         </h3>
                         <div class="col-auto card-info_wrap">
                           <ul class="list-group list-group-horizontal card-info">
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
                               </svg><span class="card-info_number">392</span>
                             </li>
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon card-info_icon--review">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
                               </svg><span class="card-info_number">47</span>
                             </li>
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon card-info_icon--comment">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#comment"></use>
                               </svg><span class="card-info_number">578</span>
                             </li>
                           </ul>
                         </div>
                         <div class="w-100 card-separator"></div>
                         <div class="col card-categories_wrap">
-                          <h4 class="card-subtitle"><span> Who Is Harry Kellerman and Why Is He Saying Those Terrible Things About Me?</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span>
-                            <div class="d-md-block card-text_gradient_hidden card-subtitle_gradient_hidden"></div>
+                          <h4 class="card-subtitle"><span>Who Is Harry Kellerman and Why Is He Saying Those Terrible Things About Me?</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span>
+                            <div class="card-text_gradient_hidden card-subtitle_gradient_hidden"></div>
                           </h4>
                           <ul class="list-group list-group-horizontal card-categories">
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#libra-square"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#libra-square"></use>
                               </svg><span class="card-categories_badge"><span class="text-success">4,7</span>/<span class="text-danger">5,3</span></span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#cup-square"></use>
-                              </svg><span class="card-categories_badge text-warning">7</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#cup-square"></use>
+                              </svg><span class="card-categories_badge">7</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-danger">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bottle-square"></use>
-                              </svg><span class="card-categories_badge text-danger">Есть</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bottle-square"></use>
+                              </svg><span class="card-categories_badge">Есть</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#strawberry-square"></use>
-                              </svg><span class="card-categories_badge text-warning">Есть</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#strawberry-square"></use>
+                              </svg><span class="card-categories_badge">Есть</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#toilet-paper-square"></use>
-                              </svg><span class="card-categories_badge text-success">Нет</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#toilet-paper-square"></use>
+                              </svg><span class="card-categories_badge">Нет</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#knuckle-square"></use>
-                              </svg><span class="card-categories_badge text-warning">5</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#knuckle-square"></use>
+                              </svg><span class="card-categories_badge">5</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-danger">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bullhorn-square"></use>
-                              </svg><span class="card-categories_badge text-danger">9</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bullhorn-square"></use>
+                              </svg><span class="card-categories_badge">9</span>
                             </li>
                           </ul>
-                          <div class="d-md-none card-text card-text--short">Фильм, 120 мин. Великобритания</div>
+                          <div class="card-row_elem card-short_text"></div>
                         </div>
-                        <div class="col-auto card-text">2011, Фильм, 120 мин. Драма, военный Великобритания, Франция Режисёр: Стивен Спилберг</div>
+                        <div class="col-auto card-desc">2011, Фильм, 120 мин. Драма, военный Великобритания, Франция Режисёр: Стивен Спилберг</div>
                       </div>
                     </div>
                   </div><a class="btn btn-link d-md-none card-row_elem card-link" href="">Подробнее...</a>
@@ -912,17 +919,17 @@
                   <ul class="list-group list-group-horizontal card-info">
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
                       </svg><span class="card-info_number">392</span>
                     </li>
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon card-info_icon--review">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
                       </svg><span class="card-info_number">47</span>
                     </li>
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon card-info_icon--comment">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#comment"></use>
                       </svg><span class="card-info_number">578</span>
                     </li>
                   </ul>
@@ -931,94 +938,95 @@
               <article class="card" :class="cardClasses">
                 <div class="card-body">
                   <div class="row no-gutters align-items-start">
-                    <div class="col-auto card-col card-img_wrap">
-                      <div class="card-row_elem card-tab">3d</div><img class="card-img" src="img/today/3.jpg" alt="Побудь в моей шкуре"/>
+                    <div class="col-auto card-img_cover">
+                      <div class="card-row_elem card-tab">3d</div>
+                      <div class="card-img_wrap"><img class="card-img" src="img/today/3.jpg" alt="Побудь в моей шкуре"/></div>
                       <div class="card-rating card-rating--danger">
                         <svg class="card-rating_star">
-                          <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
+                          <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star"></use>
                         </svg><span class="card-rating_text">2.4</span>
                       </div>
                     </div>
-                    <div class="col card-col card-text_wrap">
+                    <div class="col card-text_wrap">
                       <div class="row no-gutters card-text_wrap_row">
-                        <h3 class="col-auto card-title section-title card-col">
-                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Побудь в моей шкуре</span>
-                            <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
+                        <h3 class="col-auto section-title card-title">
+                          <div class="card-title_row"><span class="card-title_text">Побудь в моей шкуре</span>
+                            <div class="icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
                               <div class="icon-bg"></div>
                               <div class="icon-symbol_wrap">
                                 <svg class="icon-symbol">
-                                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
+                                  <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
                                 </svg>
                               </div>
                             </div>
                           </div>
                           <div class="d-md-none card-row_elem card-title_translate">The Lion King</div>
-                          <div class="d-md-none card-text_gradient_hidden"></div>
+                          <div class="card-text_gradient_hidden card-title_gradient_hidden"></div>
                         </h3>
                         <div class="col-auto card-info_wrap">
                           <ul class="list-group list-group-horizontal card-info">
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
                               </svg><span class="card-info_number">392</span>
                             </li>
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon card-info_icon--review">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
                               </svg><span class="card-info_number">47</span>
                             </li>
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon card-info_icon--comment">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#comment"></use>
                               </svg><span class="card-info_number">578</span>
                             </li>
                           </ul>
                         </div>
                         <div class="w-100 card-separator"></div>
                         <div class="col card-categories_wrap">
-                          <h4 class="card-subtitle"><span> Who Is Harry Kellerman and Why Is He Saying Those Terrible Things About Me?</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span>
-                            <div class="d-md-block card-text_gradient_hidden card-subtitle_gradient_hidden"></div>
+                          <h4 class="card-subtitle"><span>Infinitely polar bear</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span>
+                            <div class="card-text_gradient_hidden card-subtitle_gradient_hidden"></div>
                           </h4>
                           <ul class="list-group list-group-horizontal card-categories">
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#libra-square"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#libra-square"></use>
                               </svg><span class="card-categories_badge"><span class="text-success">6,2</span>/<span class="text-danger">3,8</span></span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#cup-square"></use>
-                              </svg><span class="card-categories_badge text-warning">7</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#cup-square"></use>
+                              </svg><span class="card-categories_badge">7</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-danger">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bottle-square"></use>
-                              </svg><span class="card-categories_badge text-danger">Есть</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bottle-square"></use>
+                              </svg><span class="card-categories_badge">Есть</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#strawberry-square"></use>
-                              </svg><span class="card-categories_badge text-success">Нет</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#strawberry-square"></use>
+                              </svg><span class="card-categories_badge">Нет</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-danger">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#toilet-paper-square"></use>
-                              </svg><span class="card-categories_badge text-danger">Есть</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#toilet-paper-square"></use>
+                              </svg><span class="card-categories_badge">Есть</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#knuckle-square"></use>
-                              </svg><span class="card-categories_badge text-success">2</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#knuckle-square"></use>
+                              </svg><span class="card-categories_badge">2</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bullhorn-square"></use>
-                              </svg><span class="card-categories_badge text-success">2</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bullhorn-square"></use>
+                              </svg><span class="card-categories_badge">2</span>
                             </li>
                           </ul>
-                          <div class="d-md-none card-text card-text--short">Фильм, 120 мин. Великобритания</div>
+                          <div class="card-row_elem card-short_text"></div>
                         </div>
-                        <div class="col-auto card-text"></div>
+                        <div class="col-auto card-desc"></div>
                       </div>
                     </div>
                   </div><a class="btn btn-link d-md-none card-row_elem card-link" href="">Подробнее...</a>
@@ -1027,17 +1035,17 @@
                   <ul class="list-group list-group-horizontal card-info">
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
                       </svg><span class="card-info_number">392</span>
                     </li>
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon card-info_icon--review">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
                       </svg><span class="card-info_number">47</span>
                     </li>
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon card-info_icon--comment">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#comment"></use>
                       </svg><span class="card-info_number">578</span>
                     </li>
                   </ul>
@@ -1046,95 +1054,96 @@
               <article class="card" :class="cardClasses">
                 <div class="card-body">
                   <div class="row no-gutters align-items-start">
-                    <div class="col-auto card-col card-img_wrap">
-                      <div class="card-row_elem card-tab">3d</div><img class="card-img" src="img/today/4.jpg" alt="Матрос Железняк"/>
+                    <div class="col-auto card-img_cover">
+                      <div class="card-row_elem card-tab">3d</div>
+                      <div class="card-img_wrap"><img class="card-img" src="img/today/4.jpg" alt="Матрос Железняк"/></div>
                       <div class="card-rating">
                         <svg class="card-rating_star">
-                          <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
+                          <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star"></use>
                         </svg><span class="card-rating_text">9.3</span>
                       </div>
                       <div class="card-review"></div>
                     </div>
-                    <div class="col card-col card-text_wrap">
+                    <div class="col card-text_wrap">
                       <div class="row no-gutters card-text_wrap_row">
-                        <h3 class="col-auto card-title section-title card-col">
-                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Матрос Железняк</span>
-                            <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
+                        <h3 class="col-auto section-title card-title">
+                          <div class="card-title_row"><span class="card-title_text">Матрос Железняк</span>
+                            <div class="icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
                               <div class="icon-bg"></div>
                               <div class="icon-symbol_wrap">
                                 <svg class="icon-symbol">
-                                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
+                                  <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
                                 </svg>
                               </div>
                             </div>
                           </div>
                           <div class="d-md-none card-row_elem card-title_translate">The Lion King</div>
-                          <div class="d-md-none card-text_gradient_hidden"></div>
+                          <div class="card-text_gradient_hidden card-title_gradient_hidden"></div>
                         </h3>
                         <div class="col-auto card-info_wrap">
                           <ul class="list-group list-group-horizontal card-info">
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
                               </svg><span class="card-info_number">392</span>
                             </li>
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon card-info_icon--review">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
                               </svg><span class="card-info_number">47</span>
                             </li>
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon card-info_icon--comment">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#comment"></use>
                               </svg><span class="card-info_number">578</span>
                             </li>
                           </ul>
                         </div>
                         <div class="w-100 card-separator"></div>
                         <div class="col card-categories_wrap">
-                          <h4 class="card-subtitle"><span> Who Is Harry Kellerman and Why Is He Saying Those Terrible Things About Me?</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span>
-                            <div class="d-md-block card-text_gradient_hidden card-subtitle_gradient_hidden"></div>
+                          <h4 class="card-subtitle"><span>Infinitely polar bear</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span>
+                            <div class="card-text_gradient_hidden card-subtitle_gradient_hidden"></div>
                           </h4>
                           <ul class="list-group list-group-horizontal card-categories">
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#libra-square"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#libra-square"></use>
                               </svg><span class="card-categories_badge"><span class="text-success">4,7</span>/<span class="text-danger">5,3</span></span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#cup-square"></use>
-                              </svg><span class="card-categories_badge text-warning">7</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#cup-square"></use>
+                              </svg><span class="card-categories_badge">7</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-danger">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bottle-square"></use>
-                              </svg><span class="card-categories_badge text-danger">Есть</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bottle-square"></use>
+                              </svg><span class="card-categories_badge">Есть</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#strawberry-square"></use>
-                              </svg><span class="card-categories_badge text-warning">Есть</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#strawberry-square"></use>
+                              </svg><span class="card-categories_badge">Есть</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#toilet-paper-square"></use>
-                              </svg><span class="card-categories_badge text-success">Нет</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#toilet-paper-square"></use>
+                              </svg><span class="card-categories_badge">Нет</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#knuckle-square"></use>
-                              </svg><span class="card-categories_badge text-warning">5</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#knuckle-square"></use>
+                              </svg><span class="card-categories_badge">5</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-danger">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bullhorn-square"></use>
-                              </svg><span class="card-categories_badge text-danger">9</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bullhorn-square"></use>
+                              </svg><span class="card-categories_badge">9</span>
                             </li>
                           </ul>
-                          <div class="d-md-none card-text card-text--short">Фильм, 120 мин. Великобритания</div>
+                          <div class="card-row_elem card-short_text">Топ 100 лучших фильмов</div>
                         </div>
-                        <div class="col-auto card-text"></div>
+                        <div class="col-auto card-desc"></div>
                       </div>
                     </div>
                   </div><a class="btn btn-link d-md-none card-row_elem card-link" href="">Подробнее...</a>
@@ -1143,17 +1152,17 @@
                   <ul class="list-group list-group-horizontal card-info">
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
                       </svg><span class="card-info_number">392</span>
                     </li>
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon card-info_icon--review">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
                       </svg><span class="card-info_number">47</span>
                     </li>
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon card-info_icon--comment">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#comment"></use>
                       </svg><span class="card-info_number">578</span>
                     </li>
                   </ul>
@@ -1162,94 +1171,95 @@
               <article class="card" :class="cardClasses">
                 <div class="card-body">
                   <div class="row no-gutters align-items-start">
-                    <div class="col-auto card-col card-img_wrap">
-                      <div class="card-row_elem card-tab">3d</div><img class="card-img" src="img/today/5.jpg" alt="Сила воли"/>
+                    <div class="col-auto card-img_cover">
+                      <div class="card-row_elem card-tab">3d</div>
+                      <div class="card-img_wrap"><img class="card-img" src="img/today/5.jpg" alt="Сила воли"/></div>
                       <div class="card-rating card-rating--warning">
                         <svg class="card-rating_star">
-                          <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star"></use>
+                          <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star"></use>
                         </svg><span class="card-rating_text">5.8</span>
                       </div>
                     </div>
-                    <div class="col card-col card-text_wrap">
+                    <div class="col card-text_wrap">
                       <div class="row no-gutters card-text_wrap_row">
-                        <h3 class="col-auto card-title section-title card-col">
-                          <div class="row no-gutters card-title_row"><span class="col-auto card-title_text">Сила воли</span>
-                            <div class="col-auto icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
+                        <h3 class="col-auto section-title card-title">
+                          <div class="card-title_row"><span class="card-title_text">Сила воли</span>
+                            <div class="icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark">
                               <div class="icon-bg"></div>
                               <div class="icon-symbol_wrap">
                                 <svg class="icon-symbol">
-                                  <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
+                                  <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bookmark"></use>
                                 </svg>
                               </div>
                             </div>
                           </div>
                           <div class="d-md-none card-row_elem card-title_translate">The Lion King</div>
-                          <div class="d-md-none card-text_gradient_hidden"></div>
+                          <div class="card-text_gradient_hidden card-title_gradient_hidden"></div>
                         </h3>
                         <div class="col-auto card-info_wrap">
                           <ul class="list-group list-group-horizontal card-info">
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
                               </svg><span class="card-info_number">392</span>
                             </li>
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon card-info_icon--review">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
                               </svg><span class="card-info_number">47</span>
                             </li>
                             <li class="list-group-item card-list_item card-info_item">
                               <svg class="card-icon card-info_icon card-info_icon--comment">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#comment"></use>
                               </svg><span class="card-info_number">578</span>
                             </li>
                           </ul>
                         </div>
                         <div class="w-100 card-separator"></div>
                         <div class="col card-categories_wrap">
-                          <h4 class="card-subtitle"><span> Who Is Harry Kellerman and Why Is He Saying Those Terrible Things About Me?</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span>
-                            <div class="d-md-block card-text_gradient_hidden card-subtitle_gradient_hidden"></div>
+                          <h4 class="card-subtitle"><span>Infinitely polar bear</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span>
+                            <div class="card-text_gradient_hidden card-subtitle_gradient_hidden"></div>
                           </h4>
                           <ul class="list-group list-group-horizontal card-categories">
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#libra-square"></use>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#libra-square"></use>
                               </svg><span class="card-categories_badge"><span class="text-success">6,2</span>/<span class="text-danger">3,8</span></span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-warning">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#cup-square"></use>
-                              </svg><span class="card-categories_badge text-warning">7</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#cup-square"></use>
+                              </svg><span class="card-categories_badge">7</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-danger">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bottle-square"></use>
-                              </svg><span class="card-categories_badge text-danger">Есть</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bottle-square"></use>
+                              </svg><span class="card-categories_badge">Есть</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#strawberry-square"></use>
-                              </svg><span class="card-categories_badge text-success">Нет</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#strawberry-square"></use>
+                              </svg><span class="card-categories_badge">Нет</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-danger">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#toilet-paper-square"></use>
-                              </svg><span class="card-categories_badge text-danger">Есть</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#toilet-paper-square"></use>
+                              </svg><span class="card-categories_badge">Есть</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#knuckle-square"></use>
-                              </svg><span class="card-categories_badge text-success">2</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#knuckle-square"></use>
+                              </svg><span class="card-categories_badge">2</span>
                             </li>
                             <li class="list-group-item card-list_item card-categories_item">
                               <svg class="icon card-categories_icon icon-success">
-                                <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#bullhorn-square"></use>
-                              </svg><span class="card-categories_badge text-success">2</span>
+                                <use xlink:href="svg/symbol/svg/sprite.symbol.svg#bullhorn-square"></use>
+                              </svg><span class="card-categories_badge">2</span>
                             </li>
                           </ul>
-                          <div class="d-md-none card-text card-text--short">Фильм, 120 мин. Великобритания</div>
+                          <div class="card-row_elem card-short_text"></div>
                         </div>
-                        <div class="col-auto card-text"></div>
+                        <div class="col-auto card-desc"></div>
                       </div>
                     </div>
                   </div><a class="btn btn-link d-md-none card-row_elem card-link" href="">Подробнее...</a>
@@ -1258,17 +1268,17 @@
                   <ul class="list-group list-group-horizontal card-info">
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#star-empty"></use>
                       </svg><span class="card-info_number">392</span>
                     </li>
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon card-info_icon--review">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#layer-group"></use>
                       </svg><span class="card-info_number">47</span>
                     </li>
                     <li class="list-group-item card-list_item card-info_item">
                       <svg class="card-icon card-info_icon card-info_icon--comment">
-                        <use xlink:href="../svg/symbol/svg/sprite.symbol.svg#comment"></use>
+                        <use xlink:href="svg/symbol/svg/sprite.symbol.svg#comment"></use>
                       </svg><span class="card-info_number">578</span>
                     </li>
                   </ul>

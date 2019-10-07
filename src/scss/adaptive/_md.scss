@@ -74,10 +74,14 @@
             padding-bottom: map-get($spacers, 8);
           }
 
-          &-img {
+          &-img_wrap {
             // padding-right: 11px;
             padding-right: map-get($spacers, 11);
-            max-width: 133px;
+            // max-width: 133px;
+          }
+
+          &-img {
+            max-width: 122px;
           }
 
           &-rating {
@@ -87,15 +91,31 @@
             );
           }
 
+          &-title,
+          &-subtitle {
+            width: 105%;
+            max-width: 105%;
+          }
+
           &-title {
             // margin-top: 7px;
             margin-top: map-get($spacers, 7);
             font-weight: 500;
             // line-height: 20px;
             line-height: map-get($spacers, 20);
+            // max-height: 40px;
+            width: 105%;
+            max-width: 105%;
+            max-height: map-get($spacers, 40);
+
+            &_gradient_hidden {
+              top: 50%;
+              height: 50%;
+            }
           }
 
           &-subtitle {
+            position: relative;
             // height: 26px;
             height: map-get($spacers, 26);
           }
@@ -125,15 +145,16 @@
 
           &-review {
             // right: -5px;
-            right: -#{map-get($spacers, 5)};
+            // @include position("* -5px -19px *");
+            @include position(
+              "* -#{map-get($spacers, 5)} -#{map-get($spacers, 19)} *"
+            );
           }
 
           &-text_wrap {
             align-self: stretch;
             // @include padding("8px * * 24px");
-            @include padding(
-              "#{map-get($spacers, 8)} * * #{map-get($spacers, 24)}"
-            );
+            @include padding("10px * * #{map-get($spacers, 24)}");
 
             &_row {
               position: relative;
@@ -145,36 +166,43 @@
           &-title {
             border-bottom-width: 0;
             padding-bottom: 0;
-            width: auto;
-            // font-size: 22px/1.5;
-            font-size: #{map-get($spacers, 22)}/ 1.5;
-
-            &_row {
-              align-items: center;
-            }
+            width: 65%;
+            // font-size: #{map-get($spacers, 22)}/ 1.5;
+            font-size: #{map-get($spacers, 22)}/#{map-get($spacers, 28)};
 
             &_text {
               // padding-right: 14px;
-              padding-right: map-get($spacers, 14);
+              @include padding("* #{map-get($spacers, 14)} * *");
             }
 
             &_mark {
               // padding-top: 4px;
-              padding-top: map-get($spacers, 4);
+              // padding-top: map-get($spacers, 4);
+              // @include margin("0 * -3px -4px");
+              @include margin(
+                "0 * -#{map-get($spacers, 3)} -#{map-get($spacers, 4)}"
+              );
+              fill: #d6d6d6;
 
               .icon-symbol {
                 // size: 15px;
                 size: map-get($spacers, 15);
-                fill: #d6d6d6;
               }
             }
           }
 
           &-info_wrap,
           &-separator,
-          &-text {
+          &-desc {
             display: block;
           }
+
+          // &-title_translate,
+          // &-short_text,
+          // &-link,
+          // &-footer {
+          //   display: none;
+          // }
 
           &-info {
             // @include padding("* 6px");
@@ -182,9 +210,7 @@
 
             &_item {
               // @include padding("8px  * 0 8px");
-              @include padding(
-                "#{map-get($spacers, 8)} * 0 #{map-get($spacers, 8)}"
-              );
+              @include padding("6px * 0 #{map-get($spacers, 8)}");
 
               &:first-child {
                 // padding-right: 7px;
@@ -208,6 +234,7 @@
           }
 
           &-categories_wrap {
+            @include padding("5px * 0");
             width: 44%;
             max-width: 44%;
           }
@@ -234,12 +261,16 @@
               font-size: #{map-get($spacers, 15)}/#{map-get($spacers, 19)};
               background-color: #bfbfbf;
             }
+
+            &_gradient_hidden {
+              display: block;
+            }
           }
 
           &-categories {
             display: flex;
             // margin-left: -3px;
-            margin-left: -#{map-get($spacers, 3)};
+            margin-left: -#{map-get($spacers, 2)};
 
             &_item {
               margin-right: 1px;
@@ -265,19 +296,26 @@
             }
           }
 
-          &-text {
-            @include position("absolute * 129px 0 *");
-            // width: 53%;
-            width: 190px;
-            font-size: 17px/25px;
+          &-short_text,
+          &-desc {
+            // line-height: 25px;
+            line-height: map-get($spacers, 25);
             color: $gray-500;
           }
 
-          // &-text--short,
-          // &-link,
-          // &-footer {
-          //   display: none;
-          // }
+          &-short_text {
+            // @include padding("2px * * 4px");
+            @include padding("2px * * #{map-get($spacers, 4)}");
+          }
+
+          &-desc {
+            // @include position("absolute * 129px 0 *");
+            @include position("absolute * 128px 0 *");
+            // width: 53%;
+            width: 190px;
+            // font-size: 17px;
+            font-size: #{$lead-font-size};
+          }
         }
       }
     }
@@ -334,11 +372,11 @@
       height: auto;
     }
 
-    // &-subtitle {
-    //   &_gradient_hidden {
-    //     display: block;
-    //   }
-    // }
+    &-subtitle {
+      &_gradient_hidden {
+        display: block;
+      }
+    }
   }
 
   .page {

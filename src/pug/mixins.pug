@@ -2,7 +2,7 @@ include variables
 
 mixin svg(id, classes="")
   svg(class=classes)
-    use(xlink:href="../svg/symbol/svg/sprite.symbol.svg#" + id)
+    use(xlink:href="svg/symbol/svg/sprite.symbol.svg#" + id)
 
 mixin card-rating-body(text, modif="")
   .card-rating(class=modif ? "card-rating--" + modif : "")
@@ -20,24 +20,25 @@ mixin card-rating(status)
 
 mixin card-img(img, options)
   .card-row_elem.card-tab 3d
-  img.card-img(src="img/today/" + img + ".jpg", alt=options.title)
+  .card-img_wrap
+    img.card-img(src="img/today/" + img + ".jpg", alt=options.title)
   +card-rating(options.status)
   if options.status > 9
     .card-review
 
-mixin card-title(title, classes="", marked=false)
-  h3.col-auto.card-title.section-title.card-col
-    .row.no-gutters.card-title_row
-      span.col-auto.card-title_text= title
-      //- span.col-auto.card-title_text Король лев
-      .col-auto.icon.icon--round.card-row_elem.card-row_elem--d_inline_block.card-title_mark
+mixin card-title(title, marked)
+  h3.col-auto.section-title.card-title
+    .card-title_row
+      span.card-title_text= title
+      //- span.card-title_text Король лев
+      .icon.icon--round.card-row_elem.card-row_elem--d_inline_block.card-title_mark(class={"icon-success": marked})
         .icon-bg
         .icon-symbol_wrap
           +svg("bookmark", "icon-symbol")
     .d-md-none.card-row_elem.card-title_translate The Lion King
-    .d-md-none.card-text_gradient_hidden
+    .card-text_gradient_hidden.card-title_gradient_hidden
 
-mixin card-info(classes="")
+mixin card-info
   ul.list-group.list-group-horizontal.card-info(class=classes)
     li.list-group-item.card-list_item.card-info_item
       +svg("star-empty", "card-icon card-info_icon")
@@ -49,13 +50,13 @@ mixin card-info(classes="")
       +svg("comment", "card-icon card-info_icon card-info_icon--comment")
       span.card-info_number 578
 
-mixin card-subtitle(date, genre)
+mixin card-subtitle(options)
   h4.card-subtitle
     //- span 2019, Боевик, драма, биография
-    //- span #{date}, #{genre}
-    span  Who Is Harry Kellerman and Why Is He Saying Those Terrible Things About Me?
+    //- span #{options.date}, #{options.genre}
+    span= options.translate
     span.badge.card-row_elem.card-row_elem--d_inline_block.card-subtitle_badge.order-md-first 16+
-    .d-md-block.card-text_gradient_hidden.card-subtitle_gradient_hidden
+    .card-text_gradient_hidden.card-subtitle_gradient_hidden
 
 mixin card-categories(items)
   -
@@ -111,7 +112,7 @@ mixin card-categories(items)
               | /
               span.text-danger= item.negative
           default
-            span.card-categories_badge(class={"text-success": categoryItem.success, "text-warning": categoryItem.warning, "text-danger": categoryItem.danger})= categoryItem.value
+            span.card-categories_badge= categoryItem.value
       - categoryItem.success = false
       - categoryItem.warning = false
       - categoryItem.danger = false
@@ -120,19 +121,20 @@ mixin card(img, options)
   article.card(:class="cardClasses")
     .card-body
       .row.no-gutters.align-items-start
-        .col-auto.card-col.card-img_wrap
+        .col-auto.card-img_cover
           +card-img(img, options)
-        .col.card-col.card-text_wrap
+        .col.card-text_wrap
           .row.no-gutters.card-text_wrap_row
-            +card-title(options.title)
+            +card-title(options.title, options.marked)
             .col-auto.card-info_wrap
               +card-info
             .w-100.card-separator
             .col.card-categories_wrap
-              +card-subtitle(options.date, options.genre)
+              +card-subtitle(options)
               +card-categories(options.reviews)
-              .d-md-none.card-text.card-text--short Фильм, 120 мин. Великобритания
-            .col-auto.card-text= options.text
+              //- .card-row_elem.card-short_text Фильм, 120 мин. Великобритания
+              .card-row_elem.card-short_text= options.category
+            .col-auto.card-desc= options.text
       a.btn.btn-link.d-md-none.card-row_elem.card-link(href="") Подробнее...
     .d-md-none.card-row_elem.card-footer
       +card-info
