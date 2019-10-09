@@ -23,6 +23,28 @@
         z-index: 1;
         line-height: inherit;
       }
+
+      &#{$block}--success,
+      &#{$block}--warning,
+      &#{$block}--danger {
+        // fill: inherit;
+
+        #{$block}-symbol {
+          fill: inherit;
+        }
+      }
+
+      &#{$block}--success {
+        fill: map-get($theme-colors, "success") !important;
+      }
+
+      &#{$block}--warning {
+        fill: map-get($theme-colors, "warning") !important;
+      }
+
+      &#{$block}--danger {
+        fill: map-get($theme-colors, "danger") !important;
+      }
     }
   }
 
@@ -91,6 +113,12 @@
             );
           }
 
+          &-review {
+            @include position(
+              "* -#{map-get($spacers, 1)} -#{map-get($spacers, 11)} *"
+            );
+          }
+
           &-title,
           &-subtitle {
             width: 105%;
@@ -146,8 +174,11 @@
           &-review {
             // right: -5px;
             // @include position("* -5px -19px *");
+            // @include position(
+            //   "* -#{map-get($spacers, 5)} -#{map-get($spacers, 19)} *"
+            // );
             @include position(
-              "* -#{map-get($spacers, 5)} -#{map-get($spacers, 19)} *"
+              "* -#{map-get($spacers, 5)} -#{map-get($spacers, 18)} *"
             );
           }
 

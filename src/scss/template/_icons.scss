@@ -121,17 +121,43 @@
     #{$block}-symbol {
       fill: inherit;
     }
+
+    &#{$block}--success,
+    &#{$block}--warning,
+    &#{$block}--danger {
+      #{$block}-symbol {
+        fill: $white;
+      }
+    }
+
+    &#{$block}--success {
+      #{$block}-bg {
+        background-color: map-get($theme-colors, "success") !important;
+      }
+    }
+
+    &#{$block}--warning {
+      #{$block}-bg {
+        background-color: map-get($theme-colors, "warning") !important;
+      }
+    }
+
+    &#{$block}--danger {
+      #{$block}-bg {
+        background-color: map-get($theme-colors, "danger") !important;
+      }
+    }
   }
 
-  &-success {
-    fill: map-get($theme-colors, "success") !important;
+  &#{$block}--success {
+    fill: map-get($theme-colors, "success");
   }
 
-  &-warning {
-    fill: map-get($theme-colors, "warning") !important;
+  &#{$block}--warning {
+    fill: map-get($theme-colors, "warning");
   }
 
-  &-danger {
-    fill: map-get($theme-colors, "danger") !important;
+  &#{$block}--danger {
+    fill: map-get($theme-colors, "danger");
   }
 }

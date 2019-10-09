@@ -24,14 +24,18 @@ mixin card-img(img, options)
     img.card-img(src="img/today/" + img + ".jpg", alt=options.title)
   +card-rating(options.status)
   if options.status > 9
-    .card-review
+    .icon.card-review
+      .icon-symbol_wrap.card-review_bg
+        +svg("stamp-glow", "icon-symbol")
+      .icon-symbol_wrap.card-review_icon
+        +svg("stamp", "icon-symbol")
 
 mixin card-title(title, marked)
   h3.col-auto.section-title.card-title
     .card-title_row
       span.card-title_text= title
       //- span.card-title_text Король лев
-      .icon.icon--round.card-row_elem.card-row_elem--d_inline_block.card-title_mark(class={"icon-success": marked})
+      .icon.icon--round.card-row_elem.card-row_elem--d_inline_block.card-title_mark(class={"icon--success": marked})
         .icon-bg
         .icon-symbol_wrap
           +svg("bookmark", "icon-symbol")
@@ -104,7 +108,7 @@ mixin card-categories(items)
             - categoryItem.icon = "knuckle-square"
           when 6
             - categoryItem.icon = "bullhorn-square"
-        +svg(categoryItem.icon, {"icon": true, "card-categories_icon": true, "icon-success": categoryItem.success, "icon-warning": categoryItem.warning, "icon-danger": categoryItem.danger})
+        +svg(categoryItem.icon, {"icon": true, "card-categories_icon": true, "icon--success": categoryItem.success, "icon--warning": categoryItem.warning, "icon--danger": categoryItem.danger})
         case index
           when 0
             span.card-categories_badge
@@ -132,8 +136,8 @@ mixin card(img, options)
             .col.card-categories_wrap
               +card-subtitle(options)
               +card-categories(options.reviews)
-              //- .card-row_elem.card-short_text Фильм, 120 мин. Великобритания
-              .card-row_elem.card-short_text= options.category
+              .card-row_elem.card-short_text Фильм, 120 мин. Великобритания
+              //- .card-row_elem.card-short_text= options.category
             .col-auto.card-desc= options.text
       a.btn.btn-link.d-md-none.card-row_elem.card-link(href="") Подробнее...
     .d-md-none.card-row_elem.card-footer
