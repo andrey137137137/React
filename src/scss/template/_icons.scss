@@ -125,6 +125,8 @@
     &#{$block}--success,
     &#{$block}--warning,
     &#{$block}--danger {
+      opacity: 0.5;
+
       #{$block}-symbol {
         fill: $white;
       }

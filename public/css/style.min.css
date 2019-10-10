@@ -32721,6 +32721,12 @@ a.text-dark:focus {
   fill: inherit;
 }
 
+.icon--round.icon--success,
+.icon--round.icon--warning,
+.icon--round.icon--danger {
+  opacity: 0.5;
+}
+
 .icon--round.icon--success .icon-symbol,
 .icon--round.icon--warning .icon-symbol,
 .icon--round.icon--danger .icon-symbol {
@@ -33191,7 +33197,7 @@ body {
   font-size: 0.9375rem;
   text-align: center;
   color: #fff;
-  background-image: url("../img/sprite/star.png");
+  background-image: url("../img/bg/star.png");
 }
 
 .card-rating_star {
@@ -33390,6 +33396,12 @@ body {
   .icon--round .icon-symbol_wrap {
     z-index: 1;
     line-height: inherit;
+  }
+
+  .icon--round.icon--success,
+  .icon--round.icon--warning,
+  .icon--round.icon--danger {
+    opacity: 1;
   }
 
   .icon--round.icon--success .icon-symbol,

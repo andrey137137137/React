@@ -424,7 +424,7 @@ body {
     font-size: map-get($spacers, 15);
     text-align: center;
     color: $white;
-    background-image: url(../img/sprite/star.png);
+    background-image: url(../img/bg/star.png);
 
     &_star {
       // @include padding("* 5px");

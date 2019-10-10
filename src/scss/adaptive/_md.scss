@@ -27,7 +27,7 @@
       &#{$block}--success,
       &#{$block}--warning,
       &#{$block}--danger {
-        // fill: inherit;
+        opacity: 1;
 
         #{$block}-symbol {
           fill: inherit;
