@@ -77,9 +77,9 @@ function svg() {
             $("[fill], [stroke], [style], [width], [height]")
               .removeAttr("fill")
               .removeAttr("stroke")
-              .removeAttr("style")
-              .removeAttr("width")
-              .removeAttr("height");
+              .removeAttr("style");
+            // .removeAttr("width")
+            // .removeAttr("height");
           },
           parserOptions: { xmlMode: true }
         })
@@ -90,21 +90,24 @@ function svg() {
       .pipe(
         $gp.svgSprite({
           mode: {
-            symbol: {
-              //   render:
-              //   {
-              //     scss:
-              //     {
-              //       svgId: "svg-%f",
-              // 			dest: '../../../' + pathes.css.src + '/_sprite.scss',
-              // 			// template: '../../../' + pathes.css.src + "/templates/_sprite_template.scss"
-              // 		}
-              // 	}
-            }
+            // symbol: {
+            //     render:
+            //     {
+            //       scss:
+            //       {
+            //         svgId: "svg-%f",
+            //   			dest: '../../../' + pathes.css.src + '/_sprite.scss',
+            //   			// template: '../../../' + pathes.css.src + "/templates/_sprite_template.scss"
+            //   		}
+            //   	}
+            // }
+            // stack: {
+            sprite: "sprite.svg" //sprite file name
+            // }
           }
         })
       )
-      .pipe(gulp.dest(pathes.svg.dest))
+      .pipe(gulp.dest(pathes.images.dest))
   );
 }
 
