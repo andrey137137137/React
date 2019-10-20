@@ -2,7 +2,7 @@ const // general
   gulp = require("gulp"),
   // плагины галпа, объявлять не нужно, используем как $gp.имяПлагина (без приставки gulp-)
   $gp = require("gulp-load-plugins")(),
-  $ = $gp.jquery,
+  // $ = $gp.jquery,
   del = require("del"),
   cssnext = require("postcss-cssnext"),
   short = require("postcss-short"),
@@ -29,7 +29,7 @@ const // general
     },
     svg: {
       src: "/svg",
-      dest: "/svg"
+      dest: ""
     },
     css: {
       src: "/scss",
@@ -77,9 +77,9 @@ function svg() {
             $("[fill], [stroke], [style], [width], [height]")
               .removeAttr("fill")
               .removeAttr("stroke")
-              .removeAttr("style");
-            // .removeAttr("width")
-            // .removeAttr("height");
+              .removeAttr("style")
+              .removeAttr("width")
+              .removeAttr("height");
           },
           parserOptions: { xmlMode: true }
         })
@@ -101,13 +101,13 @@ function svg() {
             //   		}
             //   	}
             // }
-            // stack: {
-            sprite: "sprite.svg" //sprite file name
-            // }
+            stack: {
+              sprite: "../sprite.svg" //sprite file name
+            }
           }
         })
       )
-      .pipe(gulp.dest(pathes.images.dest))
+      .pipe(gulp.dest(pathes.svg.dest))
   );
 }
 
@@ -216,7 +216,10 @@ function browser_sync() {
 }
 
 function watch() {
-  gulp.watch(`${pathes.html.src}/*.pug`, gulp.series(html));
+  gulp.watch(
+    [`${pathes.html.src}/*.pug`, `${pathes.svg.dest}/*.svg`],
+    gulp.series(html)
+  );
   gulp.watch(`${pathes.svg.src}/*.svg`, gulp.series(svg));
   gulp.watch(`${pathes.css.src}/**/*.scss`, gulp.series(css));
   // gulp.watch(
@@ -237,8 +240,7 @@ gulp.task(
   "default",
   gulp.series(
     clean,
-    svg,
-    gulp.parallel(html, css),
+    gulp.parallel(html, css, svg),
     // gulp.parallel(svg, css, js)
     gulp.parallel(watch, browser_sync)
   )

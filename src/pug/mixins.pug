@@ -1,41 +1,38 @@
 include variables
 
 mixin svg(id, classes="")
-  svg(width="100" height="100" viewBox="0 0 100 100" class=classes)
-    use(x="0" y="0" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite.svg#" + id)
-    //- use(x="0" y="0" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="sprite.svg#" + id)
+  svg(class=classes)
+    //- use(x="0" y="0" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite.svg#" + id)
+    //- use(xlink:href="sprite.svg#" + id)
+    use(xlink:href="#" + id)
 
-mixin card-rating-body(text, modif="")
-  .card-rating(class=modif ? "card-rating--" + modif : "")
-    +svg("star", "card-rating_star")
-    span.card-rating_text= text
-
-mixin card-rating(status)
-  case status
-    when 5.8
-      +card-rating-body(status, "warning")
-    when 2.4
-      +card-rating-body(status, "danger")
-    default
-      +card-rating-body(status)
+  //- object(type="image/svg+xml" data="img/svg/" + id + ".svg" class=classes) Your browser does not support SVG
 
 mixin card-img(img, options)
   .card-row_elem.card-tab 3d
   .card-img_wrap
     img.card-img(src="img/today/" + img + ".jpg", alt=options.title)
-  +card-rating(options.status)
+  .icon.card-img_icon.card-rating(class={"card-rating--warning": options.status < 7, "card-rating--danger": options.status < 4})
+    .icon-symbol_wrap.card-img_icon_bg.card-rating_bg
+      +svg("star-bg", "icon-symbol")
+    .icon-symbol_wrap.card-img_icon_bg.card-rating_star
+      +svg("star", "icon-symbol")
+    span.icon-symbol_wrap.card-rating_text= options.status
   if options.status > 9
-    .icon.card-review
-      .icon-symbol_wrap.card-review_bg
+    .icon.card-img_icon.card-review
+      .icon-symbol_wrap.card-img_icon_bg.card-review_bg
         +svg("stamp-glow", "icon-symbol")
       .icon-symbol_wrap.card-review_icon
         +svg("stamp", "icon-symbol")
 
+mixin card-title-text(text)
+  span.card-title_text= text
+
 mixin card-title(title, marked)
   h3.col-auto.section-title.card-title
     .card-title_row
-      span.card-title_text= title
-      //- span.card-title_text Король лев
+      +card-title-text(title)
+      //- +card-title-text("Король лев")
       .icon.icon--round.card-row_elem.card-row_elem--d_inline_block.card-title_mark(class={"icon--success": marked})
         .icon-bg
         .icon-symbol_wrap
@@ -43,23 +40,26 @@ mixin card-title(title, marked)
     .d-md-none.card-row_elem.card-title_translate The Lion King
     .card-text_gradient_hidden.card-title_gradient_hidden
 
-mixin card-info
+mixin card-info(statistics)
   ul.list-group.list-group-horizontal.card-info(class=classes)
-    li.list-group-item.card-list_item.card-info_item
+    li.list-group-item.card-list_item.card-info_item.card-info_item--stars
       +svg("star-empty", "card-icon card-info_icon")
-      span.card-info_number 392
-    li.list-group-item.card-list_item.card-info_item
+      span.card-info_number= statistics.stars
+    li.list-group-item.card-list_item.card-info_item.card-info_item--reviews
       +svg("layer-group", "card-icon card-info_icon card-info_icon--review")
-      span.card-info_number 47
-    li.list-group-item.card-list_item.card-info_item
+      span.card-info_number= statistics.reviews
+    li.list-group-item.card-list_item.card-info_item.card-info_item--comments
       +svg("comment", "card-icon card-info_icon card-info_icon--comment")
-      span.card-info_number 578
+      span.card-info_number= statistics.comments
+
+mixin card-subtitle-text(text)
+  span= text
 
 mixin card-subtitle(options)
   h4.card-subtitle
-    //- span 2019, Боевик, драма, биография
-    //- span #{options.date}, #{options.genre}
-    span= options.translate
+    //- +card-subtitle-text("2019, Боевик, драма, биография")
+    //- +card-subtitle-text(options.date + ", " + options.genre)
+    +card-subtitle-text(options.translate)
     span.badge.card-row_elem.card-row_elem--d_inline_block.card-subtitle_badge.order-md-first 16+
     .card-text_gradient_hidden.card-subtitle_gradient_hidden
 
@@ -122,6 +122,9 @@ mixin card-categories(items)
       - categoryItem.warning = false
       - categoryItem.danger = false
 
+mixin card-short-text(text)
+  .card-row_elem.card-short_text= text
+
 mixin card(img, options)
   article.card(:class="cardClasses")
     .card-body
@@ -132,17 +135,17 @@ mixin card(img, options)
           .row.no-gutters.card-text_wrap_row
             +card-title(options.title, options.marked)
             .col-auto.card-info_wrap
-              +card-info
+              +card-info(options.statistics)
             .w-100.card-separator
             .col.card-categories_wrap
               +card-subtitle(options)
               +card-categories(options.reviews)
-              .card-row_elem.card-short_text Фильм, 120 мин. Великобритания
-              //- .card-row_elem.card-short_text= options.category
+              +card-short-text("Фильм, 120 мин. Великобритания")
+              //- +card-short-text(options.category)
             .col-auto.card-desc= options.text
       a.btn.btn-link.d-md-none.card-row_elem.card-link(href="") Подробнее...
     .d-md-none.card-row_elem.card-footer
-      +card-info
+      +card-info(options.statistics)
 
 mixin display-cards(items)
   each item, index in items

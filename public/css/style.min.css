@@ -32649,7 +32649,6 @@ a.text-dark:focus {
 .icon {
   display: inline-block;
   line-height: 0;
-  overflow: hidden;
 }
 
 .icon,
@@ -32776,6 +32775,11 @@ a.text-dark:focus {
 
 body {
   background-image: url("../img/bg/body/mobile.jpg");
+}
+
+svg path {
+  fill: inherit;
+  stroke: inherit;
 }
 
 .header {
@@ -33011,6 +33015,18 @@ body {
   padding-left: 0.625rem;
 }
 
+.main-container--rows .card-info_item--stars {
+  min-width: 67px;
+}
+
+.main-container--rows .card-info_item--reviews {
+  min-width: 66px;
+}
+
+.main-container--rows .card-info_item--comments {
+  min-width: 71px;
+}
+
 .main-container--rows .card-info_icon {
   margin-right: 8px;
   margin-right: 0.5rem;
@@ -33184,47 +33200,39 @@ body {
   max-width: 99px;
 }
 
+.card-img_icon,
+.card-img_icon_bg {
+  position: absolute;
+}
+
+.card-img_icon_bg {
+  fill: #fff;
+}
+
 .card-rating {
   top: -4px;
   right: -3px;
-  position: absolute;
   top: -0.25rem;
   right: -0.1875rem;
-  position: absolute;
-  width: 3.0625rem;
-  height: 2.875rem;
+  width: 3rem;
+  height: 2.8125rem;
   font-size: 15px;
   font-size: 0.9375rem;
   text-align: center;
   color: #fff;
-  background-image: url("../img/bg/star.png");
 }
 
 .card-rating_star {
-  padding-right: 5px;
-  padding-left: 5px;
-  padding-right: 0.3125rem;
-  padding-left: 0.3125rem;
-  width: 100%;
-  height: 100%;
-  stroke-width: 5px;
-  stroke: #66c52d;
   fill: #66c52d;
 }
 
 .card-rating_text {
-  top: 0;
-  right: 0;
-  left: 0;
-  position: absolute;
-  padding-top: 14px;
-  padding-top: 0.875rem;
-  width: 100%;
-  height: 100%;
+  display: block;
+  line-height: 50px;
+  line-height: 3.125rem;
 }
 
 .card-rating--warning .card-rating_star {
-  stroke: #fbbc05;
   fill: #fbbc05;
 }
 
@@ -33233,7 +33241,6 @@ body {
 }
 
 .card-rating--danger .card-rating_star {
-  stroke: #ff715d;
   fill: #ff715d;
 }
 
@@ -33246,13 +33253,7 @@ body {
   height: 3.0625rem;
 }
 
-.card-review,
 .card-review_bg {
-  position: absolute;
-}
-
-.card-review_bg {
-  fill: #fff;
   opacity: 0.7;
 }
 
@@ -33325,6 +33326,8 @@ body {
   width: 36px;
   width: 2.25rem;
   text-align: center;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .09);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .09);
 }
 
 .page-icon {
@@ -33469,7 +33472,7 @@ body {
 
   .main-container--blocks .card-rating {
     top: -0.125rem;
-    right: -0.375rem;
+    right: -0.25rem;
   }
 
   .main-container--blocks .card-review {
@@ -33579,8 +33582,17 @@ body {
     padding-left: 0.5rem;
   }
 
-  .main-container--rows .card-info_item:first-child {
+  .main-container--rows .card-info_item--stars {
     padding-right: 0.4375rem;
+    min-width: 57px;
+  }
+
+  .main-container--rows .card-info_item--reviews {
+    min-width: 60px;
+  }
+
+  .main-container--rows .card-info_item--comments {
+    min-width: 63px;
   }
 
   .main-container--rows .card-info_icon {
