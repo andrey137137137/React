@@ -31,14 +31,6 @@
   line-height: $height - $border * 2;
 }
 
-// @mixin iconSize($size) {
-//   &,
-//   &:before,
-//   &:after {
-//     border-width: $size;
-//   }
-// }
-
 @mixin fontFace($font, $path: "../fonts") {
   @font-face {
     font-family: "#{$font}";

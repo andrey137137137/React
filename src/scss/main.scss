@@ -111,47 +111,31 @@ svg path {
         flex-grow: 1;
         flex-basis: auto;
         margin-bottom: 20px;
-        border-radius: 0;
-        // @include padding("#{map-get($spacers, 9)} * * #{map-get($spacers, 11)}");
         @include padding("9px 0 *");
         width: 100%;
         background-color: $white;
 
         &-body {
-          // @include padding("* 14px 9px 19px");
           @include padding(
             "* #{map-get($spacers, 14)} 9px #{map-get($spacers, 19)}"
           );
         }
 
         &-tab {
-          // @include position("absolute 4px * * 0");
-          @include position("absolute #{map-get($spacers, 4)} * * 0");
-          // border-top-left-radius: 3px;
+          @include position("absolute 4px * * 0");
           border-top-left-radius: map-get($spacers, 3);
-          // border-top-right-radius: 3px;
           border-top-right-radius: map-get($spacers, 3);
-          // line-height: 17px;
           line-height: $lead-font-size;
-          // size: 27px;
           size: map-get($spacers, 27);
           text-align: center;
           color: $white $gray-200;
         }
 
         &-review {
-          // @include position("* 5px -13px *");
-          // @include position(
-          //   "* #{map-get($spacers, 5)} -#{map-get($spacers, 13)} *"
-          // );
-          @include position(
-            "* #{map-get($spacers, 5)} -#{map-get($spacers, 12)} *"
-          );
+          @include position("* 5px -12px *");
         }
 
         &-text_wrap {
-          // @include padding("11px * * 3px");
-          // @include padding("11px * * #{map-get($spacers, 3)}");
           @include padding("13px * * #{map-get($spacers, 3)}");
         }
 
@@ -165,7 +149,6 @@ svg path {
 
         &-icon {
           display: inline-block;
-          // size: 15px;
           size: map-get($spacers, 15);
         }
 
@@ -174,23 +157,17 @@ svg path {
           border-bottom: 1px solid #eaeaea;
           padding-bottom: 13px;
           height: auto;
-          // font-size: 20px/1.4;
           font-size: #{map-get($spacers, 20)}/ 1.4;
 
           &_row {
             position: relative;
-            // align-items: center;
-            // padding-bottom: 1px;
           }
 
           &_text {
-            // padding-right: 11px;
             padding-right: map-get($spacers, 11);
           }
 
           &_mark {
-            // position: absolute;
-            // @include margin("-1px * -10px -5px");
             @include margin(
               "-#{map-get($spacers, 1)} * -#{map-get($spacers, 10)} -#{map-get($spacers, 5)}"
             );
@@ -199,16 +176,11 @@ svg path {
             .icon-bg {
               background-color: #ececec;
             }
-
-            // .icon-symbol {
-            //   fill: #bebebe;
-            // }
           }
 
           &_translate {
             padding-top: 1px;
             font-weight: normal;
-            // font-size: 17px/21px;
             font-size: #{$lead-font-size}/#{map-get($spacers, 21)};
             color: $gray-500;
           }
@@ -223,13 +195,11 @@ svg path {
         }
 
         &-info {
-          // @include padding("* 12px");
           @include padding("* #{map-get($spacers, 12)}");
 
           &_item {
             display: flex;
             align-items: center;
-            // @include padding("* 10px");
             @include padding("* #{map-get($spacers, 10)}");
 
             &--stars {
@@ -246,26 +216,20 @@ svg path {
           }
 
           &_icon {
-            // margin-right: 8px;
             margin-right: map-get($spacers, 8);
             fill: $gray-light;
 
             &--review {
-              // margin-right: 7px;
-              // width: 22px;
               width: map-get($spacers, 22);
             }
 
             &--comment {
-              // margin-right: 9px;
               margin-right: map-get($spacers, 9);
-              // width: 18px;
               width: map-get($spacers, 18);
             }
           }
 
           &_number {
-            // font-size: 17px;
             font-size: $lead-font-size;
             color: $gray-500;
           }
@@ -277,7 +241,6 @@ svg path {
 
         &-subtitle,
         &-short_text {
-          // padding-top: 9px;
           font-size: #{$lead-font-size}/#{map-get($spacers, 24)};
         }
 
@@ -285,14 +248,10 @@ svg path {
           height: auto;
 
           &_badge {
-            // margin-left: 9px;
             margin-left: map-get($spacers, 9);
-            // border-radius: 6px;
             border-radius: map-get($spacers, 6);
-            // padding: 0 2px 0 4px;
             padding: 0 map-get($spacers, 2) 0 map-get($spacers, 4);
-            font-weight: bold;
-            // font-size: 12px/13px;
+            font-weight: normal;
             font-size: #{map-get($spacers, 12)}/#{map-get($spacers, 13)};
             color: $white $gray-light;
           }
@@ -304,7 +263,6 @@ svg path {
         }
 
         &-link {
-          // margin-left: -5px;
           margin-left: -#{map-get($spacers, 5)};
           font-size: #{$lead-font-size}/#{map-get($spacers, 26)};
         }
@@ -333,7 +291,6 @@ svg path {
 
   &-link {
     justify-content: space-between;
-    // height: 100%;
 
     &--p_0 {
       padding: 0;
@@ -352,23 +309,15 @@ svg path {
   // }
 
   &-text {
-    // @include padding("* 6px");
     @include padding("* #{map-get($spacers, 6)}");
     display: block;
-    // font-size: 17px/49px;
     font-size: #{$lead-font-size}/#{map-get($spacers, 49)};
     color: $gray-500;
   }
 
   &-icon {
     &--rounded {
-      // @include margin("* -1px * 6px");
-      // @include margin("* -#{map-get($spacers, 1)} * #{map-get($spacers, 6)}");
       margin-left: map-get($spacers, 5);
-      // @include padding("8px 7px 7px 8px");
-      // @include padding(
-      //   "#{map-get($spacers, 8)} #{map-get($spacers, 7)} #{map-get($spacers, 7)} #{map-get($spacers, 8)}"
-      // );
 
       .icon-bg {
         background-color: $gray-light;
@@ -380,10 +329,7 @@ svg path {
     }
 
     &--margined {
-      // margin-left: 10px;
-      // margin-left: map-get($spacers, 10);
       margin-left: map-get($spacers, 9);
-      // size: 16px;
       size: $spacer;
       fill: $gray-200;
     }
@@ -393,14 +339,8 @@ svg path {
 .card {
   flex-grow: 0;
   margin-bottom: -6px;
-  // @include padding("5px 6px *");
   @include padding("5px #{map-get($spacers, 6)} *");
   min-width: auto;
-
-  // &-body,
-  // &-img_cover {
-  //   position: relative;
-  // }
 
   &-body {
     padding-bottom: 0;
@@ -412,7 +352,6 @@ svg path {
   }
 
   &-img_wrap {
-    // @include padding("21px 14px * *");
     @include padding("21px #{map-get($spacers, 14)} * *");
     // width: auto;
     // max-width: 113px;
@@ -439,18 +378,13 @@ svg path {
   &-rating {
     $elem: &;
 
-    // @include position("absolute 4px 5px * *");
     // @include position(
     //   "absolute #{map-get($spacers, 4)} #{map-get($spacers, 5)} * *"
     // );
-    @include position("-#{map-get($spacers, 4)} -#{map-get($spacers, 3)} * *");
+    @include position("-4px -3px * *");
     // size: 49px 46px;
-    // size: map-get($spacers, 49) map-get($spacers, 46);
-    size: map-get($spacers, 48) map-get($spacers, 45);
-    // font-size: 15px;
-    font-size: map-get($spacers, 15);
+    size: 48px 45px;
     text-align: center;
-    color: $white;
     // background-image: url(../img/bg/star.png);
 
     &_star {
@@ -467,45 +401,34 @@ svg path {
       // @include position("absolute 0 0 *");
       // position: relative;
       // z-index: 1;
-      // padding-top: 14px;
-      // padding-top: map-get($spacers, 14);
-      // size: 100%;
-      // line-height: 49px;
       // line-height: map-get($spacers, 49);
       display: block;
-      line-height: map-get($spacers, 50);
+      font-size: #{map-get($spacers, 15)}/#{map-get($spacers, 50)};
+      color: $white;
     }
 
     &--warning {
       #{$elem}_star {
-        // stroke: $orange;
         fill: $orange;
       }
 
       #{$elem}_text {
-        text-shadow: 0 1px rgba(148, 110, 0, 0.41);
+        // text-shadow: 0 1px rgba(148, 110, 0, 0.41);
+        text-shadow: 0 map-get($spacers, 1) rgba(148, 110, 0, 0.41);
       }
     }
 
     &--danger {
       #{$elem}_star {
-        // stroke: $red;
         fill: $red;
       }
     }
   }
 
   &-review {
-    // &,
-    // &_bg {
-    //   position: absolute;
-    // }
-
-    // @include position("* #{map-get($spacers, 6)} -#{map-get($spacers, 9)} *");
-    @include position("* #{map-get($spacers, 6)} -#{map-get($spacers, 8)} *");
-    // size: 49px 50px;
-    // size: map-get($spacers, 49) map-get($spacers, 50);
-    size: map-get($spacers, 49);
+    @include position("* 6px -8px *");
+    size: 49px;
+    // background-image: url(../img/sprite/review.png);
 
     &_bg {
       opacity: 0.7;
@@ -513,7 +436,6 @@ svg path {
 
     &_icon {
       fill: $gray-500;
-      // background-image: url(../img/sprite/review.png);
     }
   }
 
@@ -524,13 +446,11 @@ svg path {
   &-title {
     position: relative;
     margin-top: 10px;
-    // height: 21px;
     size: 100% map-get($spacers, 21);
   }
 
   &-text_gradient_hidden {
     @include position("absolute 0 0 * *");
-    // size: 24px;
     size: map-get($spacers, 24) 100%;
     background: linear-gradient(to right, rgba(0, 0, 0, 0), $white 30%);
   }
@@ -545,10 +465,7 @@ svg path {
 
   &-subtitle {
     position: relative;
-    // display: flex;
-    // line-height: 26px;
     line-height: map-get($spacers, 26);
-    // height: 26px;
     height: map-get($spacers, 26);
     overflow: hidden;
   }
@@ -574,7 +491,6 @@ svg path {
         display: flex;
         justify-content: center;
         align-items: center;
-        // size: 40px 36px;
         size: map-get($spacers, 40) map-get($spacers, 36);
       }
     }
@@ -587,16 +503,13 @@ svg path {
   }
 
   &-link {
-    // margin-left: 7px;
     margin-left: map-get($spacers, 7);
-    // width: 36px;
     width: map-get($spacers, 36);
     text-align: center;
     box-shadow: $box-shadow;
   }
 
   &-icon {
-    // size: 10px;
     size: map-get($spacers, 10);
     fill: $gray-200;
   }
@@ -606,7 +519,6 @@ svg path {
   }
 
   &-status {
-    // font-size: 17px/36px;
     font-size: #{$lead-font-size}/#{map-get($spacers, 36)};
     color: $gray-200;
   }

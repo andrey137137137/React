@@ -112,12 +112,12 @@ mixin card-categories(items)
         +svg(categoryItem.icon, {"icon": true, "card-categories_icon": true, "icon--success": categoryItem.success, "icon--warning": categoryItem.warning, "icon--danger": categoryItem.danger})
         case index
           when 0
-            span.card-categories_badge
+            span.card-categories_text
               span.text-success= item.positive
               | /
               span.text-danger= item.negative
           default
-            span.card-categories_badge= categoryItem.value
+            span.card-categories_text= categoryItem.value
       - categoryItem.success = false
       - categoryItem.warning = false
       - categoryItem.danger = false
@@ -140,8 +140,8 @@ mixin card(img, options)
             .col.card-categories_wrap
               +card-subtitle(options)
               +card-categories(options.reviews)
-              +card-short-text("Фильм, 120 мин. Великобритания")
-              //- +card-short-text(options.category)
+              //- +card-short-text("Фильм, 120 мин. Великобритания")
+              +card-short-text(options.category)
             .col-auto.card-desc= options.text
       a.btn.btn-link.d-md-none.card-row_elem.card-link(href="") Подробнее...
     .d-md-none.card-row_elem.card-footer

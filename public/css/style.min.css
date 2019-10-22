@@ -32697,9 +32697,7 @@ a.text-dark:focus {
   position: relative;
 }
 
-.icon--round .icon-bg,
-.icon--round .icon-symbol_wrap,
-.icon--round .icon-symbol {
+.icon--round .icon-bg {
   width: 100%;
   height: 100%;
 }
@@ -32709,11 +32707,6 @@ a.text-dark:focus {
   left: 0;
   position: absolute;
   border-radius: 50%;
-}
-
-.icon--round .icon-symbol_wrap {
-  z-index: 1;
-  line-height: inherit;
 }
 
 .icon--round .icon-symbol {
@@ -32878,7 +32871,6 @@ svg path {
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
   margin-bottom: 20px;
-  border-radius: 0;
   padding-top: 9px;
   padding-right: 0;
   padding-left: 0;
@@ -32899,9 +32891,6 @@ svg path {
   top: 4px;
   left: 0;
   position: absolute;
-  top: 0.25rem;
-  left: 0;
-  position: absolute;
   border-top-left-radius: 3px;
   border-top-left-radius: 0.1875rem;
   border-top-right-radius: 3px;
@@ -32918,8 +32907,6 @@ svg path {
 .main-container--rows .card-review {
   right: 5px;
   bottom: -12px;
-  right: 0.3125rem;
-  bottom: -0.75rem;
 }
 
 .main-container--rows .card-text_wrap {
@@ -33074,7 +33061,7 @@ svg path {
   border-radius: 0.375rem;
   padding: 0 2px 0 4px;
   padding: 0 0.125rem 0 0.25rem;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 12px;
   line-height: 13px;
   font-size: 0.75rem;
@@ -33212,14 +33199,9 @@ svg path {
 .card-rating {
   top: -4px;
   right: -3px;
-  top: -0.25rem;
-  right: -0.1875rem;
-  width: 3rem;
-  height: 2.8125rem;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  width: 48px;
+  height: 45px;
   text-align: center;
-  color: #fff;
 }
 
 .card-rating_star {
@@ -33228,8 +33210,11 @@ svg path {
 
 .card-rating_text {
   display: block;
+  font-size: 15px;
   line-height: 50px;
+  font-size: 0.9375rem;
   line-height: 3.125rem;
+  color: #fff;
 }
 
 .card-rating--warning .card-rating_star {
@@ -33238,6 +33223,7 @@ svg path {
 
 .card-rating--warning .card-rating_text {
   text-shadow: 0 1px rgba(148, 110, 0, .41);
+  text-shadow: 0 0.0625rem rgba(148, 110, 0, .41);
 }
 
 .card-rating--danger .card-rating_star {
@@ -33247,10 +33233,8 @@ svg path {
 .card-review {
   right: 6px;
   bottom: -8px;
-  right: 0.375rem;
-  bottom: -0.5rem;
-  width: 3.0625rem;
-  height: 3.0625rem;
+  width: 49px;
+  height: 49px;
 }
 
 .card-review_bg {
@@ -33437,9 +33421,7 @@ svg path {
 
   .section-white_bg {
     border: rgba(0, 0, 0, .1) solid 1px;
-    border-radius: 5px;
-    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .09);
-    box-shadow: 0 1px 0 rgba(0, 0, 0, .09);
+    border-radius: 3px;
   }
 
   .header {
@@ -33448,18 +33430,18 @@ svg path {
 
   .main-container--blocks {
     margin-bottom: 14px;
-    padding: 0.25rem 1.1875rem 0.875rem 1.4375rem;
+    padding: 4px 1.1875rem 14px 1.4375rem;
   }
 
   .main-container--blocks .card {
     margin-bottom: 0;
-    padding-top: 0.125rem;
+    padding-top: 2px;
     padding-right: 0;
     padding-left: 0;
   }
 
   .main-container--blocks .card-body {
-    padding-bottom: 0.5rem;
+    padding-bottom: 8px;
   }
 
   .main-container--blocks .card-img_wrap {
@@ -33471,13 +33453,13 @@ svg path {
   }
 
   .main-container--blocks .card-rating {
-    top: -0.125rem;
-    right: -0.25rem;
+    top: -2px;
+    right: -4px;
   }
 
   .main-container--blocks .card-review {
-    right: -0.0625rem;
-    bottom: -0.6875rem;
+    right: -1px;
+    bottom: -11px;
   }
 
   .main-container--blocks .card-title,
@@ -33487,7 +33469,7 @@ svg path {
   }
 
   .main-container--blocks .card-title {
-    margin-top: 0.4375rem;
+    margin-top: 7px;
     font-weight: 500;
     line-height: 1.25rem;
     width: 105%;
@@ -33506,25 +33488,25 @@ svg path {
   }
 
   .main-container--rows .card {
-    margin-bottom: 14px;
-    padding-top: 0.3125rem;
+    margin-bottom: 12px;
+    padding-top: 5px;
     padding-left: 0.6875rem;
-    min-height: 214px;
+    min-height: 216px;
   }
 
   .main-container--rows .card-body {
     padding-right: 0.875rem;
-    padding-bottom: 0.5625rem;
+    padding-bottom: 9px;
     padding-left: 1.1875rem;
   }
 
   .main-container--rows .card-rating {
-    right: -0.5rem;
+    right: -8px;
   }
 
   .main-container--rows .card-review {
-    right: -0.3125rem;
-    bottom: -1.125rem;
+    right: -5px;
+    bottom: -18px;
   }
 
   .main-container--rows .card-text_wrap {
@@ -33545,6 +33527,7 @@ svg path {
     border-bottom-width: 0;
     padding-bottom: 0;
     width: 65%;
+    font-weight: 400;
     font-size: 1.375rem;
     line-height: 1.75rem;
   }
@@ -33619,18 +33602,20 @@ svg path {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding-top: 0.0625rem;
+    padding-top: 1px;
+    padding-left: 0.0625rem;
     height: 1.5rem;
+    color: #a0a0a0;
   }
 
   .main-container--rows .card-subtitle_badge {
     -ms-flex-item-align: center;
     align-self: center;
-    margin-right: 0.5rem;
+    margin-right: 0.5625rem;
     margin-left: 0;
     border-radius: 0.5625rem;
-    padding-right: 0.375rem;
-    padding-left: 0.5625rem;
+    padding-right: 0.3125rem;
+    padding-left: 0.5rem;
     font-size: 0.9375rem;
     line-height: 1.1875rem;
     background-color: #bfbfbf;
@@ -33649,7 +33634,7 @@ svg path {
 
   .main-container--rows .card-categories_item {
     margin-right: 1px;
-    padding-top: 0.9375rem;
+    padding-top: 15px;
     padding-right: 0;
     padding-left: 0;
     width: 2.25rem;
@@ -33662,9 +33647,9 @@ svg path {
     height: 1.875rem;
   }
 
-  .main-container--rows .card-categories_badge {
+  .main-container--rows .card-categories_text {
     display: block;
-    padding-top: 0.0625rem;
+    padding-top: 1px;
     text-align: center;
     color: #a0a0a0;
   }
@@ -33754,4 +33739,15 @@ svg path {
   .content {
     max-width: 1020px;
   }
+}
+
+#pixel_perfect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000000;
+  width: 100%;
+  height: 100%;
+  background: url("../img/desktop-blocks.jpg") center top repeat-y;
+  opacity: 0.5;
 }
