@@ -12,7 +12,7 @@ mixin card-img(img, options)
   .card-row_elem.card-tab 3d
   .card-img_wrap
     img.card-img(src="img/today/" + img + ".jpg", alt=options.title)
-  .icon.card-img_icon.card-rating(class={"card-rating--warning": options.status < 7, "card-rating--danger": options.status < 4})
+  .icon.card-img_icon.card-rating(class={"card-rating--success": options.status <= 10, "card-rating--warning": options.status < 7, "card-rating--danger": options.status < 4})
     .icon-symbol_wrap.card-img_icon_bg.card-rating_bg
       +svg("star-bg", "icon-symbol")
     .icon-symbol_wrap.card-img_icon_bg.card-rating_star
@@ -30,9 +30,9 @@ mixin card-title-text(text)
 
 mixin card-title(title, marked)
   h3.col-auto.section-title.card-title
-    .card-title_row
-      +card-title-text(title)
-      //- +card-title-text("Король лев")
+    .position-relative.card-title_row
+      //- +card-title-text(title)
+      +card-title-text("Король лев")
       .icon.icon--round.card-row_elem.card-row_elem--d_inline_block.card-title_mark(class={"icon--success": marked})
         .icon-bg
         .icon-symbol_wrap
@@ -57,9 +57,9 @@ mixin card-subtitle-text(text)
 
 mixin card-subtitle(options)
   h4.card-subtitle
-    //- +card-subtitle-text("2019, Боевик, драма, биография")
+    +card-subtitle-text("2019, Боевик, драма, биография")
     //- +card-subtitle-text(options.date + ", " + options.genre)
-    +card-subtitle-text(options.translate)
+    //- +card-subtitle-text(options.translate)
     span.badge.card-row_elem.card-row_elem--d_inline_block.card-subtitle_badge.order-md-first 16+
     .card-text_gradient_hidden.card-subtitle_gradient_hidden
 
@@ -140,8 +140,8 @@ mixin card(img, options)
             .col.card-categories_wrap
               +card-subtitle(options)
               +card-categories(options.reviews)
-              //- +card-short-text("Фильм, 120 мин. Великобритания")
-              +card-short-text(options.category)
+              +card-short-text("Фильм, 120 мин. Великобритания")
+              //- +card-short-text(options.category)
             .col-auto.card-desc= options.text
       a.btn.btn-link.d-md-none.card-row_elem.card-link(href="") Подробнее...
     .d-md-none.card-row_elem.card-footer

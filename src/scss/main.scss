@@ -159,9 +159,9 @@ svg path {
           height: auto;
           font-size: #{map-get($spacers, 20)}/ 1.4;
 
-          &_row {
-            position: relative;
-          }
+          // &_row {
+          //   position: relative;
+          // }
 
           &_text {
             padding-right: map-get($spacers, 11);
@@ -246,11 +246,13 @@ svg path {
 
         &-subtitle {
           height: auto;
+          color: $gray-200;
 
           &_badge {
             margin-left: map-get($spacers, 9);
             border-radius: map-get($spacers, 6);
-            padding: 0 map-get($spacers, 2) 0 map-get($spacers, 4);
+            // padding: 0 map-get($spacers, 2) 0 map-get($spacers, 4);
+            padding: 0 map-get($spacers, 3) 0 map-get($spacers, 4);
             font-weight: normal;
             font-size: #{map-get($spacers, 12)}/#{map-get($spacers, 13)};
             color: $white $gray-light;
@@ -388,13 +390,12 @@ svg path {
     // background-image: url(../img/bg/star.png);
 
     &_star {
+      @include position("50% * * 50%");
       // @include padding("* 5px");
       // @include padding("* #{map-get($spacers, 5)}");
-      // size: 100%;
+      size: 110%;
       // stroke-width: 5px;
-      // stroke: $green;
-      // position: absolute;
-      fill: $green;
+      transform: translate(-50%, -50%);
     }
 
     &_text {
@@ -405,6 +406,10 @@ svg path {
       display: block;
       font-size: #{map-get($spacers, 15)}/#{map-get($spacers, 50)};
       color: $white;
+    }
+
+    &--success &_star {
+      fill: $green;
     }
 
     &--warning {
@@ -418,10 +423,8 @@ svg path {
       }
     }
 
-    &--danger {
-      #{$elem}_star {
-        fill: $red;
-      }
+    &--danger &_star {
+      fill: $red;
     }
   }
 

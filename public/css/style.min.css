@@ -1,7 +1,15 @@
 @font-face {
   font-family: "Neuron";
   src: url("../fonts/Neuron/Neuron.eot");
-  src: url("../fonts/Neuron/Neuron.eot?#iefix") format("embedded-opentype"), url("../fonts/Neuron/Neuron.svg#Neuron") format("svg"), url("../fonts/Neuron/Neuron.ttf") format("truetype"), url("../fonts/Neuron/Neuron.woff") format("woff"), url("../fonts/Neuron/Neuron.woff2") format("woff2");
+  src: url("../fonts/Neuron/Neuron.eot?#iefix") format("embedded-opentype"), url("../fonts/Neuron/Neuron.svgNeuron") format("svg"), url("../fonts/Neuron/Neuron.ttf") format("truetype"), url("../fonts/Neuron/Neuron.woff") format("woff"), url("../fonts/Neuron/Neuron.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NeuronAngled-DemiBold";
+  src: url("../fonts/NeuronAngled-DemiBold/NeuronAngled-DemiBold.eot");
+  src: url("../fonts/NeuronAngled-DemiBold/NeuronAngled-DemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/NeuronAngled-DemiBold/NeuronAngled-DemiBold.svgNeuronAngled-DemiBold") format("svg"), url("../fonts/NeuronAngled-DemiBold/NeuronAngled-DemiBold.ttf") format("truetype"), url("../fonts/NeuronAngled-DemiBold/NeuronAngled-DemiBold.woff") format("woff"), url("../fonts/NeuronAngled-DemiBold/NeuronAngled-DemiBold.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -32941,10 +32949,6 @@ svg path {
   line-height: 1.4;
 }
 
-.main-container--rows .card-title_row {
-  position: relative;
-}
-
 .main-container--rows .card-title_text {
   padding-right: 11px;
   padding-right: 0.6875rem;
@@ -33053,14 +33057,15 @@ svg path {
 
 .main-container--rows .card-subtitle {
   height: auto;
+  color: #a0a0a0;
 }
 
 .main-container--rows .card-subtitle_badge {
   margin-left: 9px;
   margin-left: 0.5625rem;
   border-radius: 0.375rem;
-  padding: 0 2px 0 4px;
-  padding: 0 0.125rem 0 0.25rem;
+  padding: 0 3px 0 4px;
+  padding: 0 0.1875rem 0 0.25rem;
   font-weight: 400;
   font-size: 12px;
   line-height: 13px;
@@ -33205,7 +33210,12 @@ svg path {
 }
 
 .card-rating_star {
-  fill: #66c52d;
+  top: 50%;
+  left: 50%;
+  width: 110%;
+  height: 110%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .card-rating_text {
@@ -33215,6 +33225,10 @@ svg path {
   font-size: 0.9375rem;
   line-height: 3.125rem;
   color: #fff;
+}
+
+.card-rating--success .card-rating_star {
+  fill: #66c52d;
 }
 
 .card-rating--warning .card-rating_star {
@@ -33471,6 +33485,7 @@ svg path {
   .main-container--blocks .card-title {
     margin-top: 7px;
     font-weight: 500;
+    font-family: "NeuronAngled-DemiBold", Neuron, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     line-height: 1.25rem;
     width: 105%;
     max-width: 105%;
@@ -33490,6 +33505,7 @@ svg path {
   .main-container--rows .card {
     margin-bottom: 12px;
     padding-top: 5px;
+    padding-bottom: 18px;
     padding-left: 0.6875rem;
     min-height: 216px;
   }
@@ -33605,7 +33621,6 @@ svg path {
     padding-top: 1px;
     padding-left: 0.0625rem;
     height: 1.5rem;
-    color: #a0a0a0;
   }
 
   .main-container--rows .card-subtitle_badge {
@@ -33748,6 +33763,6 @@ svg path {
   z-index: 1000000;
   width: 100%;
   height: 100%;
-  background: url("../img/desktop-blocks.jpg") center top repeat-y;
+  background: url("../img/mobile-rows.jpg") center top repeat-y;
   opacity: 0.5;
 }
