@@ -270,7 +270,7 @@ $grid-gutter-width: 14px;
 
 $border-color: rgba($black, 0.1);
 
-$border-radius: 5px;
+$border-radius: 3px;
 $border-radius-lg: $border-radius + 2px;
 $border-radius-sm: $border-radius - 2px;
 
@@ -323,7 +323,7 @@ $pagination-padding-y-sm: 0;
 $pagination-padding-x-sm: 0;
 $pagination-padding-y-lg: 0;
 $pagination-padding-x-lg: 0;
-$pagination-line-height: $font-size-lg * 2.125;
+$pagination-line-height: $font-size-lg * 2.25;
 
 $pagination-color: $gray-500;
 $pagination-bg: rgba(255, 255, 255, 1);

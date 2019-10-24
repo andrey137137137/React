@@ -94,14 +94,14 @@
   }
 
   &#{$block}--success {
-    fill: map-get($theme-colors, "success");
+    fill: map-get($theme-colors, "success") !important;
   }
 
   &#{$block}--warning {
-    fill: map-get($theme-colors, "warning");
+    fill: map-get($theme-colors, "warning") !important;
   }
 
   &#{$block}--danger {
-    fill: map-get($theme-colors, "danger");
+    fill: map-get($theme-colors, "danger") !important;
   }
 }

@@ -8,21 +8,22 @@
 
     &--round {
       padding: 0;
+      size: auto;
 
-      &,
-      #{$block}-symbol_wrap,
-      #{$block}-symbol {
-        size: auto;
-      }
+      // &,
+      // #{$block}-symbol_wrap,
+      // #{$block}-symbol {
+      //   size: auto;
+      // }
 
       #{$block}-bg {
         display: none;
       }
 
-      #{$block}-symbol_wrap {
-        z-index: 1;
-        line-height: inherit;
-      }
+      // #{$block}-symbol_wrap {
+      //   z-index: 1;
+      //   line-height: inherit;
+      // }
 
       &#{$block}--success,
       &#{$block}--warning,
@@ -320,6 +321,8 @@
   }
 
   .filter {
+    $block: &;
+
     // @include padding("* 7px 4px *");
 
     &-item {
@@ -330,33 +333,38 @@
       }
     }
 
+    &-link--switcher .icon {
+      @include margin("* #{map-get($spacers, 5)} * #{map-get($spacers, 4)}");
+      fill: $gray-light;
+    }
+
     &-text {
       @include padding("* #{map-get($spacers, 10)}");
     }
 
     &-icon {
-      &--margined,
-      &--rounded .icon-symbol {
-        size: map-get($spacers, 14);
-      }
+      // &--margin,
+      // &--round .icon-symbol {
+      //   size: map-get($spacers, 14);
+      // }
 
-      &--margined {
-        @include margin("* #{map-get($spacers, 5)}");
-        fill: $gray-light;
-      }
-
-      &--rounded {
+      &--round {
         @include margin("* 0");
 
         .icon-symbol {
           fill: $gray-200;
         }
       }
+
+      // &--margin {
+      //   @include margin("* #{map-get($spacers, 5)}");
+      //   fill: $gray-light;
+      // }
     }
 
-    &-icons {
-      padding-left: map-get($spacers, 4);
-    }
+    // &-icons {
+    //   padding-left: map-get($spacers, 4);
+    // }
   }
 
   .card {

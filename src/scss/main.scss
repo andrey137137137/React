@@ -294,31 +294,37 @@ svg path {
   &-link {
     justify-content: space-between;
 
-    &--p_0 {
+    &--switcher {
       padding: 0;
-    }
 
-    &--active {
-      #{$block}-icon {
-        fill: $green !important;
+      .icon {
+        margin-left: map-get($spacers, 9);
+        size: $spacer map-get($spacers, 15);
+        fill: $gray-200;
       }
     }
+
+    // &--active {
+    //   .icon {
+    //     fill: $green !important;
+    //   }
+    // }
   }
 
   // &-icons {
-  //   padding-right: 1px;
   //   padding-right: map-get($spacers, 1);
   // }
 
   &-text {
     @include padding("* #{map-get($spacers, 6)}");
     display: block;
-    font-size: #{$lead-font-size}/#{map-get($spacers, 49)};
+    // font-size: #{$lead-font-size}/#{map-get($spacers, 49)};
+    font-size: #{$lead-font-size}/#{map-get($spacers, 50)};
     color: $gray-500;
   }
 
   &-icon {
-    &--rounded {
+    &--round {
       margin-left: map-get($spacers, 5);
 
       .icon-bg {
@@ -330,10 +336,12 @@ svg path {
       }
     }
 
-    &--margined {
-      margin-left: map-get($spacers, 9);
+    &--filter {
       size: $spacer;
-      fill: $gray-200;
+    }
+
+    &--sort {
+      size: map-get($spacers, 11);
     }
   }
 }
@@ -383,17 +391,20 @@ svg path {
     // @include position(
     //   "absolute #{map-get($spacers, 4)} #{map-get($spacers, 5)} * *"
     // );
-    @include position("-4px -3px * *");
+    // @include position("-3px -4px * *");
+    // @include position("-4px -3px * *");
+    @include position("-2px -2px * *");
     // size: 49px 46px;
-    size: 48px 45px;
+    // size: 48px 45px;
+    size: 45px 42px;
     text-align: center;
-    // background-image: url(../img/bg/star.png);
+    background: url(../img/bg/star.png) center center no-repeat;
 
     &_star {
       @include position("50% * * 50%");
       // @include padding("* 5px");
       // @include padding("* #{map-get($spacers, 5)}");
-      size: 110%;
+      size: 86.66666666666667% 85.71428571428571%;
       // stroke-width: 5px;
       transform: translate(-50%, -50%);
     }
@@ -404,7 +415,8 @@ svg path {
       // z-index: 1;
       // line-height: map-get($spacers, 49);
       display: block;
-      font-size: #{map-get($spacers, 15)}/#{map-get($spacers, 50)};
+      // font-size: #{map-get($spacers, 15)}/#{map-get($spacers, 50)};
+      font-size: #{map-get($spacers, 15)}/#{map-get($spacers, 48)};
       color: $white;
     }
 
@@ -494,7 +506,8 @@ svg path {
         display: flex;
         justify-content: center;
         align-items: center;
-        size: map-get($spacers, 40) map-get($spacers, 36);
+        // size: map-get($spacers, 40) map-get($spacers, 36);
+        size: map-get($spacers, 41) map-get($spacers, 38);
       }
     }
 
@@ -506,10 +519,13 @@ svg path {
   }
 
   &-link {
-    margin-left: map-get($spacers, 7);
-    width: map-get($spacers, 36);
+    // margin-left: map-get($spacers, 7);
+    margin-left: map-get($spacers, 6);
+    // width: map-get($spacers, 36);
+    width: map-get($spacers, 38);
+    font-size: $lead-font-size;
     text-align: center;
-    box-shadow: $box-shadow;
+    // box-shadow: $box-shadow;
   }
 
   &-icon {
