@@ -23,13 +23,11 @@
 
   &-angle {
     &_left {
-      @include border("2px * * 2px / solid * * solid");
-      transform: rotate(-45deg);
+      transform: rotate(90deg);
     }
 
     &_right {
-      @include border("2px 2px * * / solid solid * *");
-      transform: rotate(45deg);
+      transform: rotate(-90deg);
     }
   }
 
@@ -42,10 +40,7 @@
       position: relative;
     }
 
-    #{$block}-bg
-    // #{$block}-symbol_wrap,
-    // #{$block}-symbol
- {
+    #{$block}-bg {
       size: 100%;
     }
 
@@ -53,12 +48,6 @@
       @include position("absolute 0 * * 0");
       border-radius: 50%;
     }
-
-    // #{$block}-symbol_wrap {
-    //   z-index: 1;
-    //   // line-height: $font-size-base;
-    //   line-height: inherit;
-    // }
 
     #{$block}-symbol {
       fill: inherit;

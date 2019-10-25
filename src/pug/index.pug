@@ -84,41 +84,12 @@ html(lang="ru")
 									span.pr-sm-0.pr-md-13.filter-text Вид
 									.filter-icons.pl-1.pr-2
 										a.nav-link.filter-link.filter-link--switcher(href="" @click.prevent="byRows=true")
-											//- span.icon.icon-bars.filter-icon.filter-icon--margined
 											+svg("bars", "icon", "{'icon--success': byRows}")
 										a.nav-link.filter-link.filter-link--switcher(href="" @click.prevent="byRows=false")
-											//- span.icon.icon-squares.filter-icon.filter-icon--margined.filter-icon--active
 											+svg("th-large", "icon", "{'icon--success': !byRows}")
 						+card-container
-						.row.mt-n2.pl-17.px-md-0.main-row.pagination-container
-							ul.col-auto.pagination.mb-7.pr-19.pr-md-25
-								- for (var i = 0; i < 7; i++)
-									case i
-										when 0
-											li.page-item
-												a.page-link(href="")
-													span.icon.icon-angle_left.page-text.page-icon
-													span.d-none.d-md-block.page-text Предыдущая
-										when 1
-											li.page-item.d-none.d-md-block
-												a.page-link(href="")= i
-										when 2
-											li.page-item
-												a.page-link.ml-5(href="")= i
-										when 3
-											li.page-item.active
-												a.page-link(href="")= i
-										when 5
-											li.page-item.d-none.d-md-block
-												a.page-link(href="")= i
-										when 6
-											li.page-item
-												a.page-link(href="")
-													span.d-none.d-md-block.page-text Следующая
-													span.icon.icon-angle_right.page-text.page-icon
-										default
-											li.page-item
-												a.page-link(href="")= i
+						.row.pl-17.px-md-0.main-row.pagination-container
+							+pagination
 							.col-auto.pl-2.pr-0.page-status Страница 3 из 7
 					aside.col.d-none.d-lg-block.px-0.section.sidebar
 						.container.section-container.sidebar-container.section-white_bg

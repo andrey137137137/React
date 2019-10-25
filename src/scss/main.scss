@@ -93,7 +93,6 @@ svg path {
     justify-content: space-around;
 
     &--blocks {
-      margin-bottom: 20px;
       @include padding("* * 37px 27px");
       background-color: $white;
 
@@ -110,10 +109,14 @@ svg path {
       .card {
         flex-grow: 1;
         flex-basis: auto;
-        margin-bottom: 20px;
+        @include margin("20px * 0");
         @include padding("9px 0 *");
         width: 100%;
         background-color: $white;
+
+        &:first-child {
+          margin-top: 0;
+        }
 
         &-body {
           @include padding(
@@ -179,7 +182,8 @@ svg path {
           }
 
           &_translate {
-            padding-top: 1px;
+            // padding-top: 1px;
+            padding-top: 4px;
             font-weight: normal;
             font-size: #{$lead-font-size}/#{map-get($spacers, 21)};
             color: $gray-500;
@@ -369,7 +373,7 @@ svg path {
   }
 
   &-img {
-    border-radius: 5px;
+    border-radius: $border-radius;
     width: auto;
     max-width: 99px;
   }
@@ -486,15 +490,15 @@ svg path {
   }
 }
 
-// .pagination {
-//   &-container {
-//     margin-top: 20px;
-//     padding-left: 18px;
-//   }
+.pagination {
+  &-container {
+    margin-top: 18px;
+    // padding-left: 18px;
+  }
 
-//   margin-bottom: 9px;
-//   padding-right: 19px;
-// }
+  // margin-bottom: 9px;
+  // padding-right: 19px;
+}
 
 .page {
   $block: &;
@@ -529,7 +533,8 @@ svg path {
   }
 
   &-icon {
-    size: map-get($spacers, 10);
+    // size: map-get($spacers, 10);
+    size: map-get($spacers, 13);
     fill: $gray-200;
   }
 
@@ -538,7 +543,7 @@ svg path {
   }
 
   &-status {
-    font-size: #{$lead-font-size}/#{map-get($spacers, 36)};
+    font-size: #{$lead-font-size}/#{map-get($spacers, 38)};
     color: $gray-200;
   }
 }

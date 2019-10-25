@@ -31,8 +31,8 @@ mixin card-title-text(text)
 mixin card-title(title, marked)
   h3.col-auto.section-title.card-title
     .position-relative.card-title_row
-      //- +card-title-text(title)
-      +card-title-text("Король лев")
+      +card-title-text(title)
+      //- +card-title-text("Король лев")
       .icon.icon--round.card-row_elem.card-row_elem--d_inline_block.card-title_mark(class={"icon--success": marked})
         .icon-bg
         .icon-symbol_wrap
@@ -57,9 +57,9 @@ mixin card-subtitle-text(text)
 
 mixin card-subtitle(options)
   h4.card-subtitle
-    +card-subtitle-text("2019, Боевик, драма, биография")
+    //- +card-subtitle-text("2019, Боевик, драма, биография")
     //- +card-subtitle-text(options.date + ", " + options.genre)
-    //- +card-subtitle-text(options.translate)
+    +card-subtitle-text(options.translate)
     span.badge.card-row_elem.card-row_elem--d_inline_block.card-subtitle_badge.order-md-first 16+
     .card-text_gradient_hidden.card-subtitle_gradient_hidden
 
@@ -140,8 +140,8 @@ mixin card(img, options)
             .col.card-categories_wrap
               +card-subtitle(options)
               +card-categories(options.reviews)
-              +card-short-text("Фильм, 120 мин. Великобритания")
-              //- +card-short-text(options.category)
+              //- +card-short-text("Фильм, 120 мин. Великобритания")
+              +card-short-text(options.category)
             .col-auto.card-desc= options.text
       a.btn.btn-link.d-md-none.card-row_elem.card-link(href="") Подробнее...
     .d-md-none.card-row_elem.card-footer
@@ -155,3 +155,33 @@ mixin card-container
   main.row.mr-lg-0.section-container.main-row.main-container(:class="containerClasses")
     +display-cards(movies)
     +display-cards(movies)
+
+mixin page-icon(icon)
+  //- span.icon.page-text.page-icon(class="icon-" + icon)
+  +svg("angle", "icon icon-" + icon + " page-text page-icon")
+
+mixin page-text(text)
+  span.d-none.d-md-block.page-text= text
+
+mixin page-item(index, len)
+  - var itemClassCond = index == 4 || index == len - 2
+
+  li.page-item(class={"d-none": itemClassCond, "d-md-block": itemClassCond, "active": index == 3})
+    //- a.page-link(href="" class={"ml-6": index == len - 1})
+    a.page-link(href="")
+      case index
+        when 0
+          +page-icon("angle_left")
+          +page-text("Предыдущая")
+        when len - 1
+          +page-text("Следующая")
+          +page-icon("angle_right")
+        default
+          | #{index}
+
+mixin pagination
+  - var len = 7
+
+  ul.col-auto.pagination.mb-6.pr-19.pr-md-20
+    - for (var i = 0; i < len; i++)
+      +page-item(i, len)

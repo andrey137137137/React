@@ -78,7 +78,6 @@
 
     &-container {
       &--blocks {
-        margin-bottom: 14px;
         @include padding(
           "4px #{map-get($spacers, 19)} 14px #{map-get($spacers, 23)}"
         );
@@ -140,7 +139,7 @@
 
       &--rows {
         .card {
-          margin-bottom: 12px;
+          margin-top: 12px;
           @include padding("5px * 18px #{map-get($spacers, 11)}");
           min-height: 216px;
 
@@ -377,13 +376,13 @@
     }
   }
 
-  // .pagination {
-  //   &-container {
-  //     margin-top: 14px;
-  //   }
+  .pagination {
+    &-container {
+      margin-top: 11px;
+    }
 
-  //   padding-right: 25px;
-  // }
+    // padding-right: 25px;
+  }
 
   .page {
     $block: &;
@@ -393,14 +392,30 @@
       &:last-child {
         #{$block}-link {
           justify-content: space-between;
-          @include padding("* #{map-get($spacers, 25)}");
-          width: 155px;
+          padding-right: map-get($spacers, 22);
+          width: 157px;
+        }
+      }
+
+      &:first-child {
+        #{$block}-link {
+          padding-left: map-get($spacers, 17);
+        }
+      }
+
+      &:last-child {
+        #{$block}-link {
+          padding-left: map-get($spacers, 22);
         }
       }
     }
 
-    &-text {
-      font-size: $lead-font-size;
+    &-link {
+      margin-left: map-get($spacers, 5);
     }
+
+    // &-text {
+    //   font-size: $lead-font-size;
+    // }
   }
 }
