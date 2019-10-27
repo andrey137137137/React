@@ -61,8 +61,8 @@
 
     &-white_bg {
       border: $border-color solid $border-width;
-      border-radius: $border-radius-sm;
-      // box-shadow: $box-shadow;
+      border-radius: $border-radius;
+      box-shadow: $box-shadow;
     }
   }
 
@@ -102,7 +102,8 @@
 
           &-rating {
             // @include position("-2px -6px * *");
-            @include position("-2px -4px * *");
+            // @include position("-2px -4px * *");
+            @include position("0 -4px * *");
           }
 
           &-review {
@@ -150,7 +151,8 @@
           }
 
           &-rating {
-            right: -8px;
+            // right: -8px;
+            right: -6px;
           }
 
           &-review {

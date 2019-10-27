@@ -274,9 +274,8 @@ $border-radius: 3px;
 $border-radius-lg: $border-radius + 2px;
 $border-radius-sm: $border-radius - 2px;
 
-// $box-shadow-sm: 0 1px 0 rgba($black, 0.09);
-$box-shadow: 0 1px 0 rgba($black, 0.09);
-// $box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
+// $box-shadow: 0 1px 1px -1px rgba($black, 0.09);
+$box-shadow: 0px 1px 4px -3px $black;
 
 // Typography
 //

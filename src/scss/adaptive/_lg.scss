@@ -11,4 +11,12 @@
   //     margin-right: -7px;
   //   }
   // }
+
+  .sidebar {
+    max-width: 218px;
+
+    &-container {
+      height: 585px;
+    }
+  }
 }

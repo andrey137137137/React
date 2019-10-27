@@ -402,13 +402,15 @@ svg path {
     // size: 48px 45px;
     size: 45px 42px;
     text-align: center;
-    background: url(../img/bg/star.png) center center no-repeat;
+    // background: url(../img/bg/star.png) center center no-repeat;
 
     &_star {
       @include position("50% * * 50%");
       // @include padding("* 5px");
       // @include padding("* #{map-get($spacers, 5)}");
       size: 86.66666666666667% 85.71428571428571%;
+      // size: 125%;
+      // stroke: #000;
       // stroke-width: 5px;
       transform: translate(-50%, -50%);
     }
@@ -529,7 +531,7 @@ svg path {
     width: map-get($spacers, 38);
     font-size: $lead-font-size;
     text-align: center;
-    // box-shadow: $box-shadow;
+    box-shadow: $box-shadow;
   }
 
   &-icon {
@@ -545,14 +547,6 @@ svg path {
   &-status {
     font-size: #{$lead-font-size}/#{map-get($spacers, 38)};
     color: $gray-200;
-  }
-}
-
-.sidebar {
-  max-width: 216px;
-
-  &-container {
-    height: 585px;
   }
 }
 
