@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+	.section.filter_form
+		.row.mx-0
+			.col-12.col-md-auto.navbar.section-header
+				h3.navbar-brand.filter_form-title.d-md-none Фильтр
+				button.btn.btn-link.filter_form-reset(type="reset") Сбросить
+			ul.col.nav.nav-tabs.order-md-first
+				li.nav-item(:class="getTabItemClass(0)")
+					a.nav-link(href="" :class="getTabLinkClass(0)" @click.prevent="activeTab=0") Сегодня в кино
+				li.nav-item(:class="getTabItemClass(1)")
+					a.nav-link(href="" :class="getTabLinkClass(1)" @click.prevent="activeTab=1") Скоро в кино
+				li.nav-item(:class="getTabItemClass(2)")
+					a.nav-link(href="" :class="getTabLinkClass(2)" @click.prevent="activeTab=2") Популярное на ТВ
+		.row.filter_form-row.section-white_bg.section-body

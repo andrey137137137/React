@@ -1,8 +1,7 @@
 @include media-breakpoint-up(lg) {
-  .content {
-    // max-width: 1020px;
-    max-width: map-get($container-max-widths, xl);
-  }
+  // .content {
+  //   max-width: map-get($container-max-widths, xl);
+  // }
 
   // .main {
   //   padding-right: 14px;

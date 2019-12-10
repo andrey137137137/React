@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  </head>
+  <style>
+    * {
+      margin: 0;
+      border-width: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+    }
+
+    .container,
+    .main {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .container {
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 100%;
+    }
+
+    .section {
+      background-color: #fff;
+    }
+
+    .main {
+      /* padding: 0 11px 0 27px; */
+      padding: 0 3.4375% 0 8.4375%;
+      max-width: 345px;
+    }
+
+    .col {
+      flex-grow: 0;
+      flex-basis: 0;
+      /* margin: 0 6px; */
+      margin: 0 2.127659574468085%;
+      padding: 8px;
+      min-width: auto;
+      max-width: 100%;
+    }
+
+    .img_wrap {
+      padding-top: 21px;
+      padding-right: 14px;
+      /* background-color: #66C52D; */
+      overflow: hidden;
+    }
+
+    .img {
+      border-radius: 3px;
+      width: auto;
+      max-width: 99px;
+    }
+
+    .sidebar {
+      display: none;
+    }
+
+    @media(min-width: 461px) {
+      .main {
+        /* padding: 0 11px 0 27px; */
+        padding: 0 2.386117136659436% 0 5.856832971800434%;
+        max-width: 476px;
+      }
+
+      .col {
+        /* margin: 0 6px; */
+        margin: 0 1.418439716312057%;
+      }
+    }
+
+    @media(min-width: 602px) {
+      .container {
+        max-width: 602px;
+      }
+
+      .main {
+        padding: 0 11px 0 27px;
+        /* padding: 0 1.827242524916944% 0 4.485049833887043%; */
+        max-width: 100%;
+        /* max-width: 617px; */
+      }
+
+      .col {
+        margin: 0 6px;
+        /* margin: 0 0.9966777408637874%; */
+      }
+    }
+
+    @media(min-width: 640px) {
+      .container {
+        max-width: 640px;
+      }
+
+      .section {
+        border: #66C52D solid 1px;
+        border-radius: 3px;
+      }
+
+      .main {
+        padding: 0 19px 0 23px;
+      }
+
+      .col {
+        margin: 0;
+        /* padding: 8px 1.072386058981233%; */
+      }
+
+      .img_wrap {
+        padding-top: 21px;
+        padding-right: 11px;
+      }
+
+      .img {
+        max-width: 122px;
+      }
+    }
+    /* 
+    @media(min-width: 743px) {
+      .main {
+        padding: 0 11px 0 27px;
+        /* padding: 0 1.480484522207268% 0 3.633916554508748%;
+        max-width: 743px;
+      }
+
+      .col {
+        margin: 0 6px;
+        /* margin: 0 0.851063829787234%;
+      }
+    } */
+
+    @media(min-width: 790px) {
+      .container {
+        max-width: 790px;
+      };
+
+      /* 
+      .main {
+        /* padding: 0 10px 0 11px;
+        padding: 0 1.302083333333333% 0 1.432291666666667%;
+      } */
+    }
+
+    @media(min-width: 870px) {
+      .container {
+        max-width: 870px;
+      }
+
+      .main {
+        margin: 0;
+        max-width: 640px;
+      }
+
+      .sidebar {
+        display: block;
+        margin-left: 12px;
+        width: 218px;
+        height: 585px;
+      }
+    }
+
+    @media(min-width: 1020px) {
+      .container {
+        max-width: 1020px;
+      }
+
+      .main {
+        max-width: 790px;
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="section main">
+        <div class="col">
+          <div class="img_wrap"><img class="img" src="img/today/1.jpg"/></div>
+        </div>
+        <div class="col">
+          <div class="img_wrap"><img class="img" src="img/today/2.jpg"/></div>
+        </div>
+        <div class="col">
+          <div class="img_wrap"><img class="img" src="img/today/3.jpg"/></div>
+        </div>
+        <div class="col">
+          <div class="img_wrap"><img class="img" src="img/today/4.jpg"/></div>
+        </div>
+        <div class="col">
+          <div class="img_wrap"><img class="img" src="img/today/5.jpg"/></div>
+        </div>
+        <div class="col">
+          <div class="img_wrap"><img class="img" src="img/today/1.jpg"/></div>
+        </div>
+        <div class="col">
+          <div class="img_wrap"><img class="img" src="img/today/2.jpg"/></div>
+        </div>
+      </div>
+      <div class="section sidebar"></div>
+    </div>
+  </body>
+</html>

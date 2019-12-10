@@ -115,7 +115,7 @@ function html() {
   var YOUR_LOCALS = {};
 
   return gulp
-    .src(pathes.html.src + "/index.pug")
+    .src(pathes.html.src + "/pages/*.pug")
     .pipe($gp.plumber())
     .pipe(
       $gp.pug({
@@ -217,7 +217,11 @@ function browser_sync() {
 
 function watch() {
   gulp.watch(
-    [`${pathes.html.src}/*.pug`, `${pathes.svg.dest}/*.svg`],
+    [
+      `${pathes.html.src}/*.pug`,
+      `${pathes.html.src}/pages/*.pug`,
+      `${pathes.svg.dest}/*.svg`
+    ],
     gulp.series(html)
   );
   gulp.watch(`${pathes.svg.src}/*.svg`, gulp.series(svg));
@@ -228,7 +232,7 @@ function watch() {
   // );
 }
 
-exports.clean = clean;
+// exports.clean = clean;
 exports.svg = svg;
 exports.html = html;
 exports.css = css;
@@ -239,7 +243,7 @@ exports.browser_sync = browser_sync;
 gulp.task(
   "default",
   gulp.series(
-    clean,
+    // clean,
     gulp.parallel(html, css, svg),
     // gulp.parallel(svg, css, js)
     gulp.parallel(watch, browser_sync)

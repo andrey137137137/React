@@ -30,29 +30,29 @@ svg path {
       fill: $gray-300;
     }
   }
+}
 
-  &-brand {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    // size: 56px 36px;
-    size: map-get($spacers, 56) map-get($spacers, 36);
-    overflow: hidden;
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  // size: 56px 36px;
+  size: map-get($spacers, 56) map-get($spacers, 36);
+  overflow: hidden;
 
-    &_icon {
-      display: block;
-      size: 100% auto;
+  &_icon {
+    display: block;
+    size: 100% auto;
 
-      &--cinema {
-        height: 10px;
-        fill: $white;
-      }
+    &--cinema {
+      height: 10px;
+      fill: $white;
+    }
 
-      &--censor {
-        height: 21px;
-        fill: $green;
-      }
+    &--censor {
+      height: 21px;
+      fill: $green;
     }
   }
 }
@@ -79,10 +79,14 @@ svg path {
 
 .main {
   // padding-right: 0;
+  @include margin("* auto");
+  max-width: 345px;
 
   &-row {
-    margin-right: 0;
-    padding-right: 11px;
+    // margin-right: 0;
+    // @include margin("* 0");
+    // padding-right: 11px;
+    padding-right: 15px;
   }
 
   // &-top {
@@ -90,13 +94,24 @@ svg path {
   // }
 
   &-container {
-    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: space-around;
 
     &--blocks {
-      @include padding("* * 37px 27px");
+      // @include padding("* 11px 37px 27px");
+      @include padding("* 3.4375% 37px 8.4375%");
       background-color: $white;
 
       .card {
+        @include margin("* 2.127659574468085% -6px");
+        padding-top: 5px;
+
+        &-text_span {
+          display: block;
+          size: 120% 100%;
+        }
+
         &-title {
           overflow: hidden;
         }
@@ -109,8 +124,10 @@ svg path {
       .card {
         flex-grow: 1;
         flex-basis: auto;
-        @include margin("20px * 0");
-        @include padding("9px 0 *");
+        // @include margin("20px * 0");
+        margin-top: 20px;
+        // @include padding("9px 0 *");
+        padding-top: 9px;
         width: 100%;
         background-color: $white;
 
@@ -128,8 +145,8 @@ svg path {
           @include position("absolute 4px * * 0");
           border-top-left-radius: map-get($spacers, 3);
           border-top-right-radius: map-get($spacers, 3);
-          line-height: $lead-font-size;
-          size: map-get($spacers, 27);
+          font-size: #{$small-font-size}/#{$font-size-base};
+          size: map-get($spacers, 27) 50%;
           text-align: center;
           color: $white $gray-200;
         }
@@ -149,6 +166,10 @@ svg path {
             display: inline-block;
           }
         }
+
+        // &-text_span {
+        //   font-size: $font-size-base;
+        // }
 
         &-icon {
           display: inline-block;
@@ -182,10 +203,10 @@ svg path {
           }
 
           &_translate {
-            // padding-top: 1px;
-            padding-top: 4px;
+            // padding-top: map-get($spacers, 1);
+            padding-top: map-get($spacers, 4);
             font-weight: normal;
-            font-size: #{$lead-font-size}/#{map-get($spacers, 21)};
+            font-size: #{$font-size-base}/#{map-get($spacers, 21)};
             color: $gray-500;
           }
         }
@@ -234,7 +255,7 @@ svg path {
           }
 
           &_number {
-            font-size: $lead-font-size;
+            // font-size: $lead-font-size;
             color: $gray-500;
           }
         }
@@ -245,7 +266,7 @@ svg path {
 
         &-subtitle,
         &-short_text {
-          font-size: #{$lead-font-size}/#{map-get($spacers, 24)};
+          font-size: #{$font-size-base}/#{map-get($spacers, 24)};
         }
 
         &-subtitle {
@@ -270,7 +291,7 @@ svg path {
 
         &-link {
           margin-left: -#{map-get($spacers, 5)};
-          font-size: #{$lead-font-size}/#{map-get($spacers, 26)};
+          line-height: map-get($spacers, 26);
         }
 
         &-footer {
@@ -323,7 +344,7 @@ svg path {
     @include padding("* #{map-get($spacers, 6)}");
     display: block;
     // font-size: #{$lead-font-size}/#{map-get($spacers, 49)};
-    font-size: #{$lead-font-size}/#{map-get($spacers, 50)};
+    line-height: map-get($spacers, 50);
     color: $gray-500;
   }
 
@@ -350,10 +371,168 @@ svg path {
   }
 }
 
+.btn {
+  &-secondary {
+    box-shadow: none;
+  }
+
+  &-outline-secondary {
+    &,
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    &:hover {
+      color: $input-color transparent;
+    }
+
+    border-color: $input-border-color;
+
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    &:hover {
+      border-color: $green;
+    }
+
+    &:focus,
+    &.focus,
+    &:not(:disabled):not(.disabled):active:focus,
+    &:not(:disabled):not(.disabled).active:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.nav {
+  $block: &;
+
+  &-tabs {
+    position: relative;
+    @include padding("* #{map-get($spacers, 8)}");
+    background-color: $white;
+
+    // &,
+    // &:after {
+    //   border-top: 1px solid #eaeaea;
+    // }
+
+    &:after {
+      @include position("absolute * * 0 0");
+      display: block;
+      border-top: 1px solid #eaeaea;
+      width: 100%;
+      content: "";
+    }
+
+    #{$block}-item {
+      margin-bottom: 0 !important;
+      position: relative;
+      z-index: 1;
+    }
+
+    #{$block}-link {
+      // padding: 0;
+      line-height: map-get($spacers, 50);
+      color: $gray-200;
+
+      &.active {
+        // padding-bottom: map-get($spacers, 9);
+        padding-top: map-get($spacers, 3);
+        border-bottom-width: 4px;
+        line-height: map-get($spacers, 44);
+      }
+    }
+  }
+}
+
+.filter_form {
+  margin-bottom: 20px;
+  // size: 100% 490px;
+
+  &-header {
+    @include border("1px * 1px / solid * solid / #eaeaea * #eaeaea");
+    padding: 0 7px 0 17px;
+    background-color: #f7f7f7;
+  }
+
+  // &-title,
+  // &-reset {
+  //   line-height: map-get($spacers, 51);
+  // }
+
+  &-title {
+    font-size: #{map-get($spacers, 20)}/#{map-get($spacers, 51)};
+    color: $gray-700;
+  }
+
+  &-reset {
+    font-size: #{map-get($spacers, 15)}/#{map-get($spacers, 49)};
+    color: $gray-500;
+  }
+
+  &-row {
+    @include margin("* 0");
+    // @include padding("20px 16px 21px 18px");
+    @include padding("19px 10px 21px 12px");
+  }
+
+  &-channel_wrap {
+    display: none;
+  }
+
+  &-channel {
+    @include padding("* #{$input-padding-x}");
+    width: 100%;
+    text-align: left;
+    font-size: #{$input-font-size}/ 2.4375rem;
+  }
+
+  &-control--active,
+  &_category {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: $border-radius;
+  }
+
+  &-control_wrap {
+    margin-top: 11px;
+  }
+
+  &-control {
+    &--active {
+      border: 1px solid $green;
+      padding: 8px 8px 2px;
+    }
+  }
+
+  &_category {
+    @include margin("* 7px 6px *");
+    @include padding("* 6px * 7px");
+    font-size: #{$small-font-size}/#{map-get($spacers, 23)};
+    color: $white $gray-200;
+
+    &-text {
+      margin-right: 8px;
+    }
+
+    &-close {
+      align-self: center;
+      size: map-get($spacers, 8);
+      fill: $white;
+    }
+  }
+
+  &-btns {
+    margin-top: 17px;
+    // border-width: 1px;
+    @include padding("* 0");
+    // width: 100%;
+    // box-shadow: none;
+  }
+}
+
 .card {
   flex-grow: 0;
-  margin-bottom: -6px;
-  @include padding("5px #{map-get($spacers, 6)} *");
+  // @include padding("5px #{map-get($spacers, 6)} *");
+  @include padding("* 0");
   min-width: auto;
 
   &-body {
@@ -384,9 +563,9 @@ svg path {
       position: absolute;
     }
 
-    &_bg {
-      fill: $white;
-    }
+    // &_bg #pstar-bg {
+    //   fill: $white;
+    // }
   }
 
   &-rating {
@@ -404,16 +583,16 @@ svg path {
     text-align: center;
     // background: url(../img/bg/star.png) center center no-repeat;
 
-    &_star {
-      @include position("50% * * 50%");
-      // @include padding("* 5px");
-      // @include padding("* #{map-get($spacers, 5)}");
-      size: 86.66666666666667% 85.71428571428571%;
-      // size: 125%;
-      // stroke: #000;
-      // stroke-width: 5px;
-      transform: translate(-50%, -50%);
-    }
+    // &_star {
+    //   @include position("50% * * 50%");
+    //   // @include padding("* 5px");
+    //   // @include padding("* #{map-get($spacers, 5)}");
+    //   size: 86.66666666666667% 85.71428571428571%;
+    //   // size: 125%;
+    //   // stroke: #000;
+    //   // stroke-width: 5px;
+    //   transform: translate(-50%, -50%);
+    // }
 
     &_text {
       // @include position("absolute 0 0 *");
@@ -422,15 +601,18 @@ svg path {
       // line-height: map-get($spacers, 49);
       display: block;
       // font-size: #{map-get($spacers, 15)}/#{map-get($spacers, 50)};
-      font-size: #{map-get($spacers, 15)}/#{map-get($spacers, 48)};
+      // font-size: #{map-get($spacers, 15)}/#{map-get($spacers, 48)};
+      font-size: #{map-get($spacers, 15)}/ 48px;
       color: $white;
     }
 
+    // &--success &_star .psvg-front
     &--success &_star {
       fill: $green;
     }
 
     &--warning {
+      // #{$elem}_star .psvg-front
       #{$elem}_star {
         fill: $orange;
       }
@@ -441,6 +623,7 @@ svg path {
       }
     }
 
+    // &--danger &_star .psvg-front
     &--danger &_star {
       fill: $red;
     }
@@ -451,23 +634,30 @@ svg path {
     size: 49px;
     // background-image: url(../img/sprite/review.png);
 
-    &_bg {
-      opacity: 0.7;
-    }
+    // &_bg {
+    //   opacity: 0.7;
+    // }
 
     &_icon {
-      fill: $gray-500;
+      // fill: $gray-500;
+      fill: $black;
     }
   }
 
-  &-text_wrap_row {
+  &-title_wrap {
     justify-content: space-between;
+    align-items: start;
   }
 
   &-title {
     position: relative;
     margin-top: 10px;
     size: 100% map-get($spacers, 21);
+
+    &_row {
+      position: relative;
+      display: block;
+    }
   }
 
   &-text_gradient_hidden {
@@ -478,7 +668,7 @@ svg path {
 
   &-row_elem,
   &-info_wrap,
-  &-separator,
+  // &-separator,
   &-categories,
   &-desc {
     display: none;
@@ -529,7 +719,7 @@ svg path {
     margin-left: map-get($spacers, 6);
     // width: map-get($spacers, 36);
     width: map-get($spacers, 38);
-    font-size: $lead-font-size;
+    // font-size: $lead-font-size;
     text-align: center;
     box-shadow: $box-shadow;
   }
@@ -545,7 +735,7 @@ svg path {
   }
 
   &-status {
-    font-size: #{$lead-font-size}/#{map-get($spacers, 38)};
+    line-height: map-get($spacers, 38);
     color: $gray-200;
   }
 }

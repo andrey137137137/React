@@ -91,20 +91,1259 @@
       <div class="container px-0">
         <div class="row no-gutters">
           <section class="col pr-lg-12 content main">
-            <div class="section filter_form">
+            <header class="row no-gutters pl-8 px-md-0 main-row">
+              <h2 class="col pl-8 pl-md-2 section-title section-title--main main-title">Сегодня в кино</h2>
+              <ul class="col-5 col-sm-8 nav pb-5 pb-sm-13 pr-md-0 pb-md-4 justify-content-end filter">
+                <li class="nav-item order-md-1 mr-md-10 filter-item filter-item--d_flex"><a class="nav-link pr-7 pb-7 p-md-0 icon icon--round filter-icon filter-icon--round filter-link" :class="{'icon--success': showFilter}" href="" @click.prevent="showFilter=!showFilter">
+                    <div class="icon-bg"></div><span class="d-none d-md-inline-block pr-md-17 filter-text" :class="{'text-success': showFilter}">Фильтр</span>
+                    <div class="icon-symbol_wrap">
+                      <svg class="icon-symbol filter-icon filter-icon--filter" :class="">
+                        <use xlink:href="#filter"></use>
+                      </svg>
+                    </div></a></li>
+                <li class="nav-item order-md-3 mr-md-6 filter-item filter-item--d_flex"><a class="nav-link pl-11 py-10 pr-9 p-md-0 icon icon--round filter-icon filter-icon--round filter-link" href="">
+                    <div class="icon-bg"></div><span class="d-none d-md-inline-block pr-md-11 filter-text">Сортировка</span>
+                    <div class="icon-symbol_wrap">
+                      <svg class="icon-symbol filter-icon filter-icon--sort" :class="">
+                        <use xlink:href="#sort-amount"></use>
+                      </svg>
+                    </div></a></li>
+                <li class="nav-item nav order-md-2 mr-md-0 filter-item filter-item--icons_wrap"><span class="pr-sm-0 pr-md-13 filter-text">Вид</span>
+                  <div class="filter-icons pl-1 pr-2"><a class="nav-link filter-link filter-link--switcher" href="" @click.prevent="byRows=true">
+                      <svg class="icon" :class="{'icon--success': byRows}">
+                        <use xlink:href="#bars"></use>
+                      </svg></a><a class="nav-link filter-link filter-link--switcher" href="" @click.prevent="byRows=false">
+                      <svg class="icon" :class="{'icon--success': !byRows}">
+                        <use xlink:href="#th-large"></use>
+                      </svg></a></div>
+                </li>
+              </ul>
+            </header>
+            <form class="form filter_form mt-md-n1" :class="{'d-none': !showFilter}" action="">
               <div class="row mx-0">
-                <div class="col-12 col-md-auto navbar section-header">
+                <div class="col-12 col-md-auto navbar filter_form-header">
                   <h3 class="navbar-brand filter_form-title d-md-none">Фильтр</h3>
                   <button class="btn btn-link filter_form-reset" type="reset">Сбросить</button>
                 </div>
-                <ul class="col nav nav-tabs order-md-first">
-                  <li class="nav-item" :class="getTabItemClass(0)"><a class="nav-link" href="" :class="getTabLinkClass(0)" @click.prevent="activeTab=0">Сегодня в кино</a></li>
-                  <li class="nav-item" :class="getTabItemClass(1)"><a class="nav-link" href="" :class="getTabLinkClass(1)" @click.prevent="activeTab=1">Скоро в кино</a></li>
-                  <li class="nav-item" :class="getTabItemClass(2)"><a class="nav-link" href="" :class="getTabLinkClass(2)" @click.prevent="activeTab=2">Популярное на ТВ</a></li>
+                <ul class="col nav nav-tabs order-md-first filter_form-tabs">
+                  <li class="nav-item filter_form-item" :class="getTabItemClass(0)"><a class="nav-link filter_form-link" href="" :class="getTabLinkClass(0)" @click.prevent="activeTab=0">Все</a></li>
+                  <li class="nav-item filter_form-item" :class="getTabItemClass(1)"><a class="nav-link filter_form-link" href="" :class="getTabLinkClass(1)" @click.prevent="activeTab=1">Сериалы</a></li>
+                  <li class="nav-item filter_form-item" :class="getTabItemClass(2)"><a class="nav-link filter_form-link" href="" :class="getTabLinkClass(2)" @click.prevent="activeTab=2">Передачи</a></li>
                 </ul>
               </div>
-              <div class="row filter_form-row section-white_bg section-body"></div>
-            </div>
+              <div class="row filter_form-row section-white_bg section-body">
+                <div class="col-12">
+                  <div class="row no-gutters justify-content-between">
+                    <div class="col col-md-auto">
+                      <button class="btn btn-outline-secondary active filter_form-channel" type="button">Все каналы</button>
+                    </div>
+                    <div class="col filter_form-channel_wrap">
+                      <button class="btn btn-outline-secondary filter_form-channel filter_form-channel--item_1" type="button"></button><span class="filter_form-channel_title">Первый</span>
+                    </div>
+                    <div class="col filter_form-channel_wrap">
+                      <button class="btn btn-outline-secondary filter_form-channel filter_form-channel--item_2" type="button"></button><span class="filter_form-channel_title">ТНТ</span>
+                    </div>
+                    <div class="col filter_form-channel_wrap">
+                      <button class="btn btn-outline-secondary filter_form-channel filter_form-channel--item_3" type="button"></button><span class="filter_form-channel_title">Россия 1</span>
+                    </div>
+                    <div class="col filter_form-channel_wrap">
+                      <button class="btn btn-outline-secondary filter_form-channel filter_form-channel--item_1" type="button"></button><span class="filter_form-channel_title">Первый</span>
+                    </div>
+                    <div class="col filter_form-channel_wrap">
+                      <button class="btn btn-outline-secondary filter_form-channel filter_form-channel--item_2" type="button"></button><span class="filter_form-channel_title">ТНТ</span>
+                    </div>
+                    <div class="col filter_form-channel_wrap">
+                      <button class="btn btn-outline-secondary filter_form-channel filter_form-channel--item_3" type="button"></button><span class="filter_form-channel_title">Россия 1</span>
+                    </div>
+                    <div class="col filter_form-channel_wrap">
+                      <button class="btn btn-outline-secondary filter_form-channel filter_form-channel--item_1" type="button"></button><span class="filter_form-channel_title">Первый</span>
+                    </div>
+                    <div class="col-auto d-none d-md-block">
+                      <select class="form-control filter_form-channel_dropbox">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 filter_form-control_wrap">
+                  <div class="filter_form-control filter_form-control--active">
+                    <div class="filter_form_category">
+                      <div class="filter_form_category-text">Боевик</div><a class="icon filter_form_category-close" href="">
+                        <svg class="icon-symbol" :class="">
+                          <use xlink:href="#close"></use>
+                        </svg></a>
+                    </div>
+                    <div class="filter_form_category">
+                      <div class="filter_form_category-text">Ужасы</div><a class="icon filter_form_category-close" href="">
+                        <svg class="icon-symbol" :class="">
+                          <use xlink:href="#close"></use>
+                        </svg></a>
+                    </div>
+                    <div class="filter_form_category">
+                      <div class="filter_form_category-text">Фантастика</div><a class="icon filter_form_category-close" href="">
+                        <svg class="icon-symbol" :class="">
+                          <use xlink:href="#close"></use>
+                        </svg></a>
+                    </div>
+                    <div class="filter_form_category">
+                      <div class="filter_form_category-text">Комедия</div><a class="icon filter_form_category-close" href="">
+                        <svg class="icon-symbol" :class="">
+                          <use xlink:href="#close"></use>
+                        </svg></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 filter_form-control_wrap">
+                  <input class="form-control filter_form-control" placeholder="Все года...">
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 filter_form-control_wrap">
+                  <input class="form-control filter_form-control" placeholder="Все возраста...">
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 filter_form-control_wrap">
+                  <input class="form-control filter_form-control" placeholder="Все страны...">
+                </div>
+                <div class="col-12 mt-17">
+                  <div class="row mx-0">
+                    <button class="col-12 col-md-auto btn btn-secondary" type="submit">Применить</button>
+                    <button class="d-none col-auto ml-10 btn btn-secondary" type="reset">Сбросить</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <main>
+              <div class="d-flex flex-wrap main-container" :class="containerClasses">
+                <article class="card" :class="cardClasses">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-start">
+                      <div class="col-auto card-img_cover">
+                        <div class="card-row_elem card-tab">3d</div>
+                        <div class="card-img_wrap"><img class="card-img" src="img/today/1.jpg" alt="Бесконечно белый медведь"/></div>
+                        <div class="icon card-img_icon card-rating card-rating--success">
+                          <div class="icon-symbol_wrap card-img_icon_bg card-rating_star">
+                            <svg class="icon-symbol" :class="">
+                              <use xlink:href="#star"></use>
+                            </svg>
+                          </div><span class="icon-symbol_wrap card-rating_text">9.3</span>
+                        </div>
+                        <div class="icon card-img_icon card-review">
+                          <div class="icon-symbol_wrap card-review_icon">
+                            <svg class="icon-symbol" :class="">
+                              <use xlink:href="#stamp"></use>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col card-text_wrap">
+                        <div class="row no-gutters card-title_wrap">
+                          <h3 class="col-auto section-title card-title"><span class="card-title_row"><span class="card-title_stopper"></span><span class="card-text_span card-title_text">Бесконечно белый медведь</span><span class="icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark"><span class="icon-bg"></span><span class="icon-symbol_wrap">
+                                  <svg class="icon-symbol" :class="">
+                                    <use xlink:href="#bookmark"></use>
+                                  </svg></span></span></span><span class="d-md-none card-row_elem card-title_translate">The Lion King</span><span class="card-text_gradient_hidden card-title_gradient_hidden"></span></h3>
+                          <div class="col-auto card-info_wrap">
+                            <ul class="list-group list-group-horizontal card-info">
+                              <li class="list-group-item card-list_item card-info_item card-info_item--stars">
+                                <svg class="card-icon card-info_icon" :class="">
+                                  <use xlink:href="#star-empty"></use>
+                                </svg><span class="card-info_number">392</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-info_item card-info_item--reviews">
+                                <svg class="card-icon card-info_icon card-info_icon--review" :class="">
+                                  <use xlink:href="#layer-group"></use>
+                                </svg><span class="card-info_number">47</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-info_item card-info_item--comments">
+                                <svg class="card-icon card-info_icon card-info_icon--comment" :class="">
+                                  <use xlink:href="#comment"></use>
+                                </svg><span class="card-info_number">578</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="row no-gutters align-items-end">
+                          <div class="col card-categories_wrap">
+                            <h4 class="card-subtitle"><span class="card-text_span">2019, Боевик, драма, биография</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span><span class="card-text_gradient_hidden card-subtitle_gradient_hidden"></span>
+                            </h4>
+                            <ul class="list-group list-group-horizontal card-categories">
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#libra-square"></use>
+                                </svg><span class="card-categories_text"><span class="text-success">6,2</span>/<span class="text-danger">3,8</span></span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#cup-square"></use>
+                                </svg><span class="card-categories_text">7</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--danger" :class="">
+                                  <use xlink:href="#bottle-square"></use>
+                                </svg><span class="card-categories_text">Есть</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#strawberry-square"></use>
+                                </svg><span class="card-categories_text">Нет</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--danger" :class="">
+                                  <use xlink:href="#toilet-paper-square"></use>
+                                </svg><span class="card-categories_text">Есть</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#knuckle-square"></use>
+                                </svg><span class="card-categories_text">2</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#bullhorn-square"></use>
+                                </svg><span class="card-categories_text">2</span>
+                              </li>
+                            </ul>
+                            <p class="card-row_elem card-short_text">Топ 100 лучших фильмов</p>
+                          </div>
+                          <p class="col-auto card-desc">2015, Фильм, 106 мин. Боевик, драма, биография Китай, США, Канада Режисёр: Джеймс Кэмерон</p>
+                        </div>
+                      </div>
+                    </div><a class="btn btn-link d-md-none card-row_elem card-link" href="">Подробнее...</a>
+                  </div>
+                  <div class="d-md-none card-row_elem card-footer">
+                    <ul class="list-group list-group-horizontal card-info">
+                      <li class="list-group-item card-list_item card-info_item card-info_item--stars">
+                        <svg class="card-icon card-info_icon" :class="">
+                          <use xlink:href="#star-empty"></use>
+                        </svg><span class="card-info_number">392</span>
+                      </li>
+                      <li class="list-group-item card-list_item card-info_item card-info_item--reviews">
+                        <svg class="card-icon card-info_icon card-info_icon--review" :class="">
+                          <use xlink:href="#layer-group"></use>
+                        </svg><span class="card-info_number">47</span>
+                      </li>
+                      <li class="list-group-item card-list_item card-info_item card-info_item--comments">
+                        <svg class="card-icon card-info_icon card-info_icon--comment" :class="">
+                          <use xlink:href="#comment"></use>
+                        </svg><span class="card-info_number">578</span>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+                <article class="card" :class="cardClasses">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-start">
+                      <div class="col-auto card-img_cover">
+                        <div class="card-row_elem card-tab">3d</div>
+                        <div class="card-img_wrap"><img class="card-img" src="img/today/2.jpg" alt="Кто такой Гарри gh Келлерман и почему он говорит обо мне ужасные вещи?"/></div>
+                        <div class="icon card-img_icon card-rating card-rating--success card-rating--warning">
+                          <div class="icon-symbol_wrap card-img_icon_bg card-rating_star">
+                            <svg class="icon-symbol" :class="">
+                              <use xlink:href="#star"></use>
+                            </svg>
+                          </div><span class="icon-symbol_wrap card-rating_text">5.8</span>
+                        </div>
+                      </div>
+                      <div class="col card-text_wrap">
+                        <div class="row no-gutters card-title_wrap">
+                          <h3 class="col-auto section-title card-title"><span class="card-title_row"><span class="card-title_stopper"></span><span class="card-text_span card-title_text">Кто такой Гарри gh Келлерман и почему он говорит обо мне ужасные вещи?</span><span class="icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark icon--success"><span class="icon-bg"></span><span class="icon-symbol_wrap">
+                                  <svg class="icon-symbol" :class="">
+                                    <use xlink:href="#bookmark"></use>
+                                  </svg></span></span></span><span class="d-md-none card-row_elem card-title_translate">The Lion King</span><span class="card-text_gradient_hidden card-title_gradient_hidden"></span></h3>
+                          <div class="col-auto card-info_wrap">
+                            <ul class="list-group list-group-horizontal card-info">
+                              <li class="list-group-item card-list_item card-info_item card-info_item--stars">
+                                <svg class="card-icon card-info_icon" :class="">
+                                  <use xlink:href="#star-empty"></use>
+                                </svg><span class="card-info_number">105</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-info_item card-info_item--reviews">
+                                <svg class="card-icon card-info_icon card-info_icon--review" :class="">
+                                  <use xlink:href="#layer-group"></use>
+                                </svg><span class="card-info_number">6</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-info_item card-info_item--comments">
+                                <svg class="card-icon card-info_icon card-info_icon--comment" :class="">
+                                  <use xlink:href="#comment"></use>
+                                </svg><span class="card-info_number">57</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="row no-gutters align-items-end">
+                          <div class="col card-categories_wrap">
+                            <h4 class="card-subtitle"><span class="card-text_span">2019, Боевик, драма, биография</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span><span class="card-text_gradient_hidden card-subtitle_gradient_hidden"></span>
+                            </h4>
+                            <ul class="list-group list-group-horizontal card-categories">
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#libra-square"></use>
+                                </svg><span class="card-categories_text"><span class="text-success">4,7</span>/<span class="text-danger">5,3</span></span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#cup-square"></use>
+                                </svg><span class="card-categories_text">7</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--danger" :class="">
+                                  <use xlink:href="#bottle-square"></use>
+                                </svg><span class="card-categories_text">Есть</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#strawberry-square"></use>
+                                </svg><span class="card-categories_text">Есть</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#toilet-paper-square"></use>
+                                </svg><span class="card-categories_text">Нет</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#knuckle-square"></use>
+                                </svg><span class="card-categories_text">5</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--danger" :class="">
+                                  <use xlink:href="#bullhorn-square"></use>
+                                </svg><span class="card-categories_text">9</span>
+                              </li>
+                            </ul>
+                            <p class="card-row_elem card-short_text"></p>
+                          </div>
+                          <p class="col-auto card-desc">2011, Фильм, 120 мин. Драма, военный Великобритания, Франция Режисёр: Стивен Спилберг</p>
+                        </div>
+                      </div>
+                    </div><a class="btn btn-link d-md-none card-row_elem card-link" href="">Подробнее...</a>
+                  </div>
+                  <div class="d-md-none card-row_elem card-footer">
+                    <ul class="list-group list-group-horizontal card-info">
+                      <li class="list-group-item card-list_item card-info_item card-info_item--stars">
+                        <svg class="card-icon card-info_icon" :class="">
+                          <use xlink:href="#star-empty"></use>
+                        </svg><span class="card-info_number">105</span>
+                      </li>
+                      <li class="list-group-item card-list_item card-info_item card-info_item--reviews">
+                        <svg class="card-icon card-info_icon card-info_icon--review" :class="">
+                          <use xlink:href="#layer-group"></use>
+                        </svg><span class="card-info_number">6</span>
+                      </li>
+                      <li class="list-group-item card-list_item card-info_item card-info_item--comments">
+                        <svg class="card-icon card-info_icon card-info_icon--comment" :class="">
+                          <use xlink:href="#comment"></use>
+                        </svg><span class="card-info_number">57</span>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+                <article class="card" :class="cardClasses">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-start">
+                      <div class="col-auto card-img_cover">
+                        <div class="card-row_elem card-tab">3d</div>
+                        <div class="card-img_wrap"><img class="card-img" src="img/today/3.jpg" alt="Кто такой Гарри ghjk Келлерман и почему он говорит обо мне ужасные вещи?"/></div>
+                        <div class="icon card-img_icon card-rating card-rating--success card-rating--warning card-rating--danger">
+                          <div class="icon-symbol_wrap card-img_icon_bg card-rating_star">
+                            <svg class="icon-symbol" :class="">
+                              <use xlink:href="#star"></use>
+                            </svg>
+                          </div><span class="icon-symbol_wrap card-rating_text">2.4</span>
+                        </div>
+                      </div>
+                      <div class="col card-text_wrap">
+                        <div class="row no-gutters card-title_wrap">
+                          <h3 class="col-auto section-title card-title"><span class="card-title_row"><span class="card-title_stopper"></span><span class="card-text_span card-title_text">Кто такой Гарри ghjk Келлерман и почему он говорит обо мне ужасные вещи?</span><span class="icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark"><span class="icon-bg"></span><span class="icon-symbol_wrap">
+                                  <svg class="icon-symbol" :class="">
+                                    <use xlink:href="#bookmark"></use>
+                                  </svg></span></span></span><span class="d-md-none card-row_elem card-title_translate">The Lion King</span><span class="card-text_gradient_hidden card-title_gradient_hidden"></span></h3>
+                          <div class="col-auto card-info_wrap">
+                            <ul class="list-group list-group-horizontal card-info">
+                              <li class="list-group-item card-list_item card-info_item card-info_item--stars">
+                                <svg class="card-icon card-info_icon" :class="">
+                                  <use xlink:href="#star-empty"></use>
+                                </svg><span class="card-info_number">392</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-info_item card-info_item--reviews">
+                                <svg class="card-icon card-info_icon card-info_icon--review" :class="">
+                                  <use xlink:href="#layer-group"></use>
+                                </svg><span class="card-info_number">47</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-info_item card-info_item--comments">
+                                <svg class="card-icon card-info_icon card-info_icon--comment" :class="">
+                                  <use xlink:href="#comment"></use>
+                                </svg><span class="card-info_number">578</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="row no-gutters align-items-end">
+                          <div class="col card-categories_wrap">
+                            <h4 class="card-subtitle"><span class="card-text_span">2019, Боевик, драма, биография</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span><span class="card-text_gradient_hidden card-subtitle_gradient_hidden"></span>
+                            </h4>
+                            <ul class="list-group list-group-horizontal card-categories">
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#libra-square"></use>
+                                </svg><span class="card-categories_text"><span class="text-success">6,2</span>/<span class="text-danger">3,8</span></span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#cup-square"></use>
+                                </svg><span class="card-categories_text">7</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--danger" :class="">
+                                  <use xlink:href="#bottle-square"></use>
+                                </svg><span class="card-categories_text">Есть</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#strawberry-square"></use>
+                                </svg><span class="card-categories_text">Нет</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--danger" :class="">
+                                  <use xlink:href="#toilet-paper-square"></use>
+                                </svg><span class="card-categories_text">Есть</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#knuckle-square"></use>
+                                </svg><span class="card-categories_text">2</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#bullhorn-square"></use>
+                                </svg><span class="card-categories_text">2</span>
+                              </li>
+                            </ul>
+                            <p class="card-row_elem card-short_text">Топ 100 лучших фильмов</p>
+                          </div>
+                          <p class="col-auto card-desc"></p>
+                        </div>
+                      </div>
+                    </div><a class="btn btn-link d-md-none card-row_elem card-link" href="">Подробнее...</a>
+                  </div>
+                  <div class="d-md-none card-row_elem card-footer">
+                    <ul class="list-group list-group-horizontal card-info">
+                      <li class="list-group-item card-list_item card-info_item card-info_item--stars">
+                        <svg class="card-icon card-info_icon" :class="">
+                          <use xlink:href="#star-empty"></use>
+                        </svg><span class="card-info_number">392</span>
+                      </li>
+                      <li class="list-group-item card-list_item card-info_item card-info_item--reviews">
+                        <svg class="card-icon card-info_icon card-info_icon--review" :class="">
+                          <use xlink:href="#layer-group"></use>
+                        </svg><span class="card-info_number">47</span>
+                      </li>
+                      <li class="list-group-item card-list_item card-info_item card-info_item--comments">
+                        <svg class="card-icon card-info_icon card-info_icon--comment" :class="">
+                          <use xlink:href="#comment"></use>
+                        </svg><span class="card-info_number">578</span>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+                <article class="card" :class="cardClasses">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-start">
+                      <div class="col-auto card-img_cover">
+                        <div class="card-row_elem card-tab">3d</div>
+                        <div class="card-img_wrap"><img class="card-img" src="img/today/4.jpg" alt="Матрос Железняк"/></div>
+                        <div class="icon card-img_icon card-rating card-rating--success">
+                          <div class="icon-symbol_wrap card-img_icon_bg card-rating_star">
+                            <svg class="icon-symbol" :class="">
+                              <use xlink:href="#star"></use>
+                            </svg>
+                          </div><span class="icon-symbol_wrap card-rating_text">9.3</span>
+                        </div>
+                        <div class="icon card-img_icon card-review">
+                          <div class="icon-symbol_wrap card-review_icon">
+                            <svg class="icon-symbol" :class="">
+                              <use xlink:href="#stamp"></use>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col card-text_wrap">
+                        <div class="row no-gutters card-title_wrap">
+                          <h3 class="col-auto section-title card-title"><span class="card-title_row"><span class="card-title_stopper"></span><span class="card-text_span card-title_text">Матрос Железняк</span><span class="icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark"><span class="icon-bg"></span><span class="icon-symbol_wrap">
+                                  <svg class="icon-symbol" :class="">
+                                    <use xlink:href="#bookmark"></use>
+                                  </svg></span></span></span><span class="d-md-none card-row_elem card-title_translate">The Lion King</span><span class="card-text_gradient_hidden card-title_gradient_hidden"></span></h3>
+                          <div class="col-auto card-info_wrap">
+                            <ul class="list-group list-group-horizontal card-info">
+                              <li class="list-group-item card-list_item card-info_item card-info_item--stars">
+                                <svg class="card-icon card-info_icon" :class="">
+                                  <use xlink:href="#star-empty"></use>
+                                </svg><span class="card-info_number">105</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-info_item card-info_item--reviews">
+                                <svg class="card-icon card-info_icon card-info_icon--review" :class="">
+                                  <use xlink:href="#layer-group"></use>
+                                </svg><span class="card-info_number">6</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-info_item card-info_item--comments">
+                                <svg class="card-icon card-info_icon card-info_icon--comment" :class="">
+                                  <use xlink:href="#comment"></use>
+                                </svg><span class="card-info_number">57</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="row no-gutters align-items-end">
+                          <div class="col card-categories_wrap">
+                            <h4 class="card-subtitle"><span class="card-text_span">2019, Боевик, драма, биография</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span><span class="card-text_gradient_hidden card-subtitle_gradient_hidden"></span>
+                            </h4>
+                            <ul class="list-group list-group-horizontal card-categories">
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#libra-square"></use>
+                                </svg><span class="card-categories_text"><span class="text-success">4,7</span>/<span class="text-danger">5,3</span></span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#cup-square"></use>
+                                </svg><span class="card-categories_text">7</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--danger" :class="">
+                                  <use xlink:href="#bottle-square"></use>
+                                </svg><span class="card-categories_text">Есть</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#strawberry-square"></use>
+                                </svg><span class="card-categories_text">Есть</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#toilet-paper-square"></use>
+                                </svg><span class="card-categories_text">Нет</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#knuckle-square"></use>
+                                </svg><span class="card-categories_text">5</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--danger" :class="">
+                                  <use xlink:href="#bullhorn-square"></use>
+                                </svg><span class="card-categories_text">9</span>
+                              </li>
+                            </ul>
+                            <p class="card-row_elem card-short_text">Топ 100 лучших фильмов</p>
+                          </div>
+                          <p class="col-auto card-desc"></p>
+                        </div>
+                      </div>
+                    </div><a class="btn btn-link d-md-none card-row_elem card-link" href="">Подробнее...</a>
+                  </div>
+                  <div class="d-md-none card-row_elem card-footer">
+                    <ul class="list-group list-group-horizontal card-info">
+                      <li class="list-group-item card-list_item card-info_item card-info_item--stars">
+                        <svg class="card-icon card-info_icon" :class="">
+                          <use xlink:href="#star-empty"></use>
+                        </svg><span class="card-info_number">105</span>
+                      </li>
+                      <li class="list-group-item card-list_item card-info_item card-info_item--reviews">
+                        <svg class="card-icon card-info_icon card-info_icon--review" :class="">
+                          <use xlink:href="#layer-group"></use>
+                        </svg><span class="card-info_number">6</span>
+                      </li>
+                      <li class="list-group-item card-list_item card-info_item card-info_item--comments">
+                        <svg class="card-icon card-info_icon card-info_icon--comment" :class="">
+                          <use xlink:href="#comment"></use>
+                        </svg><span class="card-info_number">57</span>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+                <article class="card" :class="cardClasses">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-start">
+                      <div class="col-auto card-img_cover">
+                        <div class="card-row_elem card-tab">3d</div>
+                        <div class="card-img_wrap"><img class="card-img" src="img/today/5.jpg" alt="Сила воли"/></div>
+                        <div class="icon card-img_icon card-rating card-rating--success card-rating--warning">
+                          <div class="icon-symbol_wrap card-img_icon_bg card-rating_star">
+                            <svg class="icon-symbol" :class="">
+                              <use xlink:href="#star"></use>
+                            </svg>
+                          </div><span class="icon-symbol_wrap card-rating_text">5.8</span>
+                        </div>
+                      </div>
+                      <div class="col card-text_wrap">
+                        <div class="row no-gutters card-title_wrap">
+                          <h3 class="col-auto section-title card-title"><span class="card-title_row"><span class="card-title_stopper"></span><span class="card-text_span card-title_text">Сила воли</span><span class="icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark"><span class="icon-bg"></span><span class="icon-symbol_wrap">
+                                  <svg class="icon-symbol" :class="">
+                                    <use xlink:href="#bookmark"></use>
+                                  </svg></span></span></span><span class="d-md-none card-row_elem card-title_translate">The Lion King</span><span class="card-text_gradient_hidden card-title_gradient_hidden"></span></h3>
+                          <div class="col-auto card-info_wrap">
+                            <ul class="list-group list-group-horizontal card-info">
+                              <li class="list-group-item card-list_item card-info_item card-info_item--stars">
+                                <svg class="card-icon card-info_icon" :class="">
+                                  <use xlink:href="#star-empty"></use>
+                                </svg><span class="card-info_number">392</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-info_item card-info_item--reviews">
+                                <svg class="card-icon card-info_icon card-info_icon--review" :class="">
+                                  <use xlink:href="#layer-group"></use>
+                                </svg><span class="card-info_number">47</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-info_item card-info_item--comments">
+                                <svg class="card-icon card-info_icon card-info_icon--comment" :class="">
+                                  <use xlink:href="#comment"></use>
+                                </svg><span class="card-info_number">578</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="row no-gutters align-items-end">
+                          <div class="col card-categories_wrap">
+                            <h4 class="card-subtitle"><span class="card-text_span">2019, Боевик, драма, биография</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span><span class="card-text_gradient_hidden card-subtitle_gradient_hidden"></span>
+                            </h4>
+                            <ul class="list-group list-group-horizontal card-categories">
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#libra-square"></use>
+                                </svg><span class="card-categories_text"><span class="text-success">6,2</span>/<span class="text-danger">3,8</span></span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#cup-square"></use>
+                                </svg><span class="card-categories_text">7</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--danger" :class="">
+                                  <use xlink:href="#bottle-square"></use>
+                                </svg><span class="card-categories_text">Есть</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#strawberry-square"></use>
+                                </svg><span class="card-categories_text">Нет</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--danger" :class="">
+                                  <use xlink:href="#toilet-paper-square"></use>
+                                </svg><span class="card-categories_text">Есть</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#knuckle-square"></use>
+                                </svg><span class="card-categories_text">2</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#bullhorn-square"></use>
+                                </svg><span class="card-categories_text">2</span>
+                              </li>
+                            </ul>
+                            <p class="card-row_elem card-short_text">Топ 100 лучших фильмов</p>
+                          </div>
+                          <p class="col-auto card-desc"></p>
+                        </div>
+                      </div>
+                    </div><a class="btn btn-link d-md-none card-row_elem card-link" href="">Подробнее...</a>
+                  </div>
+                  <div class="d-md-none card-row_elem card-footer">
+                    <ul class="list-group list-group-horizontal card-info">
+                      <li class="list-group-item card-list_item card-info_item card-info_item--stars">
+                        <svg class="card-icon card-info_icon" :class="">
+                          <use xlink:href="#star-empty"></use>
+                        </svg><span class="card-info_number">392</span>
+                      </li>
+                      <li class="list-group-item card-list_item card-info_item card-info_item--reviews">
+                        <svg class="card-icon card-info_icon card-info_icon--review" :class="">
+                          <use xlink:href="#layer-group"></use>
+                        </svg><span class="card-info_number">47</span>
+                      </li>
+                      <li class="list-group-item card-list_item card-info_item card-info_item--comments">
+                        <svg class="card-icon card-info_icon card-info_icon--comment" :class="">
+                          <use xlink:href="#comment"></use>
+                        </svg><span class="card-info_number">578</span>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+                <article class="card" :class="cardClasses">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-start">
+                      <div class="col-auto card-img_cover">
+                        <div class="card-row_elem card-tab">3d</div>
+                        <div class="card-img_wrap"><img class="card-img" src="img/today/1.jpg" alt="Бесконечно белый медведь"/></div>
+                        <div class="icon card-img_icon card-rating card-rating--success">
+                          <div class="icon-symbol_wrap card-img_icon_bg card-rating_star">
+                            <svg class="icon-symbol" :class="">
+                              <use xlink:href="#star"></use>
+                            </svg>
+                          </div><span class="icon-symbol_wrap card-rating_text">9.3</span>
+                        </div>
+                        <div class="icon card-img_icon card-review">
+                          <div class="icon-symbol_wrap card-review_icon">
+                            <svg class="icon-symbol" :class="">
+                              <use xlink:href="#stamp"></use>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col card-text_wrap">
+                        <div class="row no-gutters card-title_wrap">
+                          <h3 class="col-auto section-title card-title"><span class="card-title_row"><span class="card-title_stopper"></span><span class="card-text_span card-title_text">Бесконечно белый медведь</span><span class="icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark"><span class="icon-bg"></span><span class="icon-symbol_wrap">
+                                  <svg class="icon-symbol" :class="">
+                                    <use xlink:href="#bookmark"></use>
+                                  </svg></span></span></span><span class="d-md-none card-row_elem card-title_translate">The Lion King</span><span class="card-text_gradient_hidden card-title_gradient_hidden"></span></h3>
+                          <div class="col-auto card-info_wrap">
+                            <ul class="list-group list-group-horizontal card-info">
+                              <li class="list-group-item card-list_item card-info_item card-info_item--stars">
+                                <svg class="card-icon card-info_icon" :class="">
+                                  <use xlink:href="#star-empty"></use>
+                                </svg><span class="card-info_number">392</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-info_item card-info_item--reviews">
+                                <svg class="card-icon card-info_icon card-info_icon--review" :class="">
+                                  <use xlink:href="#layer-group"></use>
+                                </svg><span class="card-info_number">47</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-info_item card-info_item--comments">
+                                <svg class="card-icon card-info_icon card-info_icon--comment" :class="">
+                                  <use xlink:href="#comment"></use>
+                                </svg><span class="card-info_number">578</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="row no-gutters align-items-end">
+                          <div class="col card-categories_wrap">
+                            <h4 class="card-subtitle"><span class="card-text_span">2019, Боевик, драма, биография</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span><span class="card-text_gradient_hidden card-subtitle_gradient_hidden"></span>
+                            </h4>
+                            <ul class="list-group list-group-horizontal card-categories">
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#libra-square"></use>
+                                </svg><span class="card-categories_text"><span class="text-success">6,2</span>/<span class="text-danger">3,8</span></span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#cup-square"></use>
+                                </svg><span class="card-categories_text">7</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--danger" :class="">
+                                  <use xlink:href="#bottle-square"></use>
+                                </svg><span class="card-categories_text">Есть</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#strawberry-square"></use>
+                                </svg><span class="card-categories_text">Нет</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--danger" :class="">
+                                  <use xlink:href="#toilet-paper-square"></use>
+                                </svg><span class="card-categories_text">Есть</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#knuckle-square"></use>
+                                </svg><span class="card-categories_text">2</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#bullhorn-square"></use>
+                                </svg><span class="card-categories_text">2</span>
+                              </li>
+                            </ul>
+                            <p class="card-row_elem card-short_text">Топ 100 лучших фильмов</p>
+                          </div>
+                          <p class="col-auto card-desc">2015, Фильм, 106 мин. Боевик, драма, биография Китай, США, Канада Режисёр: Джеймс Кэмерон</p>
+                        </div>
+                      </div>
+                    </div><a class="btn btn-link d-md-none card-row_elem card-link" href="">Подробнее...</a>
+                  </div>
+                  <div class="d-md-none card-row_elem card-footer">
+                    <ul class="list-group list-group-horizontal card-info">
+                      <li class="list-group-item card-list_item card-info_item card-info_item--stars">
+                        <svg class="card-icon card-info_icon" :class="">
+                          <use xlink:href="#star-empty"></use>
+                        </svg><span class="card-info_number">392</span>
+                      </li>
+                      <li class="list-group-item card-list_item card-info_item card-info_item--reviews">
+                        <svg class="card-icon card-info_icon card-info_icon--review" :class="">
+                          <use xlink:href="#layer-group"></use>
+                        </svg><span class="card-info_number">47</span>
+                      </li>
+                      <li class="list-group-item card-list_item card-info_item card-info_item--comments">
+                        <svg class="card-icon card-info_icon card-info_icon--comment" :class="">
+                          <use xlink:href="#comment"></use>
+                        </svg><span class="card-info_number">578</span>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+                <article class="card" :class="cardClasses">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-start">
+                      <div class="col-auto card-img_cover">
+                        <div class="card-row_elem card-tab">3d</div>
+                        <div class="card-img_wrap"><img class="card-img" src="img/today/2.jpg" alt="Кто такой Гарри gh Келлерман и почему он говорит обо мне ужасные вещи?"/></div>
+                        <div class="icon card-img_icon card-rating card-rating--success card-rating--warning">
+                          <div class="icon-symbol_wrap card-img_icon_bg card-rating_star">
+                            <svg class="icon-symbol" :class="">
+                              <use xlink:href="#star"></use>
+                            </svg>
+                          </div><span class="icon-symbol_wrap card-rating_text">5.8</span>
+                        </div>
+                      </div>
+                      <div class="col card-text_wrap">
+                        <div class="row no-gutters card-title_wrap">
+                          <h3 class="col-auto section-title card-title"><span class="card-title_row"><span class="card-title_stopper"></span><span class="card-text_span card-title_text">Кто такой Гарри gh Келлерман и почему он говорит обо мне ужасные вещи?</span><span class="icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark icon--success"><span class="icon-bg"></span><span class="icon-symbol_wrap">
+                                  <svg class="icon-symbol" :class="">
+                                    <use xlink:href="#bookmark"></use>
+                                  </svg></span></span></span><span class="d-md-none card-row_elem card-title_translate">The Lion King</span><span class="card-text_gradient_hidden card-title_gradient_hidden"></span></h3>
+                          <div class="col-auto card-info_wrap">
+                            <ul class="list-group list-group-horizontal card-info">
+                              <li class="list-group-item card-list_item card-info_item card-info_item--stars">
+                                <svg class="card-icon card-info_icon" :class="">
+                                  <use xlink:href="#star-empty"></use>
+                                </svg><span class="card-info_number">105</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-info_item card-info_item--reviews">
+                                <svg class="card-icon card-info_icon card-info_icon--review" :class="">
+                                  <use xlink:href="#layer-group"></use>
+                                </svg><span class="card-info_number">6</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-info_item card-info_item--comments">
+                                <svg class="card-icon card-info_icon card-info_icon--comment" :class="">
+                                  <use xlink:href="#comment"></use>
+                                </svg><span class="card-info_number">57</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="row no-gutters align-items-end">
+                          <div class="col card-categories_wrap">
+                            <h4 class="card-subtitle"><span class="card-text_span">2019, Боевик, драма, биография</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span><span class="card-text_gradient_hidden card-subtitle_gradient_hidden"></span>
+                            </h4>
+                            <ul class="list-group list-group-horizontal card-categories">
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#libra-square"></use>
+                                </svg><span class="card-categories_text"><span class="text-success">4,7</span>/<span class="text-danger">5,3</span></span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#cup-square"></use>
+                                </svg><span class="card-categories_text">7</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--danger" :class="">
+                                  <use xlink:href="#bottle-square"></use>
+                                </svg><span class="card-categories_text">Есть</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#strawberry-square"></use>
+                                </svg><span class="card-categories_text">Есть</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#toilet-paper-square"></use>
+                                </svg><span class="card-categories_text">Нет</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#knuckle-square"></use>
+                                </svg><span class="card-categories_text">5</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--danger" :class="">
+                                  <use xlink:href="#bullhorn-square"></use>
+                                </svg><span class="card-categories_text">9</span>
+                              </li>
+                            </ul>
+                            <p class="card-row_elem card-short_text"></p>
+                          </div>
+                          <p class="col-auto card-desc">2011, Фильм, 120 мин. Драма, военный Великобритания, Франция Режисёр: Стивен Спилберг</p>
+                        </div>
+                      </div>
+                    </div><a class="btn btn-link d-md-none card-row_elem card-link" href="">Подробнее...</a>
+                  </div>
+                  <div class="d-md-none card-row_elem card-footer">
+                    <ul class="list-group list-group-horizontal card-info">
+                      <li class="list-group-item card-list_item card-info_item card-info_item--stars">
+                        <svg class="card-icon card-info_icon" :class="">
+                          <use xlink:href="#star-empty"></use>
+                        </svg><span class="card-info_number">105</span>
+                      </li>
+                      <li class="list-group-item card-list_item card-info_item card-info_item--reviews">
+                        <svg class="card-icon card-info_icon card-info_icon--review" :class="">
+                          <use xlink:href="#layer-group"></use>
+                        </svg><span class="card-info_number">6</span>
+                      </li>
+                      <li class="list-group-item card-list_item card-info_item card-info_item--comments">
+                        <svg class="card-icon card-info_icon card-info_icon--comment" :class="">
+                          <use xlink:href="#comment"></use>
+                        </svg><span class="card-info_number">57</span>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+                <article class="card" :class="cardClasses">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-start">
+                      <div class="col-auto card-img_cover">
+                        <div class="card-row_elem card-tab">3d</div>
+                        <div class="card-img_wrap"><img class="card-img" src="img/today/3.jpg" alt="Кто такой Гарри ghjk Келлерман и почему он говорит обо мне ужасные вещи?"/></div>
+                        <div class="icon card-img_icon card-rating card-rating--success card-rating--warning card-rating--danger">
+                          <div class="icon-symbol_wrap card-img_icon_bg card-rating_star">
+                            <svg class="icon-symbol" :class="">
+                              <use xlink:href="#star"></use>
+                            </svg>
+                          </div><span class="icon-symbol_wrap card-rating_text">2.4</span>
+                        </div>
+                      </div>
+                      <div class="col card-text_wrap">
+                        <div class="row no-gutters card-title_wrap">
+                          <h3 class="col-auto section-title card-title"><span class="card-title_row"><span class="card-title_stopper"></span><span class="card-text_span card-title_text">Кто такой Гарри ghjk Келлерман и почему он говорит обо мне ужасные вещи?</span><span class="icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark"><span class="icon-bg"></span><span class="icon-symbol_wrap">
+                                  <svg class="icon-symbol" :class="">
+                                    <use xlink:href="#bookmark"></use>
+                                  </svg></span></span></span><span class="d-md-none card-row_elem card-title_translate">The Lion King</span><span class="card-text_gradient_hidden card-title_gradient_hidden"></span></h3>
+                          <div class="col-auto card-info_wrap">
+                            <ul class="list-group list-group-horizontal card-info">
+                              <li class="list-group-item card-list_item card-info_item card-info_item--stars">
+                                <svg class="card-icon card-info_icon" :class="">
+                                  <use xlink:href="#star-empty"></use>
+                                </svg><span class="card-info_number">392</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-info_item card-info_item--reviews">
+                                <svg class="card-icon card-info_icon card-info_icon--review" :class="">
+                                  <use xlink:href="#layer-group"></use>
+                                </svg><span class="card-info_number">47</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-info_item card-info_item--comments">
+                                <svg class="card-icon card-info_icon card-info_icon--comment" :class="">
+                                  <use xlink:href="#comment"></use>
+                                </svg><span class="card-info_number">578</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="row no-gutters align-items-end">
+                          <div class="col card-categories_wrap">
+                            <h4 class="card-subtitle"><span class="card-text_span">2019, Боевик, драма, биография</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span><span class="card-text_gradient_hidden card-subtitle_gradient_hidden"></span>
+                            </h4>
+                            <ul class="list-group list-group-horizontal card-categories">
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#libra-square"></use>
+                                </svg><span class="card-categories_text"><span class="text-success">6,2</span>/<span class="text-danger">3,8</span></span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#cup-square"></use>
+                                </svg><span class="card-categories_text">7</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--danger" :class="">
+                                  <use xlink:href="#bottle-square"></use>
+                                </svg><span class="card-categories_text">Есть</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#strawberry-square"></use>
+                                </svg><span class="card-categories_text">Нет</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--danger" :class="">
+                                  <use xlink:href="#toilet-paper-square"></use>
+                                </svg><span class="card-categories_text">Есть</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#knuckle-square"></use>
+                                </svg><span class="card-categories_text">2</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#bullhorn-square"></use>
+                                </svg><span class="card-categories_text">2</span>
+                              </li>
+                            </ul>
+                            <p class="card-row_elem card-short_text">Топ 100 лучших фильмов</p>
+                          </div>
+                          <p class="col-auto card-desc"></p>
+                        </div>
+                      </div>
+                    </div><a class="btn btn-link d-md-none card-row_elem card-link" href="">Подробнее...</a>
+                  </div>
+                  <div class="d-md-none card-row_elem card-footer">
+                    <ul class="list-group list-group-horizontal card-info">
+                      <li class="list-group-item card-list_item card-info_item card-info_item--stars">
+                        <svg class="card-icon card-info_icon" :class="">
+                          <use xlink:href="#star-empty"></use>
+                        </svg><span class="card-info_number">392</span>
+                      </li>
+                      <li class="list-group-item card-list_item card-info_item card-info_item--reviews">
+                        <svg class="card-icon card-info_icon card-info_icon--review" :class="">
+                          <use xlink:href="#layer-group"></use>
+                        </svg><span class="card-info_number">47</span>
+                      </li>
+                      <li class="list-group-item card-list_item card-info_item card-info_item--comments">
+                        <svg class="card-icon card-info_icon card-info_icon--comment" :class="">
+                          <use xlink:href="#comment"></use>
+                        </svg><span class="card-info_number">578</span>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+                <article class="card" :class="cardClasses">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-start">
+                      <div class="col-auto card-img_cover">
+                        <div class="card-row_elem card-tab">3d</div>
+                        <div class="card-img_wrap"><img class="card-img" src="img/today/4.jpg" alt="Матрос Железняк"/></div>
+                        <div class="icon card-img_icon card-rating card-rating--success">
+                          <div class="icon-symbol_wrap card-img_icon_bg card-rating_star">
+                            <svg class="icon-symbol" :class="">
+                              <use xlink:href="#star"></use>
+                            </svg>
+                          </div><span class="icon-symbol_wrap card-rating_text">9.3</span>
+                        </div>
+                        <div class="icon card-img_icon card-review">
+                          <div class="icon-symbol_wrap card-review_icon">
+                            <svg class="icon-symbol" :class="">
+                              <use xlink:href="#stamp"></use>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col card-text_wrap">
+                        <div class="row no-gutters card-title_wrap">
+                          <h3 class="col-auto section-title card-title"><span class="card-title_row"><span class="card-title_stopper"></span><span class="card-text_span card-title_text">Матрос Железняк</span><span class="icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark"><span class="icon-bg"></span><span class="icon-symbol_wrap">
+                                  <svg class="icon-symbol" :class="">
+                                    <use xlink:href="#bookmark"></use>
+                                  </svg></span></span></span><span class="d-md-none card-row_elem card-title_translate">The Lion King</span><span class="card-text_gradient_hidden card-title_gradient_hidden"></span></h3>
+                          <div class="col-auto card-info_wrap">
+                            <ul class="list-group list-group-horizontal card-info">
+                              <li class="list-group-item card-list_item card-info_item card-info_item--stars">
+                                <svg class="card-icon card-info_icon" :class="">
+                                  <use xlink:href="#star-empty"></use>
+                                </svg><span class="card-info_number">105</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-info_item card-info_item--reviews">
+                                <svg class="card-icon card-info_icon card-info_icon--review" :class="">
+                                  <use xlink:href="#layer-group"></use>
+                                </svg><span class="card-info_number">6</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-info_item card-info_item--comments">
+                                <svg class="card-icon card-info_icon card-info_icon--comment" :class="">
+                                  <use xlink:href="#comment"></use>
+                                </svg><span class="card-info_number">57</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="row no-gutters align-items-end">
+                          <div class="col card-categories_wrap">
+                            <h4 class="card-subtitle"><span class="card-text_span">2019, Боевик, драма, биография</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span><span class="card-text_gradient_hidden card-subtitle_gradient_hidden"></span>
+                            </h4>
+                            <ul class="list-group list-group-horizontal card-categories">
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#libra-square"></use>
+                                </svg><span class="card-categories_text"><span class="text-success">4,7</span>/<span class="text-danger">5,3</span></span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#cup-square"></use>
+                                </svg><span class="card-categories_text">7</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--danger" :class="">
+                                  <use xlink:href="#bottle-square"></use>
+                                </svg><span class="card-categories_text">Есть</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#strawberry-square"></use>
+                                </svg><span class="card-categories_text">Есть</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#toilet-paper-square"></use>
+                                </svg><span class="card-categories_text">Нет</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#knuckle-square"></use>
+                                </svg><span class="card-categories_text">5</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--danger" :class="">
+                                  <use xlink:href="#bullhorn-square"></use>
+                                </svg><span class="card-categories_text">9</span>
+                              </li>
+                            </ul>
+                            <p class="card-row_elem card-short_text">Топ 100 лучших фильмов</p>
+                          </div>
+                          <p class="col-auto card-desc"></p>
+                        </div>
+                      </div>
+                    </div><a class="btn btn-link d-md-none card-row_elem card-link" href="">Подробнее...</a>
+                  </div>
+                  <div class="d-md-none card-row_elem card-footer">
+                    <ul class="list-group list-group-horizontal card-info">
+                      <li class="list-group-item card-list_item card-info_item card-info_item--stars">
+                        <svg class="card-icon card-info_icon" :class="">
+                          <use xlink:href="#star-empty"></use>
+                        </svg><span class="card-info_number">105</span>
+                      </li>
+                      <li class="list-group-item card-list_item card-info_item card-info_item--reviews">
+                        <svg class="card-icon card-info_icon card-info_icon--review" :class="">
+                          <use xlink:href="#layer-group"></use>
+                        </svg><span class="card-info_number">6</span>
+                      </li>
+                      <li class="list-group-item card-list_item card-info_item card-info_item--comments">
+                        <svg class="card-icon card-info_icon card-info_icon--comment" :class="">
+                          <use xlink:href="#comment"></use>
+                        </svg><span class="card-info_number">57</span>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+                <article class="card" :class="cardClasses">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-start">
+                      <div class="col-auto card-img_cover">
+                        <div class="card-row_elem card-tab">3d</div>
+                        <div class="card-img_wrap"><img class="card-img" src="img/today/5.jpg" alt="Сила воли"/></div>
+                        <div class="icon card-img_icon card-rating card-rating--success card-rating--warning">
+                          <div class="icon-symbol_wrap card-img_icon_bg card-rating_star">
+                            <svg class="icon-symbol" :class="">
+                              <use xlink:href="#star"></use>
+                            </svg>
+                          </div><span class="icon-symbol_wrap card-rating_text">5.8</span>
+                        </div>
+                      </div>
+                      <div class="col card-text_wrap">
+                        <div class="row no-gutters card-title_wrap">
+                          <h3 class="col-auto section-title card-title"><span class="card-title_row"><span class="card-title_stopper"></span><span class="card-text_span card-title_text">Сила воли</span><span class="icon icon--round card-row_elem card-row_elem--d_inline_block card-title_mark"><span class="icon-bg"></span><span class="icon-symbol_wrap">
+                                  <svg class="icon-symbol" :class="">
+                                    <use xlink:href="#bookmark"></use>
+                                  </svg></span></span></span><span class="d-md-none card-row_elem card-title_translate">The Lion King</span><span class="card-text_gradient_hidden card-title_gradient_hidden"></span></h3>
+                          <div class="col-auto card-info_wrap">
+                            <ul class="list-group list-group-horizontal card-info">
+                              <li class="list-group-item card-list_item card-info_item card-info_item--stars">
+                                <svg class="card-icon card-info_icon" :class="">
+                                  <use xlink:href="#star-empty"></use>
+                                </svg><span class="card-info_number">392</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-info_item card-info_item--reviews">
+                                <svg class="card-icon card-info_icon card-info_icon--review" :class="">
+                                  <use xlink:href="#layer-group"></use>
+                                </svg><span class="card-info_number">47</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-info_item card-info_item--comments">
+                                <svg class="card-icon card-info_icon card-info_icon--comment" :class="">
+                                  <use xlink:href="#comment"></use>
+                                </svg><span class="card-info_number">578</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="row no-gutters align-items-end">
+                          <div class="col card-categories_wrap">
+                            <h4 class="card-subtitle"><span class="card-text_span">2019, Боевик, драма, биография</span><span class="badge card-row_elem card-row_elem--d_inline_block card-subtitle_badge order-md-first">16+</span><span class="card-text_gradient_hidden card-subtitle_gradient_hidden"></span>
+                            </h4>
+                            <ul class="list-group list-group-horizontal card-categories">
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#libra-square"></use>
+                                </svg><span class="card-categories_text"><span class="text-success">6,2</span>/<span class="text-danger">3,8</span></span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--warning" :class="">
+                                  <use xlink:href="#cup-square"></use>
+                                </svg><span class="card-categories_text">7</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--danger" :class="">
+                                  <use xlink:href="#bottle-square"></use>
+                                </svg><span class="card-categories_text">Есть</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#strawberry-square"></use>
+                                </svg><span class="card-categories_text">Нет</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--danger" :class="">
+                                  <use xlink:href="#toilet-paper-square"></use>
+                                </svg><span class="card-categories_text">Есть</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#knuckle-square"></use>
+                                </svg><span class="card-categories_text">2</span>
+                              </li>
+                              <li class="list-group-item card-list_item card-categories_item">
+                                <svg class="icon card-categories_icon icon--success" :class="">
+                                  <use xlink:href="#bullhorn-square"></use>
+                                </svg><span class="card-categories_text">2</span>
+                              </li>
+                            </ul>
+                            <p class="card-row_elem card-short_text">Топ 100 лучших фильмов</p>
+                          </div>
+                          <p class="col-auto card-desc"></p>
+                        </div>
+                      </div>
+                    </div><a class="btn btn-link d-md-none card-row_elem card-link" href="">Подробнее...</a>
+                  </div>
+                  <div class="d-md-none card-row_elem card-footer">
+                    <ul class="list-group list-group-horizontal card-info">
+                      <li class="list-group-item card-list_item card-info_item card-info_item--stars">
+                        <svg class="card-icon card-info_icon" :class="">
+                          <use xlink:href="#star-empty"></use>
+                        </svg><span class="card-info_number">392</span>
+                      </li>
+                      <li class="list-group-item card-list_item card-info_item card-info_item--reviews">
+                        <svg class="card-icon card-info_icon card-info_icon--review" :class="">
+                          <use xlink:href="#layer-group"></use>
+                        </svg><span class="card-info_number">47</span>
+                      </li>
+                      <li class="list-group-item card-list_item card-info_item card-info_item--comments">
+                        <svg class="card-icon card-info_icon card-info_icon--comment" :class="">
+                          <use xlink:href="#comment"></use>
+                        </svg><span class="card-info_number">578</span>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+            </main>
+            <footer class="row no-gutters pl-17 px-md-0 main-row pagination-container">
+              <ul class="col-auto pagination mb-6 pr-19 pr-md-20">
+                <li class="page-item"><a class="page-link" href="">
+                    <svg class="icon icon-angle_left page-text page-icon" :class="">
+                      <use xlink:href="#angle"></use>
+                    </svg><span class="d-none d-md-block page-text">Предыдущая</span></a></li>
+                <li class="page-item"><a class="page-link" href="">1</a></li>
+                <li class="page-item"><a class="page-link" href="">2</a></li>
+                <li class="page-item active"><a class="page-link" href="">3</a></li>
+                <li class="page-item d-none d-md-block"><a class="page-link" href="">4</a></li>
+                <li class="page-item d-none d-md-block"><a class="page-link" href="">5</a></li>
+                <li class="page-item"><a class="page-link" href=""><span class="d-none d-md-block page-text">Следующая</span>
+                    <svg class="icon icon-angle_right page-text page-icon" :class="">
+                      <use xlink:href="#angle"></use>
+                    </svg></a></li>
+              </ul>
+              <div class="col-auto pl-2 page-status">Страница 3 из 7</div>
+            </footer>
           </section>
           <aside class="col d-none d-lg-block section sidebar">
             <div class="container sidebar-container section-white_bg section-bordered"></div>

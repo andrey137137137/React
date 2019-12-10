@@ -1,19 +1,39 @@
 @include media-breakpoint-up(sm) {
+  .main {
+    max-width: 476px;
+
+    &-row {
+      // padding-right: 11px;
+      padding-right: 15px;
+    }
+
+    &-container {
+      &--blocks {
+        // @include padding("* 11px * 27px");
+        @include padding("* 2.386117136659436% * 5.856832971800434%");
+
+        .card {
+          @include margin("* 1.418439716312057%");
+        }
+      }
+    }
+  }
+
   .filter {
-    $height: 60px;
-
     &-item {
-      height: $height;
-
       &--d_flex {
         display: flex;
         align-items: center;
+      }
+
+      &--icons_wrap {
+        margin-left: map-get($spacers, 4);
       }
     }
 
     &-text {
       // padding-right: 0;
-      line-height: $height;
+      line-height: map-get($spacers, 32);
     }
   }
 }
