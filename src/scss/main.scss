@@ -93,216 +93,21 @@ svg path {
   //   padding-left: 8px;
   // }
 
-  &-container {
-    display: flex;
-    flex-wrap: wrap;
-    // justify-content: space-around;
+  // &-container {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   // justify-content: space-around;
 
-    &--blocks {
-      // @include padding("* 11px 37px 27px");
-      @include padding("* 3.4375% 37px 8.4375%");
-      background-color: $white;
+  //   &--blocks {
+  //     // @include padding("* 11px 37px 27px");
+  //     @include padding("* 3.4375% 37px 8.4375%");
+  //     background-color: $white;
+  //   }
 
-      .card {
-        @include margin("* 2.127659574468085% -6px");
-        padding-top: 5px;
-
-        &-text_span {
-          display: block;
-          size: 120% 100%;
-        }
-
-        &-title {
-          overflow: hidden;
-        }
-      }
-    }
-
-    &--rows {
-      padding-right: 0;
-
-      .card {
-        flex-grow: 1;
-        flex-basis: auto;
-        // @include margin("20px * 0");
-        margin-top: 20px;
-        // @include padding("9px 0 *");
-        padding-top: 9px;
-        width: 100%;
-        background-color: $white;
-
-        &:first-child {
-          margin-top: 0;
-        }
-
-        &-body {
-          @include padding(
-            "* #{map-get($spacers, 14)} 9px #{map-get($spacers, 19)}"
-          );
-        }
-
-        &-tab {
-          @include position("absolute 4px * * 0");
-          border-top-left-radius: map-get($spacers, 3);
-          border-top-right-radius: map-get($spacers, 3);
-          font-size: #{$small-font-size}/#{$font-size-base};
-          size: map-get($spacers, 27) 50%;
-          text-align: center;
-          color: $white $gray-200;
-        }
-
-        &-review {
-          @include position("* 5px -12px *");
-        }
-
-        &-text_wrap {
-          @include padding("13px * * #{map-get($spacers, 3)}");
-        }
-
-        &-row_elem {
-          display: block;
-
-          &--d_inline_block {
-            display: inline-block;
-          }
-        }
-
-        // &-text_span {
-        //   font-size: $font-size-base;
-        // }
-
-        &-icon {
-          display: inline-block;
-          size: map-get($spacers, 15);
-        }
-
-        &-title {
-          margin-top: 0;
-          border-bottom: 1px solid #eaeaea;
-          padding-bottom: 13px;
-          height: auto;
-          font-size: #{map-get($spacers, 20)}/ 1.4;
-
-          // &_row {
-          //   position: relative;
-          // }
-
-          &_text {
-            padding-right: map-get($spacers, 11);
-          }
-
-          &_mark {
-            @include margin(
-              "-#{map-get($spacers, 1)} * -#{map-get($spacers, 10)} -#{map-get($spacers, 5)}"
-            );
-            fill: #bebebe;
-
-            .icon-bg {
-              background-color: #ececec;
-            }
-          }
-
-          &_translate {
-            // padding-top: map-get($spacers, 1);
-            padding-top: map-get($spacers, 4);
-            font-weight: normal;
-            font-size: #{$font-size-base}/#{map-get($spacers, 21)};
-            color: $gray-500;
-          }
-        }
-
-        &-text_gradient_hidden {
-          display: none;
-        }
-
-        &-list_item {
-          border-style: none;
-        }
-
-        &-info {
-          @include padding("* #{map-get($spacers, 12)}");
-
-          &_item {
-            display: flex;
-            align-items: center;
-            @include padding("* #{map-get($spacers, 10)}");
-
-            &--stars {
-              min-width: 67px;
-            }
-
-            &--reviews {
-              min-width: 66px;
-            }
-
-            &--comments {
-              min-width: 71px;
-            }
-          }
-
-          &_icon {
-            margin-right: map-get($spacers, 8);
-            fill: $gray-light;
-
-            &--review {
-              width: map-get($spacers, 22);
-            }
-
-            &--comment {
-              margin-right: map-get($spacers, 9);
-              width: map-get($spacers, 18);
-            }
-          }
-
-          &_number {
-            // font-size: $lead-font-size;
-            color: $gray-500;
-          }
-        }
-
-        &-categories_wrap {
-          @include padding("9px * 1px");
-        }
-
-        &-subtitle,
-        &-short_text {
-          font-size: #{$font-size-base}/#{map-get($spacers, 24)};
-        }
-
-        &-subtitle {
-          height: auto;
-          color: $gray-200;
-
-          &_badge {
-            margin-left: map-get($spacers, 9);
-            border-radius: map-get($spacers, 6);
-            // padding: 0 map-get($spacers, 2) 0 map-get($spacers, 4);
-            padding: 0 map-get($spacers, 3) 0 map-get($spacers, 4);
-            font-weight: normal;
-            font-size: #{map-get($spacers, 12)}/#{map-get($spacers, 13)};
-            color: $white $gray-light;
-          }
-        }
-
-        &-short_text {
-          padding-top: 9px;
-          color: $gray-700;
-        }
-
-        &-link {
-          margin-left: -#{map-get($spacers, 5)};
-          line-height: map-get($spacers, 26);
-        }
-
-        &-footer {
-          @include padding("* 0");
-          border-top: 1px solid #eaeaea;
-          min-height: 52px;
-          background-color: inherit;
-        }
-      }
-    }
-  }
+  //   &--rows {
+  //     padding-right: 0;
+  //   }
+  // }
 }
 
 .filter {
@@ -423,7 +228,7 @@ svg path {
     }
 
     #{$block}-item {
-      margin-bottom: 0 !important;
+      margin-bottom: 0;
       position: relative;
       z-index: 1;
     }
@@ -446,22 +251,6 @@ svg path {
 .filter_form {
   margin-bottom: 20px;
   // size: 100% 490px;
-
-  &-header {
-    @include border("1px * 1px / solid * solid / #eaeaea * #eaeaea");
-    padding: 0 7px 0 17px;
-    background-color: #f7f7f7;
-  }
-
-  // &-title,
-  // &-reset {
-  //   line-height: map-get($spacers, 51);
-  // }
-
-  &-title {
-    font-size: #{map-get($spacers, 20)}/#{map-get($spacers, 51)};
-    color: $gray-700;
-  }
 
   &-reset {
     font-size: #{map-get($spacers, 15)}/#{map-get($spacers, 49)};
@@ -530,6 +319,8 @@ svg path {
 }
 
 .card {
+  $block: &;
+
   flex-grow: 0;
   // @include padding("5px #{map-get($spacers, 6)} *");
   @include padding("* 0");
@@ -680,17 +471,212 @@ svg path {
     height: map-get($spacers, 26);
     overflow: hidden;
   }
-}
 
-.pagination {
-  &-container {
-    margin-top: 18px;
-    // padding-left: 18px;
+  &--block {
+    @include margin("* 2.127659574468085% -6px");
+    padding-top: 5px;
+
+    #{$block}-text_span {
+      display: block;
+      size: 120% 100%;
+    }
+
+    #{$block}-title {
+      overflow: hidden;
+    }
   }
 
-  // margin-bottom: 9px;
-  // padding-right: 19px;
+  &--row {
+    flex-grow: 1;
+    flex-basis: auto;
+    // @include margin("20px * 0");
+    margin-top: 20px;
+    // @include padding("9px 0 *");
+    padding-top: 9px;
+    width: 100%;
+    background-color: $white;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    #{$block}-body {
+      @include padding(
+        "* #{map-get($spacers, 14)} 9px #{map-get($spacers, 19)}"
+      );
+    }
+
+    #{$block}-tab {
+      @include position("absolute 4px * * 0");
+      border-top-left-radius: map-get($spacers, 3);
+      border-top-right-radius: map-get($spacers, 3);
+      font-size: #{$small-font-size}/#{$font-size-base};
+      size: map-get($spacers, 27) 50%;
+      text-align: center;
+      color: $white $gray-200;
+    }
+
+    #{$block}-review {
+      @include position("* 5px -12px *");
+    }
+
+    #{$block}-text_wrap {
+      @include padding("13px * * #{map-get($spacers, 3)}");
+    }
+
+    #{$block}-row_elem {
+      display: block;
+
+      &--d_inline_block {
+        display: inline-block;
+      }
+    }
+
+    // #{$block}-text_span {
+    //   font-size: $font-size-base;
+    // }
+
+    #{$block}-icon {
+      display: inline-block;
+      size: map-get($spacers, 15);
+    }
+
+    #{$block}-title {
+      margin-top: 0;
+      border-bottom: 1px solid #eaeaea;
+      padding-bottom: 13px;
+      height: auto;
+      font-size: #{map-get($spacers, 20)}/ 1.4;
+
+      // &_row {
+      //   position: relative;
+      // }
+
+      &_text {
+        padding-right: map-get($spacers, 11);
+      }
+
+      &_mark {
+        @include margin(
+          "-#{map-get($spacers, 1)} * -#{map-get($spacers, 10)} -#{map-get($spacers, 5)}"
+        );
+        fill: #bebebe;
+
+        .icon-bg {
+          background-color: #ececec;
+        }
+      }
+
+      &_translate {
+        // padding-top: map-get($spacers, 1);
+        padding-top: map-get($spacers, 4);
+        font-weight: normal;
+        font-size: #{$font-size-base}/#{map-get($spacers, 21)};
+        color: $gray-500;
+      }
+    }
+
+    #{$block}-text_gradient_hidden {
+      display: none;
+    }
+
+    #{$block}-list_item {
+      border-style: none;
+    }
+
+    #{$block}-info {
+      @include padding("* #{map-get($spacers, 12)}");
+
+      &_item {
+        display: flex;
+        align-items: center;
+        @include padding("* #{map-get($spacers, 10)}");
+
+        &--stars {
+          min-width: 67px;
+        }
+
+        &--reviews {
+          min-width: 66px;
+        }
+
+        &--comments {
+          min-width: 71px;
+        }
+      }
+
+      &_icon {
+        margin-right: map-get($spacers, 8);
+        fill: $gray-light;
+
+        &--review {
+          width: map-get($spacers, 22);
+        }
+
+        &--comment {
+          margin-right: map-get($spacers, 9);
+          width: map-get($spacers, 18);
+        }
+      }
+
+      &_number {
+        // font-size: $lead-font-size;
+        color: $gray-500;
+      }
+    }
+
+    #{$block}-categories_wrap {
+      @include padding("9px * 1px");
+    }
+
+    #{$block}-subtitle,
+    #{$block}-short_text {
+      font-size: #{$font-size-base}/#{map-get($spacers, 24)};
+    }
+
+    #{$block}-subtitle {
+      height: auto;
+      color: $gray-200;
+
+      &_badge {
+        margin-left: map-get($spacers, 9);
+        border-radius: map-get($spacers, 6);
+        // padding: 0 map-get($spacers, 2) 0 map-get($spacers, 4);
+        padding: 0 map-get($spacers, 3) 0 map-get($spacers, 4);
+        font-weight: normal;
+        font-size: #{map-get($spacers, 12)}/#{map-get($spacers, 13)};
+        color: $white $gray-light;
+      }
+    }
+
+    #{$block}-short_text {
+      padding-top: 9px;
+      color: $gray-700;
+    }
+
+    #{$block}-link {
+      margin-left: -#{map-get($spacers, 5)};
+      line-height: map-get($spacers, 26);
+    }
+
+    #{$block}-footer {
+      @include padding("* 0");
+      border-top: 1px solid #eaeaea;
+      min-height: 52px;
+      background-color: inherit;
+    }
+  }
 }
+
+.pagination_container {
+  margin-top: 18px;
+  // padding-left: 18px;
+}
+
+// .pagination {
+//   margin-bottom: 9px;
+//   padding-right: 19px;
+// }
 
 .page {
   $block: &;

@@ -1,4 +1,13 @@
 @include media-breakpoint-up(smd) {
+  .section {
+    &-body {
+      @include padding("* 11px * 27px");
+      // @include padding("* 1.827242524916944% * 4.485049833887043%");
+      // max-width: 100%;
+      // max-width: 617px;
+    }
+  }
+
   .main {
     max-width: 100%;
 
@@ -7,18 +16,20 @@
       padding-right: 15px;
     }
 
-    &-container {
-      &--blocks {
-        @include padding("* 11px * 27px");
-        // @include padding("* 1.827242524916944% * 4.485049833887043%");
-        // max-width: 100%;
-        // max-width: 617px;
+    // &-container {
+    //   &--blocks {
+    //     @include padding("* 11px * 27px");
+    //     // @include padding("* 1.827242524916944% * 4.485049833887043%");
+    //     // max-width: 100%;
+    //     // max-width: 617px;
+    //   }
+    // }
+  }
 
-        .card {
-          @include margin("* 6px");
-          // @include margin("* 0.9966777408637874%");
-        }
-      }
+  .card {
+    &--block {
+      @include margin("* 6px");
+      // @include margin("* 0.9966777408637874%");
     }
   }
 }

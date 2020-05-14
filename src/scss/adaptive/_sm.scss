@@ -1,4 +1,11 @@
 @include media-breakpoint-up(sm) {
+  .section {
+    &-body {
+      // @include padding("* 11px * 27px");
+      @include padding("* 2.386117136659436% * 5.856832971800434%");
+    }
+  }
+
   .main {
     max-width: 476px;
 
@@ -7,16 +14,12 @@
       padding-right: 15px;
     }
 
-    &-container {
-      &--blocks {
-        // @include padding("* 11px * 27px");
-        @include padding("* 2.386117136659436% * 5.856832971800434%");
-
-        .card {
-          @include margin("* 1.418439716312057%");
-        }
-      }
-    }
+    // &-container {
+    //   &--blocks {
+    //     // @include padding("* 11px * 27px");
+    //     @include padding("* 2.386117136659436% * 5.856832971800434%");
+    //   }
+    // }
   }
 
   .filter {
@@ -34,6 +37,12 @@
     &-text {
       // padding-right: 0;
       line-height: map-get($spacers, 32);
+    }
+  }
+
+  .card {
+    &--block {
+      @include margin("* 1.418439716312057%");
     }
   }
 }

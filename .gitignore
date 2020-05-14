@@ -1,4 +1,5 @@
 /node_modules
 /public/css
 /public/sprite.svg
+
 package-lock.json

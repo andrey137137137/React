@@ -190,14 +190,14 @@ mixin display-cards(items)
     +card((index + 1), item)
   //- +card
 
-mixin card-container
-  //- main.row.mr-lg-0.section-container.main-row
-  main
-    .d-flex.flex-wrap.main-container(:class="containerClasses")
-      +display-cards(movies)
-      +display-cards(movies)
-      //- +display-cards
-      //- +display-cards
+//- mixin card-container
+//-   //- main.row.mr-lg-0.section-container.main-row
+//-   main
+//-     .d-flex.flex-wrap.main-container(:class="containerClasses")
+//-       +display-cards(movies)
+//-       +display-cards(movies)
+//-       //- +display-cards
+//-       //- +display-cards
 
 mixin page-icon(icon)
   //- span.icon.page-text.page-icon(class="icon-" + icon)
@@ -228,3 +228,9 @@ mixin pagination
   ul.col-auto.pagination.mb-6.pr-19.pr-md-20
     - for (var i = 0; i < len; i++)
       +page-item(i, len)
+
+mixin tabs(items)
+  ul.col.nav.nav-tabs.order-md-first
+    each item, index in items
+      li.nav-item(:class="getTabItemClass(" + index + ")")
+        a.nav-link(href="" :class="getTabLinkClass(" + index + ")" @click.prevent="activeTab=" + index)= item

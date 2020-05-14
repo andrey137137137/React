@@ -5,7 +5,6 @@
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <title>КиноЦензор</title>
     <link rel="stylesheet" href="css/style.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
     <div id="app">
@@ -90,7 +89,7 @@
       </header>
       <div class="container px-0">
         <div class="row no-gutters">
-          <section class="col pr-lg-12 content main">
+          <main class="col pr-lg-12 content main">
             <header class="row no-gutters pl-8 px-md-0 main-row">
               <h2 class="col pl-8 pl-md-2 section-title section-title--main main-title">Сегодня в кино</h2>
               <ul class="col-5 col-sm-8 nav pb-5 pb-sm-13 pr-md-0 pb-md-4 justify-content-end filter">
@@ -119,10 +118,10 @@
                 </li>
               </ul>
             </header>
-            <form class="form filter_form mt-md-n1" :class="{'d-none': !showFilter}" action="">
-              <div class="row mx-0">
-                <div class="col-12 col-md-auto navbar filter_form-header">
-                  <h3 class="navbar-brand filter_form-title d-md-none">Фильтр</h3>
+            <form class="form section section--tabs_wrap filter_form mt-md-n1" :class="{'d-none': !showFilter}" action="">
+              <div class="row section-header">
+                <div class="col-12 col-md-auto navbar section-top">
+                  <h3 class="navbar-brand section-top_title">Фильтр</h3>
                   <button class="btn btn-link filter_form-reset" type="reset">Сбросить</button>
                 </div>
                 <ul class="col nav nav-tabs order-md-first filter_form-tabs">
@@ -131,7 +130,7 @@
                   <li class="nav-item filter_form-item" :class="getTabItemClass(2)"><a class="nav-link filter_form-link" href="" :class="getTabLinkClass(2)" @click.prevent="activeTab=2">Передачи</a></li>
                 </ul>
               </div>
-              <div class="row filter_form-row section-white_bg section-body">
+              <div class="row section-body filter_form-row">
                 <div class="col-12">
                   <div class="row no-gutters justify-content-between">
                     <div class="col col-md-auto">
@@ -214,8 +213,8 @@
                 </div>
               </div>
             </form>
-            <main>
-              <div class="d-flex flex-wrap main-container" :class="containerClasses">
+            <section class="section">
+              <div class="row section-body" :class="containerClasses">
                 <article class="card" :class="cardClasses">
                   <div class="card-body">
                     <div class="row no-gutters align-items-start">
@@ -1325,8 +1324,8 @@
                   </div>
                 </article>
               </div>
-            </main>
-            <footer class="row no-gutters pl-17 px-md-0 main-row pagination-container">
+            </section>
+            <footer class="row no-gutters pl-17 px-md-0 main-row pagination_container">
               <ul class="col-auto pagination mb-6 pr-19 pr-md-20">
                 <li class="page-item"><a class="page-link" href="">
                     <svg class="icon icon-angle_left page-text page-icon" :class="">
@@ -1344,9 +1343,9 @@
               </ul>
               <div class="col-auto pl-2 page-status">Страница 3 из 7</div>
             </footer>
-          </section>
+          </main>
           <aside class="col d-none d-lg-block section sidebar">
-            <div class="container sidebar-container section-white_bg section-bordered"></div>
+            <div class="container sidebar-container section-body section-pill"></div>
           </aside>
         </div>
       </div>
@@ -1357,6 +1356,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+    <script src="js/common.bundle.js"></script>
   </body>
 </html>

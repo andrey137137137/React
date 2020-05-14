@@ -25,10 +25,10 @@ block content
 						+svg("bars", "icon", "{'icon--success': byRows}")
 					a.nav-link.filter-link.filter-link--switcher(href="" @click.prevent="byRows=false")
 						+svg("th-large", "icon", "{'icon--success': !byRows}")
-	form.form.filter_form.mt-md-n1(:class="{'d-none': !showFilter}" action="")
-		.row.mx-0
-			.col-12.col-md-auto.navbar.filter_form-header
-				h3.navbar-brand.filter_form-title.d-md-none Фильтр
+	form.form.section.section--tabs_wrap.filter_form.mt-md-n1(:class="{'d-none': !showFilter}" action="")
+		.row.section-header
+			.col-12.col-md-auto.navbar.section-top
+				h3.navbar-brand.section-top_title Фильтр
 				button.btn.btn-link.filter_form-reset(type="reset") Сбросить
 			ul.col.nav.nav-tabs.order-md-first.filter_form-tabs
 				li.nav-item.filter_form-item(:class="getTabItemClass(0)")
@@ -37,7 +37,7 @@ block content
 					a.nav-link.filter_form-link(href="" :class="getTabLinkClass(1)" @click.prevent="activeTab=1") Сериалы
 				li.nav-item.filter_form-item(:class="getTabItemClass(2)")
 					a.nav-link.filter_form-link(href="" :class="getTabLinkClass(2)" @click.prevent="activeTab=2") Передачи
-		.row.filter_form-row.section-white_bg.section-body
+		.row.section-body.filter_form-row
 			//- .col-12.px-0
 			.col-12
 				.row.no-gutters.justify-content-between
@@ -81,8 +81,14 @@ block content
 				.row.mx-0
 					button.col-12.col-md-auto.btn.btn-secondary(type="submit") Применить
 					button.d-none.col-auto.ml-10.btn.btn-secondary(type="reset") Сбросить
-	+card-container
-	footer.row.no-gutters.pl-17.px-md-0.main-row.pagination-container
+	//- main.row.mr-lg-0.section-container.main-row
+	section.section
+		.row.section-body(:class="containerClasses")
+			+display-cards(movies)
+			+display-cards(movies)
+			//- +display-cards
+			//- +display-cards
+	footer.row.no-gutters.pl-17.px-md-0.main-row.pagination_container
 		+pagination
 		//- .col-auto.pl-2.pr-0.page-status Страница 3 из 7
 		.col-auto.pl-2.page-status Страница 3 из 7

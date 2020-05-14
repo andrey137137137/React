@@ -1,16 +1,42 @@
 extends ../layout
 
 block content
-	.section.filter_form
-		.row.mx-0
-			.col-12.col-md-auto.navbar.section-header
-				h3.navbar-brand.filter_form-title.d-md-none Фильтр
-				button.btn.btn-link.filter_form-reset(type="reset") Сбросить
-			ul.col.nav.nav-tabs.order-md-first
-				li.nav-item(:class="getTabItemClass(0)")
-					a.nav-link(href="" :class="getTabLinkClass(0)" @click.prevent="activeTab=0") Сегодня в кино
-				li.nav-item(:class="getTabItemClass(1)")
-					a.nav-link(href="" :class="getTabLinkClass(1)" @click.prevent="activeTab=1") Скоро в кино
-				li.nav-item(:class="getTabItemClass(2)")
-					a.nav-link(href="" :class="getTabLinkClass(2)" @click.prevent="activeTab=2") Популярное на ТВ
-		.row.filter_form-row.section-white_bg.section-body
+	.section.section--tabs_wrap
+		.row.section-header
+			.col-12.col-md-auto.navbar.section-top
+				h3.navbar-brand.section-top_title Фильтр
+				//- button.btn.btn-link(type="reset") Сбросить
+			+tabs(tabs.carousel)
+		.row.section-body
+			+display-cards(movies)
+			.section-footer
+
+	.section.section--whole
+		ul.nav.section-header
+			li.nav-item.dropdown
+				a.nav-link.dropdown-toggle(data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false") Dropdown
+				.dropdown-menu
+					a.dropdown-item(href="#") Action
+					a.dropdown-item(href="#") Another action
+					a.dropdown-item(href="#") Something else here
+					.dropdown-divider
+					a.dropdown-item(href="#") Separated link
+			li.nav-item
+				a.nav-link(href="#") Link
+		.row.section-body
+			+display-cards(movies)
+		.section-footer
+
+	.section.section--tabs_wrap
+		.row.section-header
+			.col-12.col-md-auto.navbar.section-top
+				h3.navbar-brand.section-top_title Фильтр
+				ul.nav
+					li.nav-item
+						a.nav-link(href="#") Новые
+					li.nav-item
+						a.nav-link(href="#") Лучшие за неделю
+			+tabs(tabs.comments)
+		.row.section-body
+			+display-cards(movies)
+			.section-footer

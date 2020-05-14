@@ -1,4 +1,33 @@
 .section {
+  margin-bottom: 15px;
+
+  &--tabs_wrap &-header,
+  &-body {
+    @include margin("* 0");
+  }
+
+  &--tabs_wrap &-body,
+  &--whole,
+  &-pill {
+    background-color: $white;
+  }
+
+  &-top {
+    @include border("1px * 1px / solid * solid / #eaeaea * #eaeaea");
+    padding: 0 7px 0 17px;
+    background-color: #f7f7f7;
+
+    &_title {
+      font-size: #{map-get($spacers, 20)}/#{map-get($spacers, 51)};
+      color: $gray-700;
+    }
+  }
+
+  &-body {
+    // @include padding("* 11px 37px 27px");
+    @include padding("* 3.4375% 37px 8.4375%");
+  }
+
   &-title {
     font-weight: bold;
     line-height: 1.5;
@@ -11,7 +40,7 @@
     }
   }
 
-  &-white_bg {
-    background-color: $white;
+  &--whole &-header {
+    justify-content: space-between;
   }
 }
