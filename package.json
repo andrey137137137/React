@@ -11,8 +11,24 @@
   "license": "ISC",
   "babel": {
     "presets": [
-      "@babel/env",
-      "@babel/react"
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime",
+      "@babel/plugin-transform-object-assign",
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      ],
+      [
+        "@babel/plugin-proposal-class-properties",
+        {
+          "loose": true
+        }
+      ]
     ]
   },
   "dependencies": {
@@ -21,6 +37,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/plugin-transform-object-assign": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
     "autoprefixer": "^8.6.5",
@@ -48,6 +68,9 @@
     "gulp-svg-sprite": "^1.5.0",
     "gulp-svgmin": "^1.2.4",
     "gulp-webpack": "^1.5.0",
+    "mobx": "^5.15.4",
+    "mobx-react": "^6.2.2",
+    "mobx-react-devtools": "^6.1.1",
     "node-sass": "^4.11.0",
     "postcss-assets": "^5.0.0",
     "postcss-cssnext": "^3.1.0",

@@ -93,13 +93,9 @@
             <header class="row no-gutters pl-8 px-md-0 main-row">
               <h2 class="col pl-8 pl-md-2 section-title section-title--main main-title">Сегодня в кино</h2>
               <ul class="col-5 col-sm-8 nav pb-5 pb-sm-13 pr-md-0 pb-md-4 justify-content-end filter">
-                <li class="nav-item order-md-1 mr-md-10 filter-item filter-item--d_flex"><a class="nav-link pr-7 pb-7 p-md-0 icon icon--round filter-icon filter-icon--round filter-link" :class="{'icon--success': showFilter}" href="" @click.prevent="showFilter=!showFilter">
-                    <div class="icon-bg"></div><span class="d-none d-md-inline-block pr-md-17 filter-text" :class="{'text-success': showFilter}">Фильтр</span>
-                    <div class="icon-symbol_wrap">
-                      <svg class="icon-symbol filter-icon filter-icon--filter" :class="">
-                        <use xlink:href="#filter"></use>
-                      </svg>
-                    </div></a></li>
+                <li class="nav-item order-md-1 mr-md-10 filter-item filter-item--d_flex">
+                  <div id="reactFilterBtn"></div>
+                </li>
                 <li class="nav-item order-md-3 mr-md-6 filter-item filter-item--d_flex"><a class="nav-link pl-11 py-10 pr-9 p-md-0 icon icon--round filter-icon filter-icon--round filter-link" href="">
                     <div class="icon-bg"></div><span class="d-none d-md-inline-block pr-md-11 filter-text">Сортировка</span>
                     <div class="icon-symbol_wrap">
