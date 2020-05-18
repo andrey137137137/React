@@ -6,26 +6,25 @@ block content
 		h2.col.pl-8.pl-md-2.section-title.section-title--main.main-title Сегодня в кино
 		//- ul.col-5.col-sm-6.nav.pr-5.pb-6.pr-md-7.pb-md-4.justify-content-end.filter
 		ul.col-5.col-sm-8.nav.pb-5.pb-sm-13.pr-md-0.pb-md-4.justify-content-end.filter
-			li.nav-item.order-md-1.mr-md-10.filter-item.filter-item--d_flex
+			li#reactFilterBtn.nav-item.order-md-1.mr-md-10.filter-item.filter-item--d_flex
 				//- a.nav-link.pr-7.pb-7.p-md-0.icon.icon--round.filter-icon.filter-icon--round.filter-link(:class="{'icon--success': showFilter}" href="" @click.prevent="showFilter=!showFilter")
 				//- 	.icon-bg
 				//- 	span.d-none.d-md-inline-block.pr-md-17.filter-text(:class="{'text-success': showFilter}") Фильтр
 				//- 	.icon-symbol_wrap
 				//- 		+svg("filter", "icon-symbol filter-icon filter-icon--filter")
-				#reactFilterBtn
 			li.nav-item.order-md-3.mr-md-6.filter-item.filter-item--d_flex
 				a.nav-link.pl-11.py-10.pr-9.p-md-0.icon.icon--round.filter-icon.filter-icon--round.filter-link(href="")
 					.icon-bg
 					span.d-none.d-md-inline-block.pr-md-11.filter-text Сортировка
 					.icon-symbol_wrap
 						+svg("sort-amount", "icon-symbol filter-icon filter-icon--sort")
-			li.nav-item.nav.order-md-2.mr-md-0.filter-item.filter-item--icons_wrap
-				span.pr-sm-0.pr-md-13.filter-text Вид
-				.filter-icons.pl-1.pr-2
-					a.nav-link.filter-link.filter-link--switcher(href="" @click.prevent="byRows=true")
-						+svg("bars", "icon", "{'icon--success': byRows}")
-					a.nav-link.filter-link.filter-link--switcher(href="" @click.prevent="byRows=false")
-						+svg("th-large", "icon", "{'icon--success': !byRows}")
+			li#reactSwitcherBtn.nav-item.nav.order-md-2.mr-md-0.filter-item.filter-item--icons_wrap
+				//- span.pr-sm-0.pr-md-13.filter-text Вид
+				//- .filter-icons.pl-1.pr-2
+				//- 	a.nav-link.filter-link.filter-link--switcher(href="" @click.prevent="byRows=true")
+				//- 		+svg("bars", "icon", "{'icon--success': byRows}")
+				//- 	a.nav-link.filter-link.filter-link--switcher(href="" @click.prevent="byRows=false")
+				//- 		+svg("th-large", "icon", "{'icon--success': !byRows}")
 	form.form.section.section--tabs_wrap.filter_form.mt-md-n1(:class="{'d-none': !showFilter}" action="")
 		.row.section-header
 			.col-12.col-md-auto.navbar.section-top

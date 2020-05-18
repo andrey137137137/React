@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { observable } from "mobx";
+import { observable, computed } from "mobx";
 import { observer } from "mobx-react";
 
 // var app = new Vue({
@@ -89,24 +89,12 @@ class NavLink extends Component {
   }
 }
 
-const getSwitchedClass = (cond, className) => (cond ? " " + className : "");
+const getSwitchedClass = (cond, className) => (cond ? className : "");
 
-function getComputedClasses(
-  commonClasses,
-  switchedClass,
-  cond,
-  isFirst = false,
-) {
-  const computed = commonClasses + getSwitchedClass(cond, switchedClass);
-
-  if (!isFirst) {
-    return computed;
-  }
-
+function getComputedClasses(commonClasses, switchedClass) {
   return {
     common: commonClasses,
     switched: switchedClass,
-    computed,
   };
 }
 
@@ -116,35 +104,33 @@ class FilterBtn extends Component {
   @observable linkClasses = getComputedClasses(
     "pr-7 pb-7 p-md-0 icon icon--round filter-icon filter-icon--round",
     "icon--success",
-    this.props.showFilter,
-    true,
   );
   @observable textClasses = getComputedClasses(
     "d-none d-md-inline-block pr-md-17 filter-text",
     "text-success",
-    this.props.showFilte,
-    true,
   );
+  @computed get linkClassesComputed() {
+    return (
+      this.linkClasses.common +
+      " " +
+      getSwitchedClass(this.showFilter, this.linkClasses.switched)
+    );
+  }
+  @computed get textClassesComputed() {
+    return (
+      this.textClasses.common +
+      " " +
+      getSwitchedClass(this.showFilter, this.textClasses.switched)
+    );
+  }
   handle = () => {
-    const switcher = !this.showFilter;
-
-    this.showFilter = switcher;
-    this.linkClasses.computed = getComputedClasses(
-      this.linkClasses.common,
-      this.linkClasses.switched,
-      switcher,
-    );
-    this.textClasses.computed = getComputedClasses(
-      this.textClasses.common,
-      this.textClasses.switched,
-      switcher,
-    );
+    this.showFilter = !this.showFilter;
   };
   render() {
     return (
-      <NavLink classes={this.linkClasses.computed} clickHandle={this.handle}>
+      <NavLink classes={this.linkClassesComputed} clickHandle={this.handle}>
         <div className="icon-bg"></div>
-        <span className={this.textClasses.computed}> Фильтр </span>
+        <span className={this.textClassesComputed}> Фильтр </span>
         <div className="icon-symbol_wrap">
           <SvgCmp
             icon="filter"
@@ -156,76 +142,50 @@ class FilterBtn extends Component {
   }
 }
 
-// @observer
-// class SwitcherBtn extends Component {
-//   constructor(props) {
-//     super(props);
-
-//     const iconCommonClasses = "icon";
-//     const switchedClass = "icon--success";
-//     const rowsSuccessClass = getSwitchedClass(props.byRows, switchedClass);
-//     const squarsSuccessClass = getSwitchedClass(!props.byRows, switchedClass);
-
-//     this.state = {
-//       byRows: props.byRows,
-//       linkPostClasses: "filter-link--switcher",
-//       iconCommonClasses,
-//       switchedClass,
-//       rowsSuccessClass: iconCommonClasses + rowsSuccessClass,
-//       squarsSuccessClass: iconCommonClasses + squarsSuccessClass,
-//     };
-
-//     this.rowsHandle = this.rowsHandle.bind(this);
-//     this.squarsHandle = this.squarsHandle.bind(this);
-//   }
-//   rowsHandle() {
-//     const switcher = true;
-
-//     this.setState({
-//       byRows: switcher,
-//       rowsSuccessClass:
-//         this.state.iconCommonClasses +
-//         getSwitchedClass(switcher, this.state.switchedClass),
-//       squarsSuccessClass:
-//         this.state.iconCommonClasses +
-//         getSwitchedClass(!switcher, this.state.switchedClass),
-//     });
-//   }
-//   squarsHandle() {
-//     const switcher = false;
-
-//     this.setState({
-//       byRows: switcher,
-//       rowsSuccessClass:
-//         this.state.iconCommonClasses +
-//         getSwitchedClass(!switcher, this.state.switchedClass),
-//       squarsSuccessClass:
-//         this.state.iconCommonClasses +
-//         getSwitchedClass(switcher, this.state.switchedClass),
-//     });
-//   }
-//   render() {
-//     return (
-//       <>
-//         <span className="pr-sm-0.pr-md-13.filter-text"> Вид </span>
-//         <div className="filter-icons.pl-1.pr-2">
-//           <NavLink
-//             classes={this.state.linkPostClasses}
-//             handle={this.rowsHandle}
-//           >
-//             <SvgCmp icon="bars" classes={this.state.rowsSuccessClass} />
-//           </NavLink>
-//           <NavLink
-//             classes={this.state.linkPostClasses}
-//             handle={this.squarsHandle}
-//           >
-//             <SvgCmp icon="th-large" classes={this.state.squarsSuccessClass} />
-//           </NavLink>
-//         </div>
-//       </>
-//     );
-//   }
-// }
+@observer
+class SwitcherBtn extends Component {
+  @observable byRows = this.props.byRows;
+  @observable linkPostClasses = "filter-link--switcher";
+  @observable iconClasses = getComputedClasses("icon", "icon--success");
+  @computed get rowsClasses() {
+    return (
+      this.iconClasses.common +
+      " " +
+      getSwitchedClass(this.byRows, this.iconClasses.switched)
+    );
+  }
+  @computed get squarsClasses() {
+    return (
+      this.iconClasses.common +
+      " " +
+      getSwitchedClass(!this.byRows, this.iconClasses.switched)
+    );
+  }
+  rowsHandle = () => {
+    this.byRows = true;
+  };
+  squarsHandle = () => {
+    this.byRows = false;
+  };
+  render() {
+    return (
+      <>
+        <span className="pr-sm-0 pr-md-13 filter-text"> Вид </span>
+        <div className="filter-icons pl-1 pr-2">
+          <NavLink classes={this.linkPostClasses} clickHandle={this.rowsHandle}>
+            <SvgCmp icon="bars" classes={this.rowsClasses} />
+          </NavLink>
+          <NavLink
+            classes={this.linkPostClasses}
+            clickHandle={this.squarsHandle}
+          >
+            <SvgCmp icon="th-large" classes={this.squarsClasses} />
+          </NavLink>
+        </div>
+      </>
+    );
+  }
+}
 
 // @observer
 // class FilterForm extends Component {
@@ -343,4 +303,9 @@ class FilterBtn extends Component {
 ReactDOM.render(
   <FilterBtn showFilter={false} />,
   document.getElementById("reactFilterBtn"),
+);
+
+ReactDOM.render(
+  <SwitcherBtn byRows={true} />,
+  document.getElementById("reactSwitcherBtn"),
 );
