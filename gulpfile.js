@@ -185,7 +185,10 @@ function watch() {
   );
   gulp.watch(`${pathes.svg.src}/*.svg`, gulp.series(svg));
   gulp.watch(`${pathes.css.src}/**/*.scss`, gulp.series(css));
-  gulp.watch(pathes.js.src + "/*.js", gulp.series(js));
+  gulp.watch(
+    [`${pathes.js.src}/*.js`, `${pathes.js.src}/**/*.js`],
+    gulp.series(js),
+  );
 }
 
 exports.clean = clean;

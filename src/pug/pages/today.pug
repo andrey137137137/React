@@ -25,62 +25,63 @@ block content
 				//- 		+svg("bars", "icon", "{'icon--success': byRows}")
 				//- 	a.nav-link.filter-link.filter-link--switcher(href="" @click.prevent="byRows=false")
 				//- 		+svg("th-large", "icon", "{'icon--success': !byRows}")
-	form.form.section.section--tabs_wrap.filter_form.mt-md-n1(:class="{'d-none': !showFilter}" action="")
-		.row.section-header
-			.col-12.col-md-auto.navbar.section-top
-				h3.navbar-brand.section-top_title Фильтр
-				button.btn.btn-link.filter_form-reset(type="reset") Сбросить
-			ul.col.nav.nav-tabs.order-md-first.filter_form-tabs
-				li.nav-item.filter_form-item(:class="getTabItemClass(0)")
-					a.nav-link.filter_form-link(href="" :class="getTabLinkClass(0)" @click.prevent="activeTab=0") Все
-				li.nav-item.filter_form-item(:class="getTabItemClass(1)")
-					a.nav-link.filter_form-link(href="" :class="getTabLinkClass(1)" @click.prevent="activeTab=1") Сериалы
-				li.nav-item.filter_form-item(:class="getTabItemClass(2)")
-					a.nav-link.filter_form-link(href="" :class="getTabLinkClass(2)" @click.prevent="activeTab=2") Передачи
-		.row.section-body.filter_form-row
-			//- .col-12.px-0
-			.col-12
-				.row.no-gutters.justify-content-between
-					.col.col-md-auto
-						//- input.form-control.filter_form-control.filter_form-channel_control.filter_form-channel_control--active(placeholder="Все каналы")
-						button.btn.btn-outline-secondary.active.filter_form-channel(type="button") Все каналы
-					+filter-channels
-					.col-auto.d-none.d-md-block
-						select.form-control.filter_form-channel_dropbox
-							- for (var i = 1; i <= 5; i++)
-								option= i
-			//- .col-12.col-sm-6.col-md-3.filter_form-control_wrap.mt-13
-			.col-12.col-sm-6.col-md-3.filter_form-control_wrap
-				.filter_form-control.filter_form-control--active
-					.filter_form_category
-						.filter_form_category-text Боевик
-						a.icon.filter_form_category-close(href="")
-							+svg("close", "icon-symbol")
-					.filter_form_category
-						.filter_form_category-text Ужасы
-						a.icon.filter_form_category-close(href="")
-							+svg("close", "icon-symbol")
-					.filter_form_category
-						.filter_form_category-text Фантастика
-						a.icon.filter_form_category-close(href="")
-							+svg("close", "icon-symbol")
-					.filter_form_category
-						.filter_form_category-text Комедия
-						a.icon.filter_form_category-close(href="")
-							+svg("close", "icon-symbol")
-			//- .col-12.col-sm-6.col-md-3.filter_form-control_wrap.mt-14
-			.col-12.col-sm-6.col-md-3.filter_form-control_wrap
-				input.form-control.filter_form-control(placeholder="Все года...")
-			//- .col-12.col-sm-6.col-md-3.filter_form-control_wrap.mt-15
-			.col-12.col-sm-6.col-md-3.filter_form-control_wrap
-				input.form-control.filter_form-control(placeholder="Все возраста...")
-			//- .col-12.col-sm-6.col-md-3.filter_form-control_wrap.mt-16
-			.col-12.col-sm-6.col-md-3.filter_form-control_wrap
-				input.form-control.filter_form-control(placeholder="Все страны...")
-			.col-12.mt-17
-				.row.mx-0
-					button.col-12.col-md-auto.btn.btn-secondary(type="submit") Применить
-					button.d-none.col-auto.ml-10.btn.btn-secondary(type="reset") Сбросить
+	#reactFilterForm
+	//- form.form.section.section--tabs_wrap.filter_form.mt-md-n1(:class="{'d-none': !showFilter}" action="")
+	//- 	.row.section-header
+	//- 		.col-12.col-md-auto.navbar.section-top
+	//- 			h3.navbar-brand.section-top_title Фильтр
+	//- 			button.btn.btn-link.filter_form-reset(type="reset") Сбросить
+	//- 		ul.col.nav.nav-tabs.order-md-first.filter_form-tabs
+	//- 			li.nav-item.filter_form-item(:class="getTabItemClass(0)")
+	//- 				a.nav-link.filter_form-link(href="" :class="getTabLinkClass(0)" @click.prevent="activeTab=0") Все
+	//- 			li.nav-item.filter_form-item(:class="getTabItemClass(1)")
+	//- 				a.nav-link.filter_form-link(href="" :class="getTabLinkClass(1)" @click.prevent="activeTab=1") Сериалы
+	//- 			li.nav-item.filter_form-item(:class="getTabItemClass(2)")
+	//- 				a.nav-link.filter_form-link(href="" :class="getTabLinkClass(2)" @click.prevent="activeTab=2") Передачи
+	//- 	.row.section-body.filter_form-row
+	//- 		//- .col-12.px-0
+	//- 		.col-12
+	//- 			.row.no-gutters.justify-content-between
+	//- 				.col.col-md-auto
+	//- 					//- input.form-control.filter_form-control.filter_form-channel_control.filter_form-channel_control--active(placeholder="Все каналы")
+	//- 					button.btn.btn-outline-secondary.active.filter_form-channel(type="button") Все каналы
+	//- 				+filter-channels
+	//- 				.col-auto.d-none.d-md-block
+	//- 					select.form-control.filter_form-channel_dropbox
+	//- 						- for (var i = 1; i <= 5; i++)
+	//- 							option= i
+	//- 		//- .col-12.col-sm-6.col-md-3.filter_form-control_wrap.mt-13
+	//- 		.col-12.col-sm-6.col-md-3.filter_form-control_wrap
+	//- 			.filter_form-control.filter_form-control--active
+	//- 				.filter_form_category
+	//- 					.filter_form_category-text Боевик
+	//- 					a.icon.filter_form_category-close(href="")
+	//- 						+svg("close", "icon-symbol")
+	//- 				.filter_form_category
+	//- 					.filter_form_category-text Ужасы
+	//- 					a.icon.filter_form_category-close(href="")
+	//- 						+svg("close", "icon-symbol")
+	//- 				.filter_form_category
+	//- 					.filter_form_category-text Фантастика
+	//- 					a.icon.filter_form_category-close(href="")
+	//- 						+svg("close", "icon-symbol")
+	//- 				.filter_form_category
+	//- 					.filter_form_category-text Комедия
+	//- 					a.icon.filter_form_category-close(href="")
+	//- 						+svg("close", "icon-symbol")
+	//- 		//- .col-12.col-sm-6.col-md-3.filter_form-control_wrap.mt-14
+	//- 		.col-12.col-sm-6.col-md-3.filter_form-control_wrap
+	//- 			input.form-control.filter_form-control(placeholder="Все года...")
+	//- 		//- .col-12.col-sm-6.col-md-3.filter_form-control_wrap.mt-15
+	//- 		.col-12.col-sm-6.col-md-3.filter_form-control_wrap
+	//- 			input.form-control.filter_form-control(placeholder="Все возраста...")
+	//- 		//- .col-12.col-sm-6.col-md-3.filter_form-control_wrap.mt-16
+	//- 		.col-12.col-sm-6.col-md-3.filter_form-control_wrap
+	//- 			input.form-control.filter_form-control(placeholder="Все страны...")
+	//- 		.col-12.mt-17
+	//- 			.row.mx-0
+	//- 				button.col-12.col-md-auto.btn.btn-secondary(type="submit") Применить
+	//- 				button.d-none.col-auto.ml-10.btn.btn-secondary(type="reset") Сбросить
 	//- main.row.mr-lg-0.section-container.main-row
 	section.section
 		.row.section-body(:class="containerClasses")

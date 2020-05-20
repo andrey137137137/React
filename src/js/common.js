@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { observable, configure, computed, action } from "mobx";
 import { observer } from "mobx-react";
-// configure({ enforceActions: "observed" });
+configure({ enforceActions: "observed" });
 
 // var app = new Vue({
 //   el: "#app",
@@ -99,9 +99,10 @@ function getComputedClasses(commonClasses, switchedClass) {
   };
 }
 
+const store = observable({ showFilter: false, byRows: true });
+
 @observer
 class FilterBtn extends Component {
-  @observable showFilter = this.props.showFilter;
   @observable linkClasses = getComputedClasses(
     "pr-7 pb-7 p-md-0 icon icon--round filter-icon filter-icon--round",
     "icon--success",
@@ -112,22 +113,25 @@ class FilterBtn extends Component {
   );
 
   @computed get linkComputedClasses() {
+    const { showFilter } = this.props.store;
     return (
       this.linkClasses.common +
       " " +
-      getSwitchedClass(this.showFilter, this.linkClasses.switched)
+      getSwitchedClass(showFilter, this.linkClasses.switched)
     );
   }
   @computed get textComputedClasses() {
+    const { showFilter } = this.props.store;
     return (
       this.textClasses.common +
       " " +
-      getSwitchedClass(this.showFilter, this.textClasses.switched)
+      getSwitchedClass(showFilter, this.textClasses.switched)
     );
   }
 
   @action handle = () => {
-    this.showFilter = !this.showFilter;
+    const { showFilter } = this.props.store;
+    this.props.store.showFilter = !showFilter;
   };
 
   render() {
@@ -148,30 +152,31 @@ class FilterBtn extends Component {
 
 @observer
 class SwitcherBtn extends Component {
-  @observable byRows = this.props.byRows;
   @observable linkPostClasses = "filter-link--switcher";
   @observable iconClasses = getComputedClasses("icon", "icon--success");
 
   @computed get rowsClasses() {
+    const { byRows } = this.props.store;
     return (
       this.iconClasses.common +
       " " +
-      getSwitchedClass(this.byRows, this.iconClasses.switched)
+      getSwitchedClass(byRows, this.iconClasses.switched)
     );
   }
   @computed get squarsClasses() {
+    const { byRows } = this.props.store;
     return (
       this.iconClasses.common +
       " " +
-      getSwitchedClass(!this.byRows, this.iconClasses.switched)
+      getSwitchedClass(!byRows, this.iconClasses.switched)
     );
   }
 
   @action rowsHandle = () => {
-    this.byRows = true;
+    this.props.store.byRows = true;
   };
   @action squarsHandle = () => {
-    this.byRows = false;
+    this.props.store.byRows = false;
   };
 
   render() {
@@ -196,7 +201,6 @@ class SwitcherBtn extends Component {
 
 @observer
 class FilterForm extends Component {
-  @observable showFilter = this.props.showFilter;
   @observable activeTab = 2;
   @observable formClasses = getComputedClasses(
     "form section section--tabs_wrap filter_form mt-md-n1",
@@ -208,48 +212,50 @@ class FilterForm extends Component {
   );
   @observable tabLinkClasses = getComputedClasses(
     "nav-link filter_form-link",
-    "nav-link--active",
+    "active",
   );
-  @observable tabs = ["Все", "Сериалы", "Передачи"];
+  @observable tabs = [
+    { name: "Все", active: false },
+    { name: "Сериалы", active: false },
+    { name: "Передачи", active: true },
+  ];
   @observable channels = ["Первый", "ТНТ", "Россия 1"];
   @observable channelSelect = [1, 2, 3, 4, 5];
   @observable genres = ["Боевик", "Ужасы", "Фантастика", "Комедия"];
   @observable filters = ["Все года...", "Все возраста...", "Все страны..."];
 
   @computed get formComputedClasses() {
+    const { showFilter } = this.props.store;
     return (
       this.formClasses.common +
       " " +
-      getSwitchedClass(this.showFilter, this.formClasses.switched)
+      getSwitchedClass(!showFilter, this.formClasses.switched)
     );
   }
-  @computed get tabItemComputedClasses() {
+  @action tabItemComputedClasses(index) {
     return (
       this.tabItemClasses.common +
       " " +
-      getSwitchedClass(this.activeTab, this.tabItemClasses.switched)
+      getSwitchedClass(this.tabs[index].active, this.tabItemClasses.switched)
     );
   }
-  @computed get tabLinkComputedClasses() {
+  @action tabLinkComputedClasses(index) {
     return (
       this.tabLinkClasses.common +
       " " +
-      getSwitchedClass(this.activeTab, this.tabLinkClasses.switched)
+      getSwitchedClass(this.tabs[index].active, this.tabLinkClasses.switched)
     );
   }
+  @action tabHandle = (e, index) => {
+    e.preventDefault();
+    console.log(this.activeTab);
 
-  @action getTabItemClass = (index) => {
-    return {
-      "nav-item--active": this.state.activeTab == index,
-    };
-  };
-  @action getTabLinkClass = (index) => {
-    return {
-      active: this.state.activeTab == index,
-    };
-  };
-  @action tabHandle = (index) => {
+    if (this.activeTab == index) return;
+
+    this.tabs[this.activeTab].name = this.tabs[this.activeTab].name;
+    this.tabs[this.activeTab].active = false;
     this.activeTab = index;
+    this.tabs[this.activeTab].active = true;
   };
 
   render() {
@@ -263,19 +269,14 @@ class FilterForm extends Component {
             </button>
           </div>
           <ul className="col nav nav-tabs order-md-first filter_form-tabs">
-            {this.tabs.map((value, index) => (
-              <li
-                key={index}
-                className={this.tabItemComputedClasses}
-                class={() => this.getTabItemClass(index)}
-              >
+            {this.tabs.map((item, index) => (
+              <li key={index} className={this.tabItemComputedClasses(index)}>
                 <a
-                  className={this.tabLinkComputedClasses}
+                  className={this.tabLinkComputedClasses(index)}
                   href=""
-                  class={() => this.getTabLinkClass(index)}
-                  onClick={() => this.tabHandle(index)}
+                  onClick={(e) => this.tabHandle(e, index)}
                 >
-                  {value}
+                  {item.name}
                 </a>
               </li>
             ))}
@@ -347,11 +348,16 @@ class FilterForm extends Component {
 }
 
 ReactDOM.render(
-  <FilterBtn showFilter={false} />,
+  <FilterBtn store={store} />,
   document.getElementById("reactFilterBtn"),
 );
 
 ReactDOM.render(
-  <SwitcherBtn byRows={true} />,
+  <SwitcherBtn store={store} />,
   document.getElementById("reactSwitcherBtn"),
+);
+
+ReactDOM.render(
+  <FilterForm store={store} />,
+  document.getElementById("reactFilterForm"),
 );
