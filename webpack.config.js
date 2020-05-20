@@ -17,7 +17,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      "@modules": path.resolve(__dirname, "src/js/modules"),
+      "@cmp": path.resolve(__dirname, "src/js/components"),
+      "@help": path.resolve(__dirname, "src/js/helpers"),
     },
   },
   plugins: [
