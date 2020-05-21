@@ -15,6 +15,8 @@
       "@babel/preset-react"
     ],
     "plugins": [
+      "transform-react-pug",
+      "transform-react-jsx",
       "@babel/plugin-transform-runtime",
       "@babel/plugin-transform-object-assign",
       [
@@ -45,6 +47,7 @@
     "@babel/preset-react": "^7.9.4",
     "autoprefixer": "^8.6.5",
     "babel-loader": "^8.1.0",
+    "babel-plugin-transform-react-pug": "^7.0.1",
     "browser-sync": "^2.26.3",
     "cross-env": "^5.2.0",
     "css-loader": "^3.5.3",
@@ -80,6 +83,7 @@
     "postcss-short-border": "^3.0.0",
     "postcss-short-text": "^1.1.0",
     "precss": "^3.1.2",
+    "pug-as-jsx-loader": "^1.0.84",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "sp-load": "^1.1.0",

@@ -11,7 +11,7 @@ export default class NavLink extends Component {
     this.state = {
       navClass,
       filterClass,
-      classes: `${navClass} ${props.classes} ${filterClass}${finalClasses}`,
+      classes: `${navClass} ${props.classes} ${filterClass}${finalClasses}`
     };
   }
   handle = (e) => {
@@ -20,7 +20,7 @@ export default class NavLink extends Component {
     this.setState((state, props) => ({
       classes: `${state.navClass} ${props.classes} ${state.filterClass}${
         props.finalClasses ? " " + props.finalClasses : ""
-      }`,
+      }`
     }));
     this.props.clickHandle();
   };

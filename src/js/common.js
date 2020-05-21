@@ -4,7 +4,7 @@ import { observable } from "mobx";
 import FilterBtn from "@cmp/FilterBtn";
 import SwitcherBtn from "@cmp/SwitcherBtn";
 import FilterForm from "@cmp/FilterForm";
-import CardContainer from "@cmp/CardContainer";
+import CardContainer from "@cardCmp/CardContainer";
 
 // var app = new Vue({
 //   el: "#app",
@@ -49,20 +49,20 @@ const store = observable({ showFilter: false, byRows: true });
 
 ReactDOM.render(
   <FilterBtn store={store} />,
-  document.getElementById("reactFilterBtn"),
+  document.getElementById("reactFilterBtn")
 );
 
 ReactDOM.render(
   <SwitcherBtn store={store} />,
-  document.getElementById("reactSwitcherBtn"),
+  document.getElementById("reactSwitcherBtn")
 );
 
 ReactDOM.render(
   <FilterForm store={store} />,
-  document.getElementById("reactFilterForm"),
+  document.getElementById("reactFilterForm")
 );
 
 ReactDOM.render(
   <CardContainer store={store} />,
-  document.getElementById("reactCardContainer"),
+  document.getElementById("reactCardContainer")
 );

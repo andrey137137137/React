@@ -2,54 +2,38 @@ import React, { Component } from "react";
 import { observable, computed, action } from "mobx";
 import { observer } from "mobx-react";
 import SvgCmp from "@cmp/SvgCmp";
-import { getSwitchedClass, getComputedClasses } from "@help/classes";
+import { getSwitchedClass } from "@help/classes";
 
 export default
 @observer
 class FilterForm extends Component {
   @observable activeTab = 2;
-  @observable formClasses = getComputedClasses(
-    "form section section--tabs_wrap filter_form mt-md-n1",
-    "d-none",
-  );
-  @observable tabItemClasses = getComputedClasses(
-    "nav-item filter_form-item",
-    "nav-item--active",
-  );
-  @observable tabLinkClasses = getComputedClasses(
-    "nav-link filter_form-link",
-    "active",
-  );
   @observable tabs = [
     { name: "Все", active: false },
     { name: "Сериалы", active: false },
-    { name: "Передачи", active: true },
+    { name: "Передачи", active: true }
   ];
   @observable channels = ["Первый", "ТНТ", "Россия 1"];
   @observable channelSelect = [1, 2, 3, 4, 5];
   @observable genres = ["Боевик", "Ужасы", "Фантастика", "Комедия"];
   @observable filters = ["Все года...", "Все возраста...", "Все страны..."];
 
-  @computed get formComputedClasses() {
-    const { showFilter } = this.props.store;
+  @computed get formClasses() {
     return (
-      this.formClasses.common +
-      " " +
-      getSwitchedClass(!showFilter, this.formClasses.switched)
+      "form section section--tabs_wrap filter_form mt-md-n1 " +
+      getSwitchedClass(!this.props.store.showFilter, "d-none")
     );
   }
-  @action tabItemComputedClasses(index) {
+  @action tabItemClasses(index) {
     return (
-      this.tabItemClasses.common +
-      " " +
-      getSwitchedClass(this.tabs[index].active, this.tabItemClasses.switched)
+      "nav-item filter_form-item " +
+      getSwitchedClass(this.tabs[index].active, "nav-item--active")
     );
   }
-  @action tabLinkComputedClasses(index) {
+  @action tabLinkClasses(index) {
     return (
-      this.tabLinkClasses.common +
-      " " +
-      getSwitchedClass(this.tabs[index].active, this.tabLinkClasses.switched)
+      "nav-link filter_form-link " +
+      getSwitchedClass(this.tabs[index].active, "active")
     );
   }
   @action tabHandle = (e, index) => {
@@ -66,7 +50,7 @@ class FilterForm extends Component {
 
   render() {
     return (
-      <form className={this.formComputedClasses} action="">
+      <form className={this.formClasses} action="">
         <div className="row section-header">
           <div className="col-12 col-md-auto navbar section-top">
             <h3 className="navbar-brand section-top_title"> Фильтр </h3>
@@ -76,9 +60,9 @@ class FilterForm extends Component {
           </div>
           <ul className="col nav nav-tabs order-md-first filter_form-tabs">
             {this.tabs.map((item, index) => (
-              <li key={index} className={this.tabItemComputedClasses(index)}>
+              <li key={index} className={this.tabItemClasses(index)}>
                 <a
-                  className={this.tabLinkComputedClasses(index)}
+                  className={this.tabLinkClasses(index)}
                   href=""
                   onClick={(e) => this.tabHandle(e, index)}
                 >

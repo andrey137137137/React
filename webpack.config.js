@@ -13,26 +13,27 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "public/js"),
     publicPath: "/public/",
-    filename: "[name].bundle.js",
+    filename: "[name].bundle.js"
   },
   resolve: {
     alias: {
       "@cmp": path.resolve(__dirname, "src/js/components"),
-      "@help": path.resolve(__dirname, "src/js/helpers"),
-    },
+      "@cardCmp": path.resolve(__dirname, "src/js/components/card"),
+      "@help": path.resolve(__dirname, "src/js/helpers")
+    }
   },
   plugins: [
     new UglifyJSPlugin({
-      sourceMap: true,
-    }),
+      sourceMap: true
+    })
   ],
   module: {
     rules: [
       {
         test: /\.js$/,
         loader: "babel-loader",
-        exclude: /node_modules/,
-      },
-    ],
-  },
+        exclude: /node_modules/
+      }
+    ]
+  }
 };
