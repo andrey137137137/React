@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { observable, computed, action } from "mobx";
 import { observer } from "mobx-react";
 import NavLink from "@cmp/NavLink";
@@ -35,21 +35,14 @@ class SwitcherBtn extends Component {
   };
 
   render() {
-    return (
-      <>
-        <span className="pr-sm-0 pr-md-13 filter-text"> Вид </span>
-        <div className="filter-icons pl-1 pr-2">
-          <NavLink classes={this.linkPostClasses} clickHandle={this.rowsHandle}>
-            <SvgCmp icon="bars" classes={this.rowsClasses} />
-          </NavLink>
-          <NavLink
-            classes={this.linkPostClasses}
-            clickHandle={this.squarsHandle}
-          >
-            <SvgCmp icon="th-large" classes={this.squarsClasses} />
-          </NavLink>
-        </div>
-      </>
-    );
+    return pug`
+      Fragment
+        span.pr-sm-0.pr-md-13.filter-text Вид
+        .filter-icons.pl-1.pr-2
+          NavLink(classes=this.linkPostClasses clickHandle=this.rowsHandle)
+            SvgCmp(icon="bars" classes=this.rowsClasses)
+          NavLink(classes=this.linkPostClasses clickHandle=this.squarsHandle)
+            SvgCmp(icon="th-large" classes=this.squarsClasses)
+    `;
   }
 }

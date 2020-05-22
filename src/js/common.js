@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { observable } from "mobx";
+import store from "@store";
 import FilterBtn from "@cmp/FilterBtn";
 import SwitcherBtn from "@cmp/SwitcherBtn";
 import FilterForm from "@cmp/FilterForm";
@@ -44,8 +44,6 @@ import CardContainer from "@cardCmp/CardContainer";
 //     },
 //   },
 // });
-
-const store = observable({ showFilter: false, byRows: true });
 
 ReactDOM.render(
   <FilterBtn store={store} />,

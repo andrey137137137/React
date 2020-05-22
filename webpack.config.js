@@ -17,6 +17,7 @@ module.exports = {
   },
   resolve: {
     alias: {
+      "@store": path.resolve(__dirname, "src/js/store.js"),
       "@cmp": path.resolve(__dirname, "src/js/components"),
       "@cardCmp": path.resolve(__dirname, "src/js/components/card"),
       "@help": path.resolve(__dirname, "src/js/helpers")

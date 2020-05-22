@@ -1,13 +1,17 @@
 export const getSwitchedClass = (cond, className) => (cond ? className : "");
 
 export function getComputedClasses(
-  commonClasses,
   switchedClasses,
-  nonSwitchedClasses
+  nonSwitchedClasses,
+  commonClasses = ""
 ) {
-  switchedClasses.forEach((item) => {
-    if (item.cond) return `${commonClasses} ${item.value}`;
-  });
+  if (commonClasses) commonClasses += " ";
 
-  return `${commonClasses} ${nonSwitchedClasses}`;
+  for (let i = 0; i < switchedClasses.length; i++) {
+    if (switchedClasses[i].cond) {
+      return commonClasses + switchedClasses[i].value;
+    }
+  }
+
+  return commonClasses + nonSwitchedClasses;
 }

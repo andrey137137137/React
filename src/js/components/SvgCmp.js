@@ -7,8 +7,8 @@ export default class SvgCmp extends Component {
   }
   render() {
     return pug`
-      svg(className='{this.props.classes}')
-        use(xlinkHref='{this.state.icon}')
+      svg(className=this.props.classes)
+        use(xlinkHref=this.state.icon)
     `;
   }
 }

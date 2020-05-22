@@ -24,13 +24,13 @@ class FilterForm extends Component {
       getSwitchedClass(!this.props.store.showFilter, "d-none")
     );
   }
-  @action tabItemClasses(index) {
+  @action getTabItemClasses(index) {
     return (
       "nav-item filter_form-item " +
       getSwitchedClass(this.tabs[index].active, "nav-item--active")
     );
   }
-  @action tabLinkClasses(index) {
+  @action getTabLinkClasses(index) {
     return (
       "nav-link filter_form-link " +
       getSwitchedClass(this.tabs[index].active, "active")
@@ -49,90 +49,42 @@ class FilterForm extends Component {
   };
 
   render() {
-    return (
-      <form className={this.formClasses} action="">
-        <div className="row section-header">
-          <div className="col-12 col-md-auto navbar section-top">
-            <h3 className="navbar-brand section-top_title"> Фильтр </h3>
-            <button className="btn btn-link filter_form-reset" type="reset">
-              Сбросить
-            </button>
-          </div>
-          <ul className="col nav nav-tabs order-md-first filter_form-tabs">
-            {this.tabs.map((item, index) => (
-              <li key={index} className={this.tabItemClasses(index)}>
-                <a
-                  className={this.tabLinkClasses(index)}
-                  href=""
-                  onClick={(e) => this.tabHandle(e, index)}
-                >
-                  {item.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="row section-body filter_form-row">
-          <div className="col-12">
-            <div className="row no-gutters justify-content-between">
-              <div className="col col-md-auto">
-                <button
-                  className="btn btn-outline-secondary active filter_form-channel"
-                  type="button"
-                >
-                  Все каналы
-                </button>
-              </div>
-              <div className="col-auto d-none d-md-block">
-                <select className="form-control filter_form-channel_dropbox">
-                  {this.channelSelect.map((value, index) => (
-                    <option key={index}> {value} </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-sm-6 col-md-3 filter_form-control_wrap">
-            <div className="filter_form-control filter_form-control--active">
-              {this.genres.map((value, index) => (
-                <div key={index} className="filter_form_category">
-                  <div className="filter_form_category-text"> {value} </div>
-                  <a className="icon filter_form_category-close" href="">
-                    <SvgCmp icon="close" classes="icon-symbol" />
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-          {this.filters.map((value, index) => (
-            <div
-              key={index}
-              className="col-12 col-sm-6 col-md-3 filter_form-control_wrap"
-            >
-              <input
-                className="form-control filter_form-control"
-                placeholder={value}
-              />
-            </div>
-          ))}
-          <div className="col-12 mt-17">
-            <div className="row mx-0">
-              <button
-                className="col-12 col-md-auto btn btn-secondary"
-                type="submit"
-              >
-                Применить
-              </button>
-              <button
-                className="d-none col-auto ml-10 btn btn-secondary"
-                type="reset"
-              >
-                Сбросить
-              </button>
-            </div>
-          </div>
-        </div>
-      </form>
-    );
+    return pug`
+      form.form.section.section--tabs_wrap.filter_form.mt-md-n1(className=this.formClasses action="")
+        .row.section-header
+          .col-12.col-md-auto.navbar.section-top
+            h3.navbar-brand.section-top_title Фильтр
+            button.btn.btn-link.filter_form-reset(type="reset") Сбросить
+          ul.col.nav.nav-tabs.order-md-first.filter_form-tabs
+            each item, index in this.tabs
+              li.nav-item.filter_form-item(key=index className=this.getTabItemClasses(index))
+                a.nav-link.filter_form-link(href="" className=this.getTabLinkClasses(index) onClick=(e) => this.tabHandle(e, index))= item.name
+        .row.section-body.filter_form-row
+          //- .col-12.px-0
+          .col-12
+            .row.no-gutters.justify-content-between
+              .col.col-md-auto
+                //- input.form-control.filter_form-control.filter_form-channel_control.filter_form-channel_control--active(placeholder="Все каналы")
+                button.btn.btn-outline-secondary.active.filter_form-channel(type="button") Все каналы
+              .col-auto.d-none.d-md-block
+                select.form-control.filter_form-channel_dropbox
+                  each item, index in this.channelSelect
+                    option(key=index)= item
+          //- .col-12.col-sm-6.col-md-3.filter_form-control_wrap.mt-13
+          .col-12.col-sm-6.col-md-3.filter_form-control_wrap
+            .filter_form-control.filter_form-control--active
+              each item, index in this.genres
+                .filter_form_category(key=index)
+                  .filter_form_category-text= item
+                  a.icon.filter_form_category-close(href="")
+                    SvgCmp(icon="close" classes="icon-symbol")
+          each item, index in this.filters
+            //- .col-12.col-sm-6.col-md-3.filter_form-control_wrap.mt-14
+            .col-12.col-sm-6.col-md-3.filter_form-control_wrap(key=index)
+              input.form-control.filter_form-control(placeholder=item)
+          .col-12.mt-17
+            .row.mx-0
+              button.col-12.col-md-auto.btn.btn-secondary(type="submit") Применить
+              button.d-none.col-auto.ml-10.btn.btn-secondary(type="reset") Сбросить`;
   }
 }

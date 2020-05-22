@@ -15,10 +15,7 @@ class FilterBtn extends Component {
     );
   }
   @computed get textClasses() {
-    return (
-      "d-none d-md-inline-block pr-md-17 filter-text " +
-      getSwitchedClass(this.props.store.showFilter, "text-success")
-    );
+    return getSwitchedClass(this.props.store.showFilter, "text-success");
   }
 
   @action handle = () => {
@@ -27,17 +24,12 @@ class FilterBtn extends Component {
   };
 
   render() {
-    return (
-      <NavLink classes={this.linkClasses} clickHandle={this.handle}>
-        <div className="icon-bg"></div>
-        <span className={this.textClasses}> Фильтр </span>
-        <div className="icon-symbol_wrap">
-          <SvgCmp
-            icon="filter"
-            classes="icon-symbol filter-icon filter-icon--filter"
-          />
-        </div>
-      </NavLink>
-    );
+    return pug`
+      NavLink(classes=this.linkClasses clickHandle=this.handle)
+        .icon-bg
+        span.d-none.d-md-inline-block.pr-md-17.filter-text(className=this.textClasses) Фильтр
+        .icon-symbol_wrap
+          SvgCmp(icon="filter" classes="icon-symbol filter-icon filter-icon--filter")
+    `;
   }
 }
