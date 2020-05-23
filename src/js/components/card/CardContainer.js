@@ -23,7 +23,15 @@ class CardContainer extends Component {
         reviews: 47,
         comments: 578
       },
-      reviews: [{ positive: "6,2", negative: "3,8" }, 7, 10, 0, 10, 2, 2]
+      reviews: {
+        result: { positive: 6.2, negative: 3.8 },
+        entertaiment: 7,
+        alcohol: 10,
+        erotica: 0,
+        toiletHumor: 10,
+        violence: 2,
+        harmfulPropaganda: 2
+      }
     },
     {
       //- title: "Путешествие из Парижа",
@@ -44,7 +52,15 @@ class CardContainer extends Component {
         reviews: 6,
         comments: 57
       },
-      reviews: [{ positive: "4,7", negative: "5,3" }, 7, 10, 5, 0, 5, 9]
+      reviews: {
+        result: { positive: 4.7, negative: 5.3 },
+        entertaiment: 7,
+        alcohol: 10,
+        erotica: 5,
+        toiletHumor: 0,
+        violence: 5,
+        harmfulPropaganda: 9
+      }
     },
     {
       //- title: "Побудь в моей шкуре",
@@ -63,7 +79,15 @@ class CardContainer extends Component {
         reviews: 47,
         comments: 578
       },
-      reviews: [{ positive: "6,2", negative: "3,8" }, 7, 10, 0, 10, 2, 2]
+      reviews: {
+        result: { positive: 6.2, negative: 3.8 },
+        entertaiment: 7,
+        alcohol: 10,
+        erotica: 0,
+        toiletHumor: 10,
+        violence: 2,
+        harmfulPropaganda: 2
+      }
     },
     {
       title: "Матрос Железняк",
@@ -79,7 +103,15 @@ class CardContainer extends Component {
         reviews: 6,
         comments: 57
       },
-      reviews: [{ positive: "4,7", negative: "5,3" }, 7, 10, 5, 0, 5, 9]
+      reviews: {
+        result: { positive: 4.7, negative: 5.3 },
+        entertaiment: 7,
+        alcohol: 10,
+        erotica: 5,
+        toiletHumor: 0,
+        violence: 5,
+        harmfulPropaganda: 9
+      }
     },
     {
       title: "Сила воли",
@@ -95,7 +127,15 @@ class CardContainer extends Component {
         reviews: 47,
         comments: 578
       },
-      reviews: [{ positive: "6,2", negative: "3,8" }, 7, 10, 0, 10, 2, 2]
+      reviews: {
+        result: { positive: 6.2, negative: 3.8 },
+        entertaiment: 7,
+        alcohol: 10,
+        erotica: 0,
+        toiletHumor: 10,
+        violence: 2,
+        harmfulPropaganda: 2
+      }
     }
   ];
 

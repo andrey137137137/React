@@ -2,7 +2,7 @@ export const getSwitchedClass = (cond, className) => (cond ? className : "");
 
 export function getComputedClasses(
   switchedClasses,
-  nonSwitchedClasses,
+  nonSwitchedClasses = "",
   commonClasses = ""
 ) {
   if (commonClasses) commonClasses += " ";
@@ -13,5 +13,7 @@ export function getComputedClasses(
     }
   }
 
-  return commonClasses + nonSwitchedClasses;
+  if (nonSwitchedClasses) return commonClasses + nonSwitchedClasses;
+
+  return commonClasses;
 }
