@@ -52,46 +52,47 @@ export default class CardGrades extends Component {
       }
     };
 
-    for (const key in props) {
-      if (props.hasOwnProperty(key)) {
-        if (key == "result") {
-          const { positive } = props.result;
+    props.data.map((item, index) => {
+      const { category, value } = item;
 
-          grades.result.positive = number2str(positive);
-          grades.result.negative = number2str(props.result.negative);
+      if (category == "result") {
+        const { positive, negative } = value;
 
-          grades[key].iconClasses = getComputedClasses(
-            [{ cond: positive > 6, value: iconClasses.success }],
-            iconClasses.warning,
-            iconClasses.common
-          );
-        } else {
-          const { value } = props[key];
-          const successCond = value < 3;
+        grades.result.positive = number2str(positive);
+        grades.result.negative = number2str(negative);
 
-          grades[key].iconClasses = getComputedClasses(
-            [
-              { cond: successCond, value: iconClasses.success },
-              { cond: value < 8, value: iconClasses.warning },
-              { cond: value >= 8, value: iconClasses.danger }
-            ],
-            "",
-            iconClasses.common
-          );
+        grades.result.iconClasses = getComputedClasses(
+          [{ cond: positive > 6, value: iconClasses.success }],
+          iconClasses.warning,
+          iconClasses.common
+        );
+      } else {
+        const successCond = value < 3;
 
-          switch (key) {
-            case "alcohol":
-            case "toiletHumor":
-            case "violence":
-              if (successCond) grades[key].value = "Нет";
-              else grades[key].value = "Есть";
-              break;
-            default:
-              grades[key].value = props[key];
-          }
+        grades[category].iconClasses = getComputedClasses(
+          [
+            { cond: successCond, value: iconClasses.success },
+            { cond: value < 8, value: iconClasses.warning }
+          ],
+          iconClasses.danger,
+          iconClasses.common
+        );
+
+        switch (category) {
+          case "alcohol":
+          case "toiletHumor":
+          case "violence":
+            if (successCond) {
+              grades[category].value = "Нет";
+            } else {
+              grades[category].value = "Есть";
+            }
+            break;
+          default:
+            grades[category].value = value;
         }
       }
-    }
+    });
 
     this.state = {
       grades
@@ -101,50 +102,16 @@ export default class CardGrades extends Component {
   render() {
     return pug`
         ul.list-group.list-group-horizontal.card-categories
-          each item, index in props.items
-            li.list-group-item.card-list_item.card-categories_item
-              if index > 0
-                if item < 3
-                  - categoryItem.success = true
-                else if item < 8
-                  - categoryItem.warning = true
-                else
-                  - categoryItem.danger = true
-                if index > 1 && index < 5
-                  if item < 3
-                    - categoryItem.value = "Нет"
-                  else
-                    - categoryItem.value = "Есть"
-                else
-                  - categoryItem.value = item
-              case index
-                when 0
-                  - categoryItem.icon = "libra-square"
-                  if item.positive == "6,2"
-                    - categoryItem.success = true
-                  else
-                    - categoryItem.warning = true
-                when 1
-                  - categoryItem.icon = "cup-square"
-                when 2
-                  - categoryItem.icon = "bottle-square"
-                when 3
-                  - categoryItem.icon = "strawberry-square"
-                when 4
-                  - categoryItem.icon = "toilet-paper-square"
-                when 5
-                  - categoryItem.icon = "knuckle-square"
-                when 6
-                  - categoryItem.icon = "bullhorn-square"
-              SvgCmp(icon=categoryItem.icon classes={"icon": true, "card-categories_icon": true, "icon--success": categoryItem.success, "icon--warning": categoryItem.warning, "icon--danger": categoryItem.danger})
-              case index
-                when 0
-                  span.card-categories_text
-                    span.text-success= item.positive
-                    | /
-                    span.text-danger= item.negative
-                default
-                  span.card-categories_text= categoryItem.value
+          each item, index in this.props.data
+            li.list-group-item.card-list_item.card-categories_item(key=item.category)
+              SvgCmp(icon=this.state.grades[item.category].icon classes=this.state.grades[item.category].iconClasses)
+              if item.category == "result"
+                span.card-categories_text
+                  span.text-success= this.state.grades[item.category].positive
+                  | /
+                  span.text-danger= this.state.grades[item.category].negative
+              else
+                span.card-categories_text= this.state.grades[item.category].value
       `;
   }
 }

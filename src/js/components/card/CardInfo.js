@@ -41,10 +41,10 @@ export default class CardInfo extends Component {
   render() {
     return pug`
       ul.list-group.list-group-horizontal.card-info
-        each item, index in props.items
+        each item, index in this.state.items
           li.list-group-item.card-list_item.card-info_item(key=item.key className=item.modif)
-            SvgCmp(icon=item.icon, classes=getIconClasses(index))
-            span.card-info_number= props.statistics[item.key]
+            SvgCmp(icon=item.icon, classes=this.getIconClasses(index))
+            span.card-info_number= this.props.data[item.key]
     `;
   }
 }

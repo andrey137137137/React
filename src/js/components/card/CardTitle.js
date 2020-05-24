@@ -3,6 +3,7 @@ import { computed } from "mobx";
 import { observer } from "mobx-react";
 import CardTitleText from "@cardCmp/CardTitleText";
 import SvgCmp from "@cmp/SvgCmp";
+import { getSwitchedClass } from "@help/classes";
 
 export default
 @observer

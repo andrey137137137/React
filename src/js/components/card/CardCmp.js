@@ -5,6 +5,7 @@ import CardImg from "@cardCmp/CardImg";
 import CardTitle from "@cardCmp/CardTitle";
 import CardInfo from "@cardCmp/CardInfo";
 import CardSubtitle from "@cardCmp/CardSubtitle";
+import CardGrades from "@cardCmp/CardGrades";
 import CardShortText from "@cardCmp/CardShortText";
 import { getComputedClasses } from "@help/classes";
 
@@ -34,13 +35,13 @@ class CardCmp extends Component {
                   marked={this.props.item.marked}
                 />
                 <div className="col-auto card-info_wrap">
-                  <CardInfo statistics={this.props.item.statistics} />
+                  <CardInfo data={this.props.item.statistics} />
                 </div>
               </div>
               <div className="row no-gutters align-items-end">
                 <div className="col card-categories_wrap">
                   <CardSubtitle options={this.props.item} />
-                  {/* <Cardcategories items={this.props.item.reviews} /> */}
+                  <CardGrades data={this.props.item.reviews} />
                   <CardShortText text={this.props.item.category} />
                 </div>
                 <p className="col-auto card-desc">{this.props.item.text}</p>
@@ -52,7 +53,7 @@ class CardCmp extends Component {
           </a>
         </div>
         <div className="d-md-none card-row_elem card-footer">
-          <CardInfo statistics={this.props.item.statistics} />
+          <CardInfo data={this.props.item.statistics} />
         </div>
       </article>
     );

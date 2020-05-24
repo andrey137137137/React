@@ -1,4 +1,4 @@
-// import React, { Component } from "react";
+import React, { Component } from "react";
 import CardSubtitleText from "@cardCmp/CardSubtitleText";
 
 export default function CardSubtitle(props) {
