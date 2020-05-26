@@ -9,11 +9,19 @@ export default
 class FilterForm extends Component {
   @observable activeTab = 2;
   @observable tabs = [
-    { name: "Все", active: false },
-    { name: "Сериалы", active: false },
-    { name: "Передачи", active: true }
+    { name: "Все", active: 1 },
+    { name: "Сериалы", active: 2 },
+    { name: "Передачи", active: "3active" }
   ];
-  @observable channels = ["Первый", "ТНТ", "Россия 1"];
+  @observable channels = [
+    { name: "Первый", img: 0 },
+    { name: "ТНТ", img: 1 },
+    { name: "Россия 1", img: 2 },
+    { name: "Первый", img: 0 },
+    { name: "ТНТ", img: 1 },
+    { name: "Россия 1", img: 2 },
+    { name: "ТНТ", img: 0 }
+  ];
   @observable channelSelect = [1, 2, 3, 4, 5];
   @observable genres = ["Боевик", "Ужасы", "Фантастика", "Комедия"];
   @observable filters = ["Все года...", "Все возраста...", "Все страны..."];
@@ -27,14 +35,20 @@ class FilterForm extends Component {
   @action getTabItemClasses(index) {
     return (
       "nav-item filter_form-item " +
-      getSwitchedClass(this.tabs[index].active, "nav-item--active")
+      getSwitchedClass(index == this.activeTab, "nav-item--active")
     );
   }
   @action getTabLinkClasses(index) {
     return (
       "nav-link filter_form-link " +
-      getSwitchedClass(this.tabs[index].active, "active")
+      getSwitchedClass(index == this.activeTab, "active")
     );
+  }
+  @action getChannelClass(index) {
+    return "filter_form-channel--item_" + (index + 1);
+  }
+  @action getTabKey(index) {
+    return this.tabs[index].active;
   }
   @action tabHandle = (e, index) => {
     e.preventDefault();
@@ -42,10 +56,9 @@ class FilterForm extends Component {
 
     if (this.activeTab == index) return;
 
-    this.tabs[this.activeTab].name = this.tabs[this.activeTab].name;
-    this.tabs[this.activeTab].active = false;
+    this.tabs[this.activeTab].active = this.activeTab;
     this.activeTab = index;
-    this.tabs[this.activeTab].active = true;
+    this.tabs[index].active = index + "active";
   };
 
   render() {
@@ -57,7 +70,7 @@ class FilterForm extends Component {
             button.btn.btn-link.filter_form-reset(type="reset") Сбросить
           ul.col.nav.nav-tabs.order-md-first.filter_form-tabs
             each item, index in this.tabs
-              li.nav-item.filter_form-item(key=index className=this.getTabItemClasses(index))
+              li.nav-item.filter_form-item(key=item.active className=this.getTabItemClasses(index))
                 a.nav-link.filter_form-link(href="" className=this.getTabLinkClasses(index) onClick=(e) => this.tabHandle(e, index))= item.name
         .row.section-body.filter_form-row
           //- .col-12.px-0
@@ -66,6 +79,10 @@ class FilterForm extends Component {
               .col.col-md-auto
                 //- input.form-control.filter_form-control.filter_form-channel_control.filter_form-channel_control--active(placeholder="Все каналы")
                 button.btn.btn-outline-secondary.active.filter_form-channel(type="button") Все каналы
+              each item, index in this.channels
+                .col.filter_form-channel_wrap(key=index)
+                  button.btn.btn-outline-secondary.filter_form-channel(className=this.getChannelClass(item.img) type="button")
+                  span.filter_form-channel_title= item.name
               .col-auto.d-none.d-md-block
                 select.form-control.filter_form-channel_dropbox
                   each item, index in this.channelSelect

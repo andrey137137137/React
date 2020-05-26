@@ -11,38 +11,38 @@ import CardContainer from "@cardCmp/CardContainer";
 //   data: {
 //     activeTab: 2,
 //     showFilter: true,
-//     byRows: false,
+//     byRows: false
 //   },
 //   computed: {
-//     containerClasses: function () {
+//     containerClasses: function() {
 //       return {
 //         // "main-container--blocks": !this.byRows,
 //         "section-pill": !this.byRows,
 //         // "main-container--rows": this.byRows,
-//         "p-0": this.byRows,
+//         "p-0": this.byRows
 //       };
 //     },
-//     cardClasses: function () {
+//     cardClasses: function() {
 //       return {
 //         col: !this.byRows,
 //         "card--block": !this.byRows,
 //         "section-pill": this.byRows,
-//         "card--row": this.byRows,
+//         "card--row": this.byRows
 //       };
-//     },
+//     }
 //   },
 //   methods: {
-//     getTabItemClass: function (index) {
+//     getTabItemClass: function(index) {
 //       return {
-//         "nav-item--active": this.activeTab == index,
+//         "nav-item--active": this.activeTab == index
 //       };
 //     },
-//     getTabLinkClass: function (index) {
+//     getTabLinkClass: function(index) {
 //       return {
-//         active: this.activeTab == index,
+//         active: this.activeTab == index
 //       };
-//     },
-//   },
+//     }
+//   }
 // });
 
 ReactDOM.render(
