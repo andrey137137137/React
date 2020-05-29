@@ -4,9 +4,8 @@ import { observer } from "mobx-react";
 import SvgCmp from "@cmp/SvgCmp";
 import { getComputedClasses } from "@help/classes";
 
-export default
 @observer
-class CardImg extends Component {
+export default class CardImg extends Component {
   @computed get img() {
     return "img/today/" + this.props.img + ".jpg";
   }

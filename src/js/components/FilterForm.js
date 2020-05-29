@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { observable, computed, action } from "mobx";
 import { observer } from "mobx-react";
+import store from "@store";
 import SvgCmp from "@cmp/SvgCmp";
 import { getSwitchedClass } from "@help/classes";
 
-export default
 @observer
-class FilterForm extends Component {
+export default class FilterForm extends Component {
   @observable activeTab = 2;
   @observable tabs = [
     { name: "Все", active: 1 },
@@ -29,7 +29,7 @@ class FilterForm extends Component {
   @computed get formClasses() {
     return (
       "form section section--tabs_wrap filter_form mt-md-n1 " +
-      getSwitchedClass(!this.props.store.showFilter, "d-none")
+      getSwitchedClass(!store.showFilter, "d-none")
     );
   }
   @action getTabItemClasses(index) {

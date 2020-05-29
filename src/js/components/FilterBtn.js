@@ -1,26 +1,26 @@
 import React, { Component } from "react";
 import { computed, action } from "mobx";
 import { observer } from "mobx-react";
+import store from "@store";
 import NavLink from "@cmp/NavLink";
 import SvgCmp from "@cmp/SvgCmp";
 import { getSwitchedClass } from "@help/classes";
 
-export default
 @observer
-class FilterBtn extends Component {
+export default class FilterBtn extends Component {
   @computed get linkClasses() {
     return (
       "pr-7 pb-7 p-md-0 icon icon--round filter-icon filter-icon--round " +
-      getSwitchedClass(this.props.store.showFilter, "icon--success")
+      getSwitchedClass(store.showFilter, "icon--success")
     );
   }
   @computed get textClasses() {
-    return getSwitchedClass(this.props.store.showFilter, "text-success");
+    return getSwitchedClass(store.showFilter, "text-success");
   }
 
   @action handle = () => {
-    const { showFilter } = this.props.store;
-    this.props.store.showFilter = !showFilter;
+    const { showFilter } = store;
+    store.showFilter = !showFilter;
   };
 
   render() {

@@ -623,8 +623,8 @@
     $block: &;
 
     &-item {
-      &:first-child,
-      &:last-child {
+      &--back,
+      &--next {
         #{$block}-link {
           justify-content: space-between;
           padding-right: map-get($spacers, 22);
@@ -633,13 +633,13 @@
         }
       }
 
-      &:first-child {
+      &--back {
         #{$block}-link {
           padding-left: map-get($spacers, 17);
         }
       }
 
-      &:last-child {
+      &--next {
         #{$block}-link {
           padding-left: map-get($spacers, 22);
         }

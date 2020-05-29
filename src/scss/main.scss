@@ -682,8 +682,8 @@ svg path {
   $block: &;
 
   &-item {
-    &:first-child,
-    &:last-child {
+    &--back,
+    &--next {
       #{$block}-link {
         display: flex;
         justify-content: center;

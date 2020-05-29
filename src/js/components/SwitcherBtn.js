@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from "react";
 import { observable, computed, action } from "mobx";
 import { observer } from "mobx-react";
+import store from "@store";
 import NavLink from "@cmp/NavLink";
 import SvgCmp from "@cmp/SvgCmp";
 import { getSwitchedClass } from "@help/classes";
 
-export default
 @observer
-class SwitcherBtn extends Component {
+export default class SwitcherBtn extends Component {
   @observable linkPostClasses = "filter-link--switcher";
   @observable iconCommonClasses = "icon";
   @observable iconSwitchedClass = "icon--success";
@@ -16,22 +16,22 @@ class SwitcherBtn extends Component {
     return (
       this.iconCommonClasses +
       " " +
-      getSwitchedClass(this.props.store.byRows, this.iconSwitchedClass)
+      getSwitchedClass(store.byRows, this.iconSwitchedClass)
     );
   }
   @computed get squarsClasses() {
     return (
       this.iconCommonClasses +
       " " +
-      getSwitchedClass(!this.props.store.byRows, this.iconSwitchedClass)
+      getSwitchedClass(!store.byRows, this.iconSwitchedClass)
     );
   }
 
   @action rowsHandle = () => {
-    this.props.store.byRows = true;
+    store.byRows = true;
   };
   @action squarsHandle = () => {
-    this.props.store.byRows = false;
+    store.byRows = false;
   };
 
   render() {

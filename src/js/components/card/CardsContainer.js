@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { observable, computed } from "mobx";
 import { observer } from "mobx-react";
+import store from "@store";
 import CardCmp from "@cardCmp/CardCmp";
 import { getComputedClasses } from "@help/classes";
 
-export default
 @observer
-class CardContainer extends Component {
+export default class CardsContainer extends Component {
   @observable items = [
     {
       title: "Бесконечно белый медведь",
@@ -141,11 +141,11 @@ class CardContainer extends Component {
 
   @computed get classes() {
     // return getComputedClasses(
-    //   { cond: this.props.store.byRows, value: "main-container--rows" },
+    //   { cond: store.byRows, value: "main-container--rows" },
     //   "main-container--blocks"
     // );
     return getComputedClasses(
-      [{ cond: this.props.store.byRows, value: "p-0" }],
+      [{ cond: store.byRows, value: "p-0" }],
       "section-pill"
     );
   }
@@ -154,7 +154,7 @@ class CardContainer extends Component {
     return pug`
       .row.section-body(className=this.classes)
         each item, index in this.items
-          CardCmp(key=index store=this.props.store img=(index + 1) item=this.items[index])
+          CardCmp(key=index store=store img=(index + 1) item=this.items[index])
     `;
   }
 }

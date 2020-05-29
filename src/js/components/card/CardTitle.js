@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { computed } from "mobx";
 import { observer } from "mobx-react";
-import CardTitleText from "@cardCmp/CardTitleText";
 import SvgCmp from "@cmp/SvgCmp";
 import { getSwitchedClass } from "@help/classes";
 
-export default
+const CardTitleText = props => pug`
+  span.card-text_span.card-title_text= props.text
+`;
+
 @observer
-class CardTitle extends Component {
+export default class CardTitle extends Component {
   @computed get classes() {
     return getSwitchedClass(this.props.marked, "icon--success");
   }

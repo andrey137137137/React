@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { computed } from "mobx";
 import { observer } from "mobx-react";
+import store from "@store";
 import CardImg from "@cardCmp/CardImg";
 import CardTitle from "@cardCmp/CardTitle";
 import CardInfo from "@cardCmp/CardInfo";
@@ -9,12 +10,11 @@ import CardGrades from "@cardCmp/CardGrades";
 import CardShortText from "@cardCmp/CardShortText";
 import { getComputedClasses } from "@help/classes";
 
-export default
 @observer
-class CardCmp extends Component {
+export default class CardCmp extends Component {
   @computed get classes() {
     return getComputedClasses(
-      [{ cond: this.props.store.byRows, value: "section-pill card--row" }],
+      [{ cond: store.byRows, value: "section-pill card--row" }],
       "col card--block",
       "card"
     );

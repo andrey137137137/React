@@ -1,5 +1,8 @@
-import React, { Component } from "react";
-import CardSubtitleText from "@cardCmp/CardSubtitleText";
+import React from "react";
+
+const CardSubtitleText = props => pug`
+  span.card-text_span= props.text
+`;
 
 export default function CardSubtitle(props) {
   return pug`
