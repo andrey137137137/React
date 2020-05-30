@@ -1,63 +1,82 @@
 import React, { Component } from "react";
+import { observable, computed, action } from "mobx";
+import { observer } from "mobx-react";
 import store from "@store";
 import SvgCmp from "@cmp/SvgCmp";
 import PageItem from "@paginationCmp/PageItem";
 import { getComputedClasses } from "@help/classes";
 
-const { count, current } = store.pagination;
+const PageIcon = props => pug`
+  //- span.icon.page-text.page-icon(className="icon-" + props.icon)
+  SvgCmp(icon="angle", classes="icon icon-" + props.icon + " page-text page-icon")
+`;
 
-const PageIcon = props => (
-  // span.icon.page-text.page-icon(class="icon-" + icon)
-  <SvgCmp
-    icon="angle"
-    classes={"icon icon-" + props.icon + " page-text page-icon"}
-  />
-);
+const PageText = props => pug`
+  span.d-none.d-md-block.page-text= props.value
+`;
 
-const PageText = props => (
-  <span className="d-none d-md-block page-text"> {props.value} </span>
-);
-
+@observer
 export default class PageArrow extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      prevIndex: current - 2,
-      nextIndex: current + 2,
-      lastIndex: count - 1
-    };
+  @observable step = 2;
+
+  @computed get prevIndex() {
+    return store.pagination.current - this.step;
+  }
+  @computed get nextIndex() {
+    return store.pagination.current + this.step;
+  }
+  @computed get lastIndex() {
+    return store.pagination.count - 1;
   }
 
-  getItemClasses = (index, hiddenClasses = false) => {
+  @action getItemClasses = (index, hiddenClasses = false) => {
+    const { current } = store.pagination;
     return getComputedClasses([{ cond: index == current, value: "active" }]);
   };
-  prevHandle = () => {
-    store.pagination.current = this.state.prevIndex;
+  @action correctStep = () => {
+    switch (store.pagination.current) {
+      case 0:
+      case this.lastIndex:
+        this.step = 3;
+        break;
+      default:
+        this.step = 2;
+    }
   };
-  firstHandle = () => {
+  @action prevHandle = () => {
+    this.correctStep();
+    store.pagination.current = this.prevIndex;
+  };
+  @action firstHandle = () => {
+    this.correctStep();
     store.pagination.current = 0;
   };
-  nextHandle = () => {
-    store.pagination.current = this.state.nextIndex;
+  @action nextHandle = () => {
+    this.correctStep();
+    store.pagination.current = this.nextIndex;
   };
-  lastHandle = () => {
-    store.pagination.current = this.state.lastIndex;
+  @action lastHandle = () => {
+    this.correctStep();
+    store.pagination.current = this.lastIndex;
   };
 
-  render = () => pug`
-    if !props.isNext
+  render() {
+    const { count, current } = store.pagination;
+    return pug`
+    if !this.props.isNext
       if current > 2
-        PageItem(classes="page-item--back" link=this.state.prevIndex clickHandle=this.prevHandle)
+        PageItem(classes="page-item--back" link=this.prevIndex clickHandle=this.prevHandle)
           PageIcon(icon="angle_left")
           PageText(value="Предыдущая")
       else
         PageItem(classes=this.getItemClasses(0) link=0 clickHandle=this.firstHandle) 1
     else
       if current < count - 3
-        PageItem(classes="page-item--next" link=this.state.nextIndex clickHandle=this.nextHandle)
+        PageItem(classes="page-item--next" link=this.nextIndex clickHandle=this.nextHandle)
           PageText(value="Следующая")
           PageIcon(icon="angle_right")
       else
-        PageItem(classes=this.getItemClasses(this.state.lastIndex) link=this.state.lastIndex clickHandle=this.lastHandle)= count
+        PageItem(classes=this.getItemClasses(this.lastIndex) link=this.lastIndex clickHandle=this.lastHandle)= count
   `;
+  }
 }

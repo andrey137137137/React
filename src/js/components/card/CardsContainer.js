@@ -154,7 +154,7 @@ export default class CardsContainer extends Component {
     return pug`
       .row.section-body(className=this.classes)
         each item, index in this.items
-          CardCmp(key=index store=store img=(index + 1) item=this.items[index])
+          CardCmp(key=index img=(index + 1) item=this.items[index])
     `;
   }
 }
