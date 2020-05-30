@@ -20,6 +20,7 @@ module.exports = {
       "@store": path.resolve(__dirname, "src/js/store.js"),
       "@cmp": path.resolve(__dirname, "src/js/components"),
       "@cardCmp": path.resolve(__dirname, "src/js/components/card"),
+      "@paginationCmp": path.resolve(__dirname, "src/js/components/pagination"),
       "@help": path.resolve(__dirname, "src/js/helpers")
     }
   },

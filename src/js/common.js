@@ -4,7 +4,7 @@ import FilterBtn from "@cmp/FilterBtn";
 import SwitcherBtn from "@cmp/SwitcherBtn";
 import FilterForm from "@cmp/FilterForm";
 import CardsContainer from "@cardCmp/CardsContainer";
-import PaginationCmp from "@cmp/PaginationCmp";
+import PaginationCmp from "@paginationCmp/PaginationCmp";
 
 ReactDOM.render(<FilterBtn />, document.getElementById("reactFilterBtn"));
 ReactDOM.render(<SwitcherBtn />, document.getElementById("reactSwitcherBtn"));

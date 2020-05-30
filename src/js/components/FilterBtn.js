@@ -19,8 +19,7 @@ export default class FilterBtn extends Component {
   }
 
   @action handle = () => {
-    const { showFilter } = store;
-    store.showFilter = !showFilter;
+    store.showFilter = !store.showFilter;
   };
 
   render() {
