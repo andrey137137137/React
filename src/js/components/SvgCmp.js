@@ -1,14 +1,6 @@
 import React, { Component } from "react";
 
-export default class SvgCmp extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { icon: "#" + props.icon };
-  }
-  render() {
-    return pug`
-      svg(className=this.props.classes)
-        use(xlinkHref=this.state.icon)
-    `;
-  }
-}
+export default SvgCmp = props => pug`
+  svg(className=this.props.classes)
+    use(xlinkHref="#" + props.icon)
+`;
